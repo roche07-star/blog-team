@@ -35,7 +35,7 @@ const TOPICS = [
 
 // 마지막으로 사용한 주제 인덱스 가져오기
 function getLastTopicIndex() {
-  const statePath = 'C:/project/blog-team/daily_blog/.state.json';
+  const statePath = './발행/.state.json';
   try {
     if (fs.existsSync(statePath)) {
       const state = JSON.parse(fs.readFileSync(statePath, 'utf8'));
@@ -49,8 +49,13 @@ function getLastTopicIndex() {
 
 // 마지막 주제 인덱스 저장
 function saveLastTopicIndex(index) {
-  const statePath = 'C:/project/blog-team/daily_blog/.state.json';
+  const statePath = './발행/.state.json';
   try {
+    // 디렉토리가 없으면 생성
+    const dir = path.dirname(statePath);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
     fs.writeFileSync(statePath, JSON.stringify({ lastTopicIndex: index, lastRun: new Date().toISOString() }), 'utf8');
   } catch (e) {
     console.error('상태 파일 저장 실패:', e.message);
@@ -59,7 +64,7 @@ function saveLastTopicIndex(index) {
 
 // 가장 최근 블로그 글 읽기
 function getLastBlogPost() {
-  const dir = 'C:/project/blog-team/daily_blog';
+  const dir = './발행';
   try {
     const files = fs.readdirSync(dir)
       .filter(f => f.endsWith('.md') && !f.startsWith('.'))
@@ -381,8 +386,10 @@ ${topic.jobizicFeature}
     const dateStr = today.toISOString().split('T')[0].replace(/-/g, '');
 
     // 1. 티스토리 HTML 파일 저장
+    const tistoryDir = './발행/tistory';
+    if (!fs.existsSync(tistoryDir)) fs.mkdirSync(tistoryDir, { recursive: true });
     const tistoryFilename = `${dateStr}_${topic.name}_티스토리.html`;
-    const tistoryFilepath = path.join('C:/project/blog-team/daily_blog', tistoryFilename);
+    const tistoryFilepath = path.join(tistoryDir, tistoryFilename);
 
     const tistoryFileContent = `<!DOCTYPE html>
 <html lang="ko">
@@ -540,8 +547,10 @@ ${tistoryContent}
     fs.writeFileSync(tistoryFilepath, tistoryFileContent, 'utf8');
 
     // 2. LinkedIn 텍스트 파일 저장
+    const linkedinDir = './발행/linkedin';
+    if (!fs.existsSync(linkedinDir)) fs.mkdirSync(linkedinDir, { recursive: true });
     const linkedinFilename = `${dateStr}_${topic.name}_LinkedIn.txt`;
-    const linkedinFilepath = path.join('C:/project/blog-team/daily_blog', linkedinFilename);
+    const linkedinFilepath = path.join(linkedinDir, linkedinFilename);
 
     const linkedinFileContent = `━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 📅 생성일: ${today.toLocaleString('ko-KR')}
@@ -561,7 +570,7 @@ ${linkedinContent}
 
     // 3. LinkedIn HTML 파일 저장 (미리보기용 - Lucide 아이콘 포함)
     const linkedinHtmlFilename = `${dateStr}_${topic.name}_LinkedIn.html`;
-    const linkedinHtmlFilepath = path.join('C:/project/blog-team/daily_blog', linkedinHtmlFilename);
+    const linkedinHtmlFilepath = path.join(linkedinDir, linkedinHtmlFilename);
 
     const linkedinHtmlContent = `<!DOCTYPE html>
 <html lang="ko">
@@ -706,8 +715,10 @@ ${linkedinContent}
     fs.writeFileSync(linkedinHtmlFilepath, linkedinHtmlContent, 'utf8');
 
     // 3. 네이버 블로그 HTML 파일 저장
+    const naverDir = './발행/naver';
+    if (!fs.existsSync(naverDir)) fs.mkdirSync(naverDir, { recursive: true });
     const naverFilename = `${dateStr}_${topic.name}_네이버.html`;
-    const naverFilepath = path.join('C:/project/blog-team/daily_blog', naverFilename);
+    const naverFilepath = path.join(naverDir, naverFilename);
 
     const naverFileContent = `<!DOCTYPE html>
 <html lang="ko">
@@ -844,7 +855,7 @@ ${naverContent}
     console.log(`📁 네이버: ${naverFilename}`);
     console.log(`📁 LinkedIn (텍스트): ${linkedinFilename}`);
     console.log(`📁 LinkedIn (HTML): ${linkedinHtmlFilename}`);
-    console.log(`📍 위치: C:/project/blog-team/daily_blog/\n`);
+    console.log(`📍 위치: ./발행/\n`);
 
     // 상태 저장 (다음번을 위해)
     saveLastTopicIndex(nextIndex);

@@ -1,0 +1,37 @@
+name: Daily Blog Generation (Naver, Tistory, LinkedIn)
+
+on:
+  schedule:
+    - cron: '30 0 * * *'  # 매일 09:30 KST (UTC 00:30)
+  workflow_dispatch:  # 수동 실행 가능
+
+jobs:
+  generate-daily-blog:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 파일 커밋 및 푸시 권한
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate daily blog posts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node auto-generate.js
+
+      - name: Commit generated files
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add 발행/
+          git commit -m "📬 일일 블로그 생성 ($(date +'%Y-%m-%d'))" || echo "No changes to commit"
+          git push || echo "Nothing to push"
