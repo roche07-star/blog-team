@@ -22,3 +22,10 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+
+# Google OAuth Credentials (보안)
+credentials.json
+token.json
+
+# Logs
+logs/

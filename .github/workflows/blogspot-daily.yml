@@ -1,0 +1,40 @@
+name: Daily Blogspot Generation
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 매일 09:00 KST (UTC 00:00)
+  workflow_dispatch:  # 수동 실행 가능
+
+jobs:
+  generate-blogspot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: |
+          cd blog-team
+          npm install
+
+      - name: Generate and publish Blogspot
+        env:
+          PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          cd blog-team
+          node auto-generate-blogspot.js
+
+      - name: Commit generated files
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add blog-team/blogspot/
+          git commit -m "📬 Blogspot 자동 생성 ($(date +'%Y-%m-%d'))" || echo "No changes to commit"
+          git push || echo "Nothing to push"
