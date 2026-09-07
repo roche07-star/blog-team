@@ -11,30 +11,26 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
       - name: Install dependencies
-        run: |
-          cd blog-team
-          npm install
+        run: npm install
 
       - name: Generate and publish Blogspot
         env:
           PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          cd blog-team
-          node auto-generate-blogspot.js
+        run: node auto-generate-blogspot.js
 
       - name: Commit generated files
         run: |
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
-          git add blog-team/blogspot/
+          git add blogspot/
           git commit -m "📬 Blogspot 자동 생성 ($(date +'%Y-%m-%d'))" || echo "No changes to commit"
           git push || echo "Nothing to push"
