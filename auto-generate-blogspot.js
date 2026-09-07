@@ -1,10 +1,18 @@
 import Anthropic from '@anthropic-ai/sdk';
-import dotenv from 'dotenv';
 import fs from 'fs';
 import path from 'path';
 import { authorize, getBlogId, publishPost } from './blogger-auth.js';
 
-dotenv.config();
+// .env 파일이 있을 때만 로드 (로컬 개발용)
+// GitHub Actions에서는 환경 변수가 이미 설정되어 있음
+try {
+  if (fs.existsSync('.env')) {
+    const dotenv = await import('dotenv');
+    dotenv.config();
+  }
+} catch (error) {
+  console.log('Using environment variables (GitHub Actions mode)');
+}
 
 const client = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY
