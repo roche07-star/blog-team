@@ -60,8 +60,8 @@ const AI_TOPICS = [
   }
 ];
 
-const STATE_PATH = 'C:/project/blog-team/blogspot/.state.json';
-const OUTPUT_DIR = 'C:/project/blog-team/blogspot';
+const STATE_PATH = './blogspot/.state.json';
+const OUTPUT_DIR = './blogspot';
 
 // ============================================================
 // 유틸리티 함수
