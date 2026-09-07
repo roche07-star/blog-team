@@ -9,45 +9,51 @@ const client = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY
 });
 
-// 주제 순환 (jobizic 기능 분석 포함)
-const TOPICS = [
-  {
-    name: '취업',
-    keywords: '신입 개발자 취업 준비, 포트폴리오 작성, 면접 대비',
-    jobizicFeature: 'JD 매칭 분석 기능으로 채용 공고와 이력서의 적합도를 0-100점으로 평가하고, 부족한 부분을 명확히 파악하여 서류 합격률을 높이는 방법'
-  },
-  {
-    name: '이직',
-    keywords: '경력 이직, 연봉 협상, 이력서 작성',
-    jobizicFeature: 'AI 이력서 분석 기능으로 경력의 강점과 약점을 객관적으로 파악하고, 개선 포인트를 제시받아 효과적으로 어필할 수 있는 이력서를 작성하는 방법'
-  },
-  {
-    name: '포트폴리오',
-    keywords: '개발자 포트폴리오, GitHub 프로젝트, README 작성법',
-    jobizicFeature: '이력서 분석 기능으로 자신의 핵심 강점 프로젝트와 기술 스택을 파악하고, 포트폴리오에서 어떤 경험을 부각해야 할지 구체적인 인사이트를 얻는 방법'
-  },
-  {
-    name: '면접가이드',
-    keywords: '기술 면접, 코딩 테스트, 인성 면접 준비',
-    jobizicFeature: '면접 가이드 기능으로 JD와 이력서를 바탕으로 예상 질문을 도출하고, 답변 전략과 핵심 어필 포인트를 체계적으로 준비하는 방법'
-  }
-];
+const TOPICS_DIR = './주제목록/채용';
 
-// 마지막으로 사용한 주제 인덱스 가져오기
-function getLastTopicIndex() {
-  const statePath = './발행/.state.json';
-  try {
-    if (fs.existsSync(statePath)) {
-      const state = JSON.parse(fs.readFileSync(statePath, 'utf8'));
-      return state.lastTopicIndex || 0;
-    }
-  } catch (e) {
-    console.error('상태 파일 읽기 실패:', e.message);
-  }
-  return 0;
+// 주 번호 계산 (ISO 8601)
+function getWeekNumber(date) {
+  const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+  const dayNum = d.getUTCDay() || 7;
+  d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+  const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+  const weekNo = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
+  return `${d.getUTCFullYear()}-W${weekNo.toString().padStart(2, '0')}`;
 }
 
-// 마지막 주제 인덱스 저장
+// 오늘 날짜에 맞는 주제 가져오기
+function getTodayTopic() {
+  try {
+    const today = new Date();
+    const todayStr = today.toISOString().split('T')[0]; // YYYY-MM-DD
+    const weekNumber = getWeekNumber(today);
+    const weekFile = path.join(TOPICS_DIR, `${weekNumber}.json`);
+
+    if (!fs.existsSync(weekFile)) {
+      console.error(`❌ No topics file found for ${weekNumber}`);
+      console.error(`   Expected: ${weekFile}`);
+      console.error(`   Please run: node generate-weekly-topics.js`);
+      throw new Error(`Topics file not found: ${weekFile}`);
+    }
+
+    const weekData = JSON.parse(fs.readFileSync(weekFile, 'utf8'));
+    const todayTopic = weekData.topics.find(t => t.date === todayStr);
+
+    if (!todayTopic) {
+      console.error(`❌ No topic found for ${todayStr} in ${weekNumber}`);
+      throw new Error(`Topic not found for today: ${todayStr}`);
+    }
+
+    console.log(`📅 Using topic for ${todayTopic.day} (${todayStr})`);
+    return todayTopic;
+
+  } catch (e) {
+    console.error('Error loading today\'s topic:', e.message);
+    throw e;
+  }
+}
+
+// 마지막 주제 인덱스 저장 (더 이상 사용 안 함, 호환성 유지)
 function saveLastTopicIndex(index) {
   const statePath = './발행/.state.json';
   try {
@@ -84,10 +90,8 @@ function getLastBlogPost() {
 
 async function generateBlogPost() {
   try {
-    // 다음 주제 선택 (순환)
-    const lastIndex = getLastTopicIndex();
-    const nextIndex = (lastIndex + 1) % TOPICS.length;
-    const topic = TOPICS[nextIndex];
+    // 오늘 주제 가져오기
+    const topic = getTodayTopic();
 
     // 이전 글 읽기
     const lastPost = getLastBlogPost();
@@ -857,10 +861,7 @@ ${naverContent}
     console.log(`📁 LinkedIn (HTML): ${linkedinHtmlFilename}`);
     console.log(`📍 위치: ./발행/\n`);
 
-    // 상태 저장 (다음번을 위해)
-    saveLastTopicIndex(nextIndex);
-
-    console.log(`🔄 다음 주제: ${TOPICS[(nextIndex + 1) % TOPICS.length].name}\n`);
+    console.log(`✅ Blog post generated successfully!\n`);
 
   } catch (error) {
     console.error('❌ 오류 발생:', error.message);
