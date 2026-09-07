@@ -21,6 +21,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Setup Blogger credentials
+        run: |
+          echo '${{ secrets.BLOGGER_CREDENTIALS }}' > credentials.json
+          echo '${{ secrets.BLOGGER_TOKEN }}' > token.json
+
       - name: Generate and publish Blogspot
         env:
           PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
