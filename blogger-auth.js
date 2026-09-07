@@ -4,8 +4,8 @@ import { google } from 'googleapis';
 import readline from 'readline';
 
 const SCOPES = ['https://www.googleapis.com/auth/blogger'];
-const TOKEN_PATH = 'C:/project/blog-team/token.json';
-const CREDENTIALS_PATH = 'C:/project/blog-team/credentials.json';
+const TOKEN_PATH = './token.json';
+const CREDENTIALS_PATH = './credentials.json';
 
 // OAuth 인증
 export async function authorize() {
