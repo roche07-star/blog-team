@@ -22,7 +22,7 @@ const MODEL = 'claude-haiku-4-5-20251001';
 
 const STATE_PATH = './발행/blogspot/.state.json';
 const OUTPUT_DIR = './발행/blogspot';
-const TOPICS_DIR = './주제목록';
+const TOPICS_DIR = './주제목록/blogspot';
 
 // ============================================================
 // 유틸리티 함수
