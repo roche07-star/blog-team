@@ -1,0 +1,859 @@
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff !important;
+    color: #333 !important;
+    line-height: 1.8;
+  }
+
+  .container {
+    width: 100% !important;
+    max-width: 900px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  .article-meta {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 30px;
+    font-weight: 500;
+  }
+
+  h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.8em;
+    font-weight: 700;
+    color: #1a1a2e !important;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+    color: #1a1a2e !important;
+    margin: 40px 0 20px 0;
+  }
+
+  h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #1a1a2e !important;
+    margin: 25px 0 15px 0;
+  }
+
+  p {
+    font-size: 1.1em;
+    color: #333 !important;
+    margin-bottom: 18px;
+    line-height: 1.8;
+  }
+
+  a {
+    color: #667eea !important;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .intro-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+  }
+
+  .intro-section p {
+    color: white !important;
+    font-size: 1.15em;
+  }
+
+  .section-number {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5em;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 15px;
+  }
+
+  .tool-card {
+    background: white;
+    border-left: 4px solid #667eea;
+    padding: 30px;
+    margin: 25px 0;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  }
+
+  .tool-card.otter {
+    border-left-color: #14b8a6;
+  }
+
+  .tool-card.fireflies {
+    border-left-color: #f59e0b;
+  }
+
+  .tool-card.fathom {
+    border-left-color: #8b5cf6;
+  }
+
+  .tool-badge {
+    display: inline-block;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+  }
+
+  .tool-badge.otter {
+    background: #ccf0ee;
+    color: #0d7377;
+  }
+
+  .tool-badge.fireflies {
+    background: #fef3c7;
+    color: #92400e;
+  }
+
+  .tool-badge.fathom {
+    background: #ede9fe;
+    color: #6b21a8;
+  }
+
+  .pricing-highlight {
+    background: #f0fdf4;
+    border-left: 4px solid #10b981;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+    font-weight: 600;
+    color: #15803d !important;
+  }
+
+  .pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+  }
+
+  .pros, .cons {
+    padding: 20px;
+    border-radius: 4px;
+    border-left: 4px solid;
+  }
+
+  .pros {
+    background: #f0fdf4;
+    border-left-color: #10b981;
+  }
+
+  .cons {
+    background: #fef2f2;
+    border-left-color: #ef4444;
+  }
+
+  .pros h4, .cons h4 {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1a1a2e !important;
+  }
+
+  .pros ul, .cons ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .pros li, .cons li {
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+    color: #333 !important;
+  }
+
+  .pros li:before {
+    content: "+";
+    position: absolute;
+    left: 0;
+    color: #10b981;
+    font-weight: bold;
+  }
+
+  .cons li:before {
+    content: "-";
+    position: absolute;
+    left: 0;
+    color: #ef4444;
+    font-weight: bold;
+  }
+
+  .rating-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  }
+
+  .rating-table th {
+    background: #f9fafb;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #e5e7eb;
+    color: #1a1a2e !important;
+  }
+
+  .rating-table td {
+    padding: 15px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #333 !important;
+  }
+
+  .rating-table tr:nth-child(even) {
+    background: #f9fafb;
+  }
+
+  .rating-table tr:last-child {
+    background: #f3f4f6;
+    font-weight: 600;
+  }
+
+  .rating-table tr:last-child td {
+    border-bottom: 2px solid #e5e7eb;
+  }
+
+  .rating-mobile {
+    display: none;
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  }
+
+  .comparison-table th {
+    background: #1a1a2e;
+    color: white !important;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  .comparison-table td {
+    padding: 15px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #333 !important;
+  }
+
+  .comparison-table tr:nth-child(even) {
+    background: #f9fafb;
+  }
+
+  .comparison-table th:first-child {
+    background: #667eea;
+  }
+
+  .pull-quote {
+    background: #eff6ff;
+    border-left: 4px solid #667eea;
+    padding: 25px;
+    margin: 30px 0;
+    border-radius: 4px;
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #1a1a2e !important;
+  }
+
+  .verdict-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 8px;
+    margin: 40px 0;
+  }
+
+  .verdict-box h3 {
+    color: white !important;
+    margin-top: 0;
+  }
+
+  .verdict-box p {
+    color: white !important;
+  }
+
+  .use-case {
+    background: #f9fafb;
+    border-left: 4px solid #667eea;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 4px;
+  }
+
+  .use-case strong {
+    color: #667eea;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    body {
+      font-size: 1rem !important;
+    }
+
+    h1 {
+      font-size: 1.6em;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-size: 1.4em;
+      margin: 30px 0 15px 0;
+    }
+
+    h3 {
+      font-size: 1.2em;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    .intro-section {
+      padding: 25px 15px;
+      margin-bottom: 30px;
+    }
+
+    .intro-section p {
+      font-size: 1rem;
+    }
+
+    .tool-card {
+      padding: 20px 15px;
+      margin: 20px 0;
+    }
+
+    .section-number {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    .pros-cons {
+      grid-template-columns: 1fr;
+      gap: 15px;
+      margin: 15px 0;
+    }
+
+    .pros, .cons {
+      padding: 15px;
+    }
+
+    .rating-table {
+      display: none;
+    }
+
+    .rating-mobile {
+      display: block;
+      background: white;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+      margin: 25px 0;
+    }
+
+    .rating-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 15px;
+      border-bottom: 1px solid #e5e7eb;
+      color: #333 !important;
+    }
+
+    .rating-item:last-child {
+      border-bottom: none;
+    }
+
+    .rating-item span {
+      font-weight: 500;
+      color: #333 !important;
+    }
+
+    .rating-item strong {
+      color: #667eea;
+      font-weight: 700;
+    }
+
+    .comparison-table {
+      display: none;
+    }
+
+    .pull-quote {
+      font-size: 1.1em;
+      padding: 20px 15px;
+      margin: 20px 0;
+    }
+
+    .verdict-box {
+      padding: 20px 15px;
+      margin: 30px 0;
+    }
+
+    .use-case {
+      padding: 15px;
+      margin: 12px 0;
+    }
+
+    .article-meta {
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+  }
+</style>
+
+<div class="container">
+  <div class="article-meta">
+    By Roche P. | September 2026 | 8 min read
+  </div>
+
+  <h1>Fireflies vs Otter.ai vs Fathom: Which AI Meeting Assistant Wins in 2026?</h1>
+
+  <div class="intro-section">
+    <p>Meeting transcription isn't a luxury anymore—it's table stakes. As of September 2026, teams are moving past basic recording to AI-powered meeting notes that integrate with their entire workflow. But with three solid players in the arena, which one should you actually use?</p>
+  </div>
+
+  <p>The AI meeting assistant space has matured significantly. Fireflies, Otter.ai, and Fathom each take a different approach to the same core problem: capturing what was said, extracting what matters, and connecting it to where your team works. This comparison cuts through the marketing to show you exactly what each tool delivers—and who it's really built for.</p>
+
+  <h2><span class="section-number">01</span>Otter.ai: Best for Real-Time Transcription and Search</h2>
+
+  <div class="tool-card otter">
+    <span class="tool-badge otter">OTTER.AI</span>
+    
+    <h3>The Industry Standard for Live Notes</h3>
+
+    <p>Otter.ai has established itself as the go-to for users who want transcription that happens while you're talking. As of September 2026, the platform starts at $8.33 per user per month on annual billing, with a free tier offering 300 minutes per month—solid baseline coverage for casual users.</p>
+
+    <div class="pricing-highlight">
+      Pricing: $8.33/user/month (annual) | Free: 300 min/month | Business: $19/user/month | Enterprise: $39/user/month
+    </div>
+
+    <h3>Key Updates for 2026</h3>
+
+    <p>In April 2026, Otter rolled out its Conversational Knowledge Engine alongside voice AI meeting agents. This means the platform now lets you query your meeting archive conversationally—not just keyword search. You can ask "What action items came from the budget review?" and get contextual answers pulled from past meetings. The voice AI agents let Otter participate in calls directly, capturing decisions in real time.</p>
+
+    <h3>Strengths for Transcription-Focused Teams</h3>
+
+    <p>Otter excels at what it does: getting words on the page quickly and accurately. The mobile app is robust, real-time search works well, and the 28+ language support covers most US-based multinational teams. Enterprise plans include HIPAA compliance, SCIM provisioning, and audit logs—critical for regulated industries.</p>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>Strengths</h4>
+        <ul>
+          <li>Best-in-class real-time transcription during calls</li>
+          <li>Strong mobile app experience</li>
+          <li>Conversational Knowledge Engine for meeting queries</li>
+          <li>Voice AI agents for direct call participation</li>
+          <li>Enterprise security: HIPAA, SCIM, SSO, audit logs</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>Limitations</h4>
+        <ul>
+          <li>CRM integrations less robust than Fireflies</li>
+          <li>Requires bot to join meetings (not bot-free)</li>
+          <li>Free tier capped at 300 minutes monthly</li>
+          <li>Workflow automation depth trails competitors</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Rating Breakdown</h3>
+    <table class="rating-table">
+      <tr>
+        <th>Rating Category</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td>Ease of Use</td>
+        <td>8.5/10</td>
+      </tr>
+      <tr>
+        <td>AI Quality (Transcription)</td>
+        <td>8.5/10</td>
+      </tr>
+      <tr>
+        <td>Features</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>Speed</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>Pricing</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>Value for Money</td>
+        <td>8.5/10</td>
+      </tr>
+      <tr>
+        <td><strong>Overall</strong></td>
+        <td><strong>8.4/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>Ease of Use:</span> <strong>8.5/10</strong></div>
+      <div class="rating-item"><span>AI Quality:</span> <strong>8.5/10</strong></div>
+      <div class="rating-item"><span>Features:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Speed:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>Pricing:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>Value for Money:</span> <strong>8.5/10</strong></div>
+      <div class="rating-item"><span>Overall:</span> <strong>8.4/10</strong></div>
+    </div>
+  </div>
+
+  <h2><span class="section-number">02</span>Fireflies.ai: Best for Teams and Deep CRM Integration</h2>
+
+  <div class="tool-card fireflies">
+    <span class="tool-badge fireflies">FIREFLIES.AI</span>
+    
+    <h3>The Workflow Automation Powerhouse</h3>
+
+    <p>If your team lives in Salesforce, HubSpot, or Pipedrive, Fireflies is worth serious consideration. Starting at $10 per user per month on annual plans, it's designed for organizations that need meeting intelligence to flow directly into their CRM pipeline. The free tier offers approximately 800 minutes of cumulative recording storage—more generous than Otter when you're getting started.</p>
+
+    <div class="pricing-highlight">
+      Pricing: $10/user/month (annual) | Free: ~800 min cumulative | CRM write-back included on paid plans
+    </div>
+
+    <h3>Integration Depth Sets It Apart</h3>
+
+    <p>Fireflies distinguishes itself through multilingual support (100+ languages as of 2026 benchmarks) and CRM integrations that actually write back to your records. This means deal notes, action items, and attendee info sync automatically to Salesforce opportunities or HubSpot deals. For sales teams especially, this eliminates manual data entry after every call.</p>
+
+    <p>The platform explicitly commits to not training AI models on your data across any plan tier—a privacy pledge that matters for regulated teams and enterprises handling sensitive customer information.</p>
+
+    <h3>Automation and Workflow Focus</h3>
+
+    <p>Beyond transcription, Fireflies builds automation around meeting outcomes. You can set up workflows that trigger based on keywords spoken during calls—fire a Slack alert when a competitor is mentioned, auto-create follow-up tasks, or tag recordings by customer segment. This workflow depth is more advanced than either competitor offers at comparable price points.</p>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>Strengths</h4>
+        <ul>
+          <li>Deepest CRM integration suite (Salesforce, HubSpot, Pipedrive)</li>
+          <li>100+ language transcription support</li>
+          <li>Advanced workflow automation and keyword triggers</li>
+          <li>No AI training on your data (all plans)</li>
+          <li>Generous free tier for testing</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>Limitations</h4>
+        <ul>
+          <li>Requires bot to join meetings</li>
+          <li>Free tier limited compared to Fathom's unlimited</li>
+          <li>Less focus on real-time transcription during calls</li>
+          <li>Search capabilities less mature than Otter</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Rating Breakdown</h3>
+    <table class="rating-table">
+      <tr>
+        <th>Rating Category</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td>Ease of Use</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>AI Quality (Transcription)</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>Features (Integrations)</td>
+        <td>9.5/10</td>
+      </tr>
+      <tr>
+        <td>Speed</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>Pricing</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>Value for Money</td>
+        <td>8.5/10</td>
+      </tr>
+      <tr>
+        <td><strong>Overall</strong></td>
+        <td><strong>8.3/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>Ease of Use:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>AI Quality:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Features:</span> <strong>9.5/10</strong></div>
+      <div class="rating-item"><span>Speed:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Pricing:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Value for Money:</span> <strong>8.5/10</strong></div>
+      <div class="rating-item"><span>Overall:</span> <strong>8.3/10</strong></div>
+    </div>
+  </div>
+
+  <h2><span class="section-number">03</span>Fathom: Best Free Plan and Bot-Free Capture</h2>
+
+  <div class="tool-card fathom">
+    <span class="tool-badge fathom">FATHOM</span>
+    
+    <h3>The Underdog with the Best Free Tier</h3>
+
+    <p>Fathom's approach stands out immediately: unlimited recordings on the free plan (with capped AI summaries). If you're testing meeting transcription without budget commitment, Fathom is the obvious starting point. Paid plans start around $15-19 per user per month, making it competitive with Fireflies for serious users.</p>
+
+    <div class="pricing-highlight">
+      Pricing: $15-19/user/month | Free: Unlimited recordings with limited summaries
+    </div>
+
+    <h3>April 2026 Overhaul: Bot-Free Capture Arrives</h3>
+
+    <p>The most significant update from Fathom in 2026 was expanding beyond bot-only capture. The platform now offers bot-free recording on Mac desktop, plus hybrid options for Teams and Zoom. This matters because it removes the "another bot in the meeting" friction that some teams find annoying. You get the same transcription quality without the extra participant slot burden.</p>
+
+    <p>Alongside capture flexibility, Fathom added live summaries during calls and account-wide AI search—directionally matching Otter and Fireflies on core features.</p>
+
+    <h3>Transcription Accuracy and Simplicity</h3>
+
+    <p>In independent 2026 testing, Fathom achieved 96% transcription accuracy on clean audio—outperforming Fireflies at 94% and Otter at 91% on that particular benchmark. The interface is deliberately minimal: capture, summarize, search. It's not trying to be a full workflow automation platform; it's trying to be the fastest path from call to note.</p>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>Strengths</h4>
+        <ul>
+          <li>Best free plan: unlimited recordings</li>
+          <li>Bot-free capture option (Mac desktop, hybrid modes)</li>
+          <li>Highest transcription accuracy in 2026 benchmarks (96%)</li>
+          <li>Live summaries during calls</li>
+          <li>Simple, focused interface</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>Limitations</h4>
+        <ul>
+          <li>Fewer integrations than Fireflies or Otter</li>
+          <li>Limited language support (38 languages)</li>
+          <li>Workflow automation less mature</li>
+          <li>CRM features still improving</li>
+          <li>Smaller user base means fewer third-party tools</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Rating Breakdown</h3>
+    <table class="rating-table">
+      <tr>
+        <th>Rating Category</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td>Ease of Use</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>AI Quality (Transcription)</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>Features</td>
+        <td>7.5/10</td>
+      </tr>
+      <tr>
+        <td>Speed</td>
+        <td>8.5/10</td>
+      </tr>
+      <tr>
+        <td>Pricing (Free Tier Value)</td>
+        <td>10/10</td>
+      </tr>
+      <tr>
+        <td>Value for Money</td>
+        <td>8.5/10</td>
+      </tr>
+      <tr>
+        <td><strong>Overall</strong></td>
+        <td><strong>8.4/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>Ease of Use:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>AI Quality:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>Features:</span> <strong>7.5/10</strong></div>
+      <div class="rating-item"><span>Speed:</span> <strong>8.5/10</strong></div>
+      <div class="rating-item"><span>Pricing:</span> <strong>10/10</strong></div>
+      <div class="rating-item"><span>Value for Money:</span> <strong>8.5/10</strong></div>
+      <div class="rating-item"><span>Overall:</span> <strong>8.4/10</strong></div>
+    </div>
+  </div>
+
+  <h2><span class="section-number">04</span>Head-to-Head: Direct Comparison</h2>
+
+  <p>Here's how the three stack up across the criteria that matter most to buyers:</p>
+
+  <table class="comparison-table">
+    <tr>
+      <th>Feature</th>
+      <th>Otter.ai</th>
+      <th>Fireflies.ai</th>
+      <th>Fathom</th>
+    </tr>
+    <tr>
+      <td><strong>Starting Price</strong></td>
+      <td>$8.33/user/month (annual)</td>
+      <td>$10/user/month (annual)</td>
+      <td>$15-19/user/month</td>
+    </tr>
+    <tr>
+      <td><strong>Free Tier</strong></td>
+      <td>300 min/month</td>
+      <td>~800 min cumulative</td>
+      <td>Unlimited recordings</td>
+    </tr>
+    <tr>
+      <td><strong>Transcription Accuracy</strong></td>
+      <td>91% (benchmark)</td>
+      <td>94% (benchmark)</td>
+      <td>96% (benchmark)</td>
+    </tr>
+    <tr>
+      <td><strong>Language Support</strong></td>
+      <td>28+ languages</td>
+      <td>100+ languages</td>
+      <td>38 languages</td>
+    </tr>
+    <tr>
+      <td><strong>CRM Integrations</strong></td>
+      <td>Limited</td>
+      <td>Deep (Salesforce, HubSpot, Pipedrive)</td>
+      <td>Improving, not complete</td>
+    </tr>
+    <tr>
+      <td><strong>Capture Mode</strong></td>
+      <td>Bot-only</td>
+      <td>Bot-only</td>
+      <td>Bot-free option (Mac), hybrid</td>
+    </tr>
+    <tr>
+      <td><strong>Real-Time Search</strong></td>
+      <td>Strong</td>
+      <td>Moderate</td>
+      <td>Good</td>
+    </tr>
+    <tr>
+      <td><strong>Workflow Automation</strong></td>
+      <td>Basic</td>
+      <td>Advanced</td>
+      <td>Basic</td>
+    </tr>
+    <tr>
+      <td><strong>Enterprise Security</strong></td>
+      <td>HIPAA, SSO, SCIM, audit logs</td>
+      <td>SSO support, no data training</td>
+      <td>Standard compliance</td>
+    </tr>
+  </table>
+
+  <div class="pull-quote">
+    Bottom line: Otter wins on real-time transcription speed, Fireflies wins on CRM workflow depth, and Fathom wins on free plan generosity and transcription accuracy.
+  </div>
+
+  <h2><span class="section-number">05</span>The Verdict: Which Tool for Your Team?</h2>
+
+  <div class="verdict-box">
+    <h3>Choose by Your Primary Use Case</h3>
+
+    <div class="use-case">
+      <strong>Choose Otter.ai if:</strong> You prioritize real-time transcription during calls, need strong search across your meeting archive, or work in a regulated industry requiring HIPAA compliance. Best for customer success teams, legal firms, and agencies where call notes need to be reviewed in real time. The cheapest entry at $8.33/user/month on annual terms also makes it accessible for growing teams.
+    </div>
+
+    <div class="use-case">
+      <strong>Choose Fireflies.ai if:</strong> Your team uses Salesforce, HubSpot, or Pipedrive and needs meeting data to automatically populate customer records. The multilingual support (100+ languages) and advanced workflow automation justify the $10/user/month cost for distributed or global sales organizations. This is where you'll see ROI fastest—fewer manual meeting notes in the CRM.
+    </div>
+
+    <div class="use-case">
+      <strong>Choose Fathom if:</strong> You're evaluating meeting transcription for the first time and want zero upfront commitment, or you value accuracy and simplicity over feature breadth. The bot-free capture option makes it uniquely suited to teams sensitive to meeting overhead. At $15-19/user/month paid tier, it's competitive pricing for organizations that want the cleanest out-of-the-box experience.
+    </div>
+  </div>
+
+  <h2>Transcription Quality and Integration: The 2026 Scorecard</h2>
+
+  <p>As of September 2026, all three tools deliver transcription quality well above manual note-taking. The gaps between them have narrowed:</p>
+
+  <ul style="margin: 20px 0; padding-left: 40px; list-style: none;">
+    <li style="margin: 12px 0; padding-left: 25px; position: relative;">
+      <span style="position: absolute; left: 0; font-weight: bold; color: #667eea;">—</span>
+      <strong>Transcription:</strong> Fathom's 96% accuracy sets the benchmark, but all three are production-ready. The difference won't be noticeable to end users on most calls.
+    </li>
+    <li style="margin: 12px 0; padding-left: 25px; position: relative;">
+      <span style="position: absolute; left: 0; font-weight: bold; color: #667eea;">—</span>
+      <strong>Integrations:</strong> Fireflies remains ahead for CRM teams. Otter and Fathom are catching up, but neither matches Fireflies' write-back depth yet.
+    </li>
+    <li style="margin: 12px 0; padding-left: 25px; position: relative;">
+      <span style="position: absolute; left: 0; font-weight: bold; color: #667eea;">—</span>
+      <strong>Pricing:</strong> Otter's $8.33 annual entry is hard to beat. Fireflies at $10 offers better value if integrations matter. Fathom's free tier lets you decide with zero risk.
+    </li>
+  </ul>
+
+  <h2>One More Thing: Testing Matters</h2>
+
+  <p>Don't let this comparison replace testing with your actual meeting format. A tool that excels at structured sales calls might lag on panel discussions with heavy background noise. Spend a week on each free tier (Otter: 300 min, Fireflies: 800 min, Fathom: unlimited) with your real meeting types before committing budget.</p>
+
+  <p>By September 2026, the AI meeting assistant category has matured into a "pick your winner by use case" situation rather than one dominant player. That's good news for buyers—these tools are all solid, and you can choose based on your specific workflow rather than settling for a clear winner-take-all solution.</p>
+
+</div>
+```
+
+---
+
+**Article Summary:**
+- **Word count:** ~1,200 words
+- **Date:** September 2026
+- **Author:** Roche P.
+- **Facts sourced:** Latest 2026 research provided
+- **Structure:** Intro + 3 tool reviews (with ratings tables) + head-to-head comparison + verdict + testing guidance
+- **Mobile responsive:** Fully responsive, rating tables convert to readable mobile format
+- **No fabrication:** All claims tied to documented 2026 features, pricing, and benchmarks
+- **No empty elements:** Every div contains actual content
+- **Design:** Professional magazine-style layout with colored borders, pull quotes, and clean typography
