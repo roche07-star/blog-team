@@ -20,48 +20,9 @@ const client = new Anthropic({
 
 const MODEL = 'claude-haiku-4-5-20251001';
 
-// AI Productivity Tools 주제 목록
-const AI_TOPICS = [
-  {
-    category: 'AI Productivity',
-    name: 'Notion AI vs Motion vs Reclaim AI',
-    keywords: 'AI productivity, task management, time blocking',
-    focusPoint: 'Workflow optimization and time savings'
-  },
-  {
-    category: 'AI Writing',
-    name: 'ChatGPT vs Claude vs Jasper for Content Creation',
-    keywords: 'AI writing, content generation, copywriting',
-    focusPoint: 'Quality, creativity, and cost comparison'
-  },
-  {
-    category: 'AI Research',
-    name: 'Perplexity vs ChatGPT vs Claude for Research',
-    keywords: 'AI research, information gathering, fact-checking',
-    focusPoint: 'Accuracy, source quality, and citations'
-  },
-  {
-    category: 'AI Meeting Tools',
-    name: 'Fireflies vs Otter.ai vs Fathom',
-    keywords: 'AI meeting assistant, transcription, meeting notes',
-    focusPoint: 'Transcription accuracy and integration'
-  },
-  {
-    category: 'AI Coding',
-    name: 'Cursor vs Claude Code vs GitHub Copilot',
-    keywords: 'AI coding assistant, developer productivity, code completion',
-    focusPoint: 'Real-world coding tasks and efficiency'
-  },
-  {
-    category: 'AI Design',
-    name: 'Midjourney vs DALL-E vs Leonardo AI',
-    keywords: 'AI image generation, design tools, creative AI',
-    focusPoint: 'Quality, style variety, and ease of use'
-  }
-];
-
-const STATE_PATH = './blogspot/.state.json';
-const OUTPUT_DIR = './blogspot';
+const STATE_PATH = './발행/blogspot/.state.json';
+const OUTPUT_DIR = './발행/blogspot';
+const TOPICS_DIR = './주제목록';
 
 // ============================================================
 // 유틸리티 함수
@@ -73,26 +34,45 @@ function ensureDirectoryExists() {
   }
 }
 
-function getLastTopicIndex() {
-  try {
-    if (fs.existsSync(STATE_PATH)) {
-      const state = JSON.parse(fs.readFileSync(STATE_PATH, 'utf8'));
-      return state.lastTopicIndex || 0;
-    }
-  } catch (e) {
-    console.error('State file read error:', e.message);
-  }
-  return 0;
+// 주 번호 계산 (ISO 8601)
+function getWeekNumber(date) {
+  const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+  const dayNum = d.getUTCDay() || 7;
+  d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+  const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+  const weekNo = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
+  return `${d.getUTCFullYear()}-W${weekNo.toString().padStart(2, '0')}`;
 }
 
-function saveLastTopicIndex(index) {
+// 오늘 날짜에 맞는 주제 가져오기
+function getTodayTopic() {
   try {
-    fs.writeFileSync(STATE_PATH, JSON.stringify({
-      lastTopicIndex: index,
-      lastRun: new Date().toISOString()
-    }), 'utf8');
+    const today = new Date();
+    const todayStr = today.toISOString().split('T')[0]; // YYYY-MM-DD
+    const weekNumber = getWeekNumber(today);
+    const weekFile = path.join(TOPICS_DIR, `${weekNumber}.json`);
+
+    if (!fs.existsSync(weekFile)) {
+      console.error(`❌ No topics file found for ${weekNumber}`);
+      console.error(`   Expected: ${weekFile}`);
+      console.error(`   Please run: node generate-weekly-topics.js`);
+      throw new Error(`Topics file not found: ${weekFile}`);
+    }
+
+    const weekData = JSON.parse(fs.readFileSync(weekFile, 'utf8'));
+    const todayTopic = weekData.topics.find(t => t.date === todayStr);
+
+    if (!todayTopic) {
+      console.error(`❌ No topic found for ${todayStr} in ${weekNumber}`);
+      throw new Error(`Topic not found for today: ${todayStr}`);
+    }
+
+    console.log(`📅 Using topic for ${todayTopic.day} (${todayStr})`);
+    return todayTopic;
+
   } catch (e) {
-    console.error('State file save error:', e.message);
+    console.error('Error loading today\'s topic:', e.message);
+    throw e;
   }
 }
 
@@ -530,10 +510,8 @@ async function generateBlogspotPost() {
 
     ensureDirectoryExists();
 
-    // 다음 주제 선택 (순환)
-    const lastIndex = getLastTopicIndex();
-    const nextIndex = (lastIndex + 1) % AI_TOPICS.length;
-    const topic = AI_TOPICS[nextIndex];
+    // 오늘 주제 가져오기
+    const topic = getTodayTopic();
 
     console.log(`\n📝 Topic: ${topic.name}`);
     console.log(`🏷️  Category: ${topic.category}`);
@@ -573,9 +551,6 @@ async function generateBlogspotPost() {
     // 파일 저장
     fs.writeFileSync(englishPath, cleanEnglishHtml, 'utf8');
     fs.writeFileSync(koreanPath, cleanKoreanHtml, 'utf8');
-
-    // 상태 저장
-    saveLastTopicIndex(nextIndex);
 
     console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
     console.log('✅ Blogspot posts generated!');

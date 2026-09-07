@@ -1,0 +1,62 @@
+{
+  "week": "2026-W37",
+  "generated": "2026-09-07T03:23:35.509Z",
+  "topics": [
+    {
+      "day": "Monday",
+      "date": "2026-09-07",
+      "category": "AI Productivity",
+      "name": "Notion AI vs Reclaim AI vs Zapier",
+      "keywords": "AI productivity, task management, scheduling, automation",
+      "focusPoint": "Workflow optimization, calendar control, and cross-app automation"
+    },
+    {
+      "day": "Tuesday",
+      "date": "2026-09-08",
+      "category": "AI Writing",
+      "name": "ChatGPT vs Claude vs Jasper",
+      "keywords": "AI writing, content creation, copywriting, blogging",
+      "focusPoint": "Draft quality, brand voice, and long-form writing performance"
+    },
+    {
+      "day": "Wednesday",
+      "date": "2026-09-09",
+      "category": "AI Research",
+      "name": "Perplexity vs Gemini vs ChatGPT",
+      "keywords": "AI research, fact-checking, citations, information gathering",
+      "focusPoint": "Search accuracy, source quality, and citation reliability"
+    },
+    {
+      "day": "Thursday",
+      "date": "2026-09-10",
+      "category": "AI Meeting Tools",
+      "name": "Avoma vs Otter.ai vs Fireflies.ai",
+      "keywords": "AI meeting tools, transcription, note-taking, summaries",
+      "focusPoint": "Transcription accuracy, meeting summaries, and follow-up automation"
+    },
+    {
+      "day": "Friday",
+      "date": "2026-09-11",
+      "category": "AI Coding",
+      "name": "GitHub Copilot vs Cursor vs Codeium",
+      "keywords": "AI coding, code completion, debugging, documentation",
+      "focusPoint": "Developer speed, inline assistance, and codebase awareness"
+    },
+    {
+      "day": "Saturday",
+      "date": "2026-09-12",
+      "category": "AI Design",
+      "name": "Midjourney vs Ideogram vs DALL-E",
+      "keywords": "AI design, image generation, creative AI, visual content",
+      "focusPoint": "Image quality, text rendering, and creative control"
+    },
+    {
+      "day": "Sunday",
+      "date": "2026-09-13",
+      "category": "AI Email Management",
+      "name": "Superhuman vs Grammarly vs Google Gemini",
+      "keywords": "AI email, inbox management, email writing, scheduling",
+      "focusPoint": "Inbox triage, reply drafting, and time-saving email workflows"
+    }
+  ]
+}

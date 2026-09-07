@@ -1,0 +1,37 @@
+name: Weekly Topics Generation
+
+on:
+  schedule:
+    - cron: '0 0 * * 1'  # 매주 월요일 09:00 KST (UTC 00:00)
+  workflow_dispatch:  # 수동 실행 가능
+
+jobs:
+  generate-topics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate weekly topics
+        env:
+          PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+        run: node generate-weekly-topics.js
+
+      - name: Commit generated files
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add 주제목록/
+          git commit -m "📅 주간 주제 생성 ($(date +'%Y-%m-%d'))" || echo "No changes to commit"
+          git push || echo "Nothing to push"
