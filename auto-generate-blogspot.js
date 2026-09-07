@@ -385,6 +385,12 @@ a {
 - Professional, readable, fast-loading
 - Use <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"> for fonts
 
+**HIDE BLOGGER SIDEBAR (CRITICAL - Apply to ALL screen sizes):**
+Add this CSS OUTSIDE any media query (applies to desktop and mobile):
+- .sidebar, .sidebar-wrapper, .sidebar-container, aside { display: none !important; }
+- .Profile, .BlogArchive, .Label, .ReportAbuse { display: none !important; }
+- .main-content, .main-wrapper, .Blog, .post-outer { width: 100% !important; }
+
 **Mobile CSS Rules (MUST INCLUDE in @media (max-width: 768px)):**
 CRITICAL: On mobile, make content USE FULL WIDTH!
 - body: font-size 1rem, margin 0, padding 0
