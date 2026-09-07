@@ -448,7 +448,7 @@ Generate the blog post content:`;
 
   const response = await client.messages.create({
     model: MODEL,
-    max_tokens: 8000,
+    max_tokens: 16000,
     messages: [{ role: 'user', content: prompt }]
   });
 
@@ -480,7 +480,7 @@ Output the complete Korean HTML:`;
 
   const response = await client.messages.create({
     model: MODEL,
-    max_tokens: 8000,
+    max_tokens: 16000,
     messages: [{ role: 'user', content: prompt }]
   });
 
