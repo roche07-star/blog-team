@@ -413,7 +413,8 @@ Add this CSS OUTSIDE any media query (applies to desktop and mobile):
 
 **Mobile CSS Rules (MUST INCLUDE in @media (max-width: 768px)):**
 CRITICAL: On mobile, make content USE FULL WIDTH!
-- body: font-size 1rem, margin 0, padding 0
+- html, body: width 100% !important, max-width 100% !important, margin 0 !important, padding 0 !important, overflow-x hidden !important
+- .main-content, .main-wrapper, .Blog, .post-outer, .post-body, .article, .post: width 100% !important, max-width 100% !important, margin 0 !important, padding 0 !important
 - .article-container: width 100% !important, max-width 100% !important, padding 15px !important, margin 0 !important
 - .hero: padding 20px 15px, width 100%
 - .hero h1: font-size 1.6em, line-height 1.3
