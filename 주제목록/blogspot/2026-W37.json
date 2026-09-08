@@ -3,20 +3,54 @@
   "generated": "2026-09-07T03:23:35.509Z",
   "topics": [
     {
+      "day": "Saturday",
+      "date": "2026-09-05",
+      "category": "AI Productivity",
+      "name": "Notion AI vs Microsoft Copilot vs Google Duet",
+      "keywords": "AI productivity, workspace AI, productivity suite",
+      "focusPoint": "Which AI Productivity Suite Actually Delivers in 2026",
+      "published": true,
+      "url": "https://ai-toolkit-blog.blogspot.com/2026/09/heres-reality-check-every-major-tech.html"
+    },
+    {
+      "day": "Sunday",
+      "date": "2026-09-06",
+      "category": "AI Design",
+      "name": "Midjourney vs DALL-E vs Leonardo AI",
+      "keywords": "AI design, image generation, creative AI",
+      "focusPoint": "Image quality and creative control",
+      "published": true,
+      "url": "https://ai-toolkit-blog.blogspot.com/2026/09/midjourney-vs-dall-e-vs-leonardo-ai.html"
+    },
+    {
       "day": "Monday",
       "date": "2026-09-07",
-      "category": "AI Productivity",
-      "name": "Notion AI vs Reclaim AI vs Zapier",
-      "keywords": "AI productivity, task management, scheduling, automation",
-      "focusPoint": "Workflow optimization, calendar control, and cross-app automation"
+      "category": "AI Meeting Tools",
+      "name": "Fireflies vs Otter.ai vs Fathom",
+      "keywords": "AI meeting tools, transcription, note-taking",
+      "focusPoint": "Transcription accuracy and meeting summaries",
+      "published": true,
+      "url": "https://ai-toolkit-blog.blogspot.com/2026/09/fireflies-vs-otterai-vs-fathom_01288419523.html"
+    },
+    {
+      "day": "Tuesday",
+      "date": "2026-09-08",
+      "category": "AI Writing",
+      "name": "ChatGPT vs Claude vs Jasper",
+      "keywords": "AI writing, content creation, copywriting",
+      "focusPoint": "Draft quality and long-form writing performance",
+      "published": true,
+      "url": "https://ai-toolkit-blog.blogspot.com/2026/09/chatgpt-vs-claude-vs-jasper_01208876612.html"
     },
     {
       "day": "Tuesday",
       "date": "2026-09-08",
       "category": "AI Research",
       "name": "Perplexity vs Gemini vs ChatGPT",
-      "keywords": "AI research, fact-checking, citations, information gathering",
-      "focusPoint": "Search accuracy, source quality, and citation reliability"
+      "keywords": "AI research, fact-checking, citations",
+      "focusPoint": "Search accuracy and citation reliability",
+      "published": true,
+      "url": "https://ai-toolkit-blog.blogspot.com/2026/09/perplexity-vs-gemini-vs-chatgpt.html"
     },
     {
       "day": "Wednesday",
