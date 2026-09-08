@@ -626,8 +626,6 @@ async function generateBlogspotPost() {
       console.log('   파일은 저장되었으니 수동으로 발행하세요.\n');
     }
 
-    console.log(`🔄 Next topic: ${AI_TOPICS[(nextIndex + 1) % AI_TOPICS.length].name}\n`);
-
   } catch (error) {
     console.error('❌ Error:', error);
     throw error;

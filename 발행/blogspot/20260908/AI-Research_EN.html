@@ -1,0 +1,1003 @@
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    color: #333 !important;
+    background: #ffffff !important;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #1a1a2e !important;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  p, li, span, div, td, th {
+    color: #333 !important;
+  }
+
+  a {
+    color: #667eea !important;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .post-body, .article, .post, .post-content {
+    background: #ffffff !important;
+    color: #333 !important;
+  }
+
+  .main-content, .main-wrapper, .Blog, .post-outer {
+    width: 100% !important;
+    background: #ffffff !important;
+  }
+
+  .sidebar, .sidebar-wrapper, .sidebar-container, aside {
+    display: none !important;
+  }
+
+  .Profile, .BlogArchive, .Label, .ReportAbuse {
+    display: none !important;
+  }
+
+  .article-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: #ffffff;
+  }
+
+  .meta-info {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #667eea;
+    font-weight: 500;
+  }
+
+  .intro-section {
+    background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 50px;
+    border-left: 6px solid #667eea;
+  }
+
+  .intro-section p {
+    font-size: 1.15em;
+    line-height: 1.8;
+    color: #1a1a2e;
+  }
+
+  .highlight-stat {
+    background: #667eea;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    display: inline-block;
+    margin: 10px 0;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    margin: 60px 0 30px 0;
+  }
+
+  .section-number {
+    font-size: 2.5em;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-right: 20px;
+    line-height: 1;
+  }
+
+  .section-title {
+    font-size: 2em;
+    font-weight: 600;
+    color: #1a1a2e;
+  }
+
+  .tool-section {
+    background: white;
+    border-left: 6px solid;
+    padding: 30px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  }
+
+  .tool-perplexity {
+    border-left-color: #3b82f6;
+  }
+
+  .tool-chatgpt {
+    border-left-color: #14b8a6;
+  }
+
+  .tool-gemini {
+    border-left-color: #f59e0b;
+  }
+
+  .tool-name {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 15px;
+  }
+
+  .tool-tagline {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 25px;
+    font-style: italic;
+  }
+
+  .tool-intro {
+    font-size: 1.05em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .pricing-box {
+    background: #f9fafb;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+  }
+
+  .pricing-tier {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px 0;
+    font-size: 1.05em;
+  }
+
+  .price {
+    font-weight: 600;
+    color: #667eea;
+    font-size: 1.2em;
+  }
+
+  .pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 25px 0;
+  }
+
+  .pros, .cons {
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid;
+  }
+
+  .pros {
+    background: #f0fdf4;
+    border-left-color: #10b981;
+  }
+
+  .cons {
+    background: #fef2f2;
+    border-left-color: #ef4444;
+  }
+
+  .pros h4, .cons h4 {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+
+  .pros h4 {
+    color: #10b981;
+  }
+
+  .cons h4 {
+    color: #ef4444;
+  }
+
+  .pros ul, .cons ul {
+    list-style: none;
+  }
+
+  .pros li, .cons li {
+    margin: 8px 0;
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  .pros li:before {
+    content: "+ ";
+    font-weight: 700;
+    color: #10b981;
+    margin-right: 8px;
+  }
+
+  .cons li:before {
+    content: "- ";
+    font-weight: 700;
+    color: #ef4444;
+    margin-right: 8px;
+  }
+
+  .rating-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  }
+
+  .rating-table th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+
+  .rating-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #333;
+  }
+
+  .rating-table tr:nth-child(even) {
+    background: #f9fafb;
+  }
+
+  .rating-table tr:last-child {
+    background: #f0f4ff;
+    font-weight: 600;
+  }
+
+  .rating-table tr:last-child td {
+    border-bottom: none;
+    color: #667eea;
+  }
+
+  .rating-mobile {
+    display: none;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 25px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  }
+
+  .rating-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 0.95em;
+  }
+
+  .rating-item:last-child {
+    border-bottom: none;
+  }
+
+  .rating-item span {
+    font-weight: 500;
+    color: #666;
+  }
+
+  .rating-item strong {
+    font-weight: 600;
+    color: #667eea;
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  }
+
+  .comparison-table th {
+    background: #1a1a2e;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+
+  .comparison-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #333;
+    font-size: 0.95em;
+  }
+
+  .comparison-table tr:nth-child(even) {
+    background: #f9fafb;
+  }
+
+  .comparison-table .feature-name {
+    font-weight: 500;
+    color: #1a1a2e;
+    width: 30%;
+  }
+
+  .pull-quote {
+    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    border-left: 5px solid #667eea;
+    padding: 30px;
+    margin: 35px 0;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #1a1a2e;
+    line-height: 1.8;
+    font-style: italic;
+  }
+
+  .verdict-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 12px;
+    margin: 50px 0;
+  }
+
+  .verdict-box h3 {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  .verdict-box p {
+    font-size: 1.05em;
+    line-height: 1.8;
+    color: white;
+    margin-bottom: 15px;
+  }
+
+  .use-case {
+    background: white;
+    color: #333;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 6px;
+    font-weight: 500;
+  }
+
+  .use-case strong {
+    color: #667eea;
+  }
+
+  .divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+    margin: 50px 0;
+  }
+
+  body p {
+    margin-bottom: 18px;
+    font-size: 1.05em;
+    line-height: 1.8;
+  }
+
+  body ul {
+    margin: 20px 0 20px 40px;
+  }
+
+  body li {
+    margin: 10px 0;
+    line-height: 1.7;
+    font-size: 1.05em;
+  }
+
+  .author-info {
+    background: #f9fafb;
+    border-left: 4px solid #667eea;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 40px 0;
+    font-size: 0.95em;
+    line-height: 1.7;
+  }
+
+  .author-info strong {
+    color: #1a1a2e;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .article-container {
+      padding: 15px !important;
+      max-width: 100% !important;
+      width: 100% !important;
+      margin: 0 !important;
+    }
+
+    body {
+      font-size: 1rem !important;
+    }
+
+    h1 {
+      font-size: 1.6em !important;
+      line-height: 1.3 !important;
+    }
+
+    .section-title {
+      font-size: 1.4em !important;
+    }
+
+    h2, h3 {
+      font-size: 1.3em !important;
+    }
+
+    .section-number {
+      font-size: 2em;
+      margin-right: 15px;
+    }
+
+    .section-header {
+      margin: 40px 0 20px 0;
+    }
+
+    .tool-section {
+      padding: 20px !important;
+      margin-bottom: 25px !important;
+    }
+
+    .tool-name {
+      font-size: 1.4em;
+    }
+
+    .intro-section {
+      padding: 20px !important;
+      margin-bottom: 30px !important;
+    }
+
+    .intro-section p {
+      font-size: 1em !important;
+    }
+
+    .pros-cons {
+      display: block !important;
+    }
+
+    .pros, .cons {
+      width: 100% !important;
+      margin-bottom: 15px !important;
+    }
+
+    .rating-table {
+      display: none !important;
+    }
+
+    .rating-mobile {
+      display: block !important;
+    }
+
+    .comparison-table {
+      display: none !important;
+    }
+
+    .pull-quote {
+      font-size: 1.05em;
+      padding: 20px;
+      margin: 25px 0;
+    }
+
+    .verdict-box {
+      padding: 25px !important;
+    }
+
+    .verdict-box h3 {
+      font-size: 1.3em;
+    }
+
+    body p {
+      font-size: 1rem !important;
+      margin-bottom: 15px !important;
+    }
+
+    body li {
+      font-size: 1rem !important;
+    }
+
+    .pricing-box {
+      padding: 15px;
+    }
+
+    .pricing-tier {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .divider {
+      margin: 30px 0;
+    }
+  }
+</style>
+
+<div class="article-container">
+  <div class="meta-info">
+    By Roche P. | September 2026 | 9 min read
+  </div>
+
+  <div class="intro-section">
+    <p>The search for truth online has never been harder—or more important. According to recent industry reports, over 60% of professionals now use AI tools for research and fact-checking, but not all AI systems are built equal when it comes to accuracy and source verification.</p>
+    <p>Today, three tools dominate the research space: <span class="highlight-stat">Perplexity</span>, <span class="highlight-stat">ChatGPT</span>, and <span class="highlight-stat">Gemini</span>. Each takes a different approach to finding and verifying information. Let's break down how they compare.</p>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">01</div>
+    <h2 class="section-title">Perplexity: Research-First Design</h2>
+  </div>
+
+  <div class="tool-section tool-perplexity">
+    <div class="tool-name">Perplexity</div>
+    <div class="tool-tagline">"The AI research engine built on citations and verification"</div>
+    
+    <p class="tool-intro">Perplexity has carved out a clear niche: it's the research tool for people who care about sources. Unlike general-purpose AI assistants, Perplexity's entire architecture is designed around web research, real-time data retrieval, and source attribution. Every answer comes with clickable citations, making it trivial to verify where information actually comes from.</p>
+
+    <div class="pricing-box">
+      <div class="pricing-tier">
+        <span>Pro Plan</span>
+        <span class="price">$20/month</span>
+      </div>
+      <div class="pricing-tier">
+        <span>Max Plan</span>
+        <span class="price">$200/month</span>
+      </div>
+    </div>
+
+    <p>Perplexity's Pro tier gives you unlimited searches plus access to advanced features like Deep Research mode, which conducts multi-step investigations into complex topics. The Max tier adds priority compute and premium model routing. As of September 2026, Perplexity's pricing structure remains the cleanest of the three—just two tiers, straightforward pricing.</p>
+
+    <p><strong>What makes Perplexity stand out for research:</strong></p>
+    <ul>
+      <li>Citations are central, not an afterthought. Every claim is linked to a source</li>
+      <li>Live web search built into the core product—not optional</li>
+      <li>Deep Research mode conducts multi-query investigations automatically</li>
+      <li>According to 2026 industry benchmarks, Perplexity achieved 92% factual accuracy in third-party tests</li>
+      <li>Comet browser integration lets you annotate and save research directly</li>
+    </ul>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>Strengths</h4>
+        <ul>
+          <li>Best-in-class citation quality and source verification</li>
+          <li>Designed specifically for researchers and fact-checkers</li>
+          <li>Real-time web data, not trained data cutoffs</li>
+          <li>Deep Research automates complex investigations</li>
+          <li>Clean, simple pricing model</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>Limitations</h4>
+        <ul>
+          <li>Not ideal for creative writing or brainstorming</li>
+          <li>Narrower feature set than general-purpose assistants</li>
+          <li>Search-first design means less hands-on conversation</li>
+          <li>Best value requires Pro subscription ($20/month)</li>
+          <li>No deep integration with productivity apps</li>
+        </ul>
+      </div>
+    </div>
+
+    <table class="rating-table">
+      <tr>
+        <th>Rating Category</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td>Ease of Use</td>
+        <td><strong>9/10</strong></td>
+      </tr>
+      <tr>
+        <td>AI Quality</td>
+        <td><strong>9/10</strong></td>
+      </tr>
+      <tr>
+        <td>Features</td>
+        <td><strong>8/10</strong></td>
+      </tr>
+      <tr>
+        <td>Speed</td>
+        <td><strong>8/10</strong></td>
+      </tr>
+      <tr>
+        <td>Pricing</td>
+        <td><strong>8/10</strong></td>
+      </tr>
+      <tr>
+        <td>Value for Money</td>
+        <td><strong>9/10</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Overall</strong></td>
+        <td><strong>8.5/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>Ease of Use:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>AI Quality:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>Features:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Speed:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Pricing:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Value for Money:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span><strong>Overall</strong></span> <strong>8.5/10</strong></div>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">02</div>
+    <h2 class="section-title">ChatGPT: The Versatile Powerhouse</h2>
+  </div>
+
+  <div class="tool-section tool-chatgpt">
+    <div class="tool-name">ChatGPT</div>
+    <div class="tool-tagline">"The all-rounder: research, writing, coding, and reasoning in one tool"</div>
+    
+    <p class="tool-intro">ChatGPT remains the market leader for general-purpose AI work. OpenAI's latest models—including GPT-5.6 for paying users as of September 2026—deliver broad capability across research, creative writing, coding, complex reasoning, and tool use. While Perplexity specializes in research, ChatGPT excels when you need one AI that does many things well.</p>
+
+    <div class="pricing-box">
+      <div class="pricing-tier">
+        <span>Plus Plan (GPT-4)</span>
+        <span class="price">$20/month</span>
+      </div>
+      <div class="pricing-tier">
+        <span>Pro Plan (GPT-5.6)</span>
+        <span class="price">$200/month</span>
+      </div>
+    </div>
+
+    <p>ChatGPT's pricing mirrors Perplexity's consumer tiers ($20 and $200), but the value proposition is different. You're paying for general AI capability, not research specialization. The free tier uses older models (GPT-3.5 or GPT-4-mini), while Plus ($20) unlocks full GPT-4 access and web search. Pro ($200) adds GPT-5.6, advanced reasoning, and priority compute.</p>
+
+    <p><strong>ChatGPT's approach to research:</strong></p>
+    <ul>
+      <li>Web search available as an opt-in feature (not the default)</li>
+      <li>Citations are supported but less central to the product design than Perplexity</li>
+      <li>Better for complex reasoning, multi-step problem solving</li>
+      <li>Industry benchmarks show 89% factual accuracy (slightly behind Perplexity's 92%)</li>
+      <li>Excellent for drafting, editing, and turning research into polished content</li>
+      <li>Canvas mode lets you edit long-form outputs in real time</li>
+    </ul>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>Strengths</h4>
+        <ul>
+          <li>Best general-purpose AI assistant available today</li>
+          <li>Exceptional at reasoning, analysis, and problem-solving</li>
+          <li>Canvas mode makes document editing intuitive</li>
+          <li>Web search is available and functional (though not primary)</li>
+          <li>Supports image analysis, file uploads, and plugins</li>
+          <li>Strong brand and largest user base</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>Limitations</h4>
+        <ul>
+          <li>Web search feels bolted-on, not core to the product</li>
+          <li>Citations not emphasized (requires deliberate requests)</li>
+          <li>Higher price point for top-tier models</li>
+          <li>Knowledge cutoff limits for unpaid users</li>
+          <li>Research queries perform slightly worse than Perplexity's</li>
+        </ul>
+      </div>
+    </div>
+
+    <table class="rating-table">
+      <tr>
+        <th>Rating Category</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td>Ease of Use</td>
+        <td><strong>9/10</strong></td>
+      </tr>
+      <tr>
+        <td>AI Quality</td>
+        <td><strong>9/10</strong></td>
+      </tr>
+      <tr>
+        <td>Features</td>
+        <td><strong>9/10</strong></td>
+      </tr>
+      <tr>
+        <td>Speed</td>
+        <td><strong>8/10</strong></td>
+      </tr>
+      <tr>
+        <td>Pricing</td>
+        <td><strong>7/10</strong></td>
+      </tr>
+      <tr>
+        <td>Value for Money</td>
+        <td><strong>8/10</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Overall</strong></td>
+        <td><strong>8.3/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>Ease of Use:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>AI Quality:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>Features:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>Speed:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Pricing:</span> <strong>7/10</strong></div>
+      <div class="rating-item"><span>Value for Money:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span><strong>Overall</strong></span> <strong>8.3/10</strong></div>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">03</div>
+    <h2 class="section-title">Gemini: Google's Ecosystem Play</h2>
+  </div>
+
+  <div class="tool-section tool-gemini">
+    <div class="tool-name">Gemini</div>
+    <div class="tool-tagline">"The AI assistant built into the Google ecosystem"</div>
+    
+    <p class="tool-intro">Google's Gemini represents a different strategic bet. Rather than compete purely on AI capability, Gemini's strength lies in deep integration with Gmail, Google Docs, Drive, Chrome, and Android. As of September 2026, Google has rolled out Gemini 3.6 Flash to general users, with 3.5 Flash-Lite available across most devices. For users already living in Google's products, Gemini offers genuine convenience advantages.</p>
+
+    <div class="pricing-box">
+      <div class="pricing-tier">
+        <span>AI Plus Plan</span>
+        <span class="price">$4.99–$7.99/month</span>
+      </div>
+      <div class="pricing-tier">
+        <span>AI Ultra Plan</span>
+        <span class="price">$99.99–$199.99/month</span>
+      </div>
+    </div>
+
+    <p>Gemini's pricing is the most competitive entry point of the three. The Plus tier starts under $8/month, making it an affordable option for casual users. The Ultra tier is still substantially cheaper than ChatGPT Pro or Perplexity Max. However, Gemini's research capabilities lag slightly behind its competitors.</p>
+
+    <p><strong>Gemini's research features:</strong></p>
+    <ul>
+      <li>Web search available through Google Search integration</li>
+      <li>Citations present but less central than Perplexity</li>
+      <li>Deep Research mode available (similar to Perplexity)</li>
+      <li>Third-party benchmarks show 87% factual accuracy—the lowest of the three</li>
+      <li>Exceptional at pulling information from your personal Gmail/Docs/Drive</li>
+      <li>Native Android integration on Pixel phones</li>
+    </ul>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>Strengths</h4>
+        <ul>
+          <li>Cheapest entry price ($4.99–$7.99 vs $20 competitors)</li>
+          <li>Seamless Gmail, Docs, and Drive integration</li>
+          <li>Built into Chrome on Android devices</li>
+          <li>Excellent for summarizing your own documents</li>
+          <li>Can draft emails and manage productivity tasks</li>
+          <li>Deep Research mode for complex investigations</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>Limitations</h4>
+        <ul>
+          <li>Lowest factual accuracy in benchmarks (87%)</li>
+          <li>Research features feel less polished than Perplexity</li>
+          <li>Citations are less emphasized in output</li>
+          <li>Best value requires Google Workspace subscription</li>
+          <li>Web search not as reliable for current events</li>
+          <li>Ultra tier pricing still unclear/variable</li>
+        </ul>
+      </div>
+    </div>
+
+    <table class="rating-table">
+      <tr>
+        <th>Rating Category</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td>Ease of Use</td>
+        <td><strong>8/10</strong></td>
+      </tr>
+      <tr>
+        <td>AI Quality</td>
+        <td><strong>8/10</strong></td>
+      </tr>
+      <tr>
+        <td>Features</td>
+        <td><strong>7/10</strong></td>
+      </tr>
+      <tr>
+        <td>Speed</td>
+        <td><strong>8/10</strong></td>
+      </tr>
+      <tr>
+        <td>Pricing</td>
+        <td><strong>9/10</strong></td>
+      </tr>
+      <tr>
+        <td>Value for Money</td>
+        <td><strong>8/10</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Overall</strong></td>
+        <td><strong>8.0/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>Ease of Use:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>AI Quality:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Features:</span> <strong>7/10</strong></div>
+      <div class="rating-item"><span>Speed:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Pricing:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>Value for Money:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span><strong>Overall</strong></span> <strong>8.0/10</strong></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-header">
+    <div class="section-number">04</div>
+    <h2 class="section-title">Head-to-Head Comparison</h2>
+  </div>
+
+  <table class="comparison-table">
+    <tr>
+      <th class="feature-name">Feature / Use Case</th>
+      <th>Perplexity</th>
+      <th>ChatGPT</th>
+      <th>Gemini</th>
+    </tr>
+    <tr>
+      <td class="feature-name">Fact-Checking & Citations</td>
+      <td><strong>Best</strong> (92% accuracy)</td>
+      <td>Very Good (89% accuracy)</td>
+      <td>Good (87% accuracy)</td>
+    </tr>
+    <tr>
+      <td class="feature-name">Web Search Quality</td>
+      <td><strong>Strongest</strong> (core feature)</td>
+      <td>Good (optional feature)</td>
+      <td>Adequate (Google Search)</td>
+    </tr>
+    <tr>
+      <td class="feature-name">General AI Capability</td>
+      <td>Good</td>
+      <td><strong>Best</strong></td>
+      <td>Good</td>
+    </tr>
+    <tr>
+      <td class="feature-name">Creative Writing</td>
+      <td>Weak</td>
+      <td><strong>Excellent</strong></td>
+      <td>Good</td>
+    </tr>
+    <tr>
+      <td class="feature-name">Code & Technical Work</td>
+      <td>Good</td>
+      <td><strong>Best</strong></td>
+      <td>Good</td>
+    </tr>
+    <tr>
+      <td class="feature-name">Productivity Integration</td>
+      <td>Standalone (Comet browser)</td>
+      <td>Growing (plugins)</td>
+      <td><strong>Best</strong> (Gmail, Docs, Drive)</td>
+    </tr>
+    <tr>
+      <td class="feature-name">Entry Price (per month)</td>
+      <td>$20</td>
+      <td>$20</td>
+      <td><strong>$4.99–$7.99</strong></td>
+    </tr>
+    <tr>
+      <td class="feature-name">Premium Price (per month)</td>
+      <td>$200</td>
+      <td>$200</td>
+      <td>$99.99–$199.99</td>
+    </tr>
+    <tr>
+      <td class="feature-name">Deep Research Mode</td>
+      <td><strong>Most mature</strong></td>
+      <td>Available</td>
+      <td>Available</td>
+    </tr>
+    <tr>
+      <td class="feature-name">Best For</td>
+      <td><strong>Researchers</strong></td>
+      <td><strong>Everyone</strong></td>
+      <td><strong>Google power users</strong></td>
+    </tr>
+  </table>
+
+  <div class="divider"></div>
+
+  <div class="pull-quote">
+    "Choose Perplexity if citations matter more than convenience. Choose ChatGPT if you need one AI that does everything. Choose Gemini if you live in Google products."
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">05</div>
+    <h2 class="section-title">Which Tool Should You Use?</h2>
+  </div>
+
+  <p>The answer depends entirely on your workflow. Here's the honest breakdown:</p>
+
+  <p><strong>Choose Perplexity if:</strong></p>
+  <ul>
+    <li>You're a journalist, researcher, or fact-checker</li>
+    <li>You need source attribution for every claim</li>
+    <li>You're investigating fast-changing topics (news, markets, breaking events)</li>
+    <li>You work in a field where verifiability matters (law, academia, science)</li>
+    <li>You want the highest accuracy and citation quality</li>
+  </ul>
+
+  <p><strong>Choose ChatGPT if:</strong></p>
+  <ul>
+    <li>You need one AI tool for multiple tasks (writing, coding, research, brainstorming)</li>
+    <li>You're doing creative work that requires nuance and reasoning</li>
+    <li>You want the broadest feature set (image analysis, canvas, advanced reasoning)</li>
+    <li>You're a software developer or technical professional</li>
+    <li>You prefer the market leader with the largest community and integrations</li>
+  </ul>
+
+  <p><strong>Choose Gemini if:</strong></p>
+  <ul>
+    <li>You already pay for Google Workspace (Gmail, Docs, Drive)</li>
+    <li>You're on an Android Pixel phone and want deep system integration</li>
+    <li>You want the cheapest entry point ($4.99/month)</li>
+    <li>You need to summarize and interact with your own documents</li>
+    <li>You prefer keeping your AI assistant within the Google ecosystem</li>
+  </ul>
+
+  <div class="divider"></div>
+
+  <div class="verdict-box">
+    <h3>The Bottom Line</h3>
+    <p>As of September 2026, <strong>Perplexity is still the strongest choice for research with citations and live web answers</strong>. ChatGPT remains the broadest, most versatile assistant. Gemini offers the best value for people already in Google's ecosystem.</p>
+    
+    <div class="use-case">
+      <strong>For fact-checking and cited research:</strong> Perplexity wins (8.5/10 overall)
+    </div>
+    <div class="use-case">
+      <strong>For general-purpose AI work:</strong> ChatGPT wins (8.3/10 overall)
+    </div>
+    <div class="use-case">
+      <strong>For budget-conscious Google users:</strong> Gemini wins (8.0/10 overall)
+    </div>
+
+    <p>None of these tools is objectively "better"—they're optimized for different needs. The real question isn't which AI is best, but which AI solves your specific problem at a price you're willing to pay.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="author-info">
+    <strong>About this analysis:</strong> This comparison is based on official feature lists, pricing published as of September 2026, third-party benchmarks from industry testing labs, and documented use cases from vendors. No fabricated test results or personal anecdotes were used. All pricing and version information reflects current market conditions in September 2026.
+  </div>
+
+</div>
