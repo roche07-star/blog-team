@@ -302,6 +302,46 @@ a {
   background: #ffffff !important;
 }
 
+.article-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: #ffffff;
+}
+
+.meta-info {
+  font-size: 0.95em;
+  color: #666;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #667eea;
+}
+
+.intro-section {
+  background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+  padding: 40px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  border-left: 6px solid #667eea;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  margin: 60px 0 30px 0;
+}
+
+.section-number {
+  font-size: 2.5em;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-right: 20px;
+  line-height: 1;
+}
+
 **Layout Components:**
 1. **Hero Section**: Gradient background, large headline (3em), author + date + reading time (plain text)
 2. **Metadata**: "By Roche P. | September 2026 | 8 min read" (simple text, NO icons)
@@ -342,9 +382,9 @@ a {
 - ✅ Example: "- Limitation" NOT "&#8712; Limitation"
 
 **Mobile Responsive (CRITICAL - Must work perfectly on mobile!):**
-- Container: width 100% !important, max-width 100% !important, NO max-width restrictions!
+- article-container: width 100% !important, max-width 100% !important, padding 15px !important, margin 0 !important
 - Body font-size: 1rem on mobile (NOT 1.1em - too large!)
-- Hero h1: 1.8em on mobile (readable but not overwhelming)
+- Hero h1: 1.6em on mobile (readable but not overwhelming)
 - Section padding: 15px on mobile (NOT 40px or 20px)
 - Stack ALL grids/cards vertically on mobile
 - Tables: Convert to responsive cards on mobile (NO tables on mobile!)
@@ -374,7 +414,7 @@ Add this CSS OUTSIDE any media query (applies to desktop and mobile):
 **Mobile CSS Rules (MUST INCLUDE in @media (max-width: 768px)):**
 CRITICAL: On mobile, make content USE FULL WIDTH!
 - body: font-size 1rem, margin 0, padding 0
-- .container: width 100% !important, max-width 100% !important, padding 10px !important, margin 0 !important
+- .article-container: width 100% !important, max-width 100% !important, padding 15px !important, margin 0 !important
 - .hero: padding 20px 15px, width 100%
 - .hero h1: font-size 1.6em, line-height 1.3
 - .section, .tool-card: padding 15px, width 100%, box-sizing border-box
@@ -425,7 +465,7 @@ Example correct format:
   /* CSS here */
 </style>
 
-<div class="container">
+<div class="article-container">
   <p>Article starts here...</p>
   ...
 </div>
