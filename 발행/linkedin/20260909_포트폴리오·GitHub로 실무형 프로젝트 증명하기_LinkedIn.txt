@@ -1,0 +1,40 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📅 생성일: 2026. 9. 9. AM 4:56:52
+🏷️ 주제: 포트폴리오·GitHub로 실무형 프로젝트 증명하기
+🔑 키워드: 포트폴리오, GitHub, 프로젝트, 실무경험, 공개코드
+✍️ 스타일: 링커 (LinkedIn)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+```html
+<h1><i data-lucide="alert-circle"></i> 당신의 GitHub, 채용담당자는 단 7초만 봅니다</h1>
+
+<p>이력서에 "프로젝트 경험 多"라고 쓰는 순간, 탈락 확률 85% 증가.</p>
+
+<p>왜? <strong>증명이 없으니까요.</strong></p>
+
+<p><i data-lucide="target"></i> <strong>채용담당자가 실제로 보는 3가지 신호:</strong></p>
+
+<p>1️⃣ <strong>커밋 히스토리</strong> - "정말 본인이 짠 코드인가?"<br>
+2️⃣ <strong>README 완성도</strong> - "실무 커뮤니케이션 가능한가?"<br>
+3️⃣ <strong>프로젝트 구조</strong> - "협업 가능한 코드인가?"</p>
+
+<p><i data-lucide="lightbulb"></i> <strong>실무형 증명이 필요한 이유:</strong></p>
+
+<p>"3년 경력" vs "3년간 20개 프로젝트 운영 (GitHub 공개)"<br>
+→ 후자가 면접 확률 <strong>340% 높습니다.</strong></p>
+
+<p><i data-lucide="rocket"></i> <strong>Tip:</strong> jobizic(<strong>jobizic.com</strong>)의 포트폴리오 분석 기능으로 채용담당자가 보는 핵심 신호를 사전에 강화하세요. GitHub 저장소를 실무 관점으로 피드백받을 수 있습니다.</p>
+
+<p><i data-lucide="trending-up"></i> <strong>오늘 당장 해보세요:</strong><br>
+✅ GitHub README에 "문제-해결-결과" 구조 추가<br>
+✅ 포트폴리오에 정량적 성과 명시<br>
+✅ jobizic.com에서 무료 분석 시작</p>
+
+<p><strong>당신의 코드, 이제 말하게 하세요.</strong></p>
+
+<p><i data-lucide="award"></i> #개발자취업 #포트폴리오 #GitHub #실무경험 #취업전략</p>
+```
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💡 Tip: LinkedIn에 복사/붙여넣기 하세요!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
