@@ -1,62 +1,62 @@
 {
   "week": "2026-W37",
-  "generated": "2026-09-12T13:59:52.441Z",
+  "generated": "2026-09-12T14:47:00.000Z",
   "topics": [
     {
       "day": "Saturday",
       "date": "2026-09-12",
       "category": "AI Productivity",
-      "name": "Notion AI 3.0 vs Microsoft Copilot 365 vs ChatGPT Work",
-      "keywords": "workspace AI, docs, task automation",
-      "focusPoint": "Compare document drafting, task execution, and workplace integration across productivity stacks."
+      "name": "Motion vs Reclaim vs Clockwise",
+      "keywords": "smart scheduling, task planning, calendar optimization",
+      "focusPoint": "Smart scheduling, task planning, and calendar optimization for busy professionals"
     },
     {
       "day": "Sunday",
       "date": "2026-09-13",
       "category": "AI Writing",
-      "name": "Claude 4 Sonnet vs ChatGPT GPT-5.6 vs Gemini 3.5 Pro",
-      "keywords": "writing quality, long-form drafts, reasoning",
-      "focusPoint": "Compare long-form writing, tone control, editing quality, and research-assisted drafting."
+      "name": "Grammarly vs Wordtune vs ProWritingAid",
+      "keywords": "grammar correction, tone improvement, rewriting quality",
+      "focusPoint": "Grammar correction, tone improvement, rewriting quality, and long-form editing depth"
     },
     {
       "day": "Monday",
       "date": "2026-09-14",
       "category": "AI Design",
-      "name": "Claude Design vs Gamma vs Beautiful.ai",
-      "keywords": "slides, visual creation, brand design",
-      "focusPoint": "Compare prompt-to-design speed, presentation quality, and brand-consistent output."
+      "name": "Ideogram vs Canva Magic Studio vs Adobe Firefly",
+      "keywords": "text-to-image, brand-safe design, social content",
+      "focusPoint": "Text-to-image quality, brand-safe design workflows, and social content creation"
     },
     {
       "day": "Tuesday",
       "date": "2026-09-15",
       "category": "AI Video",
-      "name": "Veo 3.1 vs Runway Gen-4 vs Kling 3.0",
-      "keywords": "text-to-video, cinematic video, motion quality",
-      "focusPoint": "Compare realism, clip length, editing control, and cinematic consistency."
+      "name": "Synthesia vs Google Veo 3 vs Higgsfield",
+      "keywords": "talking-head videos, cinematic generation, marketing video",
+      "focusPoint": "Talking-head videos, cinematic generation, and marketing video production speed"
     },
     {
       "day": "Wednesday",
       "date": "2026-09-16",
       "category": "AI Coding",
-      "name": "Cursor 3 vs Claude Code vs Devin",
-      "keywords": "agentic coding, code generation, software automation",
-      "focusPoint": "Compare autonomous coding depth, IDE workflow, and ability to ship production-ready code."
+      "name": "Lovable vs Bolt vs Replit",
+      "keywords": "rapid app prototyping, code generation, no-code builder",
+      "focusPoint": "Rapid app prototyping, code generation workflow, and non-technical builder experience"
     },
     {
       "day": "Thursday",
       "date": "2026-09-17",
-      "category": "AI Research",
-      "name": "Perplexity Comet vs NotebookLM vs Gemini 3.5 Pro",
-      "keywords": "web research, source grounding, document synthesis",
-      "focusPoint": "Compare live web research, citation quality, and knowledge synthesis from documents."
+      "category": "AI Meeting Tools",
+      "name": "Fathom vs Avoma vs MeetGeek",
+      "keywords": "meeting capture, action-item extraction, team collaboration",
+      "focusPoint": "Meeting capture quality, action-item extraction, and team collaboration features"
     },
     {
       "day": "Friday",
       "date": "2026-09-18",
-      "category": "AI Voice",
-      "name": "ElevenLabs vs OpenAI Voice Engine vs Google Gemini Live",
-      "keywords": "voice generation, real-time speech, voice agents",
-      "focusPoint": "Compare voice realism, latency, multilingual support, and conversational voice experiences."
+      "category": "AI Email Management",
+      "name": "Shortwave vs Superhuman vs Microsoft Copilot Pro for Outlook",
+      "keywords": "inbox prioritization, AI drafting, email productivity",
+      "focusPoint": "Inbox prioritization, AI drafting, and productivity inside email workflows"
     }
   ]
 }
