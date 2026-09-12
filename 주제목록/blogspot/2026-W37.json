@@ -1,62 +1,62 @@
 {
   "week": "2026-W37",
-  "generated": "2026-09-12T13:47:49.174Z",
+  "generated": "2026-09-12T13:59:52.441Z",
   "topics": [
     {
       "day": "Saturday",
       "date": "2026-09-12",
       "category": "AI Productivity",
-      "name": "Motion vs Reclaim vs Clockwise",
-      "keywords": "calendar automation, scheduling, productivity",
-      "focusPoint": "Smart scheduling, task planning, and calendar optimization for busy professionals"
+      "name": "Notion AI 3.0 vs Microsoft Copilot 365 vs ChatGPT Work",
+      "keywords": "workspace AI, docs, task automation",
+      "focusPoint": "Compare document drafting, task execution, and workplace integration across productivity stacks."
     },
     {
       "day": "Sunday",
       "date": "2026-09-13",
       "category": "AI Writing",
-      "name": "Grammarly vs Wordtune vs ProWritingAid",
-      "keywords": "writing assistant, rewriting, grammar",
-      "focusPoint": "Grammar correction, tone improvement, rewriting quality, and long-form editing depth"
+      "name": "Claude 4 Sonnet vs ChatGPT GPT-5.6 vs Gemini 3.5 Pro",
+      "keywords": "writing quality, long-form drafts, reasoning",
+      "focusPoint": "Compare long-form writing, tone control, editing quality, and research-assisted drafting."
     },
     {
       "day": "Monday",
       "date": "2026-09-14",
       "category": "AI Design",
-      "name": "Ideogram vs Canva Magic Studio vs Adobe Firefly",
-      "keywords": "AI design, image generation, brand visuals",
-      "focusPoint": "Text-to-image quality, brand-safe design workflows, and social content creation"
+      "name": "Claude Design vs Gamma vs Beautiful.ai",
+      "keywords": "slides, visual creation, brand design",
+      "focusPoint": "Compare prompt-to-design speed, presentation quality, and brand-consistent output."
     },
     {
       "day": "Tuesday",
       "date": "2026-09-15",
       "category": "AI Video",
-      "name": "Synthesia vs Google Veo 3 vs Higgsfield",
-      "keywords": "AI video, avatar videos, video generation",
-      "focusPoint": "Talking-head videos, cinematic generation, and marketing video production speed"
+      "name": "Veo 3.1 vs Runway Gen-4 vs Kling 3.0",
+      "keywords": "text-to-video, cinematic video, motion quality",
+      "focusPoint": "Compare realism, clip length, editing control, and cinematic consistency."
     },
     {
       "day": "Wednesday",
       "date": "2026-09-16",
       "category": "AI Coding",
-      "name": "Lovable vs Bolt vs Replit",
-      "keywords": "vibe coding, app builder, AI development",
-      "focusPoint": "Rapid app prototyping, code generation workflow, and non-technical builder experience"
+      "name": "Cursor 3 vs Claude Code vs Devin",
+      "keywords": "agentic coding, code generation, software automation",
+      "focusPoint": "Compare autonomous coding depth, IDE workflow, and ability to ship production-ready code."
     },
     {
       "day": "Thursday",
       "date": "2026-09-17",
-      "category": "AI Meeting Tools",
-      "name": "Fathom vs Avoma vs MeetGeek",
-      "keywords": "meeting notes, transcription, summaries",
-      "focusPoint": "Meeting capture quality, action-item extraction, and team collaboration features"
+      "category": "AI Research",
+      "name": "Perplexity Comet vs NotebookLM vs Gemini 3.5 Pro",
+      "keywords": "web research, source grounding, document synthesis",
+      "focusPoint": "Compare live web research, citation quality, and knowledge synthesis from documents."
     },
     {
       "day": "Friday",
       "date": "2026-09-18",
-      "category": "AI Email Management",
-      "name": "Shortwave vs Superhuman vs Microsoft Copilot Pro for Outlook",
-      "keywords": "email AI, inbox management, drafting",
-      "focusPoint": "Inbox prioritization, AI drafting, and productivity inside email workflows"
+      "category": "AI Voice",
+      "name": "ElevenLabs vs OpenAI Voice Engine vs Google Gemini Live",
+      "keywords": "voice generation, real-time speech, voice agents",
+      "focusPoint": "Compare voice realism, latency, multilingual support, and conversational voice experiences."
     }
   ]
 }
