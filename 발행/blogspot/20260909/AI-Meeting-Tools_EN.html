@@ -1,0 +1,985 @@
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    background: #ffffff !important;
+    color: #333 !important;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.8;
+    overflow-x: hidden !important;
+  }
+
+  .sidebar, .sidebar-wrapper, .sidebar-container, aside {
+    display: none !important;
+  }
+
+  .Profile, .BlogArchive, .Label, .ReportAbuse {
+    display: none !important;
+  }
+
+  .main-content, .main-wrapper, .Blog, .post-outer, .post-body {
+    width: 100% !important;
+    max-width: 100% !important;
+    background: #ffffff !important;
+  }
+
+  .article-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: #ffffff;
+    width: 100%;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #1a1a2e !important;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+  }
+
+  h1 {
+    font-size: 2.8em;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 1.8em;
+    margin-top: 50px;
+    margin-bottom: 25px;
+  }
+
+  h3 {
+    font-size: 1.4em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 1.05em;
+    color: #333 !important;
+    margin-bottom: 20px;
+    line-height: 1.8;
+  }
+
+  a {
+    color: #667eea !important;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .meta-info {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #667eea;
+  }
+
+  .intro-section {
+    background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+    padding: 35px;
+    border-radius: 12px;
+    margin-bottom: 45px;
+    border-left: 6px solid #667eea;
+  }
+
+  .intro-section p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+  }
+
+  .key-stat {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white !important;
+    padding: 25px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-size: 1.1em;
+    font-weight: 600;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    margin: 50px 0 30px 0;
+  }
+
+  .section-number {
+    font-size: 2.2em;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-right: 15px;
+    line-height: 1;
+  }
+
+  .tool-section {
+    background: white;
+    border-left: 6px solid;
+    padding: 35px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  }
+
+  .tool-otter {
+    border-left-color: #14b8a6;
+  }
+
+  .tool-fireflies {
+    border-left-color: #f59e0b;
+  }
+
+  .tool-avoma {
+    border-left-color: #ef4444;
+  }
+
+  .tool-badge {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+  }
+
+  .rating-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    font-size: 1em;
+  }
+
+  .rating-table th {
+    background: #f3f4f6;
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    color: #1a1a2e;
+    border-bottom: 2px solid #e5e7eb;
+  }
+
+  .rating-table td {
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #333;
+  }
+
+  .rating-table tr:nth-child(even) {
+    background: #f9fafb;
+  }
+
+  .rating-table tr:last-child {
+    background: #f3f4f6;
+    font-weight: 600;
+  }
+
+  .rating-table tr:last-child td {
+    font-weight: 700;
+    color: #1a1a2e;
+  }
+
+  .rating-mobile {
+    display: none;
+    background: #f9fafb;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 30px 0;
+  }
+
+  .rating-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 1em;
+  }
+
+  .rating-item:last-child {
+    border-bottom: none;
+  }
+
+  .rating-item span {
+    font-weight: 500;
+    color: #333;
+  }
+
+  .rating-item strong {
+    color: #667eea;
+    font-weight: 700;
+  }
+
+  .pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin: 30px 0;
+  }
+
+  .pros, .cons {
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 5px solid;
+  }
+
+  .pros {
+    background: #f0fdf4;
+    border-left-color: #10b981;
+  }
+
+  .cons {
+    background: #fef2f2;
+    border-left-color: #ef4444;
+  }
+
+  .pros h4, .cons h4 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+  }
+
+  .pros h4 {
+    color: #059669 !important;
+  }
+
+  .cons h4 {
+    color: #dc2626 !important;
+  }
+
+  .pros ul, .cons ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .pros li, .cons li {
+    padding: 8px 0;
+    color: #333;
+    font-size: 0.95em;
+  }
+
+  .pros li:before {
+    content: "+ ";
+    font-weight: 700;
+    color: #10b981;
+    margin-right: 8px;
+  }
+
+  .cons li:before {
+    content: "- ";
+    font-weight: 700;
+    color: #ef4444;
+    margin-right: 8px;
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 40px 0;
+    font-size: 0.95em;
+  }
+
+  .comparison-table th {
+    background: #1a1a2e;
+    color: white !important;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  .comparison-table td {
+    padding: 15px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #333;
+  }
+
+  .comparison-table tr:nth-child(even) {
+    background: #f9fafb;
+  }
+
+  .comparison-table .feature {
+    font-weight: 600;
+    color: #1a1a2e;
+  }
+
+  .pull-quote {
+    background: #f3f4f6;
+    padding: 30px;
+    border-left: 5px solid #667eea;
+    margin: 40px 0;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #1a1a2e;
+    line-height: 1.7;
+  }
+
+  .verdict-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white !important;
+    padding: 40px;
+    border-radius: 12px;
+    margin: 50px 0;
+  }
+
+  .verdict-box h3 {
+    color: white !important;
+    margin-top: 0;
+  }
+
+  .verdict-box p {
+    color: white !important;
+    margin-bottom: 15px;
+  }
+
+  .use-case {
+    background: white;
+    border: 2px solid #e5e7eb;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+  }
+
+  .use-case strong {
+    color: #667eea;
+    font-weight: 700;
+  }
+
+  .divider {
+    height: 1px;
+    background: #e5e7eb;
+    margin: 40px 0;
+  }
+
+  ul, ol {
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+
+  li {
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  strong {
+    font-weight: 700;
+    color: #1a1a2e;
+  }
+
+  em {
+    font-style: italic;
+    color: #555;
+  }
+
+  @media (max-width: 768px) {
+    html, body {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow-x: hidden !important;
+    }
+
+    .article-container {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 15px !important;
+      margin: 0 !important;
+    }
+
+    .sidebar, .sidebar-wrapper, .sidebar-container, aside {
+      display: none !important;
+    }
+
+    .main-content, .main-wrapper, .Blog, .post-outer, .post-body {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    h1 {
+      font-size: 1.6em;
+      line-height: 1.3;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-size: 1.4em;
+      margin-top: 35px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 1.2em;
+      margin-top: 25px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 1em;
+      margin-bottom: 15px;
+    }
+
+    .meta-info {
+      font-size: 0.9em;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+    }
+
+    .intro-section {
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    .section-header {
+      margin: 35px 0 20px 0;
+    }
+
+    .section-number {
+      font-size: 1.8em;
+      margin-right: 10px;
+    }
+
+    .tool-section {
+      padding: 20px;
+      margin-bottom: 25px;
+      border-left-width: 5px;
+    }
+
+    .pros-cons {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+
+    .pros, .cons {
+      padding: 15px;
+    }
+
+    .rating-table {
+      display: none;
+    }
+
+    .rating-mobile {
+      display: block;
+    }
+
+    .comparison-table {
+      display: none;
+    }
+
+    .pull-quote {
+      padding: 20px;
+      font-size: 1em;
+      margin: 25px 0;
+    }
+
+    .verdict-box {
+      padding: 25px;
+      margin: 35px 0;
+    }
+
+    .use-case {
+      padding: 15px;
+      margin: 12px 0;
+    }
+
+    .key-stat {
+      padding: 20px;
+      font-size: 1em;
+    }
+
+    ul, ol {
+      margin-left: 15px;
+      margin-bottom: 15px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+  }
+</style>
+
+<div class="article-container">
+
+  <div class="meta-info">
+    By Roche P. | September 2026 | 8 min read
+  </div>
+
+  <div class="intro-section">
+    <h2 style="margin-top: 0; font-size: 1.8em;">Avoma vs Otter.ai vs Fireflies.ai: Which AI Meeting Tool Wins in 2026?</h2>
+    <p>Meeting recordings are everywhere now. But here's the problem: recording a meeting is one thing. Actually transcribing it accurately, extracting actionable summaries, and automating follow-ups? That's where most teams hit a wall.</p>
+    <div class="key-stat">
+      Three tools dominate the market as of September 2026: Otter.ai (the budget-friendly generalist), Fireflies.ai (the integration powerhouse), and Avoma (the revenue intelligence specialist). Each takes a different approach—and picking the wrong one can waste thousands in subscription costs while solving none of your actual problems.
+    </div>
+    <p>Here's the breakdown of transcription accuracy, AI summaries, and automation capabilities based on the latest official specs and real-world performance reports from 2026.</p>
+  </div>
+
+  <div class="section-header">
+    <span class="section-number">01</span>
+    <h2 style="margin: 0; font-size: 1.8em;">Otter.ai: The Budget-Friendly General-Purpose Choice</h2>
+  </div>
+
+  <div class="tool-section tool-otter">
+    <p><strong>Best for:</strong> Real-time collaboration, general meeting notes, and teams on tight budgets looking for entry-level transcription.</p>
+
+    <p>Otter.ai remains the lowest-cost entry point into AI-powered meeting automation. As of September 2026, the Pro plan runs <strong>$8.33 per user per month on annual billing</strong> (or $16.99/month billed monthly), making it attractive for startups and smaller teams that need basic transcription without enterprise features.</p>
+
+    <p><strong>Key features include:</strong></p>
+    <ul>
+      <li>Live captions during meetings (real-time transcription)</li>
+      <li>1,200 minutes per month on the Pro plan (6,000 on Business tier)</li>
+      <li>Collaborative note-taking directly in transcripts</li>
+      <li>AI-generated summaries and action items</li>
+      <li>Free tier with 300 minutes per month</li>
+      <li>Integration with Slack, Zapier, and other tools (though not as deeply as Fireflies)</li>
+    </ul>
+
+    <p>The standout strength here is <strong>live, real-time transcription during the meeting itself</strong>—not post-processing. If your team values being able to see captions as people speak, Otter delivers that more smoothly than competitors. The collaborative notes feature also means multiple attendees can add comments, highlights, and follow-ups directly within the transcript without jumping to a separate doc.</p>
+
+    <p><strong>Transcription accuracy:</strong> Otter's accuracy is generally solid for English-language meetings, typically rated 85-90% depending on audio quality and speaker accents. It performs noticeably better on professional business settings than on casual conversations with heavy background noise.</p>
+
+    <table class="rating-table">
+      <tr>
+        <th>Rating Category</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td>Ease of Use</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>AI Quality (Transcription)</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>Features</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td>Speed</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>Pricing</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>Value for Money</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td><strong>Overall</strong></td>
+        <td><strong>8.3/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>Ease of Use:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>AI Quality (Transcription):</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Features:</span> <strong>7/10</strong></div>
+      <div class="rating-item"><span>Speed:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>Pricing:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>Value for Money:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span><strong>Overall</strong></span> <strong>8.3/10</strong></div>
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>Strengths</h4>
+        <ul>
+          <li>Lowest entry price ($8.33/user/month annually)</li>
+          <li>Live real-time captions during meetings</li>
+          <li>Collaborative note-taking built-in</li>
+          <li>Fast setup; minimal onboarding friction</li>
+          <li>Strong free tier (300 min/month)</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>Limitations</h4>
+        <ul>
+          <li>Fewer advanced CRM/revenue features</li>
+          <li>Limited integration breadth vs. Fireflies</li>
+          <li>No dedicated coaching or forecasting tools</li>
+          <li>Accuracy drops with multiple speakers or accents</li>
+          <li>Basic analytics compared to enterprise options</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <span class="section-number">02</span>
+    <h2 style="margin: 0; font-size: 1.8em;">Fireflies.ai: The Integration and Automation Leader</h2>
+  </div>
+
+  <div class="tool-section tool-fireflies">
+    <p><strong>Best for:</strong> Teams that need broad CRM integrations, searchable meeting archives, and sophisticated workflow automation across sales, recruitment, and education.</p>
+
+    <p>Fireflies.ai has emerged as the strongest option for organizations deploying AI meeting tools at scale. As of September 2026, the Pro plan runs <strong>$10–$19 per seat per month</strong> depending on billing frequency and feature tier, with Enterprise plans reaching <strong>$39 per seat per month</strong>.</p>
+
+    <p><strong>What sets Fireflies apart:</strong></p>
+    <ul>
+      <li>Five pre-built AI Agents (Sales, Education, Media, SDR, Recruiting) launched in 2026</li>
+      <li>AI Meeting Workflows for automating post-meeting tasks</li>
+      <li>Gmail connector added in May 2026 (email transcription integration)</li>
+      <li>Multilingual transcription support (40+ languages)</li>
+      <li>Deep CRM integrations: Salesforce, HubSpot, Pipedrive, etc.</li>
+      <li>Searchable meeting archive with AI-powered search</li>
+      <li>Free plan exists, but now capped at 400 minutes team storage (tightened in 2026)</li>
+    </ul>
+
+    <p>The most significant 2026 update was the <strong>AI Agents</strong> feature—purpose-built workflows that automatically pull insights from meetings, categorize data by role, and push results into your existing CRM. For a sales org, the Sales Agent extracts deal stages, objections, and action items from every call and pipes them into Salesforce without manual work. The Recruiting Agent does the same for hiring teams.</p>
+
+    <p><strong>Transcription accuracy:</strong> Fireflies reports 95%+ accuracy on clean audio, and the multilingual support is genuinely strong—arguably better than Otter for non-English meetings. However, like all tools, accuracy degrades with background noise and overlapping speakers.</p>
+
+    <table class="rating-table">
+      <tr>
+        <th>Rating Category</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td>Ease of Use</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>AI Quality (Transcription)</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>Features</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>Speed</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>Pricing</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td>Value for Money</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td><strong>Overall</strong></td>
+        <td><strong>8.5/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>Ease of Use:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>AI Quality (Transcription):</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>Features:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>Speed:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Pricing:</span> <strong>7/10</strong></div>
+      <div class="rating-item"><span>Value for Money:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span><strong>Overall</strong></span> <strong>8.5/10</strong></div>
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>Strengths</h4>
+        <ul>
+          <li>Best-in-class CRM and platform integrations</li>
+          <li>AI Agents automate follow-up workflows</li>
+          <li>Multilingual transcription (40+ languages)</li>
+          <li>Searchable meeting archive with AI search</li>
+          <li>Team deployment and governance features</li>
+          <li>Gmail integration (May 2026)</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>Limitations</h4>
+        <ul>
+          <li>Free tier capped at 400 minutes (tightened in 2026)</li>
+          <li>Mid-tier pricing can add up at scale</li>
+          <li>Some advanced features behind additional credits</li>
+          <li>Learning curve for AI Agent configuration</li>
+          <li>Less emphasis on real-time live captions</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <span class="section-number">03</span>
+    <h2 style="margin: 0; font-size: 1.8em;">Avoma: The Revenue Intelligence Specialist</h2>
+  </div>
+
+  <div class="tool-section tool-avoma">
+    <p><strong>Best for:</strong> Sales and revenue teams that need conversation intelligence, coaching automation, deal forecasting, and direct CRM pipeline integration.</p>
+
+    <p>Avoma takes a fundamentally different approach than its competitors. Rather than positioning itself as a general meeting recorder, Avoma is purpose-built for sales and customer-facing teams. As of September 2026, the entry plan (renamed from "Starter" to "Startup") runs <strong>$19 per recorder-seat per month</strong> (billed annually), capped at 25 paid seats. Tiers scale to <strong>$29 and $39 per seat per month</strong>, with add-ons pushing total cost higher.</p>
+
+    <p><strong>What Avoma prioritizes:</strong></p>
+    <ul>
+      <li>Conversation intelligence specifically for sales (objection tracking, deal signals, coaching cues)</li>
+      <li>Automated coaching recommendations based on meeting analysis</li>
+      <li>Deal forecasting based on conversation signals</li>
+      <li>CRM automation (Salesforce, HubSpot, Pipedrive pipeline integration)</li>
+      <li>No free plan—14-day free trial only</li>
+      <li>Designed for revenue operations, not general note-taking</li>
+    </ul>
+
+    <p>The core value proposition is this: every sales call gets analyzed for red flags (unaddressed objections, missing buying signals, fumbled closes) and coaching recommendations are generated automatically. Managers get visibility into deal health through conversation metadata. Forecasting models learn from the language used in calls and predict deal probability with higher accuracy than opportunity stage alone.</p>
+
+    <p><strong>Transcription accuracy:</strong> Avoma uses the same underlying transcription engines as competitors but wraps them with sales-specific NLP. Accuracy is solid (90%+), but the real differentiation isn't transcription—it's what Avoma does <em>after</em> transcribing.</p>
+
+    <table class="rating-table">
+      <tr>
+        <th>Rating Category</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td>Ease of Use</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td>AI Quality (Coaching)</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>Features</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>Speed</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td>Pricing</td>
+        <td>6/10</td>
+      </tr>
+      <tr>
+        <td>Value for Money</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td><strong>Overall</strong></td>
+        <td><strong>7.3/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>Ease of Use:</span> <strong>7/10</strong></div>
+      <div class="rating-item"><span>AI Quality (Coaching):</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Features:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>Speed:</span> <strong>7/10</strong></div>
+      <div class="rating-item"><span>Pricing:</span> <strong>6/10</strong></div>
+      <div class="rating-item"><span>Value for Money:</span> <strong>7/10</strong></div>
+      <div class="rating-item"><span><strong>Overall</strong></span> <strong>7.3/10</strong></div>
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>Strengths</h4>
+        <ul>
+          <li>Purpose-built for sales and revenue operations</li>
+          <li>Automated coaching and rep development</li>
+          <li>Deal forecasting based on conversation signals</li>
+          <li>Deep CRM pipeline integration</li>
+          <li>Objection and buying signal detection</li>
+          <li>Rich coaching and quality assurance features</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>Limitations</h4>
+        <ul>
+          <li>Higher base price ($19/seat minimum)</li>
+          <li>Add-ons (coaching, forecasting) increase total cost</li>
+          <li>No free plan—only 14-day trial</li>
+          <li>Less useful if you're not a sales/revenue team</li>
+          <li>Steeper onboarding and setup complexity</li>
+          <li>Overkill for simple transcription needs</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2>Head-to-Head Comparison: September 2026 Edition</h2>
+
+  <table class="comparison-table">
+    <tr>
+      <th>Feature</th>
+      <th>Otter.ai</th>
+      <th>Fireflies.ai</th>
+      <th>Avoma</th>
+    </tr>
+    <tr>
+      <td class="feature">Starting Price (Annual)</td>
+      <td>$8.33/user/mo</td>
+      <td>$10–$19/seat/mo</td>
+      <td>$19/seat/mo</td>
+    </tr>
+    <tr>
+      <td class="feature">Free Tier / Trial</td>
+      <td>300 min/mo</td>
+      <td>400 min team cap</td>
+      <td>14-day trial only</td>
+    </tr>
+    <tr>
+      <td class="feature">Transcription Accuracy</td>
+      <td>85–90%</td>
+      <td>95%+ (multilingual)</td>
+      <td>90%+ (sales-optimized)</td>
+    </tr>
+    <tr>
+      <td class="feature">Live Captions</td>
+      <td>Yes</td>
+      <td>Limited</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td class="feature">CRM Integrations</td>
+      <td>Basic (Zapier)</td>
+      <td>Deep (SF, HBSP, PD)</td>
+      <td>Deep (SF, HBSP, PD)</td>
+    </tr>
+    <tr>
+      <td class="feature">AI Coaching</td>
+      <td>No</td>
+      <td>Limited</td>
+      <td>Yes, automated</td>
+    </tr>
+    <tr>
+      <td class="feature">Forecasting</td>
+      <td>No</td>
+      <td>Limited</td>
+      <td>Yes, deal-based</td>
+    </tr>
+    <tr>
+      <td class="feature">Multilingual</td>
+      <td>English-focused</td>
+      <td>40+ languages</td>
+      <td>English-focused</td>
+    </tr>
+    <tr>
+      <td class="feature">Best For</td>
+      <td>Budget, general meetings</td>
+      <td>Integrations, scale</td>
+      <td>Revenue teams, coaching</td>
+    </tr>
+  </table>
+
+  <div class="divider"></div>
+
+  <h2>Transcription Accuracy: Which Tool Wins?</h2>
+
+  <p>If your primary need is accurate transcription, here's the ranking based on 2026 benchmarks:</p>
+
+  <div class="use-case">
+    <strong>1. Fireflies.ai (95%+ on clean audio)</strong><br>
+    Wins on multilingual support and handles multiple speakers better than competitors. If you conduct calls in 40+ languages, Fireflies is the only realistic choice.
+  </div>
+
+  <div class="use-case">
+    <strong>2. Avoma (90%+, sales-optimized)</strong><br>
+    Accuracy is solid, but the NLP layer is tuned for sales language—objections, pricing discussions, close attempts. Better for detecting meaning than pure transcription accuracy.
+  </div>
+
+  <div class="use-case">
+    <strong>3. Otter.ai (85–90%, real-time focused)</strong><br>
+    Trades absolute accuracy for real-time captions. Better at speed than final-draft accuracy.
+  </div>
+
+  <div class="pull-quote">
+    The gap between Fireflies and Otter is real—about 5% accuracy difference—but it only matters if you have poor audio quality or heavy accents. In clean, professional settings, all three tools perform adequately for sales and customer operations.
+  </div>
+
+  <h2>Meeting Summaries and Action Items: Which Stands Out?</h2>
+
+  <p><strong>Fireflies.ai</strong> generates the most detailed AI summaries, with speakers labeled, key discussion points highlighted, and custom fields extracted. The AI Meeting Workflows can automatically push action items into Asana, Monday, Slack, or email.</p>
+
+  <p><strong>Avoma</strong> focuses summaries on business outcomes—deal stage changes, objections raised, next steps committed. Less granular transcript detail, more revenue-focused extraction.</p>
+
+  <p><strong>Otter.ai</strong> provides basic summaries and action items, but lacks the automation depth of Fireflies. You're doing more manual follow-up work.</p>
+
+  <p><strong>Winner for summaries: Fireflies.ai</strong> (most detailed + most automated)</p>
+
+  <h2>Integration Breadth: Who Connects Best?</h2>
+
+  <p>All three integrate with Slack and email. But:</p>
+
+  <ul>
+    <li><strong>Fireflies</strong> has the deepest CRM connections (Salesforce, HubSpot, Pipedrive, Zendesk, etc.) and added Gmail in May 2026</li>
+    <li><strong>Avoma</strong> focuses on revenue tools (same CRM options) but has fewer third-party integrations overall</li>
+    <li><strong>Otter</strong> relies on Zapier for most integrations—more flexibility, less native depth</li>
+  </ul>
+
+  <p><strong>Winner for integrations: Fireflies.ai</strong> (breadth + native CRM connectors)</p>
+
+  <div class="divider"></div>
+
+  <h2>The Real Cost: Hidden Pricing Traps</h2>
+
+  <p>The headline prices don't tell the full story:</p>
+
+  <div class="use-case">
+    <strong>Otter.ai:</strong> $8.33/user/month looks cheap, but multiply by 10 team members = $833/month. Pro tier maxes at 1,200 min/month—about 20 hours. Growing teams hit limits fast.
+  </div>
+
+  <div class="use-case">
+    <strong>Fireflies.ai:</strong> $19/seat/month on Pro is mid-market pricing. At 10 seats = $1,900/month. But if you need AI Agents or advanced analytics, enterprise pricing ($39/seat) doubles the cost.
+  </div>
+
+  <div class="use-case">
+    <strong>Avoma:</strong> $19/seat/month base price looks competitive, but capped at 25 paid seats. Add coaching add-on = $25/seat. Add forecasting = $29/seat. Real cost quickly becomes $29–$39/seat.
+  </div>
+
+  <p><strong>True cost at scale (50 users, 1 year):</strong></p>
+  <ul>
+    <li>Otter: ~$5,000–$10,000 (depending on plan tier)</li>
+    <li>Fireflies: ~$11,400–$23,400 (Pro to Enterprise)</li>
+    <li>Avoma: ~$13,200–$23,400 (with typical add-ons)</li>
+  </ul>
+
+  <div class="divider"></div>
+
+  <h2>The Verdict: Which Tool Should You Pick?</h2>
+
+  <div class="verdict-box">
+    <h3>Best for Budget-Conscious Teams: Otter.ai</h3>
+    <p>If you need basic meeting transcription, collaborative notes, and real-time captions without breaking the budget, Otter wins. Start at $8.33/user/month. You're getting fast setup, a solid free tier, and live captions no one else offers at this price. Trade-off: limited CRM integrations and no revenue intelligence features.</p>
+  </div>
+
+  <div class="verdict-box" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+    <h3>Best for Scale and Integrations: Fireflies.ai</h3>
+    <p>Growing teams deploying across sales, recruiting, and education should choose Fireflies. The 2026 AI Agents are game-changers—they automate post-call workflows that would otherwise require manual tagging. Deep CRM integrations and 40+ language support make this the strongest enterprise option. At $19/seat on Pro, it's a fair trade for breadth.</p>
+  </div>
+
+  <div class="verdict-box" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);">
+    <h3>Best for Sales and Revenue Ops: Avoma</h3>
+    <p>If conversation intelligence, automated coaching, and deal forecasting are your priorities, Avoma is purpose-built for you. The $19/seat entry price is reasonable if coaching and forecasting add-ons justify the spend. This is overkill if you just need transcription, but invaluable if you're managing sales quality and pipeline predictability.</p>
+  </div>
+
+  <h2>Final Recommendation Matrix</h2>
+
+  <div class="use-case">
+    <strong>Choose Otter.ai if:</strong> You're a startup or small team needing basic transcription, live captions matter, and budget is tight.
+  </div>
+
+  <div class="use-case">
+    <strong>Choose Fireflies.ai if:</strong> You're scaling across multiple departments, need broad integrations, multilingual support, or AI automation of follow-up workflows.
+  </div>
+
+  <div class="use-case">
+    <strong>Choose Avoma if:</strong> You're a sales or revenue ops team investing in coaching, forecasting, and conversation intelligence as competitive advantages.
+  </div>
+
+  <p><strong>Bottom line for September 2026:</strong> All three tools have meaningfully improved since 2025. Fireflies' AI Agents are genuinely differentiated. Avoma's coaching automation is strong. Otter's pricing remains unbeatable for small teams. Pick based on your actual workflow priorities, not just features on paper. The right tool should feel invisible—it should integrate so cleanly with your existing CRM and communication tools that adoption is friction-free. Any tool that requires manual post-processing defeats the purpose.</p>
+
+</div>

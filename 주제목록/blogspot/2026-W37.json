@@ -1,96 +1,62 @@
 {
   "week": "2026-W37",
-  "generated": "2026-09-07T03:23:35.509Z",
+  "generated": "2026-09-12T13:43:12.114Z",
   "topics": [
     {
       "day": "Saturday",
-      "date": "2026-09-05",
-      "category": "AI Productivity",
-      "name": "Notion AI vs Microsoft Copilot vs Google Duet",
-      "keywords": "AI productivity, workspace AI, productivity suite",
-      "focusPoint": "Which AI Productivity Suite Actually Delivers in 2026",
-      "published": true,
-      "url": "https://ai-toolkit-blog.blogspot.com/2026/09/heres-reality-check-every-major-tech.html"
-    },
-    {
-      "day": "Sunday",
-      "date": "2026-09-06",
-      "category": "AI Design",
-      "name": "Midjourney vs DALL-E vs Leonardo AI",
-      "keywords": "AI design, image generation, creative AI",
-      "focusPoint": "Image quality and creative control",
-      "published": true,
-      "url": "https://ai-toolkit-blog.blogspot.com/2026/09/midjourney-vs-dall-e-vs-leonardo-ai.html"
-    },
-    {
-      "day": "Monday",
-      "date": "2026-09-07",
-      "category": "AI Meeting Tools",
-      "name": "Fireflies vs Otter.ai vs Fathom",
-      "keywords": "AI meeting tools, transcription, note-taking",
-      "focusPoint": "Transcription accuracy and meeting summaries",
-      "published": true,
-      "url": "https://ai-toolkit-blog.blogspot.com/2026/09/fireflies-vs-otterai-vs-fathom_01288419523.html"
-    },
-    {
-      "day": "Tuesday",
-      "date": "2026-09-08",
-      "category": "AI Writing",
-      "name": "ChatGPT vs Claude vs Jasper",
-      "keywords": "AI writing, content creation, copywriting",
-      "focusPoint": "Draft quality and long-form writing performance",
-      "published": true,
-      "url": "https://ai-toolkit-blog.blogspot.com/2026/09/chatgpt-vs-claude-vs-jasper_01208876612.html"
-    },
-    {
-      "day": "Tuesday",
-      "date": "2026-09-08",
-      "category": "AI Research",
-      "name": "Perplexity vs Gemini vs ChatGPT",
-      "keywords": "AI research, fact-checking, citations",
-      "focusPoint": "Search accuracy and citation reliability",
-      "published": true,
-      "url": "https://ai-toolkit-blog.blogspot.com/2026/09/perplexity-vs-gemini-vs-chatgpt.html"
-    },
-    {
-      "day": "Wednesday",
-      "date": "2026-09-09",
-      "category": "AI Meeting Tools",
-      "name": "Avoma vs Otter.ai vs Fireflies.ai",
-      "keywords": "AI meeting tools, transcription, note-taking, summaries",
-      "focusPoint": "Transcription accuracy, meeting summaries, and follow-up automation"
-    },
-    {
-      "day": "Thursday",
-      "date": "2026-09-10",
-      "category": "AI Coding",
-      "name": "GitHub Copilot vs Cursor vs Codeium",
-      "keywords": "AI coding, code completion, debugging, documentation",
-      "focusPoint": "Developer speed, inline assistance, and codebase awareness"
-    },
-    {
-      "day": "Friday",
-      "date": "2026-09-11",
-      "category": "AI Design",
-      "name": "Midjourney vs Ideogram vs DALL-E",
-      "keywords": "AI design, image generation, creative AI, visual content",
-      "focusPoint": "Image quality, text rendering, and creative control"
-    },
-    {
-      "day": "Saturday",
       "date": "2026-09-12",
-      "category": "AI Email Management",
-      "name": "Superhuman vs Grammarly vs Google Gemini",
-      "keywords": "AI email, inbox management, email writing, scheduling",
-      "focusPoint": "Inbox triage, reply drafting, and time-saving email workflows"
+      "category": "AI Productivity",
+      "name": "ChatGPT vs Microsoft Copilot vs Gemini",
+      "keywords": "workflow orchestration, office productivity, team automation",
+      "focusPoint": "Compare task automation, document handling, workspace integration, and team collaboration."
     },
     {
       "day": "Sunday",
       "date": "2026-09-13",
+      "category": "AI Writing",
+      "name": "Claude vs ChatGPT vs Jasper",
+      "keywords": "long-form writing, brand voice, content drafting",
+      "focusPoint": "Compare writing quality, tone control, editing workflow, and marketing content consistency."
+    },
+    {
+      "day": "Monday",
+      "date": "2026-09-14",
+      "category": "AI Design",
+      "name": "Midjourney vs Adobe Firefly vs Gemini",
+      "keywords": "image generation, creative visuals, multimodal design",
+      "focusPoint": "Compare image quality, style control, commercial usage, and design workflow integration."
+    },
+    {
+      "day": "Tuesday",
+      "date": "2026-09-15",
       "category": "AI Video",
-      "name": "Descript vs Runway vs Synthesia",
-      "keywords": "AI video editing, video generation, screen recording",
-      "focusPoint": "Video editing automation and AI-powered content creation"
+      "name": "Runway vs Synthesia vs Veo",
+      "keywords": "video generation, avatars, text-to-video",
+      "focusPoint": "Compare realism, editing control, avatar features, and speed of video production."
+    },
+    {
+      "day": "Wednesday",
+      "date": "2026-09-16",
+      "category": "AI Coding",
+      "name": "Claude Code vs Cursor vs GitHub Copilot",
+      "keywords": "agentic coding, IDE integration, code completion",
+      "focusPoint": "Compare coding assistance, debugging, context awareness, and developer workflow fit."
+    },
+    {
+      "day": "Thursday",
+      "date": "2026-09-17",
+      "category": "AI Meeting Tools",
+      "name": "Otter vs Fathom vs Fireflies",
+      "keywords": "meeting summaries, transcription, action items",
+      "focusPoint": "Compare transcription accuracy, summaries, CRM/workspace integrations, and team collaboration."
+    },
+    {
+      "day": "Friday",
+      "date": "2026-09-18",
+      "category": "AI Research",
+      "name": "Perplexity vs NotebookLM vs Gemini",
+      "keywords": "source-grounded research, cited answers, document analysis",
+      "focusPoint": "Compare citation quality, source grounding, document upload support, and research depth."
     }
   ]
 }

@@ -48,7 +48,30 @@ function getWeekNumber(date) {
 async function getTodayTopic() {
   try {
     const today = new Date();
+    const dayOfWeek = today.getDay(); // 0=일요일, 6=토요일
     const todayStr = today.toISOString().split('T')[0]; // YYYY-MM-DD
+
+    // ✨ 매주 토요일에 새 일주일 주제 자동 생성
+    if (dayOfWeek === 6) {
+      console.log('\n📅 토요일입니다! 새 일주일 주제를 생성합니다...\n');
+
+      const newTopics = await generateWeeklyTopics(todayStr);
+
+      const weekNumber = getWeekNumber(today);
+      const weekFile = path.join(TOPICS_DIR, `${weekNumber}.json`);
+
+      const weekData = {
+        week: weekNumber,
+        generated: new Date().toISOString(),
+        topics: newTopics
+      };
+
+      fs.writeFileSync(weekFile, JSON.stringify(weekData, null, 2));
+      console.log(`✅ 주제 파일 저장 완료: ${weekFile}\n`);
+
+      return weekData.topics[0]; // 토요일 주제 반환
+    }
+
     const weekNumber = getWeekNumber(today);
     const weekFile = path.join(TOPICS_DIR, `${weekNumber}.json`);
 
@@ -144,7 +167,26 @@ Return ONLY a JSON array with 7 topics:
       throw new Error('No JSON found in response');
     }
 
-    const topics = JSON.parse(jsonMatch[0]);
+    const rawTopics = JSON.parse(jsonMatch[0]);
+
+    // 날짜 정보 추가
+    const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const topics = rawTopics.map((topic, i) => {
+      const date = new Date(startDate);
+      date.setDate(date.getDate() + i);
+      const dateStr = date.toISOString().slice(0, 10);
+      const dayName = dayNames[date.getDay()];
+
+      return {
+        day: dayName,
+        date: dateStr,
+        category: topic.category,
+        name: topic.name,
+        keywords: topic.keywords,
+        focusPoint: topic.focusPoint
+      };
+    });
+
     console.log(`✅ 7일치 주제 생성 완료\n`);
 
     return topics;
