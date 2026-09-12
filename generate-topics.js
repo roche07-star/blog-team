@@ -11,6 +11,30 @@ async function generateWeeklyTopics(startDate) {
   console.log('🔄 일주일 주제 생성 시작...\n');
   console.log(`📅 시작일: ${startDate}\n`);
 
+  // 이전 주제 목록 가져오기 (중복 방지)
+  const prevTopics = [];
+  try {
+    const topicsDir = path.join('주제목록', 'blogspot');
+    const files = fs.readdirSync(topicsDir).filter(f => f.endsWith('.json'));
+    files.forEach(file => {
+      const data = JSON.parse(fs.readFileSync(path.join(topicsDir, file), 'utf8'));
+      if (data.topics) {
+        data.topics.forEach(t => {
+          if (t.name && t.name !== 'NEW_TOPIC_PLACEHOLDER') {
+            prevTopics.push(t.name);
+          }
+        });
+      }
+    });
+    console.log(`  📋 이전 주제 ${prevTopics.length}개 확인\n`);
+  } catch (err) {
+    console.log('  (이전 주제 없음)\n');
+  }
+
+  const prevTopicsStr = prevTopics.length > 0
+    ? `\n\n⚠️ AVOID these previously used topics:\n${prevTopics.map(t => `- ${t}`).join('\n')}`
+    : '';
+
   try {
     const response = await fetch('https://api.perplexity.ai/chat/completions', {
       method: 'POST',
@@ -27,11 +51,17 @@ async function generateWeeklyTopics(startDate) {
           },
           {
             role: 'user',
-            content: `Suggest 7 trending AI tool comparison topics for the next 7 days starting from ${startDate}.
+            content: `Suggest 7 UNIQUE trending AI tool comparison topics for the next 7 days starting from ${startDate}.
 
 Each topic should be in the format: "Tool A vs Tool B vs Tool C"
 
-Categories to cover: AI Productivity, AI Writing, AI Design, AI Video, AI Coding, AI Meeting Tools, AI Email Management, AI Research
+Categories to cover: AI Productivity, AI Writing, AI Design, AI Video, AI Coding, AI Meeting Tools, AI Email Management, AI Research, AI Data Analysis, AI Voice, AI Automation${prevTopicsStr}
+
+IMPORTANT:
+- Each topic must be COMPLETELY DIFFERENT from previous topics
+- Use NEW and TRENDING tools from 2026
+- Avoid repeating the same tool combinations
+- If a tool appears in previous topics, use DIFFERENT tools
 
 Return ONLY a JSON array with 7 topics:
 [

@@ -1,62 +1,62 @@
 {
   "week": "2026-W37",
-  "generated": "2026-09-12T13:43:12.114Z",
+  "generated": "2026-09-12T13:47:49.174Z",
   "topics": [
     {
       "day": "Saturday",
       "date": "2026-09-12",
       "category": "AI Productivity",
-      "name": "ChatGPT vs Microsoft Copilot vs Gemini",
-      "keywords": "workflow orchestration, office productivity, team automation",
-      "focusPoint": "Compare task automation, document handling, workspace integration, and team collaboration."
+      "name": "Motion vs Reclaim vs Clockwise",
+      "keywords": "calendar automation, scheduling, productivity",
+      "focusPoint": "Smart scheduling, task planning, and calendar optimization for busy professionals"
     },
     {
       "day": "Sunday",
       "date": "2026-09-13",
       "category": "AI Writing",
-      "name": "Claude vs ChatGPT vs Jasper",
-      "keywords": "long-form writing, brand voice, content drafting",
-      "focusPoint": "Compare writing quality, tone control, editing workflow, and marketing content consistency."
+      "name": "Grammarly vs Wordtune vs ProWritingAid",
+      "keywords": "writing assistant, rewriting, grammar",
+      "focusPoint": "Grammar correction, tone improvement, rewriting quality, and long-form editing depth"
     },
     {
       "day": "Monday",
       "date": "2026-09-14",
       "category": "AI Design",
-      "name": "Midjourney vs Adobe Firefly vs Gemini",
-      "keywords": "image generation, creative visuals, multimodal design",
-      "focusPoint": "Compare image quality, style control, commercial usage, and design workflow integration."
+      "name": "Ideogram vs Canva Magic Studio vs Adobe Firefly",
+      "keywords": "AI design, image generation, brand visuals",
+      "focusPoint": "Text-to-image quality, brand-safe design workflows, and social content creation"
     },
     {
       "day": "Tuesday",
       "date": "2026-09-15",
       "category": "AI Video",
-      "name": "Runway vs Synthesia vs Veo",
-      "keywords": "video generation, avatars, text-to-video",
-      "focusPoint": "Compare realism, editing control, avatar features, and speed of video production."
+      "name": "Synthesia vs Google Veo 3 vs Higgsfield",
+      "keywords": "AI video, avatar videos, video generation",
+      "focusPoint": "Talking-head videos, cinematic generation, and marketing video production speed"
     },
     {
       "day": "Wednesday",
       "date": "2026-09-16",
       "category": "AI Coding",
-      "name": "Claude Code vs Cursor vs GitHub Copilot",
-      "keywords": "agentic coding, IDE integration, code completion",
-      "focusPoint": "Compare coding assistance, debugging, context awareness, and developer workflow fit."
+      "name": "Lovable vs Bolt vs Replit",
+      "keywords": "vibe coding, app builder, AI development",
+      "focusPoint": "Rapid app prototyping, code generation workflow, and non-technical builder experience"
     },
     {
       "day": "Thursday",
       "date": "2026-09-17",
       "category": "AI Meeting Tools",
-      "name": "Otter vs Fathom vs Fireflies",
-      "keywords": "meeting summaries, transcription, action items",
-      "focusPoint": "Compare transcription accuracy, summaries, CRM/workspace integrations, and team collaboration."
+      "name": "Fathom vs Avoma vs MeetGeek",
+      "keywords": "meeting notes, transcription, summaries",
+      "focusPoint": "Meeting capture quality, action-item extraction, and team collaboration features"
     },
     {
       "day": "Friday",
       "date": "2026-09-18",
-      "category": "AI Research",
-      "name": "Perplexity vs NotebookLM vs Gemini",
-      "keywords": "source-grounded research, cited answers, document analysis",
-      "focusPoint": "Compare citation quality, source grounding, document upload support, and research depth."
+      "category": "AI Email Management",
+      "name": "Shortwave vs Superhuman vs Microsoft Copilot Pro for Outlook",
+      "keywords": "email AI, inbox management, drafting",
+      "focusPoint": "Inbox prioritization, AI drafting, and productivity inside email workflows"
     }
   ]
 }
