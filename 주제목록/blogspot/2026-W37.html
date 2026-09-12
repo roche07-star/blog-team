@@ -65,6 +65,11 @@
       box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
     }
 
+    .topic-card.published {
+      opacity: 0.8;
+      border: 2px solid #10b981;
+    }
+
     .day-badge {
       display: inline-block;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -74,6 +79,10 @@
       font-size: 0.85em;
       font-weight: 600;
       margin-bottom: 8px;
+    }
+
+    .day-badge.published {
+      background: #10b981;
     }
 
     .date {
@@ -109,6 +118,13 @@
       color: #667eea;
     }
 
+    .published-badge {
+      margin-top: 12px;
+      font-size: 0.85em;
+      color: #10b981;
+      font-weight: 600;
+    }
+
     @media (max-width: 768px) {
       body {
         padding: 20px 15px;
@@ -128,15 +144,25 @@
   <div class="container">
     <div class="header">
       <h1>📅 Weekly Topics</h1>
-      <div class="week">2026-W37</div>
-      <div class="generated">Generated: Sep 12, 2026, 11:47 PM</div>
+      <div class="week">2026-W37 (Sep 12-18)</div>
+      <div class="generated">Generated: Sep 12, 2026</div>
     </div>
 
     <div class="topics-grid">
 
-    <div class="topic-card">
-      <div class="day-badge">Saturday</div>
+    <div class="topic-card published">
+      <div class="day-badge published">Saturday ✅</div>
       <div class="date">2026-09-12</div>
+      <div class="category">AI Email Management</div>
+      <h3>Superhuman vs Grammarly vs Google Gemini</h3>
+      <p class="keywords"><strong>Keywords:</strong> AI email, inbox management, email writing, scheduling</p>
+      <p class="focus"><strong>Focus:</strong> Inbox triage, reply drafting, and time-saving email workflows</p>
+      <p class="published-badge">✅ Published</p>
+    </div>
+
+    <div class="topic-card">
+      <div class="day-badge">Sunday</div>
+      <div class="date">2026-09-13</div>
       <div class="category">AI Productivity</div>
       <h3>Motion vs Reclaim vs Clockwise</h3>
       <p class="keywords"><strong>Keywords:</strong> smart scheduling, task planning, calendar optimization</p>
@@ -144,8 +170,8 @@
     </div>
 
     <div class="topic-card">
-      <div class="day-badge">Sunday</div>
-      <div class="date">2026-09-13</div>
+      <div class="day-badge">Monday</div>
+      <div class="date">2026-09-14</div>
       <div class="category">AI Writing</div>
       <h3>Grammarly vs Wordtune vs ProWritingAid</h3>
       <p class="keywords"><strong>Keywords:</strong> grammar correction, tone improvement, rewriting quality</p>
@@ -153,8 +179,8 @@
     </div>
 
     <div class="topic-card">
-      <div class="day-badge">Monday</div>
-      <div class="date">2026-09-14</div>
+      <div class="day-badge">Tuesday</div>
+      <div class="date">2026-09-15</div>
       <div class="category">AI Design</div>
       <h3>Ideogram vs Canva Magic Studio vs Adobe Firefly</h3>
       <p class="keywords"><strong>Keywords:</strong> text-to-image, brand-safe design, social content</p>
@@ -162,8 +188,8 @@
     </div>
 
     <div class="topic-card">
-      <div class="day-badge">Tuesday</div>
-      <div class="date">2026-09-15</div>
+      <div class="day-badge">Wednesday</div>
+      <div class="date">2026-09-16</div>
       <div class="category">AI Video</div>
       <h3>Synthesia vs Google Veo 3 vs Higgsfield</h3>
       <p class="keywords"><strong>Keywords:</strong> talking-head videos, cinematic generation, marketing video</p>
@@ -171,8 +197,8 @@
     </div>
 
     <div class="topic-card">
-      <div class="day-badge">Wednesday</div>
-      <div class="date">2026-09-16</div>
+      <div class="day-badge">Thursday</div>
+      <div class="date">2026-09-17</div>
       <div class="category">AI Coding</div>
       <h3>Lovable vs Bolt vs Replit</h3>
       <p class="keywords"><strong>Keywords:</strong> rapid app prototyping, code generation, no-code builder</p>
@@ -180,21 +206,12 @@
     </div>
 
     <div class="topic-card">
-      <div class="day-badge">Thursday</div>
-      <div class="date">2026-09-17</div>
+      <div class="day-badge">Friday</div>
+      <div class="date">2026-09-18</div>
       <div class="category">AI Meeting Tools</div>
       <h3>Fathom vs Avoma vs MeetGeek</h3>
       <p class="keywords"><strong>Keywords:</strong> meeting capture, action-item extraction, team collaboration</p>
       <p class="focus"><strong>Focus:</strong> Meeting capture quality, action-item extraction, and team collaboration features</p>
-    </div>
-
-    <div class="topic-card">
-      <div class="day-badge">Friday</div>
-      <div class="date">2026-09-18</div>
-      <div class="category">AI Email Management</div>
-      <h3>Shortwave vs Superhuman vs Microsoft Copilot Pro for Outlook</h3>
-      <p class="keywords"><strong>Keywords:</strong> inbox prioritization, AI drafting, email productivity</p>
-      <p class="focus"><strong>Focus:</strong> Inbox prioritization, AI drafting, and productivity inside email workflows</p>
     </div>
 
     </div>

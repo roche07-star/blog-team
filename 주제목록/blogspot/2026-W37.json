@@ -1,62 +1,64 @@
 {
   "week": "2026-W37",
-  "generated": "2026-09-12T14:47:00.000Z",
+  "generated": "2026-09-12T15:10:00.000Z",
   "topics": [
     {
       "day": "Saturday",
       "date": "2026-09-12",
+      "category": "AI Email Management",
+      "name": "Superhuman vs Grammarly vs Google Gemini",
+      "keywords": "AI email, inbox management, email writing, scheduling",
+      "focusPoint": "Inbox triage, reply drafting, and time-saving email workflows",
+      "published": true,
+      "url": "https://ai-toolkit-blog.blogspot.com/2026/09/superhuman-vs-grammarly-vs-google-gemini.html"
+    },
+    {
+      "day": "Sunday",
+      "date": "2026-09-13",
       "category": "AI Productivity",
       "name": "Motion vs Reclaim vs Clockwise",
       "keywords": "smart scheduling, task planning, calendar optimization",
       "focusPoint": "Smart scheduling, task planning, and calendar optimization for busy professionals"
     },
     {
-      "day": "Sunday",
-      "date": "2026-09-13",
+      "day": "Monday",
+      "date": "2026-09-14",
       "category": "AI Writing",
       "name": "Grammarly vs Wordtune vs ProWritingAid",
       "keywords": "grammar correction, tone improvement, rewriting quality",
       "focusPoint": "Grammar correction, tone improvement, rewriting quality, and long-form editing depth"
     },
     {
-      "day": "Monday",
-      "date": "2026-09-14",
+      "day": "Tuesday",
+      "date": "2026-09-15",
       "category": "AI Design",
       "name": "Ideogram vs Canva Magic Studio vs Adobe Firefly",
       "keywords": "text-to-image, brand-safe design, social content",
       "focusPoint": "Text-to-image quality, brand-safe design workflows, and social content creation"
     },
     {
-      "day": "Tuesday",
-      "date": "2026-09-15",
+      "day": "Wednesday",
+      "date": "2026-09-16",
       "category": "AI Video",
       "name": "Synthesia vs Google Veo 3 vs Higgsfield",
       "keywords": "talking-head videos, cinematic generation, marketing video",
       "focusPoint": "Talking-head videos, cinematic generation, and marketing video production speed"
     },
     {
-      "day": "Wednesday",
-      "date": "2026-09-16",
+      "day": "Thursday",
+      "date": "2026-09-17",
       "category": "AI Coding",
       "name": "Lovable vs Bolt vs Replit",
       "keywords": "rapid app prototyping, code generation, no-code builder",
       "focusPoint": "Rapid app prototyping, code generation workflow, and non-technical builder experience"
     },
     {
-      "day": "Thursday",
-      "date": "2026-09-17",
+      "day": "Friday",
+      "date": "2026-09-18",
       "category": "AI Meeting Tools",
       "name": "Fathom vs Avoma vs MeetGeek",
       "keywords": "meeting capture, action-item extraction, team collaboration",
       "focusPoint": "Meeting capture quality, action-item extraction, and team collaboration features"
-    },
-    {
-      "day": "Friday",
-      "date": "2026-09-18",
-      "category": "AI Email Management",
-      "name": "Shortwave vs Superhuman vs Microsoft Copilot Pro for Outlook",
-      "keywords": "inbox prioritization, AI drafting, email productivity",
-      "focusPoint": "Inbox prioritization, AI drafting, and productivity inside email workflows"
     }
   ]
 }
