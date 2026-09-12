@@ -45,7 +45,7 @@ function getWeekNumber(date) {
 }
 
 // 오늘 날짜에 맞는 주제 가져오기
-function getTodayTopic() {
+async function getTodayTopic() {
   try {
     const today = new Date();
     const todayStr = today.toISOString().split('T')[0]; // YYYY-MM-DD
@@ -59,8 +59,9 @@ function getTodayTopic() {
       throw new Error(`Topics file not found: ${weekFile}`);
     }
 
-    const weekData = JSON.parse(fs.readFileSync(weekFile, 'utf8'));
-    const todayTopic = weekData.topics.find(t => t.date === todayStr);
+    let weekData = JSON.parse(fs.readFileSync(weekFile, 'utf8'));
+    const todayIndex = weekData.topics.findIndex(t => t.date === todayStr);
+    let todayTopic = weekData.topics[todayIndex];
 
     if (!todayTopic) {
       console.error(`❌ No topic found for ${todayStr} in ${weekNumber}`);
@@ -68,12 +69,114 @@ function getTodayTopic() {
     }
 
     console.log(`📅 Using topic for ${todayTopic.day} (${todayStr})`);
+
+    // ✨ NEW_TOPIC_PLACEHOLDER 자동 생성
+    if (todayTopic.name === 'NEW_TOPIC_PLACEHOLDER') {
+      console.log('\n⚠️  주제가 설정되지 않았습니다.');
+      console.log('🤖 자동으로 7일치 주제를 생성합니다...\n');
+
+      // 7일치 주제 생성
+      const newTopics = await generateWeeklyTopics(todayStr);
+
+      // JSON 파일 업데이트
+      weekData = await updateWeekTopics(weekFile, todayIndex, newTopics);
+
+      // 업데이트된 오늘 주제 가져오기
+      todayTopic = weekData.topics[todayIndex];
+
+      console.log(`✅ 오늘 주제: ${todayTopic.name}\n`);
+    }
+
     return todayTopic;
 
   } catch (e) {
     console.error('Error loading today\'s topic:', e.message);
     throw e;
   }
+}
+
+// ============================================================
+// 자동 주제 생성 (7일치)
+// ============================================================
+
+async function generateWeeklyTopics(startDate) {
+  console.log('🔄 자동 주제 생성 시작 (7일치)...\n');
+
+  try {
+    const response = await fetch('https://api.perplexity.ai/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${process.env.PERPLEXITY_API_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        model: 'sonar',
+        messages: [{
+          role: 'system',
+          content: 'You are an AI tools expert. Suggest trending AI tool comparison topics for blog posts.'
+        }, {
+          role: 'user',
+          content: `Suggest 7 trending AI tool comparison topics for the next 7 days starting from ${startDate}.
+
+Each topic should be in the format: "Tool A vs Tool B vs Tool C"
+
+Categories to cover: AI Productivity, AI Writing, AI Design, AI Video, AI Coding, AI Meeting Tools, AI Email Management, AI Research
+
+Return ONLY a JSON array with 7 topics:
+[
+  {"category": "AI Productivity", "name": "Tool A vs Tool B vs Tool C", "keywords": "keyword1, keyword2, keyword3", "focusPoint": "What to compare"},
+  ...
+]`
+        }]
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error(`Perplexity API error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    const content = data.choices[0].message.content;
+
+    // JSON 추출
+    const jsonMatch = content.match(/\[[\s\S]*\]/);
+    if (!jsonMatch) {
+      throw new Error('No JSON found in response');
+    }
+
+    const topics = JSON.parse(jsonMatch[0]);
+    console.log(`✅ 7일치 주제 생성 완료\n`);
+
+    return topics;
+
+  } catch (error) {
+    console.error('❌ 자동 주제 생성 실패:', error.message);
+    throw error;
+  }
+}
+
+async function updateWeekTopics(weekFile, startIndex, newTopics) {
+  const weekData = JSON.parse(fs.readFileSync(weekFile, 'utf8'));
+
+  // 7일치 업데이트
+  for (let i = 0; i < 7 && startIndex + i < weekData.topics.length; i++) {
+    const topic = weekData.topics[startIndex + i];
+    const newTopic = newTopics[i];
+
+    if (topic.name === 'NEW_TOPIC_PLACEHOLDER' || !topic.name) {
+      console.log(`  📝 ${topic.date}: ${newTopic.name}`);
+      topic.category = newTopic.category;
+      topic.name = newTopic.name;
+      topic.keywords = newTopic.keywords;
+      topic.focusPoint = newTopic.focusPoint;
+    }
+  }
+
+  // 저장
+  fs.writeFileSync(weekFile, JSON.stringify(weekData, null, 2));
+  console.log(`\n✅ 주제 파일 업데이트 완료: ${weekFile}\n`);
+
+  return weekData;
 }
 
 // ============================================================
@@ -551,8 +654,8 @@ async function generateBlogspotPost() {
 
     ensureDirectoryExists();
 
-    // 오늘 주제 가져오기
-    const topic = getTodayTopic();
+    // 오늘 주제 가져오기 (필요시 자동 생성)
+    const topic = await getTodayTopic();
 
     console.log(`\n📝 Topic: ${topic.name}`);
     console.log(`🏷️  Category: ${topic.category}`);

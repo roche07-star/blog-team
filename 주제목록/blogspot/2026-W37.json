@@ -79,18 +79,18 @@
     {
       "day": "Saturday",
       "date": "2026-09-12",
-      "category": "AI Productivity",
-      "name": "NEW_TOPIC_PLACEHOLDER",
-      "keywords": "TBD",
-      "focusPoint": "To be selected via Perplexity on 9/12"
-    },
-    {
-      "day": "Sunday",
-      "date": "2026-09-13",
       "category": "AI Email Management",
       "name": "Superhuman vs Grammarly vs Google Gemini",
       "keywords": "AI email, inbox management, email writing, scheduling",
       "focusPoint": "Inbox triage, reply drafting, and time-saving email workflows"
+    },
+    {
+      "day": "Sunday",
+      "date": "2026-09-13",
+      "category": "AI Video",
+      "name": "Descript vs Runway vs Synthesia",
+      "keywords": "AI video editing, video generation, screen recording",
+      "focusPoint": "Video editing automation and AI-powered content creation"
     }
   ]
 }
