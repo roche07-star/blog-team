@@ -643,6 +643,129 @@ Output the complete Korean HTML:`;
   return koreanHtml;
 }
 
+// 한국어 버전 A - 기능 비교 중심
+async function createKoreanVersionA(englishHtml, topic) {
+  console.log('🇰🇷 Creating Korean Version A (기능 비교)...');
+
+  const prompt = `Translate and rewrite this English blog post to Korean, focusing on FEATURE COMPARISON perspective.
+
+**Original topic:** ${topic.name}
+
+**Translation + Rewriting guidelines:**
+- Keep HTML structure exactly the same
+- Focus on "WHAT each tool can do" (기능 중심)
+- Emphasize:
+  * Core features of each tool
+  * Feature differences and comparisons
+  * Which features are better/unique
+  * Technical capabilities
+- Translate to natural Korean
+- Keep technical terms in English when appropriate (e.g., ChatGPT, Claude, API)
+- Maintain professional tone
+- Keep links and formatting
+
+**English HTML:**
+${englishHtml}
+
+Output the complete Korean HTML focused on feature comparison:`;
+
+  const response = await client.messages.create({
+    model: MODEL,
+    max_tokens: 16000,
+    messages: [{ role: 'user', content: prompt }]
+  });
+
+  let koreanHtml = response.content.find(b => b.type === 'text')?.text || '';
+
+  // HTML 엔티티를 직접 이모지로 변환
+  const entityMap = {
+    '&#9989;': '✅',
+    '&#10060;': '❌',
+    '&#9888;': '⚠️',
+    '&#128176;': '💰',
+    '&#9889;': '⚡',
+    '&#128293;': '🔥',
+    '&#128200;': '📊',
+    '&#127919;': '🎯',
+    '&#128100;': '👤',
+    '&#128197;': '📅',
+    '&#9200;': '⏱️',
+    '&check;': '✅',
+    '&cross;': '❌',
+    '&times;': '❌'
+  };
+
+  Object.keys(entityMap).forEach(entity => {
+    const regex = new RegExp(entity, 'g');
+    koreanHtml = koreanHtml.replace(regex, entityMap[entity]);
+  });
+
+  console.log('  ✓ Korean Version A (기능 비교) complete\n');
+  return koreanHtml;
+}
+
+// 한국어 버전 B - 실전 활용 중심
+async function createKoreanVersionB(englishHtml, topic) {
+  console.log('🇰🇷 Creating Korean Version B (실전 활용)...');
+
+  const prompt = `Translate and rewrite this English blog post to Korean, focusing on PRACTICAL USE CASES perspective.
+
+**Original topic:** ${topic.name}
+
+**Translation + Rewriting guidelines:**
+- Keep HTML structure exactly the same
+- Focus on "HOW to use each tool" (실전 활용 중심)
+- Emphasize:
+  * Real-world use scenarios
+  * Practical tips and tricks
+  * Which tool for which situation
+  * User workflow recommendations
+  * Best practices
+- Translate to natural Korean
+- Keep technical terms in English when appropriate (e.g., ChatGPT, Claude, API)
+- Maintain professional tone
+- Keep links and formatting
+
+**English HTML:**
+${englishHtml}
+
+Output the complete Korean HTML focused on practical use cases:`;
+
+  const response = await client.messages.create({
+    model: MODEL,
+    max_tokens: 16000,
+    messages: [{ role: 'user', content: prompt }]
+  });
+
+  let koreanHtml = response.content.find(b => b.type === 'text')?.text || '';
+
+  // HTML 엔티티를 직접 이모지로 변환
+  const entityMap = {
+    '&#9989;': '✅',
+    '&#10060;': '❌',
+    '&#9888;': '⚠️',
+    '&#128176;': '💰',
+    '&#9889;': '⚡',
+    '&#128293;': '🔥',
+    '&#128200;': '📊',
+    '&#127919;': '🎯',
+    '&#128100;': '👤',
+    '&#128197;': '📅',
+    '&#9200;': '⏱️',
+    '&check;': '✅',
+    '&cross;': '❌',
+    '&times;': '❌'
+  };
+
+  Object.keys(entityMap).forEach(entity => {
+    const regex = new RegExp(entity, 'g');
+    koreanHtml = koreanHtml.replace(regex, entityMap[entity]);
+  });
+
+  console.log('  ✓ Korean Version B (실전 활용) complete\n');
+  return koreanHtml;
+}
+
 // ============================================================
 // 메인 실행
 // ============================================================
@@ -664,8 +787,9 @@ async function generateBlogspotPost() {
     // Alex가 작성 (영어)
     const englishHtml = await alexWriteBlogPost(topic);
 
-    // 한국어 번역 (이해용)
-    const koreanHtml = await translateToKorean(englishHtml, topic);
+    // 한국어 2개 버전 생성 (콘텐츠 관점별)
+    const koreanHtmlA = await createKoreanVersionA(englishHtml, topic);
+    const koreanHtmlB = await createKoreanVersionB(englishHtml, topic);
 
     // 날짜 폴더 생성
     const timestamp = new Date().toISOString().slice(0, 10).replace(/-/g, '');
@@ -677,31 +801,39 @@ async function generateBlogspotPost() {
     // 파일명
     const categorySlug = topic.category.replace(/\s+/g, '-');
     const englishFileName = `${categorySlug}_EN.html`;
-    const koreanFileName = `${categorySlug}_KR.html`;
+    const koreanFileNameA = `${categorySlug}_KR_기능비교.html`;
+    const koreanFileNameB = `${categorySlug}_KR_실전활용.html`;
 
     // 파일 경로
     const englishPath = path.join(dateFolder, englishFileName);
-    const koreanPath = path.join(dateFolder, koreanFileName);
+    const koreanPathA = path.join(dateFolder, koreanFileNameA);
+    const koreanPathB = path.join(dateFolder, koreanFileNameB);
 
     // ```html 마커 제거
     const cleanEnglishHtml = englishHtml
       .replace(/^```html\s*/g, '')
       .replace(/```\s*$/g, '');
 
-    const cleanKoreanHtml = koreanHtml
+    const cleanKoreanHtmlA = koreanHtmlA
+      .replace(/^```html\s*/g, '')
+      .replace(/```\s*$/g, '');
+
+    const cleanKoreanHtmlB = koreanHtmlB
       .replace(/^```html\s*/g, '')
       .replace(/```\s*$/g, '');
 
     // 파일 저장
     fs.writeFileSync(englishPath, cleanEnglishHtml, 'utf8');
-    fs.writeFileSync(koreanPath, cleanKoreanHtml, 'utf8');
+    fs.writeFileSync(koreanPathA, cleanKoreanHtmlA, 'utf8');
+    fs.writeFileSync(koreanPathB, cleanKoreanHtmlB, 'utf8');
 
     console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
     console.log('✅ Blogspot posts generated!');
     console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
     console.log(`📁 Saved to: ${dateFolder}`);
     console.log(`  - ${englishFileName} (for Blogspot)`);
-    console.log(`  - ${koreanFileName} (for review)\n`);
+    console.log(`  - ${koreanFileNameA} (기능 비교 버전)`);
+    console.log(`  - ${koreanFileNameB} (실전 활용 버전)\n`);
 
     // Blogger 자동 발행
     try {
