@@ -1,0 +1,42 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📅 생성일: 2026. 9. 14. AM 5:12:37
+🏷️ 주제: 2026년 신입 개발자 AI·클라우드 취업 준비
+🔑 키워드: 신입 개발자, AI, 클라우드, 취업 준비, 기술스택
+✍️ 스타일: 링커 (LinkedIn)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+```html
+<h1><i data-lucide="alert-circle"></i> 2026년 신입 개발자 95%가 놓치는 치명적 실수</h1>
+
+<p>AI, 클라우드 공부했는데 왜 서류에서 떨어질까요?</p>
+
+<p>답은 간단합니다.<br>
+<strong>"기업이 원하는 것"</strong>과 <strong>"내가 준비한 것"</strong>의 간극.</p>
+
+<p><i data-lucide="target"></i> <strong>2026년 신입 개발자 생존 전략 3가지:</strong></p>
+
+<p><strong>1. JD를 해부하라</strong><br>
+"Python, AWS 경험자" ≠ 단순 이수 증명서<br>
+→ 실제 프로젝트에서 어떻게 활용했는지가 핵심</p>
+
+<p><strong>2. 빈틈을 메워라</strong><br>
+Docker는 있는데 Kubernetes가 없다?<br>
+→ 기업이 보는 건 "완성도"입니다</p>
+
+<p><strong>3. 데이터로 증명하라</strong><br>
+"열심히 했습니다" ✖<br>
+"API 응답속도 40% 개선" ✔</p>
+
+<p><i data-lucide="lightbulb"></i> <strong>Tip:</strong> jobizic(<strong>jobizic.com</strong>)의 JD 매칭 기능으로 지원하려는 공고의 필수 역량을 분석하고, 내 포트폴리오의 빈틈을 정확히 파악하세요. AI가 부족한 기술과 보완할 프로젝트 방향까지 추천합니다.</p>
+
+<p><i data-lucide="rocket"></i> <strong>2026년은 준비된 자의 시장입니다.</strong></p>
+
+<p>당신의 기술스택, 기업 관점에서 점검해보셨나요?<br>
+→ <strong>jobizic.com</strong></p>
+
+<p><i data-lucide="users"></i> 신입 개발자 여러분, 어떤 기술스택 준비 중이신가요? 댓글로 공유해주세요!</p>
+```
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💡 Tip: LinkedIn에 복사/붙여넣기 하세요!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
