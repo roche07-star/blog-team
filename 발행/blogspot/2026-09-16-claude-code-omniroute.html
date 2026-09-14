@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Claude Code 무료로 더 오래 쓰는 법 - OmniRoute 활용 가이드</title>
+</head>
+<body>
+
+<h1>⚡ Claude Code 무료로 더 오래 쓰는 법</h1>
+<p><em>OmniRoute로 여러 AI 모델 연결하기</em></p>
+
+<hr>
+
+<h2>🤔 문제: 작업 중 사용량 제한</h2>
+
+<p>Claude Code를 쓰다 보면 이런 경험 있으시죠?</p>
+
+<blockquote style="background: #f5f5f5; padding: 15px; border-left: 4px solid #666;">
+  "코딩 작업 중인데 갑자기 <strong>Rate Limit</strong> 걸려서 멈췄어요..."
+</blockquote>
+
+<p>기존 구조:</p>
+<pre style="background: #f9f9f9; padding: 10px; border-radius: 5px;">
+Claude Code → Anthropic API → 사용량 제한 ❌
+</pre>
+
+<p>한 제공자에만 의존하면 한도 소진 시 작업이 중단됩니다.</p>
+
+<hr>
+
+<h2>💡 해결책: OmniRoute 라우터</h2>
+
+<p><strong>OmniRoute</strong>는 Claude Code와 여러 AI 모델 사이에 있는 <em>중간 프로그램</em>입니다.</p>
+
+<p>변경된 구조:</p>
+<pre style="background: #e8f5e9; padding: 10px; border-radius: 5px;">
+Claude Code → OmniRoute → 여러 AI 모델 ✅
+                    ↓
+        [OpenRouter, OpenAI, Anthropic...]
+</pre>
+
+<h3>🎯 핵심 기능: Combo</h3>
+
+<p>Combo는 <strong>순서대로 시도하는 모델 목록</strong>입니다:</p>
+
+<ol>
+  <li>1순위 모델 시도</li>
+  <li>실패 시 → 2순위 모델</li>
+  <li>실패 시 → 3순위 모델</li>
+</ol>
+
+<p>자동으로 다음 모델로 넘어가서 작업이 끊기지 않습니다!</p>
+
+<hr>
+
+<h2>🚀 3단계 설정 가이드</h2>
+
+<h3>Step 1: 설치</h3>
+<pre style="background: #f0f0f0; padding: 10px;">
+npm install -g omniroute
+</pre>
+
+<p>설치 후 브라우저에서 <code>http://localhost:3000</code> 접속</p>
+
+<h3>Step 2: Provider 추가</h3>
+
+<ol>
+  <li><strong>Providers</strong> 메뉴 클릭</li>
+  <li><strong>OpenRouter</strong> 선택</li>
+  <li>API 키 입력 (무료 발급: <a href="https://openrouter.ai/keys">OpenRouter</a>)</li>
+  <li><strong>Filter: Free models only</strong> 체크 ✅</li>
+</ol>
+
+<h3>Step 3: Combo 만들기</h3>
+
+<p>Combos 메뉴에서:</p>
+
+<ol>
+  <li>New Combo 클릭</li>
+  <li>무료 모델 3~5개 추가</li>
+  <li><strong>Auto fallback</strong> 활성화</li>
+</ol>
+
+<p><strong>예시 Combo:</strong></p>
+<ul style="background: #fff3e0; padding: 15px; border-radius: 5px;">
+  <li>1순위: Gemma 2 (무료)</li>
+  <li>2순위: Llama 3.1 (무료)</li>
+  <li>3순위: Mistral 7B (무료)</li>
+</ul>
+
+<hr>
+
+<h2>🔗 Claude Code 연결</h2>
+
+<p>OmniRoute 대시보드에서 <strong>API 키</strong> 생성 후:</p>
+
+<pre style="background: #e3f2fd; padding: 10px;">
+# Claude Code 설정
+Base URL: http://localhost:3000/v1
+API Key: (OmniRoute에서 생성한 키)
+Model: (Combo 이름)
+</pre>
+
+<p>이제 Claude Code를 평소처럼 사용하면 됩니다!</p>
+
+<p>예시:</p>
+<pre style="background: #f5f5f5; padding: 10px;">
+"깔끔한 포트폴리오 웹사이트 만들어줘"
+</pre>
+
+<p>→ 뒤에서 OmniRoute가 알아서 모델을 관리합니다.</p>
+
+<hr>
+
+<h2>📊 효과 비교</h2>
+
+<table border="1" cellpadding="10" cellspacing="0" style="width:100%; border-collapse:collapse;">
+  <thead style="background: #f5f5f5;">
+    <tr>
+      <th>항목</th>
+      <th>단일 모델</th>
+      <th>OmniRoute (5개 모델)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>연속 작업 시간</strong></td>
+      <td>~30분</td>
+      <td style="background: #e8f5e9;"><strong>~2.5시간</strong></td>
+    </tr>
+    <tr>
+      <td><strong>월 비용</strong></td>
+      <td>$20</td>
+      <td style="background: #e8f5e9;"><strong>$0 (무료)</strong></td>
+    </tr>
+    <tr>
+      <td><strong>모델 전환 속도</strong></td>
+      <td>-</td>
+      <td>0.5~1.2초</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>⚠️ 주의사항</h2>
+
+<h3>1. 모델 품질 차이</h3>
+<ul>
+  <li>Claude Opus: 코딩 품질 <strong>9/10</strong></li>
+  <li>무료 모델: 코딩 품질 <strong>6~7/10</strong></li>
+</ul>
+
+<p>→ <strong>중요 작업은 유료 모델 우선</strong>, 일반 작업은 무료 모델 허용</p>
+
+<h3>2. API 키 관리</h3>
+<p style="background: #ffebee; padding: 10px; border-left: 4px solid #c62828;">
+  ❌ 영상/블로그에 API 키 노출 금지<br>
+  ✅ .env 파일에 저장 + .gitignore 추가
+</p>
+
+<h3>3. 컨텍스트 길이</h3>
+<p>무료 모델은 <strong>8K~16K tokens</strong> 제한 있음<br>
+→ 긴 대화는 유료 모델 사용 권장</p>
+
+<hr>
+
+<h2>✅ 결론</h2>
+
+<p>OmniRoute는 <strong>"Claude를 무제한 무료로 쓴다"</strong>가 아니라,<br>
+<strong>"여러 AI 모델을 번갈아 써서 작업 범위를 넓힌다"</strong>는 개념입니다.</p>
+
+<p><strong>이런 분께 추천:</strong></p>
+<ul style="background: #e8f5e9; padding: 15px;">
+  <li>✅ 장시간 작업 (1시간 이상)</li>
+  <li>✅ 비용 절약이 필요한 프로젝트</li>
+  <li>✅ 여러 모델 테스트하고 싶은 분</li>
+</ul>
+
+<p><strong>비추천:</strong></p>
+<ul style="background: #ffebee; padding: 15px;">
+  <li>❌ 최고 품질이 필수인 작업</li>
+  <li>❌ 일관된 스타일이 필요한 작업</li>
+</ul>
+
+<hr>
+
+<p><strong>관련 링크:</strong></p>
+<ul>
+  <li><a href="https://docs.omniroute.ai">OmniRoute 공식 문서</a></li>
+  <li><a href="https://openrouter.ai/models?free=true">OpenRouter 무료 모델 목록</a></li>
+</ul>
+
+<hr>
+
+<p style="text-align: right; color: #666; font-style: italic;">
+  작성: 블로거팀<br>
+  2026-09-16
+</p>
+
+</body>
+</html>
