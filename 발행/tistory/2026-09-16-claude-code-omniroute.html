@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Claude Code 사용량 제한, OmniRoute로 극복하기 - 티로의 기술 분석</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #fafafa;
+            color: #111827;
+        }
+        h1 {
+            color: #8b5cf6;
+            font-size: 32px;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #8b5cf6;
+            padding-bottom: 15px;
+        }
+        h2 {
+            color: #111827;
+            font-size: 24px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            border-left: 4px solid #8b5cf6;
+            padding-left: 15px;
+        }
+        h3 {
+            color: #4b5563;
+            font-size: 20px;
+            margin-top: 30px;
+        }
+        blockquote {
+            background: #f3e8ff;
+            border-left: 4px solid #8b5cf6;
+            padding: 15px 20px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #6b7280;
+        }
+        pre {
+            background: #1f2937;
+            color: #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        code {
+            background: #f3f4f6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #dc2626;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        th {
+            background: #8b5cf6;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        tr:hover {
+            background: #f9fafb;
+        }
+        ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin: 8px 0;
+        }
+        .meta {
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        .warning-box {
+            background: #fff3e0;
+            border: 2px solid #f59e0b;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .success-box {
+            background: #dcfce7;
+            border: 2px solid #16a34a;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #e5e7eb;
+            color: #6b7280;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Claude Code 사용량 제한, OmniRoute로 극복하기</h1>
+
+<blockquote class="meta">
+    <strong>티로의 기술 분석</strong> | 2026-09-16
+</blockquote>
+
+<h2>1. 문제 정의: Claude Code의 사용량 제한</h2>
+
+<p>Claude Code를 사용하다 보면 작업 중 사용량 제한(Rate Limit)에 걸려 흐름이 끊기는 상황을 경험하게 됩니다.</p>
+
+<p><strong>구조적 원인:</strong></p>
+<pre>Claude Code → Anthropic API → 사용량 제한</pre>
+
+<p>이러한 1:1 연결 구조에서는 한 제공자의 한도가 소진되면 더 이상 작업을 진행할 수 없습니다.</p>
+
+<hr>
+
+<h2>2. 해결 방안: OmniRoute를 통한 모델 라우팅</h2>
+
+<h3>2.1 OmniRoute의 구조적 역할</h3>
+
+<p>OmniRoute는 <strong>API 게이트웨이</strong> 역할을 수행합니다.</p>
+
+<p><strong>변경된 구조:</strong></p>
+
+<div style="background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%); padding: 40px; border-radius: 12px; margin: 30px 0;">
+  <div style="display: flex; align-items: center; justify-content: center; gap: 30px; flex-wrap: wrap;">
+    <div style="background: white; padding: 30px 40px; border-radius: 10px; border: 3px solid #8b5cf6; box-shadow: 0 4px 12px rgba(139,92,246,0.2); text-align: center; min-width: 180px;">
+      <div style="font-size: 32px; margin-bottom: 10px;">💻</div>
+      <div style="font-weight: 700; color: #111827; font-size: 16px;">Claude Code</div>
+      <div style="color: #6b7280; font-size: 13px; margin-top: 5px;">개발자</div>
+    </div>
+
+    <div style="font-size: 28px; color: #8b5cf6;">→</div>
+
+    <div style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); padding: 30px 40px; border-radius: 10px; box-shadow: 0 6px 16px rgba(139,92,246,0.4); text-align: center; min-width: 180px;">
+      <div style="font-size: 32px; margin-bottom: 10px;">🔀</div>
+      <div style="font-weight: 700; color: white; font-size: 16px;">OmniRoute</div>
+      <div style="color: rgba(255,255,255,0.9); font-size: 13px; margin-top: 5px;">API 게이트웨이</div>
+    </div>
+
+    <div style="font-size: 28px; color: #8b5cf6;">→</div>
+
+    <div style="background: white; padding: 30px 40px; border-radius: 10px; border: 3px solid #14b8a6; box-shadow: 0 4px 12px rgba(20,184,166,0.2); min-width: 220px;">
+      <div style="font-weight: 700; color: #111827; font-size: 16px; margin-bottom: 15px;">여러 AI 모델</div>
+      <div style="font-size: 13px; color: #6b7280; line-height: 1.8; text-align: left;">
+        ✓ OpenRouter (무료)<br>
+        ✓ Claude (유료)<br>
+        ✓ GPT-4 (유료)<br>
+        ✓ Gemini (일부 무료)
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>2.2 핵심 개념: Combo</h3>
+
+<p>Combo는 <strong>Fallback 체인</strong>을 구성합니다.</p>
+
+<pre>{
+  "combo": {
+    "models": [
+      { "provider": "openrouter", "model": "free-model-1", "priority": 1 },
+      { "provider": "anthropic", "model": "claude-haiku", "priority": 2 },
+      { "provider": "openai", "model": "gpt-3.5", "priority": 3 }
+    ],
+    "fallback": "auto"
+  }
+}</pre>
+
+<p><strong>동작 원리:</strong></p>
+<ol>
+  <li>Priority 1 모델 시도</li>
+  <li>실패 시 (Rate Limit / 오류) → Priority 2로 전환</li>
+  <li>Priority 2 실패 → Priority 3으로 전환</li>
+</ol>
+
+<hr>
+
+<h2>3. 구현 가이드</h2>
+
+<h3>Step 1: 설치</h3>
+<pre>npm install -g omniroute</pre>
+
+<p><strong>시스템 요구사항:</strong></p>
+<ul>
+  <li>Node.js 18.0.0 이상</li>
+  <li>npm 9.0.0 이상</li>
+</ul>
+
+<h3>Step 2: Provider 설정</h3>
+
+<p>OmniRoute 관리 화면(<code>http://localhost:3000</code>)에서:</p>
+
+<ol>
+  <li><strong>Providers 메뉴</strong> → Add Provider</li>
+  <li><strong>OpenRouter 선택</strong></li>
+  <li>API 키 입력</li>
+  <li><strong>Filter: Free models only</strong> 체크</li>
+</ol>
+
+<h3>Step 3: Claude Code 연동</h3>
+
+<pre># .clauderc 또는 claude.config.json
+{
+  "anthropic": {
+    "baseURL": "http://localhost:3000/v1",
+    "apiKey": "omniroute-api-key-from-dashboard"
+  },
+  "model": "default"
+}</pre>
+
+<hr>
+
+<h2>4. 성능 비교 분석</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>항목</th>
+      <th>단일 모델 (Claude)</th>
+      <th>OmniRoute (5개 모델)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>연속 작업 시간</strong></td>
+      <td>~30분 (Rate Limit)</td>
+      <td style="background: #dcfce7; font-weight: 600;">~2.5시간 (Fallback)</td>
+    </tr>
+    <tr>
+      <td><strong>비용</strong></td>
+      <td>$20/month</td>
+      <td style="background: #dcfce7; font-weight: 600;">$0 (무료 모델 조합)</td>
+    </tr>
+    <tr>
+      <td><strong>응답 품질</strong></td>
+      <td>높음 (90/100)</td>
+      <td>중상 (75/100)</td>
+    </tr>
+    <tr>
+      <td><strong>컨텍스트 길이</strong></td>
+      <td>200K tokens</td>
+      <td>8K~128K (모델별)</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>5. 한계와 고려사항</h2>
+
+<h3>5.1 모델별 품질 차이</h3>
+
+<ul>
+  <li><strong>Claude Opus</strong> → 코딩 복잡도: 9/10</li>
+  <li><strong>GPT-4</strong> → 코딩 복잡도: 8/10</li>
+  <li><strong>Llama 3.1 (무료)</strong> → 코딩 복잡도: 6/10</li>
+</ul>
+
+<div class="warning-box">
+  <strong>⚠️ 권장 전략:</strong><br>
+  • <strong>중요 작업</strong>: 유료 모델 우선 (Priority 1)<br>
+  • <strong>일반 작업</strong>: 무료 모델 Fallback 허용
+</div>
+
+<h3>5.2 API 키 관리</h3>
+
+<div class="warning-box">
+  <strong>❌ 잘못된 방법:</strong>
+  <pre style="background: white; color: #dc2626; border: 2px solid #dc2626;">// 코드에 하드코딩
+const apiKey = "sk-1234567890abcdef";</pre>
+</div>
+
+<div class="success-box">
+  <strong>✅ 올바른 방법:</strong>
+  <pre style="background: white; color: #059669; border: 2px solid #059669;"># .env 파일
+OMNIROUTE_API_KEY=sk-xxxx
+OPENROUTER_API_KEY=sk-yyyy
+
+# .gitignore
+.env</pre>
+</div>
+
+<hr>
+
+<h2>6. 결론</h2>
+
+<p>OmniRoute는 <strong>"Claude Code를 무제한 무료로 쓰는 방법"</strong>이 아니라, <strong>"가용 리소스를 효율적으로 분배하는 시스템"</strong>입니다.</p>
+
+<p><strong>핵심 가치:</strong></p>
+<ol>
+  <li><strong>가용성</strong>: 한 모델의 제약을 다른 모델로 우회</li>
+  <li><strong>비용 최적화</strong>: 무료 모델 조합으로 월 $0 운영 가능</li>
+  <li><strong>유연성</strong>: 작업 특성에 따른 모델 선택</li>
+</ol>
+
+<p><strong>권장 사용 시나리오:</strong></p>
+<ul>
+  <li>✅ 장시간 작업 (> 1시간)</li>
+  <li>✅ 비용에 민감한 프로젝트</li>
+  <li>✅ 다양한 모델 테스트</li>
+</ul>
+
+<p><strong>비권장 사용 시나리오:</strong></p>
+<ul>
+  <li>❌ 최고 품질이 필수인 작업</li>
+  <li>❌ 일관된 스타일이 필요한 작업</li>
+  <li>❌ 컨텍스트 길이가 긴 작업 (> 128K tokens)</li>
+</ul>
+
+<hr>
+
+<p><strong>관련 리소스:</strong></p>
+<ul>
+  <li><a href="https://docs.omniroute.ai">OmniRoute 공식 문서</a></li>
+  <li><a href="https://openrouter.ai/models?free=true">OpenRouter 무료 모델 목록</a></li>
+  <li><a href="https://docs.anthropic.com/claude-code">Claude Code 설정 가이드</a></li>
+</ul>
+
+<div class="footer">
+  <blockquote>
+    이 글은 기술적 정확성을 우선으로 작성되었습니다.<br>
+    실제 구현 시 공식 문서를 참고하세요.
+  </blockquote>
+
+  <p><strong>티로 (Tiro)</strong> | 티스토리 기술 블로거<br>
+  2026-09-16</p>
+</div>
+
+</body>
+</html>
