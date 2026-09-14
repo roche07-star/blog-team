@@ -1,0 +1,63 @@
+{
+  "week": "2026-W38",
+  "type": "blogspot",
+  "generated": "2026-09-14T02:18:27.882Z",
+  "topics": [
+    {
+      "day": "Monday",
+      "date": "2026-09-14",
+      "category": "AI Productivity",
+      "name": "Notion AI vs ChatGPT vs Claude",
+      "keywords": "AI productivity, task management, workspace, automation",
+      "focusPoint": "Best all-around workflow optimization for docs, planning, and multi-step knowledge work"
+    },
+    {
+      "day": "Tuesday",
+      "date": "2026-09-15",
+      "category": "AI Writing",
+      "name": "ChatGPT vs Claude vs Jasper",
+      "keywords": "AI writing, content creation, copywriting, blogging",
+      "focusPoint": "Draft quality, tone control, and marketing-ready output"
+    },
+    {
+      "day": "Wednesday",
+      "date": "2026-09-16",
+      "category": "AI Research",
+      "name": "Perplexity vs ChatGPT vs Gemini",
+      "keywords": "AI research, citations, fact-checking, web search",
+      "focusPoint": "Accuracy, source visibility, and fast answer verification"
+    },
+    {
+      "day": "Thursday",
+      "date": "2026-09-17",
+      "category": "AI Meeting Tools",
+      "name": "Fathom vs Fireflies.ai vs Granola",
+      "keywords": "AI meetings, transcription, note-taking, summaries",
+      "focusPoint": "Meeting capture quality, action items, and summary usefulness"
+    },
+    {
+      "day": "Friday",
+      "date": "2026-09-18",
+      "category": "AI Coding",
+      "name": "GitHub Copilot vs Cursor vs Claude",
+      "keywords": "AI coding, code completion, debugging, documentation",
+      "focusPoint": "Developer speed, code understanding, and debugging assistance"
+    },
+    {
+      "day": "Saturday",
+      "date": "2026-09-19",
+      "category": "AI Design",
+      "name": "Midjourney vs DALL·E vs Adobe Firefly",
+      "keywords": "AI design, image generation, creative AI, visuals",
+      "focusPoint": "Image quality, creative control, and brand-safe design output"
+    },
+    {
+      "day": "Sunday",
+      "date": "2026-09-20",
+      "category": "AI Email Management",
+      "name": "Superhuman vs Gmail Gemini vs Shortwave",
+      "keywords": "AI email, inbox management, email writing, scheduling",
+      "focusPoint": "Inbox triage speed, drafting help, and calendar-aware email workflows"
+    }
+  ]
+}
