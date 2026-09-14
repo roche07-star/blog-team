@@ -22,11 +22,36 @@ Claude Code → Anthropic API → 사용량 제한
 OmniRoute는 **API 게이트웨이** 역할을 수행합니다.
 
 **변경된 구조:**
-```
-Claude Code → OmniRoute → 여러 AI 제공자
-                    ↓
-            [OpenRouter, OpenAI, Anthropic, ...]
-```
+
+<div style="background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%); padding: 40px; border-radius: 12px; margin: 30px 0;">
+  <div style="display: flex; align-items: center; justify-content: center; gap: 30px; flex-wrap: wrap;">
+    <div style="background: white; padding: 30px 40px; border-radius: 10px; border: 3px solid #8b5cf6; box-shadow: 0 4px 12px rgba(139,92,246,0.2); text-align: center; min-width: 180px;">
+      <div style="font-size: 32px; margin-bottom: 10px;">💻</div>
+      <div style="font-weight: 700; color: #111827; font-size: 16px;">Claude Code</div>
+      <div style="color: #6b7280; font-size: 13px; margin-top: 5px;">개발자</div>
+    </div>
+    
+    <div style="font-size: 28px; color: #8b5cf6;">→</div>
+    
+    <div style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); padding: 30px 40px; border-radius: 10px; box-shadow: 0 6px 16px rgba(139,92,246,0.4); text-align: center; min-width: 180px;">
+      <div style="font-size: 32px; margin-bottom: 10px;">🔀</div>
+      <div style="font-weight: 700; color: white; font-size: 16px;">OmniRoute</div>
+      <div style="color: rgba(255,255,255,0.9); font-size: 13px; margin-top: 5px;">API 게이트웨이</div>
+    </div>
+    
+    <div style="font-size: 28px; color: #8b5cf6;">→</div>
+    
+    <div style="background: white; padding: 30px 40px; border-radius: 10px; border: 3px solid #14b8a6; box-shadow: 0 4px 12px rgba(20,184,166,0.2); min-width: 220px;">
+      <div style="font-weight: 700; color: #111827; font-size: 16px; margin-bottom: 15px;">여러 AI 모델</div>
+      <div style="font-size: 13px; color: #6b7280; line-height: 1.8; text-align: left;">
+        ✓ OpenRouter (무료)<br>
+        ✓ Claude (유료)<br>
+        ✓ GPT-4 (유료)<br>
+        ✓ Gemini (일부 무료)
+      </div>
+    </div>
+  </div>
+</div>
 
 ### 2.2 핵심 개념: Combo
 

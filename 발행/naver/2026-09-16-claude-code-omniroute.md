@@ -28,22 +28,58 @@
 
 ### 🎯 기존 방식 vs OmniRoute
 
-**기존:**
-```
-내가 Claude Code 쓴다 
-  → Claude만 쓴다 
-    → 한도 끝 
-      → 작업 중단 😢
-```
+<div style="background: linear-gradient(135deg, #fff5f5 0%, #ffe4e6 100%); padding: 25px; border-radius: 12px; margin: 20px 0; border-left: 4px solid #dc2626;">
+  <div style="font-weight: 600; color: #dc2626; margin-bottom: 10px;">❌ 기존 방식</div>
+  <div style="color: #4b5563; line-height: 1.8; font-size: 14px;">
+    Claude Code → Claude만 사용<br>
+    → 한도 끝 → 작업 중단 😢
+  </div>
+</div>
 
-**OmniRoute:**
-```
-내가 Claude Code 쓴다
-  → OmniRoute가 여러 AI 중 하나 선택
-    → Claude 한도 끝?
-      → 다른 AI로 자동 전환
-        → 작업 계속! 😊
-```
+<div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); padding: 25px; border-radius: 12px; margin: 20px 0; border-left: 4px solid #16a34a;">
+  <div style="font-weight: 600; color: #16a34a; margin-bottom: 10px;">✅ OmniRoute 방식</div>
+  <div style="color: #4b5563; line-height: 1.8; font-size: 14px;">
+    Claude Code → OmniRoute<br>
+    → 여러 AI 중 선택<br>
+    → Claude 한도 끝? → 다른 AI로 자동 전환<br>
+    → 작업 계속! 😊
+  </div>
+</div>
+
+<br>
+
+<div style="background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%); padding: 30px; border-radius: 12px; margin: 30px 0;">
+  <div style="text-align: center; margin-bottom: 20px;">
+    <div style="font-weight: 700; color: #111827; font-size: 18px; margin-bottom: 5px;">🔄 OmniRoute 작동 방식</div>
+    <div style="color: #6b7280; font-size: 13px;">여러 AI를 자동으로 연결해요!</div>
+  </div>
+  
+  <div style="display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap;">
+    <div style="background: white; padding: 20px; border-radius: 10px; border: 2px solid #8b5cf6; text-align: center; min-width: 130px;">
+      <div style="font-size: 32px; margin-bottom: 5px;">💻</div>
+      <div style="font-weight: 600; color: #111827; font-size: 15px;">Claude Code</div>
+    </div>
+    
+    <div style="font-size: 24px; color: #8b5cf6;">→</div>
+    
+    <div style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(139,92,246,0.3); text-align: center; min-width: 130px;">
+      <div style="font-size: 32px; margin-bottom: 5px;">🔀</div>
+      <div style="font-weight: 600; color: white; font-size: 15px;">OmniRoute</div>
+    </div>
+    
+    <div style="font-size: 24px; color: #8b5cf6;">→</div>
+    
+    <div style="background: white; padding: 20px; border-radius: 10px; border: 2px solid #14b8a6; min-width: 160px;">
+      <div style="font-weight: 600; color: #111827; font-size: 15px; margin-bottom: 10px; text-align: center;">여러 AI 🎯</div>
+      <div style="font-size: 13px; color: #6b7280; line-height: 1.8; text-align: left;">
+        ✓ OpenRouter<br>
+        ✓ Claude<br>
+        ✓ GPT-4<br>
+        ✓ Gemini
+      </div>
+    </div>
+  </div>
+</div>
 
 <br>
 
