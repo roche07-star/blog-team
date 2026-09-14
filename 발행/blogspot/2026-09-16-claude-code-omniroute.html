@@ -84,46 +84,42 @@ Claude Code → Anthropic API → 사용량 제한 ❌
 npm install -g omniroute
 </pre>
 
-<p>설치 후 브라우저에서 <code>http://localhost:3000</code> 접속</p>
+<h3>Step 2: 서버 실행</h3>
+<pre style="background: #f0f0f0; padding: 10px;">
+omniroute serve
+</pre>
 
-<h3>Step 2: Provider 추가</h3>
+<p>서버가 <code>http://localhost:20128</code>에서 실행됩니다.</p>
 
-<ol>
-  <li><strong>Providers</strong> 메뉴 클릭</li>
-  <li><strong>OpenRouter</strong> 선택</li>
-  <li>API 키 입력 (무료 발급: <a href="https://openrouter.ai/keys">OpenRouter</a>)</li>
-  <li><strong>Filter: Free models only</strong> 체크 ✅</li>
-</ol>
-
-<h3>Step 3: Combo 만들기</h3>
-
-<p>Combos 메뉴에서:</p>
-
-<ol>
-  <li>New Combo 클릭</li>
-  <li>무료 모델 3~5개 추가</li>
-  <li><strong>Auto fallback</strong> 활성화</li>
-</ol>
-
-<p><strong>예시 Combo:</strong></p>
-<ul style="background: #fff3e0; padding: 15px; border-radius: 5px;">
-  <li>1순위: Gemma 2 (무료)</li>
-  <li>2순위: Llama 3.1 (무료)</li>
-  <li>3순위: Mistral 7B (무료)</li>
+<p><strong>무료 모델 확인:</strong></p>
+<ul>
+  <li>대시보드: <code>http://localhost:20128/dashboard</code></li>
+  <li>무료 제공자: <code>/dashboard/free-tiers</code></li>
+  <li>사전 구성된 무료 모델 자동 포함</li>
 </ul>
 
 <hr>
 
 <h2>🔗 Claude Code 연결</h2>
 
-<p>OmniRoute 대시보드에서 <strong>API 키</strong> 생성 후:</p>
+<p><code>.claude/settings.local.json</code> 파일 생성:</p>
 
 <pre style="background: #e3f2fd; padding: 10px;">
-# Claude Code 설정
-Base URL: http://localhost:3000/v1
-API Key: (OmniRoute에서 생성한 키)
-Model: (Combo 이름)
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "http://localhost:20128",
+    "ANTHROPIC_AUTH_TOKEN": "omniroute",
+    "ANTHROPIC_MODEL": "auto/best-free"
+  }
+}
 </pre>
+
+<p><strong>설정 설명:</strong></p>
+<ul>
+  <li><code>ANTHROPIC_BASE_URL</code>: OmniRoute 서버 (주의: /v1 없음)</li>
+  <li><code>ANTHROPIC_AUTH_TOKEN</code>: 대시보드 API 키</li>
+  <li><code>ANTHROPIC_MODEL</code>: 자동 무료 모델 선택</li>
+</ul>
 
 <p>이제 Claude Code를 평소처럼 사용하면 됩니다!</p>
 

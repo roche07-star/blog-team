@@ -226,25 +226,26 @@
 </div>
 
 <div class="step-box">
-  <h3 style="margin-top: 0;">Step 2️⃣: 무료 AI 모델 연결</h3>
-  <ol>
-    <li>브라우저에서 <code>http://localhost:3000</code> 접속</li>
-    <li><strong>Providers</strong> 메뉴 클릭</li>
-    <li><strong>OpenRouter</strong> 선택</li>
-    <li>API 키 입력 (무료로 발급 가능!)</li>
-    <li><strong>무료 모델만 가져오기</strong> 체크 ✅</li>
-  </ol>
+  <h3 style="margin-top: 0;">Step 2️⃣: 서버 실행하기</h3>
+  <p>터미널에서:</p>
+  <code>omniroute serve</code>
+  <p style="margin-top: 10px;">그러면 서버가 <code>http://localhost:20128</code>에서 시작돼요!</p>
+  <p style="margin-top: 15px;"><strong>무료 모델은 자동으로 포함됩니다</strong> ✨</p>
+  <p>확인하고 싶으면 브라우저에서:<br><code>http://localhost:20128/dashboard/free-tiers</code></p>
 </div>
 
 <div class="step-box">
-  <h3 style="margin-top: 0;">Step 3️⃣: Combo 만들기</h3>
-  <p>"Combo"는 <strong>사용할 AI 모델 목록</strong>이에요!</p>
-  <ol>
-    <li><strong>Combos</strong> 메뉴 클릭</li>
-    <li><strong>New Combo</strong> 버튼</li>
-    <li>무료 모델 3~5개 추가</li>
-    <li><strong>자동 전환</strong> 켜기</li>
-  </ol>
+  <h3 style="margin-top: 0;">Step 3️⃣: Claude Code 연결하기</h3>
+  <p><code>.claude/settings.local.json</code> 파일을 만들어요:</p>
+  <pre style="background: white; padding: 15px; border-radius: 8px; margin-top: 10px; font-size: 13px; overflow-x: auto;">
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "http://localhost:20128",
+    "ANTHROPIC_AUTH_TOKEN": "omniroute",
+    "ANTHROPIC_MODEL": "auto/best-free"
+  }
+}</pre>
+  <p style="margin-top: 15px;"><strong>주의!</strong> Base URL 끝에 <code>/v1</code> 안 붙여요!</p>
 </div>
 
 <br>
