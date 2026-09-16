@@ -1,0 +1,43 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📅 생성일: 2026. 9. 16. AM 5:01:39
+🏷️ 주제: 2026년 포트폴리오·GitHub 실전형 강화
+🔑 키워드: 포트폴리오, GitHub, 프로젝트, 실무경험, 협업
+✍️ 스타일: 링커 (LinkedIn)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+```html
+<h1><i data-lucide="alert-circle"></i> 95%의 개발자가 GitHub을 이력서처럼 쓰고 있습니다</h1>
+
+<p>그리고 그것이 바로 탈락의 이유입니다.</p>
+
+<p>2026년, 채용담당자들이 당신의 GitHub에서 찾는 것은<br>
+<strong>"코드"가 아닙니다.</strong></p>
+
+<p><i data-lucide="target"></i> <strong>그들이 진짜 보는 3가지:</strong></p>
+
+<p>1. <strong>문제 해결 과정</strong><br>
+   → README에 "왜 이 기술을 선택했는지" 있나요?</p>
+
+<p>2. <strong>협업 흔적</strong><br>
+   → Issue, PR 코멘트로 커뮤니케이션 능력을 증명했나요?</p>
+
+<p>3. <strong>지속성</strong><br>
+   → 1년 전 프로젝트, 여전히 관리되고 있나요?</p>
+
+<p><i data-lucide="lightbulb"></i> <strong>실전 Tip:</strong><br>
+<strong>jobizic</strong>(<a href="https://jobizic.com" target="_blank">jobizic.com</a>)의 프로필·저장소 분석 기능은<br>
+채용담당자 관점에서 당신의 포트폴리오를 자동 진단합니다.<br>
+"기술 스택만 나열"이 아닌 "실무 임팩트" 중심으로 개선 포인트를 제안받으세요.</p>
+
+<p><i data-lucide="rocket"></i> <strong>포트폴리오는 과거 기록이 아닙니다.<br>
+미래 동료에게 보내는 첫 협업 제안서입니다.</strong></p>
+
+<p>👉 당신의 GitHub, 지금 채용담당자 눈으로 다시 보세요.<br>
+<a href="https://jobizic.com" target="_blank">jobizic.com</a></p>
+
+<p><i data-lucide="users"></i> 이 글이 도움됐다면 당신의 네트워크와 공유해주세요!</p>
+```
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💡 Tip: LinkedIn에 복사/붙여넣기 하세요!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
