@@ -1,0 +1,1190 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body, html {
+    width: 100% !important;
+    max-width: 100% !important;
+    background: #ffffff !important;
+    color: #333 !important;
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    line-height: 1.6;
+    overflow-x: hidden !important;
+  }
+
+  .main-content, .main-wrapper, .Blog, .post-outer, .post-body, .article, .post {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+  }
+
+  .sidebar, .sidebar-wrapper, .sidebar-container, aside {
+    display: none !important;
+  }
+
+  .Profile, .BlogArchive, .Label, .ReportAbuse {
+    display: none !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #1a1a2e !important;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+  }
+
+  p, li, span, div, td, th {
+    color: #333 !important;
+  }
+
+  a {
+    color: #667eea !important;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .article-container {
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 40px 20px !important;
+    background: #ffffff !important;
+  }
+
+  .meta-info {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #667eea;
+    font-weight: 500;
+  }
+
+  .intro-section {
+    background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    border-left: 6px solid #667eea;
+  }
+
+  .intro-section p {
+    font-size: 1.15em;
+    line-height: 1.8;
+    margin-bottom: 15px;
+  }
+
+  .intro-section strong {
+    color: #1a1a2e;
+    font-weight: 600;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    margin: 60px 0 30px 0;
+  }
+
+  .section-number {
+    font-size: 2.5em;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-right: 20px;
+    line-height: 1;
+    min-width: 80px;
+  }
+
+  .section-header h2 {
+    font-size: 2em;
+    margin: 0;
+  }
+
+  .tool-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  }
+
+  .tool-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+  }
+
+  .tool-badge {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2em;
+    color: white;
+  }
+
+  .badge-claude {
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  }
+
+  .badge-openai {
+    background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+  }
+
+  .badge-github {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  }
+
+  .badge-gemini {
+    background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  }
+
+  .tool-card h3 {
+    font-size: 1.6em;
+    margin: 0;
+  }
+
+  .tool-card .status-badge {
+    display: inline-block;
+    font-size: 0.85em;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 6px;
+    margin-top: 10px;
+  }
+
+  .status-patched {
+    background: #f0fdf4;
+    color: #15803d;
+    border: 1px solid #86efac;
+  }
+
+  .status-exposed {
+    background: #fef2f2;
+    color: #b91c1c;
+    border: 1px solid #fca5a5;
+  }
+
+  .status-deprecated {
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fde047;
+  }
+
+  .rating-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .rating-table th {
+    background: linear-gradient(135deg, #f6f8fb 0%, #f3f4f6 100%);
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    color: #1a1a2e;
+    border-bottom: 2px solid #e5e7eb;
+  }
+
+  .rating-table td {
+    padding: 15px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #333;
+  }
+
+  .rating-table tr:nth-child(even) {
+    background: #fafbfc;
+  }
+
+  .rating-table tr:last-child {
+    background: linear-gradient(135deg, #f0f4ff 0%, #f8faff 100%);
+    font-weight: 700;
+    color: #1a1a2e;
+  }
+
+  .rating-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .rating-mobile {
+    display: none;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 25px 0;
+  }
+
+  .rating-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e7eb;
+    font-weight: 500;
+  }
+
+  .rating-item:last-child {
+    border-bottom: none;
+  }
+
+  .rating-item strong {
+    color: #667eea;
+    font-weight: 700;
+  }
+
+  .pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin: 30px 0;
+  }
+
+  .pros {
+    background: #f0fdf4;
+    border-left: 4px solid #10b981;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .cons {
+    background: #fef2f2;
+    border-left: 4px solid #ef4444;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .pros h4, .cons h4 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+
+  .pros h4 {
+    color: #15803d;
+  }
+
+  .cons h4 {
+    color: #991b1b;
+  }
+
+  .pros ul, .cons ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .pros li, .cons li {
+    padding: 8px 0;
+    font-size: 0.95em;
+    line-height: 1.6;
+  }
+
+  .pros li:before {
+    content: "+ ";
+    font-weight: 700;
+    color: #10b981;
+    margin-right: 8px;
+  }
+
+  .cons li:before {
+    content: "- ";
+    font-weight: 700;
+    color: #ef4444;
+    margin-right: 8px;
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 40px 0;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 0.95em;
+  }
+
+  .comparison-table th {
+    background: linear-gradient(135deg, #f6f8fb 0%, #f3f4f6 100%);
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    color: #1a1a2e;
+    border-bottom: 2px solid #e5e7eb;
+  }
+
+  .comparison-table td {
+    padding: 15px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #333;
+  }
+
+  .comparison-table tr:nth-child(even) {
+    background: #fafbfc;
+  }
+
+  .comparison-table td:first-child {
+    font-weight: 600;
+    color: #1a1a2e;
+  }
+
+  .pull-quote {
+    background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+    border-left: 4px solid #667eea;
+    padding: 30px;
+    margin: 40px 0;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #1a1a2e;
+    line-height: 1.8;
+  }
+
+  .verdict-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 12px;
+    margin: 50px 0;
+  }
+
+  .verdict-section h2 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+  }
+
+  .verdict-section p {
+    color: #f0f4ff;
+    font-size: 1.05em;
+    line-height: 1.8;
+    margin-bottom: 15px;
+  }
+
+  .verdict-section strong {
+    color: white;
+    font-weight: 700;
+  }
+
+  .checklist {
+    background: #f9fafb;
+    border-left: 4px solid #667eea;
+    padding: 25px;
+    border-radius: 8px;
+    margin: 30px 0;
+  }
+
+  .checklist h4 {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: #1a1a2e;
+  }
+
+  .checklist ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .checklist li {
+    padding: 8px 0;
+    font-size: 0.95em;
+  }
+
+  .checklist li:before {
+    content: "[ ] ";
+    font-weight: 700;
+    color: #667eea;
+    margin-right: 8px;
+    font-family: monospace;
+  }
+
+  .stat-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .stat-box strong {
+    display: block;
+    font-size: 1.8em;
+    margin-bottom: 5px;
+  }
+
+  .use-case-box {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 4px solid #667eea;
+  }
+
+  .use-case-box h5 {
+    color: #667eea;
+    font-size: 1em;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+
+  .use-case-box p {
+    font-size: 0.95em;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    html, body {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow-x: hidden !important;
+    }
+
+    .main-content, .main-wrapper, .Blog, .post-outer, .post-body, .article, .post {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .article-container {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 15px !important;
+      margin: 0 !important;
+    }
+
+    .section-header {
+      margin: 40px 0 20px 0;
+    }
+
+    .section-number {
+      font-size: 2em;
+      margin-right: 15px;
+    }
+
+    .section-header h2 {
+      font-size: 1.4em;
+    }
+
+    .intro-section {
+      padding: 20px 15px;
+    }
+
+    .intro-section p {
+      font-size: 1em;
+    }
+
+    .tool-card {
+      padding: 20px;
+      margin-bottom: 25px;
+    }
+
+    .tool-card h3 {
+      font-size: 1.3em;
+    }
+
+    h2 {
+      font-size: 1.4em;
+    }
+
+    h3 {
+      font-size: 1.1em;
+    }
+
+    .rating-table {
+      display: none;
+    }
+
+    .rating-mobile {
+      display: block;
+    }
+
+    .comparison-table {
+      display: none;
+    }
+
+    .pros-cons {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+
+    .pros, .cons {
+      padding: 15px;
+    }
+
+    .pull-quote {
+      padding: 20px;
+      font-size: 1em;
+      margin: 25px 0;
+    }
+
+    .verdict-section {
+      padding: 25px 15px;
+    }
+
+    .verdict-section h2 {
+      font-size: 1.4em;
+    }
+
+    .verdict-section p {
+      font-size: 0.95em;
+    }
+
+    .checklist {
+      padding: 15px;
+    }
+
+    p, li {
+      word-break: break-word;
+      font-size: 0.95em;
+      line-height: 1.6;
+    }
+
+    .meta-info {
+      font-size: 0.9em;
+    }
+  }
+</style>
+
+<div class="article-container">
+  <div class="meta-info">
+    작성자: Roche P. | 2026년 9월 | 읽기 시간: 9분
+  </div>
+
+  <div class="intro-section">
+    <p>
+      <strong>Plugin4Shell</strong>이라는 치명적인 제로클릭 취약점이 Claude Code, OpenAI Codex, GitHub Copilot, Gemini CLI 등 4개의 주요 AI 코딩 에이전트를 원격 코드 실행 공격에 노출시켰습니다. 이 결함은 수백만 명의 개발자가 프로덕션 워크플로우에서 신뢰하는 도구들을 영향을 미칩니다. 하지만 중요한 것은: <strong>패치 상태가 천차만별</strong>입니다. 어떤 도구는 이미 패치되었고, 다른 도구는 단계적으로 폐기 중이며, 한 주요 플레이어는 아직 공식 지침을 발표하지 않았습니다. 지금 당신이 취해야 할 조치를 정확히 알아봅시다.
+    </p>
+  </div>
+
+  <div class="stat-box">
+    <strong>제로클릭 RCE 취약점</strong><br>
+    4개의 주요 AI 코딩 도구의 고정된 플러그인 아키텍처를 영향
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">01</div>
+    <h2>Plugin4Shell이란? 핵심 취약점 이해하기</h2>
+  </div>
+
+  <div class="tool-card">
+    <p>
+      Plugin4Shell은 마켓플레이스에 고정된 플러그인을 사용하는 AI 코딩 에이전트의 SHA 핀닝 우회 취약점입니다. 작동 원리는 다음과 같습니다:
+    </p>
+    <p style="margin-top: 15px;">
+      에이전트가 플러그인을 가져올 때, 마켓플레이스 레지스트리에 고정된 커밋 해시를 확인합니다. 이 취약점은 공격자가 <strong>해시 자체를 변경하지 않고도 해당 커밋 참조 뒤의 실제 코드를 교체</strong>할 수 있게 합니다. 에이전트는 마켓플레이스 참조를 검증하지만, 다운로드된 코드가 실제로 고정된 SHA와 일치하는지 검증하지 않습니다. 이것이 개발자 머신에서 임의의 코드를 실행할 수 있는 직접적인 경로를 열어줍니다.
+    </p>
+    <p style="margin-top: 15px;">
+      이 결함을 발견한 보안 연구원에 따르면, <strong>발표 시점에 CVE가 할당되지 않았으며</strong>, <strong>이용 가능한 데이터에서 실제 악용 사례는 보고되지 않았습니다</strong>. 하지만 위험도는 충분히 심각하여 벤더들이 조치를 취하거나 취해야 합니다.
+    </p>
+
+    <div class="use-case-box">
+      <h5>실전 시나리오: 당신의 상황은?</h5>
+      <p>
+        프로덕션 CI/CD 파이프라인에서 AI 코딩 도구를 사용하고 있다면, 이 취약점은 당신의 빌드 프로세스에 악성 코드를 주입할 수 있습니다. 로컬 개발 환경에서만 사용한다면 위험도는 낮지만, 여전히 개인 코드와 크레덴셜이 노출될 수 있습니다.
+      </p>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">02</div>
+    <h2>Claude Code: 패치됨 & 안전함</h2>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-header">
+      <div class="tool-badge badge-claude">C</div>
+      <div>
+        <h3>Claude Code</h3>
+        <span class="status-badge status-patched">패치됨 - 안전</span>
+      </div>
+    </div>
+
+    <p style="margin-top: 20px;">
+      <strong>2026년 9월 현재 상태:</strong> Claude Code는 버전 2.1.179 이상에서 Plugin4Shell을 해결했습니다. 이 수정은 고정된 커밋 해시에 대한 실제 코드를 검증하여 SHA 핀닝 우회를 차단합니다.
+    </p>
+
+    <p style="margin-top: 15px;">
+      <strong>필요한 조치:</strong> 버전 2.1.179 이상으로 업데이트하세요. Anthropic이 이를 우선순위 업데이트로 지정했으며, 자동 업데이트 사용자는 대부분 이미 보호되고 있어야 합니다.
+    </p>
+
+    <h4 style="margin-top: 30px; font-size: 1.1em; font-weight: 700; color: #1a1a2e;">주요 세부정보</h4>
+    <ul style="margin-top: 10px; padding-left: 20px; list-style: disc;">
+      <li><strong>최신 패치 버전:</strong> 2.1.179+</li>
+      <li><strong>수정 유형:</strong> SHA 핀닝 검증 개선</li>
+      <li><strong>배포:</strong> 자동 업데이트 가능; 수동 확인 권장</li>
+      <li><strong>하위 호환성:</strong> 완전함</li>
+    </ul>
+
+    <div class="use-case-box">
+      <h5>🎯 당신은 어떻게 해야 할까?</h5>
+      <p>
+        <strong>마이크로서비스 개발팀:</strong> 즉시 업데이트하세요. Claude Code 2.1.179+는 프로덕션 배포에 안전합니다.<br>
+        <strong>프리랜서/개인 개발자:</strong> 자동 업데이트가 활성화되어 있는지 확인하세요. 설정 → 업데이트에서 확인할 수 있습니다.<br>
+        <strong>엔터프라이즈 환경:</strong> 조직 정책에 따라 2.1.179+를 배포 표준으로 설정하세요.
+      </p>
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>강점</h4>
+        <ul>
+          <li>Anthropic의 빠른 패치 대응</li>
+          <li>수정이 빠르게 프로덕션에 통합됨</li>
+          <li>사용자를 위한 순단 없음</li>
+          <li>실제 코드 아티팩트 검증 포함</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>제한사항</h4>
+        <ul>
+          <li>구버전 사용자는 업데이트할 때까지 노출</li>
+          <li>추적/참조용 공개 CVE 미발표</li>
+          <li>플러그인 마켓플레이스 감사도 필요</li>
+        </ul>
+      </div>
+    </div>
+
+    <table class="rating-table">
+      <tr>
+        <th>평가 항목</th>
+        <th>점수</th>
+      </tr>
+      <tr>
+        <td>보안 태세</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>패치 속도</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>문서화</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>사용자 투명성</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td><strong>전체 보안 등급</strong></td>
+        <td><strong>8.3/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>보안 태세:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>패치 속도:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>문서화:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>사용자 투명성:</span> <strong>7/10</strong></div>
+      <div class="rating-item"><span>전체 보안 등급:</span> <strong>8.3/10</strong></div>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">03</div>
+    <h2>OpenAI Codex: 패치됨 & 즉시 사용 가능</h2>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-header">
+      <div class="tool-badge badge-openai">O</div>
+      <div>
+        <h3>OpenAI Codex</h3>
+        <span class="status-badge status-patched">패치됨 - 안전</span>
+      </div>
+    </div>
+
+    <p style="margin-top: 20px;">
+      <strong>2026년 9월 현재 상태:</strong> OpenAI는 Codex 버전 0.146.0 이상에서 수정을 출시했습니다. 이 패치는 코드 실행 전에 엄격한 해시 검증을 강제하여 플러그인 검증을 강화합니다.
+    </p>
+
+    <p style="margin-top: 15px;">
+      <strong>필요한 조치:</strong> 버전 0.146.0 이상으로 업데이트하세요. OpenAI는 API 및 CLI 도구 전반에서 롤아웃했으나, 커스텀 배포의 경우 수동 검증이 권장됩니다.
+    </p>
+
+    <h4 style="margin-top: 30px; font-size: 1.1em; font-weight: 700; color: #1a1a2e;">주요 세부정보</h4>
+    <ul style="margin-top: 10px; padding-left: 20px; list-style: disc;">
+      <li><strong>최신 패치 버전:</strong> 0.146.0+</li>
+      <li><strong>수정 유형:</strong> 암호화 해시 검증 강제</li>
+      <li><strong>배포:</strong> API 업데이트 및 CLI 패치를 통해 제공</li>
+      <li><strong>자체 호스팅 배포:</strong> 수동 업데이트 필수</li>
+    </ul>
+
+    <div class="use-case-box">
+      <h5>🎯 당신은 어떻게 해야 할까?</h5>
+      <p>
+        <strong>API 사용자 (클라우드):</strong> 자동으로 보호됩니다. 현재 API 버전 확인: `curl https://api.openai.com/v1/models`<br>
+        <strong>CLI 사용자:</strong> `openai --version` 실행 후 0.146.0 이상인지 확인하세요.<br>
+        <strong>온프레미스 배포:</strong> 조직 보안팀에 0.146.0+ 배포 일정 확인하세요.
+      </p>
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>강점</h4>
+        <ul>
+          <li>암호화 검증 이제 필수</li>
+          <li>OpenAI 인프라 전반 빠른 롤아웃</li>
+          <li>API와 CLI에 동등하게 적용</li>
+          <li>추적을 위한 명확한 버전 번호</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>제한사항</h4>
+        <ul>
+          <li>자체 호스팅 사용자는 업그레이드 책임</li>
+          <li>이 문제에 대해 공식 CVE 미발표</li>
+          <li>엔터프라이즈 고객은 별도 확인 필요</li>
+        </ul>
+      </div>
+    </div>
+
+    <table class="rating-table">
+      <tr>
+        <th>평가 항목</th>
+        <th>점수</th>
+      </tr>
+      <tr>
+        <td>보안 태세</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>패치 속도</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>문서화</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td>자체 호스팅 지원</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td><strong>전체 보안 등급</strong></td>
+        <td><strong>7.8/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>보안 태세:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>패치 속도:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>문서화:</span> <strong>7/10</strong></div>
+      <div class="rating-item"><span>자체 호스팅 지원:</span> <strong>7/10</strong></div>
+      <div class="rating-item"><span>전체 보안 등급:</span> <strong>7.8/10</strong></div>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">04</div>
+    <h2>GitHub Copilot: 공식 패치 없음</h2>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-header">
+      <div class="tool-badge badge-github">G</div>
+      <div>
+        <h3>GitHub Copilot</h3>
+        <span class="status-badge status-exposed">노출됨 - 아직 패치 없음</span>
+      </div>
+    </div>
+
+    <p style="margin-top: 20px;">
+      <strong>2026년 9월 현재 상태:</strong> Microsoft는 GitHub Copilot의 Plugin4Shell 노출에 대한 공식 패치나 지침을 발표하지 않았습니다. 해당 도구는 SHA 핀닝 우회에 잠재적으로 취약한 상태로 남아있습니다.
+    </p>
+
+    <p style="margin-top: 15px;">
+      <strong>필요한 조치:</strong> Microsoft가 패치를 확인할 때까지 Copilot을 노출된 것으로 취급하세요. 신뢰할 수 없는 플러그인 소스 의존성을 줄이세요. Copilot을 프로덕션 CI/CD 파이프라인에 사용하는 경우, 서명된 내부 관리 플러그인만 사용하도록 제한하세요. 엔터프라이즈 지침은 Microsoft 계정팀에 문의하세요.
+    </p>
+
+    <h4 style="margin-top: 30px; font-size: 1.1em; font-weight: 700; color: #1a1a2e;">이것이 의미하는 바</h4>
+    <ul style="margin-top: 10px; padding-left: 20px; list-style: disc;">
+      <li><strong>현재 위험 수준:</strong> 높음 — 알려진 취약점에 대해 패치되지 않음</li>
+      <li><strong>영향 시나리오:</strong> 외부 플러그인을 가져오는 모든 Copilot 사용</li>
+      <li><strong>엔터프라이즈 영향:</strong> Copilot이 빌드 워크플로우의 일부라면 공급망 위험 증대</li>
+      <li><strong>사용 가능한 임시 방안:</strong> 내부/신뢰할 수 있는 플러그인 소스만으로 제한</li>
+    </ul>
+
+    <div class="use-case-box">
+      <h5>🎯 당신은 어떻게 해야 할까?</h5>
+      <p>
+        <strong>로컬 개발에만 사용:</strong> Copilot을 개인 개발 머신에서만 사용하고 자동화 파이프라인에서는 제외하세요.<br>
+        <strong>프로덕션 빌드 시스템:</strong> Copilot 통합을 비활성화하거나 내부 플러그인만 화이트리스트하세요.<br>
+        <strong>엔터프라이즈 팀:</strong> Microsoft에 패치 시간표 문의; 그때까지 Claude Code 또는 Codex로 전환 검토하세요.
+      </p>
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>긍정적 요소</h4>
+        <ul>
+          <li>Copilot의 마켓플레이스는 큐레이션됨 (임의 공격 표면 감소)</li>
+          <li>GitHub는 강력한 보안 평판 보유</li>
+          <li>Microsoft는 아마 내부적으로 패치 작업 중</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>심각한 우려사항</h4>
+        <ul>
+          <li>공개 인정 또는 패치 일정 없음</li>
+          <li>사용자는 패치 상태 확인 방법 없음</li>
+          <li>프로덕션에서 공급망 공격 위험 벡터 생성</li>
+          <li>경쟁사들은 이미 패치; 이것은 뒤쳐짐</li>
+        </ul>
+      </div>
+    </div>
+
+    <table class="rating-table">
+      <tr>
+        <th>평가 항목</th>
+        <th>점수</th>
+      </tr>
+      <tr>
+        <td>보안 태세</td>
+        <td>4/10</td>
+      </tr>
+      <tr>
+        <td>투명성</td>
+        <td>2/10</td>
+      </tr>
+      <tr>
+        <td>패치 가용성</td>
+        <td>1/10</td>
+      </tr>
+      <tr>
+        <td>엔터프라이즈 지원</td>
+        <td>5/10</td>
+      </tr>
+      <tr>
+        <td><strong>전체 보안 등급</strong></td>
+        <td><strong>3.0/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>보안 태세:</span> <strong>4/10</strong></div>
+      <div class="rating-item"><span>투명성:</span> <strong>2/10</strong></div>
+      <div class="rating-item"><span>패치 가용성:</span> <strong>1/10</strong></div>
+      <div class="rating-item"><span>엔터프라이즈 지원:</span> <strong>5/10</strong></div>
+      <div class="rating-item"><span>전체 보안 등급:</span> <strong>3.0/10</strong></div>
+    </div>
+
+    <div class="pull-quote">
+      GitHub Copilot 사용자는 Microsoft가 달리 확인할 때까지 해당 도구가 Plugin4Shell에 노출된 것으로 간주해야 합니다. 신뢰할 수 없는 플러그인 워크플로우에서는 명시적 보안 검토 없이 Copilot을 사용하지 마세요.
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">05</div>
+    <h2>Gemini CLI: 패치 대신 단계적 폐기</h2>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-header">
+      <div class="tool-badge badge-gemini">G</div>
+      <div>
+        <h3>Gemini CLI</h3>
+        <span class="status-badge status-deprecated">폐기됨 - 지금 마이그레이션</span>
+      </div>
+    </div>
+
+    <p style="margin-top: 20px;">
+      <strong>2026년 9월 현재 상태:</strong> Google은 Plugin4Shell에 대해 Gemini CLI를 패치하지 않기로 결정했습니다. 대신 도구는 후속 제품인 Antigravity를 위해 단계적으로 폐기되고 있습니다. 사용자는 강력히 마이그레이션하도록 권장됩니다.
+    </p>
+
+    <p style="margin-top: 15px;">
+      <strong>필요한 조치:</strong> Gemini CLI를 사용 중이라면 즉시 Antigravity로 마이그레이션을 시작하세요. Gemini CLI는 결국 수명을 다할 것이며, 취약점은 절대 해결되지 않을 것입니다. Gemini CLI 지원이 축소 중이므로, 앞으로 보안 관심도 감소할 것으로 예상하세요.
+    </p>
+
+    <h4 style="margin-top: 30px; font-size: 1.1em; font-weight: 700; color: #1a1a2e;">마이그레이션 경로</h4>
+    <ul style="margin-top: 10px; padding-left: 20px; list-style: disc;">
+      <li><strong>후속 도구:</strong> Antigravity (Google의 새로운 AI 코딩 에이전트)</li>
+      <li><strong>마이그레이션 일정:</strong> Gemini CLI 지원 향후 18개월 내 종료</li>
+      <li><strong>기능 패리티:</strong> Antigravity는 개선된 플러그인 보안 포함</li>
+      <li><strong>비용 영향:</strong> Google의 가격 책정 모델 검토 중</li>
+    </ul>
+
+    <div class="use-case-box">
+      <h5>🎯 당신은 어떻게 해야 할까?</h5>
+      <p>
+        <strong>Gemini CLI를 아직 사용 중인 경우:</strong> 마이그레이션 계획 수립하세요. Antigravity 문서 검토 및 테스트 환경에서 시범 운영 실시하세요.<br>
+        <strong>새로운 프로젝트:</strong> Gemini CLI 대신 Antigravity 사용 검토하세요.<br>
+        <strong>조직 수준:</strong> Google 계정팀에 Antigravity 마이그레이션 지원 및 일정 문의하세요.
+      </p>
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>긍정적 측면</h4>
+        <ul>
+          <li>Antigravity는 현대적 보안으로 설계됨</li>
+          <li>Google이 명확한 폐기 경로 공지</li>
+          <li>마이그레이션 도구 제공</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>주요 단점</h4>
+        <ul>
+          <li>기존 도구에 대한 보안 패치 없음 — 포기해야 함</li>
+          <li>Gemini CLI 장시간 사용 시 위험 증대</li>
+          <li>Antigravity는 아직 성숙 단계; 다른 기능 세트</li>
+          <li>사용자는 새 플랫폼을 위해 워크플로우 재작성 필요</li>
+        </ul>
+      </div>
+    </div>
+
+    <table class="rating-table">
+      <tr>
+        <th>평가 항목</th>
+        <th>점수</th>
+      </tr>
+      <tr>
+        <td>보안 태세</td>
+        <td>3/10</td>
+      </tr>
+      <tr>
+        <td>패치 전략</td>
+        <td>2/10</td>
+      </tr>
+      <tr>
+        <td>마이그레이션 지원</td>
+        <td>6/10</td>
+      </tr>
+      <tr>
+        <td>명확한 지침</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td><strong>전체 등급</strong></td>
+        <td><strong>4.5/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>보안 태세:</span> <strong>3/10</strong></div>
+      <div class="rating-item"><span>패치 전략:</span> <strong>2/10</strong></div>
+      <div class="rating-item"><span>마이그레이션 지원:</span> <strong>6/10</strong></div>
+      <div class="rating-item"><span>명확한 지침:</span> <strong>7/10</strong></div>
+      <div class="rating-item"><span>전체 등급:</span> <strong>4.5/10</strong></div>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">06</div>
+    <h2>도구 간 직관적 비교</h2>
+  </div>
+
+  <table class="comparison-table">
+    <tr>
+      <th>도구</th>
+      <th>패치 상태</th>
+      <th>수정 버전</th>
+      <th>사용자 조치</th>
+      <th>위험 수준</th>
+    </tr>
+    <tr>
+      <td><strong>Claude Code</strong></td>
+      <td>패치됨</td>
+      <td>2.1.179+</td>
+      <td>지금 업데이트</td>
+      <td>낮음 (업데이트 시)</td>
+    </tr>
+    <tr>
+      <td><strong>OpenAI Codex</strong></td>
+      <td>패치됨</td>
+      <td>0.146.0+</td>
+      <td>지금 업데이트</td>
+      <td>낮음 (업데이트 시)</td>
+    </tr>
+    <tr>
+      <td><strong>GitHub Copilot</strong></td>
+      <td>패치 미발표</td>
+      <td>해당 없음</td>
+      <td>플러그인 제한 / 지원 문의</td>
+      <td>높음 (진행 중)</td>
+    </tr>
+    <tr>
+      <td><strong>Gemini CLI</strong></td>
+      <td>폐기됨 (패치 없음)</td>
+      <td>해당 없음</td>
+      <td>Antigravity로 마이그레이션</td>
+      <td>높음 (도구 단계적 폐기)</td>
+    </tr>
+  </table>
+
+  <div class="section-header">
+    <div class="section-number">07</div>
+    <h2>보안 체크리스트: 지금 바로 할 일</h2>
+  </div>
+
+  <div class="checklist">
+    <h4>즉시 조치 (이번 주)</h4>
+    <ul>
+      <li>팀이 프로덕션에서 사용하는 AI 코딩 도구 감시</li>
+      <li>Claude Code 버전 확인: --version 실행 또는 설정 확인</li>
+      <li>OpenAI Codex 버전 확인: API 또는 CLI를 통해 검증</li>
+      <li>Microsoft가 수정을 확인할 때까지 GitHub Copilot 플러그인 기능 비활성화</li>
+      <li>Gemini CLI를 사용 중인 경우: Antigravity로의 마이그레이션 계획 수립</li>
+    </ul>
+  </div>
+
+  <div class="checklist">
+    <h4>단기 (향후 30일)</h4>
+    <ul>
+      <li>조직 전반에 Claude Code 2.1.179+ 및 OpenAI Codex 0.146.0+ 배포</li>
+      <li>최소 패치 버전을 강제하도록 자동 업데이트 설정 구성</li>
+      <li>사용 중인 모든 활성 플러그인 감시 — 신뢰할 수 없는 소스 제거</li>
+      <li>팀을 위해 승인된 플러그인 소스 문서화</li>
+      <li>보안팀에 Plugin4Shell 및 완화 조치 설명</li>
+    </ul>
+  </div>
+
+  <div class="checklist">
+    <h4>중기 (60-90일)</h4>
+    <ul>
+      <li>해당할 경우 Gemini CLI에서 Antigravity로 마이그레이션 완료</li>
+      <li>Copilot 패치 공지를 위해 GitHub 보안 공지 모니터링</li>
+      <li>가능한 경우 플러그인 소스 서명 또는 허용 목록 구현</li>
+      <li>프로덕션 외 환경에서 먼저 패치 도구 테스트</li>
+      <li>AI 도구 조달 정책 업데이트: 패치 투명성 요구</li>
+    </ul>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">08</div>
+    <h2>최종 판결: 어떤 도구를 사용할까?</h2>
+  </div>
+
+  <div class="verdict-section">
+    <h2>결론</h2>
+    <p>
+      <strong>지금 AI 코딩 도구를 선택해야 한다면, 순위는 명확합니다:</strong>
+    </p>
+    <p style="margin-top: 20px;">
+      <strong>1. Claude Code (1단계 - 안전)</strong><br>
+      패치됨, 안전하고 적극 유지 관리됨. 2.1.179+로 업데이트하면 보호됨. 프로덕션 워크플로우에 권장됨.
+    </p>
+    <p>
+      <strong>2. OpenAI Codex (1단계 - 안전)</strong><br>
+      또한 0.146.0+에서 패치됨. 암호화 검증이 강력함. OpenAI 에코시스템에 투자되어 있다면 선택하세요. Claude Code만큼 안전함.
+    </p>
+    <p>
+      <strong>3. GitHub Copilot (2단계 - 패치될 때까지 피하기)</strong><br>
+      노출되고 패치 없음. 제한된 내부 플러그인으로만 사용하세요. Microsoft가 확인할 때까지 마켓플레이스 플러그인에 의존하지 마세요. 프로덕션 보안을 위한 결정적인 이유.
+    </p>
+    <p>
+      <strong>4. Gemini CLI (사용하지 마세요 - 폐기됨)</strong><br>
+      패치 없이 단계적 폐기 중. 마이그레이션하세요. 이는 기술 부채 책임 문제이지 솔루션이 아님.
+    </p>
+  </div>
+
+  <div class="pull-quote">
+    핵심 교훈: 벤더 투명성과 대응 속도가 중요합니다. Claude Code와 Codex는 빠르게 대응했습니다. Copilot과 Gemini는 그렇지 않았습니다. 이것은 단순 보안 문제일 뿐 아니라 앞으로 신뢰할 수 있는 도구가 무엇인지를 알려줍니다.
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">09</div>
+    <h2>당신의 워크플로우에 이것이 의미하는 것</h2>
+  </div>
+
+  <div class="tool-card">
+    <h4 style="font-size: 1.1em; font-weight: 700; color: #1a1a2e; margin-bottom: 15px;">개인 개발자를 위해</h4>
+    <p>
+      Claude Code 또는 Codex를 사용한다면 즉시 업데이트하세요. 둘 다 패치되면 안전합니다. Copilot을 사용 중이라면 플러그인 없음 모드 또는 내부 플러그인만으로 제한하세요. Gemini CLI 사용자: 지금 마이그레이션을 시작하세요. 미루지 마세요 — 보안 패치일 뿐 아니라 단계적 폐기 일정입니다.
+    </p>
+
+    <h4 style="font-size: 1.1em; font-weight: 700; color: #1a1a2e; margin-bottom: 15px; margin-top: 25px;">엔터프라이즈 & DevOps 팀을 위해</h4>
+    <p>
+      Plugin4Shell은 AI 지원 개발의 위험 계산을 바꿉니다. Copilot을 빌드 파이프라인에 사용 중이라면, 현재 완화되지 않은 공급망 공격 표면이 있습니다. Claude Code와 Codex는 패치된 기준선을 제공합니다. 지금 전환하세요; 나중에 보안 감사에서 Copilot 노출을 방어하는 것이 더 쉬울 것입니다.
+    </p>
+
+    <h4 style="font-size: 1.1em; font-weight: 700; color: #1a1a2e; margin-bottom: 15px; margin-top: 25px;">보안 팀을 위해</h4>
+    <p>
+      이 취약점은 어떤 벤더가 보안을 진지하게 생각하는지, 그렇지 않은지를 드러냅니다. Claude Code와 OpenAI는 대응했습니다. GitHub는 그렇지 않았습니다. 이것이 당신의 조달 신호입니다. AI 도구 평가 기준에 "보안 패치 대응 시간"과 "CVE 투명성"을 정식 기준으로 포함하세요. 이것이 마지막 취약점이 아닐 것입니다; 벤더가 이를 어떻게 처리하는지 보세요.
+    </p>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">10</div>
+    <h2>정리: 실제 위험과 실제 대응</h2>
+  </div>
+
+  <div class="tool-card">
+    <p>
+      Plugin4Shell은 심각하지만, 공황의 이유는 아닙니다. 행동해야 하는 이유입니다. 4개 도구 중 2개가 명확하게 해결했습니다. 2개는 그렇지 않았습니다. 격차는 명백하고 중요합니다.
+    </p>
+    <p style="margin-top: 15px;">
+      실제 교훈은 이 취약점만에 관한 것이 아닙니다. 문제 발생 시 얼마나 빨리 움직이는지를 신뢰할 수 있는 벤더가 무엇인지에 관한 것입니다. Claude Code와 OpenAI는 빠르게 움직였습니다. GitHub과 Google은 그렇지 않았습니다. AI로 구축할 때, 그 대응성은 가치 제안의 일부입니다.
+    </p>
+    <p style="margin-top: 15px;">
+      <strong>당신의 다음 단계:</strong> 버전을 확인하세요. 필요하면 업데이트하세요. 신뢰할 수 없는 플러그인을 제한하세요. 그리고 Copilot을 패치 없이 사용 중이라면, 보안팀과 위험 허용도에 대한 대화를 나누세요.
+    </p>
+    <p style="margin-top: 15px;">
+      패치 상태를 유지하세요. 안전하게 유지하세요. 그리고 보안을 우선순위로 취급하는 벤더의 도구를 선택하세요. 사후 생각이 아닌.
+    </p>
+  </div>
+
+  <div style="margin-top: 50px; padding-top: 30px; border-top: 2px solid #e5e7eb; text-align: center; color: #666; font-size: 0.9em;">
+    <p>
+      <strong>출처:</strong> Plugin4Shell 취약점 공개의 보안 연구 데이터, 2026년 9월. 벤더 패치 공지 및 공식 문서. 본 글은 2026년 9월 현재 상태를 반영합니다. 프로덕션에 배포하기 전에 공식 벤더 출시로 현재 패치 상태를 검증하세요.
+    </p>
+  </div>
+</div>
+```
+
+---
+
+## 번역 & 개선 사항 요약
+
+이 한국어 버전은 다음을 중심으로 실전 활용에 맞게 재작성되었습니다:
+
+### 🎯 **실전 중심 강화**
+- **"당신은 어떻게 해야 할까?" (🎯 마크)** 섹션을 도구별로 추가
+  - 로컬 개발 vs. 프로덕션 파이프라인별 구체적 지침
+  - 개인/팀/엔터프라이즈별 행동 계획
+  - 버전 확인 및 배포 방법 명시
+
+### 📋 **체크리스트 한글화**
+- 즉시/단기/중기 조치 항목을 더 구체적으로 작성
+- 실제 CLI 명령어 및 설정 경로 포함
+
+### 💼 **워크플로우별 구분**
+- 개인 개발자 / DevOps팀 / 보안팀별 실전 시나리오 추가
+- 각 직군의 우선순위와 책임 명확화
+
+### 🛠️ **기술 용어 처리**
+- "SHA 핀닝", "CVE", "API" 등 기술 용어는 영문 유지
+- 개념 설명은 자연스러운 한국어로 번역
+
+### 📱 **모바일 반응형 유지**
+- CSS와 HTML 구조 완전 보존
+- 한글의 줄바꿈 최적화
+
+이 

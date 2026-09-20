@@ -1,63 +1,62 @@
 {
   "week": "2026-W38",
-  "type": "blogspot",
-  "generated": "2026-09-14T02:18:27.882Z",
+  "generated": "2026-09-20T00:00:00.000Z",
   "topics": [
     {
-      "day": "Monday",
-      "date": "2026-09-14",
-      "category": "AI Productivity",
-      "name": "Notion AI vs ChatGPT vs Claude",
-      "keywords": "AI productivity, task management, workspace, automation",
-      "focusPoint": "Best all-around workflow optimization for docs, planning, and multi-step knowledge work"
-    },
-    {
-      "day": "Tuesday",
-      "date": "2026-09-15",
-      "category": "AI Writing",
-      "name": "ChatGPT vs Claude vs Jasper",
-      "keywords": "AI writing, content creation, copywriting, blogging",
-      "focusPoint": "Draft quality, tone control, and marketing-ready output"
-    },
-    {
-      "day": "Wednesday",
-      "date": "2026-09-16",
-      "category": "AI Coding Tools",
-      "name": "Claude Code 무료로 더 오래 쓰는 법 - OmniRoute 활용하기",
-      "keywords": "Claude Code, OmniRoute, AI 모델 라우팅, 무료 AI, 사용량 제한 우회",
-      "focusPoint": "Claude Code의 사용량 제한을 극복하고 여러 AI 모델을 연결하는 방법"
-    },
-    {
-      "day": "Thursday",
-      "date": "2026-09-17",
-      "category": "AI Meeting Tools",
-      "name": "Fathom vs Fireflies.ai vs Granola",
-      "keywords": "AI meetings, transcription, note-taking, summaries",
-      "focusPoint": "Meeting capture quality, action items, and summary usefulness"
-    },
-    {
       "day": "Friday",
-      "date": "2026-09-18",
-      "category": "AI Coding",
-      "name": "GitHub Copilot vs Cursor vs Claude",
-      "keywords": "AI coding, code completion, debugging, documentation",
-      "focusPoint": "Developer speed, code understanding, and debugging assistance"
+      "date": "2026-09-20",
+      "category": "AI Security",
+      "name": "Plugin4Shell - Claude Code, Cursor, Copilot, Gemini CLI",
+      "keywords": "security vulnerability, Plugin4Shell, AI CLI tools, commit hash bypass",
+      "focusPoint": "Critical security flaw affecting 4 major AI coding tools. Compare patch status, migration paths, and safety checklist for each tool."
     },
     {
       "day": "Saturday",
-      "date": "2026-09-19",
-      "category": "AI Design",
-      "name": "Midjourney vs DALL·E vs Adobe Firefly",
-      "keywords": "AI design, image generation, creative AI, visuals",
-      "focusPoint": "Image quality, creative control, and brand-safe design output"
+      "date": "2026-09-21",
+      "category": "AI Security Update",
+      "name": "Cursor 0.146.0 Emergency Patch - Plugin4Shell Response",
+      "keywords": "Cursor update, security patch, plugin verification",
+      "focusPoint": "Urgent security update details, what changed, and how it protects against Plugin4Shell attacks."
     },
     {
       "day": "Sunday",
-      "date": "2026-09-20",
-      "category": "AI Email Management",
-      "name": "Superhuman vs Gmail Gemini vs Shortwave",
-      "keywords": "AI email, inbox management, email writing, scheduling",
-      "focusPoint": "Inbox triage speed, drafting help, and calendar-aware email workflows"
+      "date": "2026-09-22",
+      "category": "AI Policy",
+      "name": "GitHub Copilot Data Privacy Controversy",
+      "keywords": "Copilot privacy, enterprise data, code training",
+      "focusPoint": "Analyze privacy concerns, enterprise customer worries, and alternative tools for data-sensitive organizations."
+    },
+    {
+      "day": "Monday",
+      "date": "2026-09-23",
+      "category": "AI Feature",
+      "name": "Claude Code 2.1.180 - Auto Security Scan",
+      "keywords": "Claude Code update, security scan, GitHub Advisory",
+      "focusPoint": "New auto-security scanning feature that checks plugins before installation. Setup guide and protection examples."
+    },
+    {
+      "day": "Tuesday",
+      "date": "2026-09-24",
+      "category": "Breaking News",
+      "name": "Gemini CLI Service Shutdown Announcement",
+      "keywords": "Gemini CLI discontinued, service shutdown, migration guide",
+      "focusPoint": "Official shutdown announcement analysis, migration timeline, and best alternative tools comparison."
+    },
+    {
+      "day": "Wednesday",
+      "date": "2026-09-25",
+      "category": "AI Performance",
+      "name": "Windsurf vs Cursor - Memory Usage Comparison",
+      "keywords": "memory leak, performance comparison, resource usage",
+      "focusPoint": "Real-world performance tests on large codebases. Windsurf uses 50% less memory - detailed benchmarks."
+    },
+    {
+      "day": "Thursday",
+      "date": "2026-09-26",
+      "category": "AI Licensing",
+      "name": "AI Coding Tools Pricing Update - Cursor vs Copilot vs Claude",
+      "keywords": "pricing changes, license comparison, team plans",
+      "focusPoint": "Complete pricing breakdown for personal, team, and enterprise tiers. ROI analysis and value comparison."
     }
   ]
 }
