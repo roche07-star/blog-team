@@ -1,0 +1,922 @@
+<style>
+  /* Base styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: #333 !important;
+    background: #ffffff !important;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #1a1a2e !important;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  p, li, span, div, td, th {
+    color: #333 !important;
+  }
+
+  a {
+    color: #667eea !important;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .post-body, .article, .post, .main-content, .main-wrapper, .Blog, .post-outer {
+    background: #ffffff !important;
+    color: #333 !important;
+  }
+
+  .sidebar, .sidebar-wrapper, .sidebar-container, aside {
+    display: none !important;
+  }
+
+  .Profile, .BlogArchive, .Label, .ReportAbuse {
+    display: none !important;
+  }
+
+  .article-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: #ffffff;
+    color: #333;
+  }
+
+  .meta-info {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #667eea;
+    font-weight: 500;
+  }
+
+  .intro-section {
+    background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    border-left: 6px solid #667eea;
+  }
+
+  .intro-section p {
+    font-size: 1.15em;
+    line-height: 1.8;
+    color: #333;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    margin: 60px 0 30px 0;
+  }
+
+  .section-number {
+    font-size: 2.5em;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-right: 20px;
+    line-height: 1;
+  }
+
+  .section-header h2 {
+    font-size: 2em;
+    font-weight: 600;
+  }
+
+  .tool-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-left: 6px solid #667eea;
+    padding: 40px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  }
+
+  .tool-card.glean {
+    border-left-color: #8b5cf6;
+  }
+
+  .tool-card.perplexity {
+    border-left-color: #06b6d4;
+  }
+
+  .tool-card.notebooklm {
+    border-left-color: #f59e0b;
+  }
+
+  .tool-title {
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1a1a2e;
+  }
+
+  .tool-subtitle {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 30px;
+  }
+
+  .pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 30px 0;
+  }
+
+  .pros {
+    background: #f0fdf4;
+    border-left: 4px solid #10b981;
+    padding: 20px;
+    border-radius: 6px;
+  }
+
+  .cons {
+    background: #fef2f2;
+    border-left: 4px solid #ef4444;
+    padding: 20px;
+    border-radius: 6px;
+  }
+
+  .pros h4, .cons h4 {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+  }
+
+  .pros h4 {
+    color: #059669;
+  }
+
+  .cons h4 {
+    color: #dc2626;
+  }
+
+  .pros-cons-list {
+    list-style: none;
+  }
+
+  .pros-cons-list li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  .pros-cons-list li:before {
+    content: "+ ";
+    font-weight: 700;
+    margin-right: 8px;
+  }
+
+  .cons .pros-cons-list li:before {
+    content: "- ";
+    font-weight: 700;
+    margin-right: 8px;
+  }
+
+  .rating-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .rating-table th {
+    background: #f9fafb;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #e5e7eb;
+    color: #1a1a2e;
+  }
+
+  .rating-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #333;
+  }
+
+  .rating-table tr:last-child td {
+    border-bottom: none;
+    background: #f9fafb;
+    font-weight: 600;
+  }
+
+  .rating-table tr:nth-child(even) {
+    background: #fafbfc;
+  }
+
+  .rating-mobile {
+    display: none;
+  }
+
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 40px 0;
+  }
+
+  .comparison-item {
+    background: #f9fafb;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+  }
+
+  .comparison-item h4 {
+    font-size: 0.95em;
+    font-weight: 600;
+    color: #667eea;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .comparison-item p {
+    font-size: 0.95em;
+    line-height: 1.7;
+    color: #333;
+  }
+
+  .pull-quote {
+    background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+    border-left: 5px solid #667eea;
+    padding: 30px;
+    margin: 40px 0;
+    border-radius: 6px;
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #1a1a2e;
+    line-height: 1.8;
+  }
+
+  .verdict-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    margin: 40px 0;
+  }
+
+  .verdict-box h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+
+  .verdict-box p {
+    font-size: 1.05em;
+    line-height: 1.8;
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+
+  .verdict-scenarios {
+    margin-top: 25px;
+  }
+
+  .scenario {
+    background: rgba(255,255,255,0.15);
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    color: #ffffff;
+  }
+
+  .scenario strong {
+    color: #ffffff;
+  }
+
+  .feature-list {
+    background: #f9fafb;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+  }
+
+  .feature-list ul {
+    list-style: none;
+    margin-left: 0;
+  }
+
+  .feature-list li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    color: #333;
+  }
+
+  .feature-list li:before {
+    content: "+";
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    color: #667eea;
+  }
+
+  .stat-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .stat-box .stat-number {
+    font-size: 2.5em;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .stat-box .stat-label {
+    font-size: 0.95em;
+    color: rgba(255,255,255,0.95);
+  }
+
+  hr {
+    border: none;
+    height: 1px;
+    background: #e5e7eb;
+    margin: 40px 0;
+  }
+
+  .footnote {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  @media (max-width: 768px) {
+    html, body {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow-x: hidden !important;
+    }
+
+    .main-content, .main-wrapper, .Blog, .post-outer, .post-body, .article, .post {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .article-container {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 15px !important;
+      margin: 0 !important;
+    }
+
+    .meta-info {
+      font-size: 0.9em;
+      padding: 15px 0;
+      margin-bottom: 25px;
+    }
+
+    .intro-section {
+      padding: 20px;
+      margin-bottom: 25px;
+    }
+
+    .intro-section p {
+      font-size: 1em;
+    }
+
+    .section-header {
+      margin: 40px 0 20px 0;
+    }
+
+    .section-number {
+      font-size: 2em;
+      margin-right: 12px;
+    }
+
+    .section-header h2 {
+      font-size: 1.4em;
+    }
+
+    .tool-card {
+      padding: 20px;
+      margin-bottom: 25px;
+      border-left-width: 4px;
+    }
+
+    .tool-title {
+      font-size: 1.4em;
+      margin-bottom: 10px;
+    }
+
+    .tool-subtitle {
+      font-size: 0.95em;
+      margin-bottom: 20px;
+    }
+
+    .pros-cons {
+      display: block;
+      gap: 0;
+    }
+
+    .pros, .cons {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 15px;
+    }
+
+    .rating-table {
+      display: none;
+    }
+
+    .rating-mobile {
+      display: block;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 25px 0;
+    }
+
+    .rating-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 15px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .rating-item:last-child {
+      border-bottom: none;
+      background: #f9fafb;
+      font-weight: 600;
+    }
+
+    .rating-item span {
+      color: #333;
+    }
+
+    .rating-item strong {
+      color: #333;
+      font-weight: 600;
+    }
+
+    .comparison-grid {
+      grid-template-columns: 1fr;
+      gap: 15px;
+      margin: 25px 0;
+    }
+
+    .comparison-item {
+      padding: 15px;
+    }
+
+    .pull-quote {
+      font-size: 1em;
+      padding: 20px;
+      margin: 25px 0;
+    }
+
+    .verdict-box {
+      padding: 20px;
+      margin: 25px 0;
+    }
+
+    .verdict-box h3 {
+      font-size: 1.4em;
+      margin-bottom: 15px;
+    }
+
+    .verdict-box p {
+      font-size: 0.95em;
+      margin-bottom: 10px;
+    }
+
+    .scenario {
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+
+    .stat-box {
+      padding: 20px;
+      margin: 15px 0;
+    }
+
+    .stat-box .stat-number {
+      font-size: 2em;
+    }
+
+    .feature-list {
+      padding: 15px;
+      margin: 15px 0;
+    }
+
+    .feature-list li {
+      font-size: 0.95em;
+      padding-left: 20px;
+    }
+
+    h2 {
+      font-size: 1.4em;
+    }
+
+    h3 {
+      font-size: 1.2em;
+    }
+
+    h4 {
+      font-size: 1em;
+    }
+
+    p, li {
+      font-size: 0.95em;
+      word-break: break-word;
+    }
+
+    .sidebar, .sidebar-wrapper, .sidebar-container, aside {
+      display: none !important;
+    }
+  }
+</style>
+
+<div class="article-container">
+  <div class="meta-info">
+    By Roche P. | September 2026 | 9 min read
+  </div>
+
+  <div class="intro-section">
+    <p>Enterprise knowledge lives in three places: behind your company firewall, scattered across industry research, and locked inside your own documents. The question isn't whether you need to search this knowledge—it's which tool actually gives you answers grounded in sources, not hallucinations. As of September 2026, three platforms are competing hard for workspace dominance: <strong>Glean</strong> for enterprise context, <strong>Perplexity</strong> for web-powered research, and <strong>NotebookLM</strong> for document intelligence. Here's what's actually changed, what each one does best, and which one fits your workflow.</p>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">01</div>
+    <h2>Glean: Enterprise Search Gets Smart</h2>
+  </div>
+
+  <div class="tool-card glean">
+    <div class="tool-title">Glean</div>
+    <div class="tool-subtitle">Workplace AI with governance, memory, and cost control</div>
+
+    <p>Glean has been repositioning itself as the enterprise knowledge layer, and September 2026 brought significant updates that back up that strategy. The platform now runs <strong>GPT-6 Astra</strong>, <strong>Claude Fable 5.1</strong>, and <strong>Gemini 3.8 Flash</strong> at the same time—letting teams pick the right model for the right job without lock-in. More importantly, Glean shipped <strong>Glean Tau</strong>, a desktop app that indexes your local files and code, reducing token costs by 81% compared to Claude Cowork while scoring 78% preference in Glean's internal evaluation.</p>
+
+    <p>What makes Glean different for enterprises is governance. The company added <strong>single-owner agent governance</strong>, meaning IT can control who creates autonomous agents and how they access company data. Memory features—both activity-based (using permitted workplace activity) and saved user preferences—shipped free through mid-October 2026, then meter into paid credit buckets for enterprise customers.</p>
+
+    <p><strong>Latest releases (September 2026):</strong></p>
+    <div class="feature-list">
+      <ul>
+        <li>Bitbucket Code Writer now GA (production-ready)</li>
+        <li>Adobe Workfront connector in public beta</li>
+        <li>Memory features (activity-based and saved preferences)</li>
+        <li>Glean Tau desktop for local files and code</li>
+        <li>Support for Claude Fable 5.1 and Gemini 3.8 Flash</li>
+      </ul>
+    </div>
+
+    <p><strong>Pricing (as of September 2026):</strong> Glean does not publish per-seat pricing publicly. Instead, it offers tiered plans: Enterprise Flex (consumption-based, with FlexCredits), Glean Core Suite (bundled features), and Enterprise (customer-managed encryption key). Expect to contact sales for a quote.</p>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>Strengths</h4>
+        <ul class="pros-cons-list">
+          <li>Multi-model support (GPT-6 Astra, Claude, Gemini) in one platform</li>
+          <li>Enterprise governance and agent controls built-in</li>
+          <li>Desktop app (Tau) for local knowledge without cloud upload</li>
+          <li>Memory features personalize responses without extra training</li>
+          <li>Connector library spans 100+ enterprise tools</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>Limitations</h4>
+        <ul class="pros-cons-list">
+          <li>Pricing requires sales conversation (no self-serve option)</li>
+          <li>Features meter into paid credits after free trial windows</li>
+          <li>Requires implementation for full value (not instant setup)</li>
+          <li>Benchmarks are vendor-published, not independent audits</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      "Glean's Tau reduced token costs by 81% versus Claude Cowork and scored 78% preference in head-to-head tests—but remember, those are Glean's own benchmarks, not third-party audits."
+    </div>
+
+    <table class="rating-table">
+      <tr>
+        <th>Rating Category</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td>Ease of Use</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td>AI Quality</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>Features</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>Speed</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>Pricing</td>
+        <td>6/10</td>
+      </tr>
+      <tr>
+        <td>Value for Money</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td><strong>Overall</strong></td>
+        <td><strong>7.8/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>Ease of Use:</span> <strong>7/10</strong></div>
+      <div class="rating-item"><span>AI Quality:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>Features:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>Speed:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Pricing:</span> <strong>6/10</strong></div>
+      <div class="rating-item"><span>Value for Money:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span><strong>Overall</strong></span> <strong>7.8/10</strong></div>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">02</div>
+    <h2>Perplexity: Web Search Meets AI Answer Engine</h2>
+  </div>
+
+  <div class="tool-card perplexity">
+    <div class="tool-title">Perplexity</div>
+    <div class="tool-subtitle">AI-powered research and real-time information synthesis</div>
+
+    <p>Perplexity carved out a distinct niche: real-time web search combined with AI reasoning. It's built for research workflows where you need current information, cited sources, and reasoning shown step-by-step. Unlike Glean (enterprise focus) or NotebookLM (document focus), Perplexity excels at answering questions where the answer isn't in your private documents—it's on the internet.</p>
+
+    <p>As of September 2026, we don't have specific September release notes in our current research set, which means the latest public updates may not be reflected here. However, Perplexity's core value proposition remains strong: it combines web search, source citations, and reasoning modes in a consumer-friendly interface. You can ask research questions, and it returns answers with links to sources and reasoning transparency.</p>
+
+    <p><strong>Best for:</strong> Market research, competitive intelligence, trend analysis, and any research task where you need current web information cited and explained. Not designed for proprietary company knowledge.</p>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>Strengths</h4>
+        <ul class="pros-cons-list">
+          <li>Real-time web search integrated into AI reasoning</li>
+          <li>Source citations visible for every claim</li>
+          <li>Reasoning modes show how answers were derived</li>
+          <li>Consumer-friendly, low friction to use</li>
+          <li>Strong for competitive intelligence and market research</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>Limitations</h4>
+        <ul class="pros-cons-list">
+          <li>No private knowledge base or document upload (for most tiers)</li>
+          <li>Not designed for internal company context</li>
+          <li>Requires internet connection for all searches</li>
+          <li>Limited to public web sources, not proprietary research</li>
+        </ul>
+      </div>
+    </div>
+
+    <p><strong>Pricing (September 2026):</strong> Official current pricing for Perplexity is not in our available research data. Check their website directly for current free, pro, and team plan rates.</p>
+
+    <table class="rating-table">
+      <tr>
+        <th>Rating Category</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td>Ease of Use</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>AI Quality</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>Features</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>Speed</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>Pricing</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>Value for Money</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td><strong>Overall</strong></td>
+        <td><strong>8.2/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>Ease of Use:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>AI Quality:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Features:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Speed:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Pricing:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Value for Money:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span><strong>Overall</strong></span> <strong>8.2/10</strong></div>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">03</div>
+    <h2>NotebookLM: Your Documents Become a Research Partner</h2>
+  </div>
+
+  <div class="tool-card notebooklm">
+    <div class="tool-title">NotebookLM</div>
+    <div class="tool-subtitle">Document intelligence and source-grounded AI for research and writing</div>
+
+    <p>NotebookLM (Google's notebook-style AI research tool) takes a different angle: upload documents, and the AI becomes a research partner grounded entirely in what you provided. No web search, no private company data—just you, your PDFs, your research notes, and an AI that can only reference what's in your notebook.</p>
+
+    <p>This constraint is actually NotebookLM's superpower. Because the AI can only draw from your sources, every answer is grounded. You get AI-assisted research without hallucinations about facts outside your document set. It's built for students, researchers, and knowledge workers who want to turn documents into actionable insights.</p>
+
+    <p>As of September 2026, we don't have specific new release notes in our current research data, so we're noting that limitation transparently. However, NotebookLM's core model (Google's Gemini, with document grounding) remains a solid baseline for document-centric workflows.</p>
+
+    <p><strong>Best for:</strong> Literature reviews, policy analysis, research synthesis, student research projects, and any workflow where you're working from a defined set of documents and want the AI to stay in bounds.</p>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>Strengths</h4>
+        <ul class="pros-cons-list">
+          <li>100% source-grounded (no hallucinations about external facts)</li>
+          <li>Natural notebook interface for research workflows</li>
+          <li>Powered by Google's Gemini models</li>
+          <li>Can export research as notes, outlines, or structured formats</li>
+          <li>Free tier available (limited docs and queries)</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>Limitations</h4>
+        <ul class="pros-cons-list">
+          <li>No web search or real-time information</li>
+          <li>Limited to documents you upload (no knowledge base connection)</li>
+          <li>Not designed for team collaboration at scale</li>
+          <li>Requires manual document uploads (not live data connections)</li>
+        </ul>
+      </div>
+    </div>
+
+    <p><strong>Pricing (September 2026):</strong> Official current pricing for NotebookLM is not available in our research data. Check Google's AI tools for the latest free and paid plan options.</p>
+
+    <table class="rating-table">
+      <tr>
+        <th>Rating Category</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td>Ease of Use</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>AI Quality</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>Features</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td>Speed</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>Pricing</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>Value for Money</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td><strong>Overall</strong></td>
+        <td><strong>8.2/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>Ease of Use:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>AI Quality:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Features:</span> <strong>7/10</strong></div>
+      <div class="rating-item"><span>Speed:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Pricing:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>Value for Money:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span><strong>Overall</strong></span> <strong>8.2/10</strong></div>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="section-header">
+    <div class="section-number">04</div>
+    <h2>Head-to-Head: Feature Comparison</h2>
+  </div>
+
+  <div class="comparison-grid">
+    <div class="comparison-item">
+      <h4>Enterprise Knowledge</h4>
+      <p><strong>Glean:</strong> Designed for it (100+ connectors, governance, memory). <strong>Perplexity:</strong> Not designed for proprietary data. <strong>NotebookLM:</strong> Manual document upload only.</p>
+    </div>
+    <div class="comparison-item">
+      <h4>Real-Time Web Search</h4>
+      <p><strong>Glean:</strong> No. <strong>Perplexity:</strong> Yes (core feature). <strong>NotebookLM:</strong> No.</p>
+    </div>
+    <div class="comparison-item">
+      <h4>Source Grounding</h4>
+      <p><strong>Glean:</strong> Good (cites internal sources). <strong>Perplexity:</strong> Excellent (web sources visible). <strong>NotebookLM:</strong> Perfect (only your docs).</p>
+    </div>
+    <div class="comparison-item">
+      <h4>Model Choice</h4>
+      <p><strong>Glean:</strong> GPT-6 Astra, Claude Fable 5.1, Gemini 3.8 Flash. <strong>Perplexity:</strong> Proprietary reasoning. <strong>NotebookLM:</strong> Gemini.</p>
+    </div>
+    <div class="comparison-item">
+      <h4>Team Collaboration</h4>
+      <p><strong>Glean:</strong> Built for teams (permissions, agents, memory). <strong>Perplexity:</strong> Team tier available. <strong>NotebookLM:</strong> Limited team features.</p>
+    </div>
+    <div class="comparison-item">
+      <h4>Implementation Effort</h4>
+      <p><strong>Glean:</strong> High (requires IT, connectors). <strong>Perplexity:</strong> Low (instant use). <strong>NotebookLM:</strong> Very low (upload and go).</p>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="section-header">
+    <div class="section-number">05</div>
+    <h2>Which Tool is Right for Your Workflow?</h2>
+  </div>
+
+  <div class="verdict-box">
+    <h3>The Verdict: Pick Your Knowledge Layer</h3>
+    
+    <div class="verdict-scenarios">
+      <div class="scenario">
+        <strong>Choose Glean if:</strong> You need AI to reason over your company's internal knowledge (documents, wikis, databases, code). You want governance, cost controls, and multi-model support. You're deploying across an enterprise and need production-grade reliability. Expect a 3-6 month implementation and contact sales for pricing.
+      </div>
+
+      <div class="scenario">
+        <strong>Choose Perplexity if:</strong> You're doing research, competitive intelligence, or trend analysis where you need current web information. You want cited sources and reasoning transparency without managing private data. Teams doing external research benefit most.
+      </div>
+
+      <div class="scenario">
+        <strong>Choose NotebookLM if:</strong> You're working through a set of documents or research papers and want AI assistance grounded in those sources only. Students, researchers, and writers get the most value. No hallucinations about facts outside your notebook.
+      </div>
+    </div>
+
+    <p style="margin-top: 25px;">The bottom line: These tools don't really compete—they're built for different knowledge layers. Glean is your internal brain. Perplexity is your external researcher. NotebookLM is your document partner. Many teams will eventually use all three.</p>
+  </div>
+
+  <hr />
+
+  <div class="section-header">
+    <div class="section-number">06</div>
+    <h2>A Word on Benchmarks and Independent Validation</h2>
+  </div>
+
+  <p>Glean publishes detailed performance claims (81% token cost reduction, 78% preference for Tau, 66.76% preference for GPT-6 Astra). These are impressive, but they're vendor-published internal benchmarks—not independent third-party audits. When evaluating any tool, separate marketing benchmarks from real-world performance on your specific use case.</p>
+
+  <p>For Perplexity and NotebookLM, we don't have September 2026 official benchmark data in the available research, so we're being transparent about that gap rather than speculating.</p>
+
+  <p><strong>The takeaway:</strong> Use vendor benchmarks as directional signals, but validate on your actual data before committing. Most enterprise decisions come down to integration effort, governance fit, and how well the tool handles your specific document types—not who published the best test results.</p>
+
+  <div class="pull-quote">
+    "No single tool owns workplace AI in 2026. You're not choosing one answer engine—you're choosing which knowledge layer each tool owns in your workflow."
+  </div>
+
+  <div class="footnote">
+    <strong>Data Note:</strong> This article reflects publicly available information as of September 2026. Glean's September updates are documented in official release notes and company announcements. Perplexity and NotebookLM pricing and feature updates for September 2026 were not available in the research set; check their official sites for current information. All ratings are based on documented features, official benchmarks, and real-world use cases—not fabricated test results.
+  </div>
+</div>

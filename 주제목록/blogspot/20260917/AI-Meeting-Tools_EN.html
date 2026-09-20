@@ -1,0 +1,1022 @@
+<style>
+/* CRITICAL: Hide Blogger sidebar on all screen sizes */
+.sidebar, .sidebar-wrapper, .sidebar-container, aside { display: none !important; }
+.Profile, .BlogArchive, .Label, .ReportAbuse { display: none !important; }
+.main-content, .main-wrapper, .Blog, .post-outer { width: 100% !important; }
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+/* Base styles */
+html, body {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #ffffff !important;
+  color: #333 !important;
+  overflow-x: hidden !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #1a1a2e !important;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+p, li, span, div, td, tr, th {
+  color: #333 !important;
+  font-family: 'Inter', sans-serif;
+}
+
+a {
+  color: #667eea !important;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.post-body, .article, .post, .post-content {
+  background: #ffffff !important;
+  color: #333 !important;
+}
+
+/* Container */
+.article-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 40px 20px !important;
+  background: #ffffff !important;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* Metadata */
+.meta-info {
+  font-size: 0.95em;
+  color: #666;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #667eea;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Intro section */
+.intro-section {
+  background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+  padding: 40px;
+  border-radius: 12px;
+  margin-bottom: 50px;
+  border-left: 6px solid #667eea;
+}
+
+.intro-section h2 {
+  margin-top: 0;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.intro-section p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  margin: 15px 0;
+}
+
+/* Section header */
+.section-header {
+  display: flex;
+  align-items: center;
+  margin: 60px 0 30px 0;
+}
+
+.section-number {
+  font-size: 2.5em;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-right: 20px;
+  line-height: 1;
+}
+
+.section-title {
+  font-size: 2em;
+  margin: 0;
+  color: #1a1a2e;
+}
+
+/* Tool card */
+.tool-card {
+  background: white;
+  border-left: 6px solid #667eea;
+  padding: 30px;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.tool-card.granola {
+  border-left-color: #f59e0b;
+}
+
+.tool-card.fathom {
+  border-left-color: #06b6d4;
+}
+
+.tool-card.fireflies {
+  border-left-color: #8b5cf6;
+}
+
+.tool-name {
+  font-size: 1.8em;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  color: #1a1a2e;
+}
+
+.tool-tagline {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+/* Pricing highlight */
+.pricing-highlight {
+  background: linear-gradient(135deg, #f0f9ff 0%, #f5f3ff 100%);
+  padding: 20px;
+  border-radius: 8px;
+  margin: 25px 0;
+  border-left: 4px solid #667eea;
+}
+
+.pricing-highlight strong {
+  color: #1a1a2e;
+}
+
+/* Pros and Cons */
+.pros-cons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.pros {
+  background: #f0fdf4;
+  border-left: 4px solid #10b981;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+.cons {
+  background: #fef2f2;
+  border-left: 4px solid #ef4444;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+.pros-title, .cons-title {
+  font-weight: 700;
+  font-size: 1.1em;
+  margin: 0 0 15px 0;
+}
+
+.pros-title {
+  color: #059669;
+}
+
+.cons-title {
+  color: #dc2626;
+}
+
+.pros ul, .cons ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.pros li, .cons li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.pros li:before {
+  content: '+ ';
+  color: #10b981;
+  font-weight: 700;
+  margin-right: 5px;
+}
+
+.cons li:before {
+  content: '- ';
+  color: #ef4444;
+  font-weight: 700;
+  margin-right: 5px;
+}
+
+/* Rating table */
+.rating-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 30px 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.rating-table th {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 15px;
+  text-align: left;
+  font-weight: 700;
+}
+
+.rating-table td {
+  padding: 15px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.rating-table tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+.rating-table tr:last-child {
+  background: #f3f0ff;
+  font-weight: 700;
+}
+
+.rating-table tr:last-child td {
+  border-bottom: none;
+  color: #667eea;
+}
+
+/* Rating mobile (hidden on desktop) */
+.rating-mobile {
+  display: none;
+}
+
+.rating-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e7eb;
+  font-family: 'Inter', sans-serif;
+}
+
+.rating-item span {
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.rating-item strong {
+  color: #667eea;
+  font-weight: 700;
+}
+
+/* Comparison table */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 40px 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.comparison-table th {
+  background: #1a1a2e;
+  color: white;
+  padding: 18px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.95em;
+}
+
+.comparison-table td {
+  padding: 16px 18px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.95em;
+}
+
+.comparison-table tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+.comparison-table tr:first-child {
+  background: #1a1a2e;
+}
+
+/* Pull quote */
+.pull-quote {
+  background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+  border-left: 5px solid #667eea;
+  padding: 30px;
+  margin: 40px 0;
+  border-radius: 8px;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #1a1a2e;
+  font-style: italic;
+}
+
+/* Final verdict */
+.verdict-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 40px;
+  border-radius: 12px;
+  margin: 50px 0;
+}
+
+.verdict-section h3 {
+  color: white;
+  font-size: 1.8em;
+  margin-top: 0;
+}
+
+.verdict-section p {
+  color: white;
+  font-size: 1.05em;
+  line-height: 1.8;
+  margin: 15px 0;
+}
+
+.verdict-item {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 6px;
+  border-left: 4px solid rgba(255, 255, 255, 0.5);
+}
+
+.verdict-item strong {
+  color: #fff;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Body text */
+p {
+  font-size: 1.05em;
+  line-height: 1.8;
+  margin: 20px 0;
+  font-family: 'Inter', sans-serif;
+}
+
+ul, ol {
+  font-size: 1.05em;
+  line-height: 1.8;
+  margin: 20px 0;
+  padding-left: 30px;
+}
+
+li {
+  margin-bottom: 12px;
+}
+
+/* Divider */
+.divider {
+  border: none;
+  height: 1px;
+  background: #e5e7eb;
+  margin: 50px 0;
+}
+
+/* Stat box */
+.stat-box {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.stat-number {
+  font-size: 2.5em;
+  font-weight: 700;
+  margin: 0;
+}
+
+.stat-label {
+  font-size: 1em;
+  margin: 10px 0 0 0;
+  opacity: 0.9;
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+  .rating-mobile {
+    display: none !important;
+  }
+  
+  .rating-table {
+    display: table !important;
+  }
+  
+  .comparison-table {
+    display: table !important;
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+  }
+  
+  .article-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 15px !important;
+    margin: 0 !important;
+  }
+  
+  .main-content, .main-wrapper, .Blog, .post-outer, .post-body {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  h1 {
+    font-size: 1.8em !important;
+    line-height: 1.3;
+  }
+  
+  h2 {
+    font-size: 1.4em !important;
+  }
+  
+  h3 {
+    font-size: 1.2em !important;
+  }
+  
+  p {
+    font-size: 1em !important;
+    word-break: break-word;
+  }
+  
+  .section-header {
+    margin: 40px 0 20px 0;
+  }
+  
+  .section-number {
+    font-size: 2em;
+    margin-right: 15px;
+  }
+  
+  .section-title {
+    font-size: 1.5em;
+  }
+  
+  .intro-section {
+    padding: 20px 15px;
+    margin-bottom: 30px;
+  }
+  
+  .intro-section h2 {
+    font-size: 1.5em;
+  }
+  
+  .tool-card {
+    padding: 20px 15px;
+    margin-bottom: 25px;
+  }
+  
+  .tool-name {
+    font-size: 1.4em;
+  }
+  
+  .pros-cons {
+    display: block;
+    grid-template-columns: none;
+    gap: 0;
+  }
+  
+  .pros {
+    margin-bottom: 20px;
+  }
+  
+  .cons {
+    margin-bottom: 20px;
+  }
+  
+  .rating-table {
+    display: none !important;
+  }
+  
+  .rating-mobile {
+    display: block !important;
+    background: white;
+    border-left: 4px solid #667eea;
+    padding: 20px;
+    border-radius: 6px;
+    margin: 25px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  }
+  
+  .rating-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .rating-item:last-child {
+    border-bottom: none;
+  }
+  
+  .comparison-table {
+    display: none !important;
+  }
+  
+  .comparison-mobile {
+    display: block !important;
+  }
+  
+  .pull-quote {
+    padding: 20px 15px;
+    font-size: 1.1em;
+  }
+  
+  .verdict-section {
+    padding: 25px 15px;
+  }
+  
+  .verdict-section h3 {
+    font-size: 1.4em;
+  }
+  
+  .stat-box {
+    padding: 20px 15px;
+  }
+  
+  .stat-number {
+    font-size: 2em;
+  }
+  
+  ul, ol {
+    padding-left: 20px;
+  }
+}
+</style>
+
+<div class="article-container">
+  <div class="meta-info">
+    By Roche P. | September 2026 | 9 min read
+  </div>
+
+  <div class="intro-section">
+    <h2>Fathom vs Fireflies.ai vs Granola: The Right AI Meeting Tool for Your Team</h2>
+    <p>Meeting recording and transcription tools have become table stakes in modern work. But which one actually delivers the features your team needs without burning through your budget?</p>
+    <p>This September 2026 comparison cuts through the noise and looks at three of the strongest contenders: Granola (the bot-free specialist), Fathom (the freemium generalist), and Fireflies.ai (the integration powerhouse). We'll compare pricing, capture quality, feature sets, and real-world use cases so you can pick the right fit.</p>
+  </div>
+
+  <div class="section-header">
+    <span class="section-number">01</span>
+    <h2 class="section-title">The State of AI Meeting Tools in 2026</h2>
+  </div>
+
+  <p>The meeting capture landscape has matured significantly. As of September 2026, the key differentiator isn't just whether a tool can transcribe—it's <em>how</em> it captures audio and what automation it builds on top.</p>
+
+  <p>Three distinct capture models now dominate:</p>
+  <ul>
+    <li><strong>Bot-based capture</strong>: A virtual participant joins your call and records directly from the meeting. Most accessible, works on any platform, but meeting members see the bot is present.</li>
+    <li><strong>Bot-free (device-level) capture</strong>: Records directly from your system audio and microphone. Invisible to other participants. Privacy-focused but more technically complex.</li>
+    <li><strong>Flexible hybrid</strong>: Offers both modes and lets you choose per meeting. The middle ground that appeals to most teams.</li>
+  </ul>
+
+  <p>Pricing has also shifted. Free tiers are shrinking, but they're still meaningful differentiators—and the value gap between free and paid has widened. That matters if you're evaluating ROI for team deployments.</p>
+
+  <hr class="divider">
+
+  <div class="section-header">
+    <span class="section-number">02</span>
+    <h2 class="section-title">Granola: The Bot-Free Specialist</h2>
+  </div>
+
+  <div class="tool-card granola">
+    <h3 class="tool-name">Granola</h3>
+    <p class="tool-tagline">Silent, intelligent meeting notes without the bot</p>
+
+    <p>Granola has carved out a distinctive position: it's the strongest choice if you want <strong>zero visibility to other meeting participants</strong>. Its device-level capture model works by tapping directly into your system audio and microphone—no virtual attendee, no bot in the attendee list.</p>
+
+    <p>The workflow is intentionally different from transcription-first tools. Instead of dumping raw transcript into your lap, Granola prioritizes a hybrid notepad: you start by jotting your own notes, and the AI fills in context, transcription excerpts, and summaries around them. That approach resonates with people who want notes that reflect their own thinking, not just a playback of what was said.</p>
+
+    <div class="pricing-highlight">
+      <strong>Pricing as of September 2026:</strong>
+      <ul>
+        <li>Free: Basic free plan with unlimited meetings, but 30-day history window and limited archive access</li>
+        <li>Business: $14/user/month</li>
+        <li>Enterprise: $35/user/month</li>
+      </ul>
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4 class="pros-title">Strengths</h4>
+        <ul>
+          <li>Truly bot-free capture—no meeting visibility, ideal for sensitive conversations</li>
+          <li>User-written notes as the anchor; AI fills in context and details</li>
+          <li>Natural-language editing and cross-tool connectivity</li>
+          <li>Strong hybrid notepad model that differs from traditional transcription</li>
+          <li>Cross-platform availability (Windows, macOS, Android, iPhone)</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4 class="cons-title">Limitations</h4>
+        <ul>
+          <li>Desktop-first experience; mobile is secondary</li>
+          <li>Free plan history limited to 30 days</li>
+          <li>Less emphasis on team automation and integrations vs. Fireflies</li>
+          <li>Smaller ecosystem of third-party connections</li>
+        </ul>
+      </div>
+    </div>
+
+    <table class="rating-table">
+      <tr>
+        <th>Rating Category</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td>Ease of Use</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>AI Quality</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>Features</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td>Capture Privacy</td>
+        <td>10/10</td>
+      </tr>
+      <tr>
+        <td>Pricing Value</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td>Integration Ecosystem</td>
+        <td>6/10</td>
+      </tr>
+      <tr>
+        <td><strong>Overall</strong></td>
+        <td><strong>7.7/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>Ease of Use:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>AI Quality:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Features:</span> <strong>7/10</strong></div>
+      <div class="rating-item"><span>Capture Privacy:</span> <strong>10/10</strong></div>
+      <div class="rating-item"><span>Pricing Value:</span> <strong>7/10</strong></div>
+      <div class="rating-item"><span>Integration Ecosystem:</span> <strong>6/10</strong></div>
+      <div class="rating-item"><span><strong>Overall</strong></span> <strong>7.7/10</strong></div>
+    </div>
+
+    <div class="pull-quote">
+      Granola is the clear winner if you need bot-free capture and your team handles sensitive, confidential conversations where visibility matters.
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-header">
+    <span class="section-number">03</span>
+    <h2 class="section-title">Fathom: The Freemium Generalist</h2>
+  </div>
+
+  <div class="tool-card fathom">
+    <h3 class="tool-name">Fathom</h3>
+    <p class="tool-tagline">Flexible capture modes with the most generous free plan</p>
+
+    <p>Fathom's biggest selling point is straightforward: it still offers one of the market's most generous free plans. As of September 2026, the free tier includes unlimited recordings, transcription, and instant AI summaries—features that many competitors now gate behind paid tiers.</p>
+
+    <p>Flexibility is the second strength. Fathom lets you choose your capture mode per meeting: use a bot when it's practical, or flip to bot-free mode when you need stealth. The bot-free option is currently in beta and Mac-only, which limits its reach, but it signals the company's willingness to compete on multiple fronts.</p>
+
+    <p>Where Fathom shows its limits is team features. Advanced summaries, detailed action items, and multi-user collaboration start in the paid tiers. For solo users or very small teams, this structure is unbeatable. For scaling organizations, you'll hit the paywall faster.</p>
+
+    <div class="pricing-highlight">
+      <strong>Pricing as of September 2026:</strong>
+      <ul>
+        <li>Free: Unlimited recordings, transcription, and basic summaries</li>
+        <li>Premium: $20/month or $16/year</li>
+        <li>Team: $19/month or $15/year</li>
+        <li>Business: $34/month or $25/year</li>
+        <li>Enterprise: Custom pricing</li>
+      </ul>
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4 class="pros-title">Strengths</h4>
+        <ul>
+          <li>Most generous free plan in the category—unlimited recordings and transcription</li>
+          <li>Flexible capture: choice of bot or bot-free per meeting</li>
+          <li>Fast setup and onboarding for new users</li>
+          <li>Straightforward, readable UI with minimal learning curve</li>
+          <li>Good value for individual users and small teams on free or Premium tier</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4 class="cons-title">Limitations</h4>
+        <ul>
+          <li>Bot-free mode is Mac-only and still in beta</li>
+          <li>Advanced summaries and action items require paid plans</li>
+          <li>Weaker team automation and workflow integrations vs. Fireflies</li>
+          <li>Limited native integrations outside common platforms</li>
+          <li>Free plan lacks advanced collaboration features for teams</li>
+        </ul>
+      </div>
+    </div>
+
+    <table class="rating-table">
+      <tr>
+        <th>Rating Category</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td>Ease of Use</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>AI Quality</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>Features</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td>Capture Flexibility</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td>Free Tier Value</td>
+        <td>10/10</td>
+      </tr>
+      <tr>
+        <td>Team Automation</td>
+        <td>6/10</td>
+      </tr>
+      <tr>
+        <td><strong>Overall</strong></td>
+        <td><strong>7.8/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>Ease of Use:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>AI Quality:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Features:</span> <strong>7/10</strong></div>
+      <div class="rating-item"><span>Capture Flexibility:</span> <strong>7/10</strong></div>
+      <div class="rating-item"><span>Free Tier Value:</span> <strong>10/10</strong></div>
+      <div class="rating-item"><span>Team Automation:</span> <strong>6/10</strong></div>
+      <div class="rating-item"><span><strong>Overall</strong></span> <strong>7.8/10</strong></div>
+    </div>
+
+    <div class="pull-quote">
+      Fathom wins on accessibility. If you're evaluating tools on cost and ease of entry, especially as an individual user, Fathom's free plan is hard to beat.
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-header">
+    <span class="section-number">04</span>
+    <h2 class="section-title">Fireflies.ai: The Integration Powerhouse</h2>
+  </div>
+
+  <div class="tool-card fireflies">
+    <h3 class="tool-name">Fireflies.ai</h3>
+    <p class="tool-tagline">Deep integrations and workflow automation at scale</p>
+
+    <p>Fireflies.ai takes a different approach: it prioritizes deep integration into your existing stack. The company has invested heavily in connecting to CRM platforms, communication tools, project management systems, and custom workflows—40+ native integrations as of this writing.</p>
+
+    <p>The standout feature is automation. Once you've enabled Fireflies, it can automatically populate CRM fields, create action items in your project management tool, and distribute notes to the right channels—all without manual touching. For sales teams, ops-heavy organizations, and enterprise deployments, this automation pays dividends fast.</p>
+
+    <p>Capture is bot-based by default, but the company also offers bot-free options via desktop app, Chrome extension, and Google Meet SDK integrations. It's less opinionated than Granola on the topic, and that flexibility appeals to larger teams with mixed requirements.</p>
+
+    <div class="pricing-highlight">
+      <strong>Pricing as of September 2026:</strong>
+      <ul>
+        <li>Free: Limited transcription with core features</li>
+        <li>Pro: $18/month or $10/year</li>
+        <li>Business: $29/month or $19/year</li>
+        <li>Enterprise: $39/month (or higher for large deployments)</li>
+      </ul>
+      <p><em>Unlimited transcription is available on all tiers, including free.</em></p>
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4 class="pros-title">Strengths</h4>
+        <ul>
+          <li>40+ native integrations: CRM, Slack, Hubspot, Salesforce, Microsoft, and more</li>
+          <li>Powerful automation: auto-populate CRM, create action items, route notes</li>
+          <li>Unlimited transcription on every tier, including free</li>
+          <li>AskFred (AI assistant) for natural-language question answering on call content</li>
+          <li>Strong team collaboration and permissions model</li>
+          <li>Best fit for sales, ops, and enterprise scaling</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4 class="cons-title">Limitations</h4>
+        <ul>
+          <li>Default bot-based capture; bot visibility is standard expectation</li>
+          <li>Bot-free modes are more fragmented (desktop app, extension, SDK)</li>
+          <li>Steeper learning curve due to integration complexity</li>
+          <li>Free tier is more limited than Fathom's; paid plans needed for full value</li>
+          <li>Requires buy-in from your CRM/tools to maximize ROI</li>
+        </ul>
+      </div>
+    </div>
+
+    <table class="rating-table">
+      <tr>
+        <th>Rating Category</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td>Ease of Use</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td>AI Quality</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>Features</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>Integration Depth</td>
+        <td>10/10</td>
+      </tr>
+      <tr>
+        <td>Automation</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>Team Scaling</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td><strong>Overall</strong></td>
+        <td><strong>8.7/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>Ease of Use:</span> <strong>7/10</strong></div>
+      <div class="rating-item"><span>AI Quality:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>Features:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>Integration Depth:</span> <strong>10/10</strong></div>
+      <div class="rating-item"><span>Automation:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>Team Scaling:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span><strong>Overall</strong></span> <strong>8.7/10</strong></div>
+    </div>
+
+    <div class="pull-quote">
+      Fireflies.ai is the choice for organizations running Salesforce, HubSpot, or complex sales workflows. The ROI comes from automation, not just better notes.
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-header">
+    <span class="section-number">05</span>
+    <h2 class="section-title">Head-to-Head Comparison</h2>
+  </div>
+
+  <table class="comparison-table">
+    <tr>
+      <th>Feature / Use Case</th>
+      <th>Granola</th>
+      <th>Fathom</th>
+      <th>Fireflies.ai</th>
+    </tr>
+    <tr>
+      <td><strong>Capture Model</strong></td>
+      <td>Device-level / Bot-free only</td>
+      <td>Bot or Bot-free (beta, Mac)</td>
+      <td>Bot-based default + bot-free options</td>
+    </tr>
+    <tr>
+      <td><strong>Free Plan</strong></td>
+      <td>Basic, 30-day window</td>
+      <td>Unlimited recordings & transcription</td>
+      <td>Limited, unlimited transcription</td>
+    </tr>
+    <tr>
+      <td><strong>Entry Paid Price</strong></td>
+      <td>$14/user/month</td>
+      <td>$16-20/month (individual) or $15-19 (team)</td>
+      <td>$10-18/month</td>
+    </tr>
+    <tr>
+      <td><strong>Automation</strong></td>
+      <td>Basic</td>
+      <td>Limited</td>
+      <td>Extensive (40+ integrations)</td>
+    </tr>
+    <tr>
+      <td><strong>Bot Visibility</strong></td>
+      <td>None (stealth)</td>
+      <td>Flexible (your choice)</td>
+      <td>Default visible, but bot-free options</td>
+    </tr>
+    <tr>
+      <td><strong>Best For</strong></td>
+      <td>Sensitive calls, solo users, privacy-first</td>
+      <td>Individuals, small teams, budget-conscious</td>
+      <td>Sales teams, enterprise, CRM-heavy workflows</td>
+    </tr>
+    <tr>
+      <td><strong>Team Scaling</strong></td>
+      <td>Moderate</td>
+      <td>Fair</td>
+      <td>Excellent</td>
+    </tr>
+    <tr>
+      <td><strong>Learning Curve</strong></td>
+      <td>Low-moderate</td>
+      <td>Very low</td>
+      <td>Moderate-high</td>
+    </tr>
+  </table>
+
+  <hr class="divider">
+
+  <div class="section-header">
+    <span class="section-number">06</span>
+    <h2 class="section-title">Which Tool Should You Choose?</h2>
+  </div>
+
+  <div class="verdict-section">
+    <h3>The Decision Framework</h3>
+    
+    <div class="verdict-item">
+      <strong>Choose Granola if...</strong>
+      You need true bot-free capture and your team handles confidential, sensitive, or regulated conversations. Ideal for law firms, healthcare, finance, or any context where meeting participants shouldn't see a recording bot. Also excellent for solo users who prioritize privacy and a note-centric workflow.
+    </div>
+
+    <div class="verdict-item">
+      <strong>Choose Fathom if...</strong>
+      You want the easiest entry point and the best free tier. Perfect for individuals, freelancers, small teams testing the category, or anyone skeptical about ROI. The free plan is genuinely valuable—you can get real mileage without paying. Bonus: flexibility to try both bot and bot-free modes.
+    </div>
+
+    <div class="verdict-item">
+      <strong>Choose Fireflies.ai if...</strong>
+      You run a sales team, operate in a CRM-heavy environment (Salesforce, HubSpot, Pipedrive), or need meeting automation to populate fields, create tickets, or route notes automatically. The integration ecosystem and automation payoff compound as you scale. Best ROI for teams of 10+.
+    </div>
+  </div>
+
+  <h3 style="margin-top: 40px; font-size: 1.5em;">By Team Size and Budget</h3>
+
+  <p><strong>1-3 person team, tight budget:</strong> Fathom's free plan is unbeatable. Spend $0 until you actually need advanced features.</p>
+
+  <p><strong>3-10 person team, mixed workflows:</strong> Fathom on Premium ($16-20/year) or Granola Business ($14/user/month) depending on whether you care about bot visibility.</p>
+
+  <p><strong>10+ person team, sales or ops focus:</strong> Fireflies.ai Enterprise or Business tier. The integration ROI justifies the cost. Budget $200-400/month for a 10-person team.</p>
+
+  <p><strong>Privacy-sensitive environment (legal, healthcare, finance):</strong> Granola Business ($14/user/month). Bot-free is non-negotiable here.</p>
+
+  <hr class="divider">
+
+  <div class="section-header">
+    <span class="section-number">07</span>
+    <h2 class="section-title">The Bottom Line</h2>
+  </div>
+
+  <p>As of September 2026, AI meeting tools have splintered into clearly differentiated categories. You're no longer just choosing based on transcription quality—you're choosing based on <em>capture philosophy</em> and <em>workflow integration depth</em>.</p>
+
+  <p><strong>Granola</strong> wins on privacy and the bot-free experience. It's the only true "invisible" option, and that matters more in certain industries than others.</p>
+
+  <p><strong>Fathom</strong> wins on accessibility. The free plan is genuinely generous, and the flexibility to try both bot and bot-free modes makes it a safe first choice for teams uncertain about their needs.</p>
+
+  <p><strong>Fireflies.ai</strong> wins on scale and automation. If your team lives in Salesforce or HubSpot, the integration value compounds fast. It's the most expensive entry point but offers the clearest ROI for sales and ops teams.</p>
+
+  <p>The right choice depends on three questions: (1) Do you need bot-free capture? (2) What's your budget? (3) How tightly integrated does this need to be with your existing tools? Answer those, and the decision becomes clear.</p>
+
+  <div class="pull-quote">
+    The best meeting tool isn't the fanciest—it's the one your team will actually use consistently. Start with Fathom's free plan, try Granola if you need privacy, or jump straight to Fireflies if you're already deep in a CRM. All three are solid bets in 2026.
+  </div>
+
+</div>

@@ -1,0 +1,1052 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: #333 !important;
+    background: #ffffff !important;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #1a1a2e !important;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+  }
+
+  p, li, span, div {
+    color: #333 !important;
+  }
+
+  a {
+    color: #667eea !important;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .post-body, .article, .post {
+    background: #ffffff !important;
+    color: #333 !important;
+  }
+
+  .sidebar, .sidebar-wrapper, .sidebar-container, aside {
+    display: none !important;
+  }
+
+  .Profile, .BlogArchive, .Label, .ReportAbuse {
+    display: none !important;
+  }
+
+  .main-content, .main-wrapper, .Blog, .post-outer {
+    width: 100% !important;
+  }
+
+  .article-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: #ffffff;
+  }
+
+  .meta-info {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #667eea;
+    font-weight: 500;
+  }
+
+  .intro-section {
+    background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 50px;
+    border-left: 6px solid #667eea;
+  }
+
+  .intro-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+
+  .intro-section p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #444;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    margin: 60px 0 30px 0;
+  }
+
+  .section-number {
+    font-size: 2.5em;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-right: 25px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .section-content h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+
+  .tool-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-left: 6px solid #667eea;
+    padding: 30px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  }
+
+  .tool-badge {
+    display: inline-block;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+  }
+
+  .badge-copilot {
+    background: #ecf0ff;
+    color: #667eea;
+    border: 1px solid #667eea;
+  }
+
+  .badge-cursor {
+    background: #f0fdf4;
+    color: #10b981;
+    border: 1px solid #10b981;
+  }
+
+  .badge-claude {
+    background: #fef3c7;
+    color: #b45309;
+    border: 1px solid #b45309;
+  }
+
+  .tool-card h3 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    color: #1a1a2e;
+  }
+
+  .tool-card p {
+    font-size: 1.05em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #444;
+  }
+
+  .rating-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .rating-table th {
+    background: #f3f4f6;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    color: #1a1a2e;
+    border-bottom: 2px solid #e5e7eb;
+  }
+
+  .rating-table td {
+    padding: 15px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #333;
+  }
+
+  .rating-table tr:nth-child(even) {
+    background: #fafbfc;
+  }
+
+  .rating-table tr:last-child {
+    background: #f3f4f6;
+    font-weight: 600;
+  }
+
+  .rating-table tr:last-child td {
+    font-weight: 700;
+    color: #1a1a2e;
+  }
+
+  .rating-mobile {
+    display: none;
+  }
+
+  .pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin: 30px 0;
+  }
+
+  .pros {
+    background: #f0fdf4;
+    border-left: 6px solid #10b981;
+    padding: 25px;
+    border-radius: 8px;
+  }
+
+  .cons {
+    background: #fef2f2;
+    border-left: 6px solid #ef4444;
+    padding: 25px;
+    border-radius: 8px;
+  }
+
+  .pros h4, .cons h4 {
+    font-size: 1.15em;
+    margin-bottom: 15px;
+  }
+
+  .pros h4 {
+    color: #059669;
+  }
+
+  .cons h4 {
+    color: #dc2626;
+  }
+
+  .pros ul, .cons ul {
+    list-style: none;
+  }
+
+  .pros li, .cons li {
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  .pros li:before {
+    content: "+";
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    color: #10b981;
+  }
+
+  .cons li:before {
+    content: "-";
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    color: #ef4444;
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 40px 0;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .comparison-table th {
+    background: #f3f4f6;
+    padding: 18px;
+    text-align: left;
+    font-weight: 600;
+    color: #1a1a2e;
+    border-bottom: 2px solid #e5e7eb;
+    font-size: 0.95em;
+  }
+
+  .comparison-table td {
+    padding: 18px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #333;
+    font-size: 0.95em;
+  }
+
+  .comparison-table tr:nth-child(even) {
+    background: #fafbfc;
+  }
+
+  .comparison-table tr:first-child {
+    background: #f3f4f6;
+  }
+
+  .pull-quote {
+    border-left: 6px solid #667eea;
+    padding: 25px 30px;
+    background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+    margin: 40px 0;
+    border-radius: 8px;
+    font-size: 1.15em;
+    line-height: 1.8;
+    color: #1a1a2e;
+    font-weight: 500;
+  }
+
+  .verdict-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 12px;
+    margin: 50px 0;
+  }
+
+  .verdict-box h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  .verdict-box p {
+    font-size: 1.05em;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 15px;
+  }
+
+  .verdict-box strong {
+    color: white;
+    font-weight: 700;
+  }
+
+  .key-stat {
+    background: #ecf0ff;
+    border-left: 6px solid #667eea;
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #1a1a2e;
+  }
+
+  .divider {
+    height: 1px;
+    background: #e5e7eb;
+    margin: 50px 0;
+  }
+
+  .body-text {
+    font-size: 1.05em;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 25px;
+  }
+
+  .subheading {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin: 35px 0 20px 0;
+  }
+
+  .use-case-box {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-left: 5px solid #667eea;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 6px;
+  }
+
+  .use-case-box strong {
+    color: #667eea;
+  }
+
+  @media (max-width: 768px) {
+    html, body {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow-x: hidden !important;
+    }
+
+    .sidebar, .sidebar-wrapper, .sidebar-container, aside {
+      display: none !important;
+    }
+
+    .Profile, .BlogArchive, .Label, .ReportAbuse {
+      display: none !important;
+    }
+
+    .main-content, .main-wrapper, .Blog, .post-outer, .post-body, .article, .post {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .article-container {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 15px !important;
+      margin: 0 !important;
+    }
+
+    h1 {
+      font-size: 1.5em !important;
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-size: 1.4em !important;
+    }
+
+    h3 {
+      font-size: 1.2em !important;
+    }
+
+    .intro-section {
+      padding: 20px 15px;
+      margin-bottom: 30px;
+    }
+
+    .intro-section h2 {
+      font-size: 1.4em;
+    }
+
+    .intro-section p {
+      font-size: 1em;
+    }
+
+    .section-header {
+      margin: 40px 0 20px 0;
+    }
+
+    .section-number {
+      font-size: 2em;
+      margin-right: 15px;
+    }
+
+    .section-content h2 {
+      font-size: 1.4em;
+    }
+
+    .tool-card {
+      padding: 20px 15px;
+      margin-bottom: 25px;
+      border-left: 4px solid #667eea;
+    }
+
+    .tool-card h3 {
+      font-size: 1.2em;
+    }
+
+    .tool-card p {
+      font-size: 1em;
+    }
+
+    .body-text {
+      font-size: 1em;
+    }
+
+    .subheading {
+      font-size: 1.2em;
+    }
+
+    .rating-table {
+      display: none;
+    }
+
+    .rating-mobile {
+      display: block;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 25px 0;
+    }
+
+    .rating-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 15px;
+      border-bottom: 1px solid #e5e7eb;
+      font-size: 0.95em;
+    }
+
+    .rating-item:last-child {
+      border-bottom: none;
+    }
+
+    .rating-item span {
+      font-weight: 500;
+    }
+
+    .rating-item strong {
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+
+    .comparison-table {
+      display: none;
+    }
+
+    .pros-cons {
+      display: block;
+      margin: 25px 0;
+    }
+
+    .pros {
+      padding: 20px 15px;
+      margin-bottom: 15px;
+    }
+
+    .cons {
+      padding: 20px 15px;
+    }
+
+    .pros h4, .cons h4 {
+      font-size: 1.05em;
+    }
+
+    .pros li, .cons li {
+      font-size: 0.95em;
+    }
+
+    .pull-quote {
+      padding: 20px 15px;
+      font-size: 1.05em;
+      margin: 30px 0;
+    }
+
+    .verdict-box {
+      padding: 25px 15px;
+      margin: 40px 0;
+    }
+
+    .verdict-box h3 {
+      font-size: 1.25em;
+    }
+
+    .verdict-box p {
+      font-size: 0.95em;
+    }
+
+    .key-stat {
+      padding: 15px;
+      font-size: 0.95em;
+    }
+
+    .divider {
+      margin: 35px 0;
+    }
+
+    p, li {
+      word-break: break-word;
+    }
+  }
+</style>
+
+<div class="article-container">
+  <div class="meta-info">
+    로셰 P. 저 | 2026년 9월 | 10분 읽기
+  </div>
+
+  <div class="intro-section">
+    <h2>GitHub Copilot vs Cursor vs Claude: 실제로 효과 있는 AI 코딩 어시스턴트는?</h2>
+    <p>2026년 개발자들을 위한 세 가지 주요 AI 코딩 도구가 경쟁 중입니다. 하지만 어떤 도구가 실제로 개발 워크플로우를 빠르게 해주고, 코드 맥락을 이해하며, 예산을 낭비하지 않을까요? 최신 공식 업데이트가 보여주는 실전 활용 사례를 정리했습니다.</p>
+  </div>
+
+  <div class="key-stat">
+    2026년 9월 기준, GitHub Copilot은 가장 큰 플랫폼 업데이트를 발표했습니다: Jira 통합, CLI의 적응형 모델 오케스트레이션, VS Code 에이전트 자동화, 그리고 Business/Enterprise 요금 선불 결제 변경 등이 있습니다.
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">01</div>
+    <div class="section-content">
+      <h2>GitHub Copilot: 엔터프라이즈의 선택지가 더 강해지다</h2>
+    </div>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-badge badge-copilot">GitHub Copilot</div>
+    <h3>2026년 9월 업데이트: 실무에 미치는 영향</h3>
+    <p class="body-text">GitHub Copilot은 이달 여러 주요 기능을 출시했습니다. Copilot 앱이 Jira와 통합되어 AI 채팅 중 이슈를 직접 참조할 수 있게 되었습니다. 커맨드라인 인터페이스에 적응형 모델 오케스트레이션이 추가되어 작업의 복잡도와 예산 제약에 따라 최적의 모델을 자동 선택합니다. VS Code는 새로운 에이전트 자동화 기능으로 반복적인 리팩토링 작업을 지속적인 프롬프트 없이 처리할 수 있게 되었습니다. JetBrains IDE는 엔터프라이즈 제어 기능이 확대되었으며, GPT-6 Astra, Gemini 3.8 Flash, Claude Fable 5.1이 새로 지원되기 시작했습니다.</p>
+
+    <div class="subheading">실전 활용 시나리오</div>
+    
+    <div class="use-case-box">
+      <strong>시나리오 1: Jira 기반 팀의 개발 워크플로우</strong>
+      <p style="margin-top: 10px;">팀이 Jira에서 이슈를 관리하고 있다면, Copilot에서 직접 이슈를 언급할 수 있습니다. "Jira-123에서 설명한 대로 이 함수를 리팩토링해줄래?" 라고 물으면 Copilot이 이슈 내용을 맥락으로 가져와 코드를 작성합니다. 이를 통해 이슈와 코드의 추적성이 향상되고 문맥 전환 시간을 줄일 수 있습니다.</p>
+    </div>
+
+    <div class="use-case-box">
+      <strong>시나리오 2: 적응형 모델 오케스트레이션으로 비용 절감</strong>
+      <p style="margin-top: 10px;">간단한 변수명 변경 제안에는 더 빠른 Claude Fable 5.1을, 복잡한 알고리즘 설계에는 GPT-6 Astra를 자동으로 사용합니다. 수동으로 모델을 선택할 필요가 없어 개발 속도가 올라가면서도 예산은 효율적으로 관리됩니다. 특히 대규모 팀에서는 이 자동 최적화만으로도 월간 비용을 30% 이상 절감할 수 있습니다.</p>
+    </div>
+
+    <div class="use-case-box">
+      <strong>시나리오 3: VS Code 에이전트로 자동 리팩토링</strong>
+      <p style="margin-top: 10px;">의도적으로 "이 폴더의 모든 export를 정렬해줘" 같은 작업을 지시하면, Copilot 에이전트가 여러 파일을 자동으로 처리합니다. 개발자가 각 파일마다 프롬프트를 반복할 필요가 없어, 대규모 코드베이스 리팩토링 시간이 크게 단축됩니다.</p>
+    </div>
+
+    <div class="subheading">가격 정책 변화 (2026년 9월 기준)</div>
+    <p class="body-text">주요 변화: GitHub는 Business/Enterprise 좌석을 다음 청구 주기부터 선불 결제 방식으로 변경했습니다. 신규 가입은 신용카드/PayPal 고객 대상으로 9월 1일부터 재개되었습니다. GPT-6 Astra를 사용할 경우 선불 좌석이 아닌 사용량 기반 가격이 적용됩니다 (제공자 정가 기준). 개인 개발자용 가격에는 아직 변화가 공식 발표되지 않았습니다.</p>
+
+    <div class="body-text">
+      <strong>실전 팁:</strong> Enterprise 도입을 검토 중이라면 선불 결제로 인한 현금 흐름 영향을 미리 파악하세요. 사용량 기반 가격으로 전환되는 GPT-6 Astra의 예상 비용을 계산한 후 선택하는 것이 현명합니다.
+    </div>
+
+    <div class="subheading">핵심 기능</div>
+    <p class="body-text">앱과 CLI에서 콘텐츠 제외 옵션이 있어 지적 재산권 우려를 해결할 수 있습니다. JetBrains에서 엔터프라이즈 관리 샌드박스가 지원되며, 자동 모델 선택이 비용, 품질, 응답 시간의 균형을 맞춥니다. IDE, CLI, 웹 전반의 통합 Copilot 경험이 지속적으로 개선되고 있습니다.</p>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>실무에서의 장점</h4>
+        <ul>
+          <li>Jira 통합으로 이슈 중심의 팀 워크플로우 간소화</li>
+          <li>적응형 모델 오케스트레이션으로 성능 손실 없이 30%+ 비용 절감</li>
+          <li>VS Code, JetBrains, Visual Studio 등 주요 IDE에서 최고 수준의 지원</li>
+          <li>에이전트 자동화로 반복적인 리팩토링 작업 자동 처리</li>
+          <li>대규모 조직을 위한 감사 로그 및 엔터프라이즈 제어</li>
+          <li>한 인터페이스에서 GPT, Claude, Gemini 간 전환 가능</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>실무에서의 제약</h4>
+        <ul>
+          <li>선불 결제 방식으로 대규모 도입 시 초기 현금 부담 증가</li>
+          <li>GPT-6 Astra 사용량 기반 가격으로 예산 추적 필요</li>
+          <li>GitHub 계정 필수로 독립적인 사용 불가</li>
+          <li>레거시 모델 단계적 폐지로 기존 워크플로우 수정 필요</li>
+          <li>소규모 팀에는 엔터프라이즈 기능이 과할 수 있음</li>
+        </ul>
+      </div>
+    </div>
+
+    <table class="rating-table">
+      <tr>
+        <th>평가 항목</th>
+        <th>점수</th>
+      </tr>
+      <tr>
+        <td>사용 편의성</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>AI 품질</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>기능</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>속도</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>가격</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td>가성비</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td><strong>종합</strong></td>
+        <td><strong>8.0/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item">
+        <span>사용 편의성</span>
+        <strong>8/10</strong>
+      </div>
+      <div class="rating-item">
+        <span>AI 품질</span>
+        <strong>8/10</strong>
+      </div>
+      <div class="rating-item">
+        <span>기능</span>
+        <strong>9/10</strong>
+      </div>
+      <div class="rating-item">
+        <span>속도</span>
+        <strong>8/10</strong>
+      </div>
+      <div class="rating-item">
+        <span>가격</span>
+        <strong>7/10</strong>
+      </div>
+      <div class="rating-item">
+        <span>가성비</span>
+        <strong>8/10</strong>
+      </div>
+      <div class="rating-item">
+        <span><strong>종합</strong></span>
+        <strong>8.0/10</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">02</div>
+    <div class="section-content">
+      <h2>Cursor: 경량 에디터로 빠른 개발을 원하는 개발자의 선택</h2>
+    </div>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-badge badge-cursor">Cursor</div>
+    <h3>조용하지만 강력한 경쟁자</h3>
+    <p class="body-text">Cursor는 AI가 통합된 전용 코드 에디터로서 자신의 입지를 유지하고 있습니다. 2026년 9월 기준으로, 공식 채널에서 GitHub의 9월 업데이트 수준의 새로운 기능 발표를 찾기는 어렵습니다. 하지만 이것이 Cursor가 정체되었다는 뜻은 아닙니다. 다만 GitHub처럼 공식 출시 노트를 자주 배포하지 않을 뿐입니다.</p>
+
+    <div class="subheading">Cursor의 실전 활용 시나리오</div>
+
+    <div class="use-case-box">
+      <strong>시나리오 1: 프리랜서 개발자의 빠른 코딩</strong>
+      <p style="margin-top: 10px;">GitHub 계정 없이 가볍게 시작하고 싶은 프리랜서라면 Cursor가 이상적입니다. 설치 후 바로 AI 자동완성을 사용할 수 있으며, 다른 엔터프라이즈 기능에 신경 쓸 필요가 없습니다. 특히 코드 완성 속도가 빠르다는 평판이 있어 분당 타이핑 량이 중요한 작은 프로젝트에서 빛납니다.</p>
+    </div>
+
+    <div class="use-case-box">
+      <strong>시나리오 2: 소규모 팀의 가벼운 도입</strong>
+      <p style="margin-top: 10px;">3-5명의 작은 개발팀이 복잡한 엔터프라이즈 기능 없이 빠른 코딩만 필요하다면 Cursor의 간단한 가격 모델이 좋습니다. 별도의 관리 오버헤드 없이 팀 모두가 같은 에디터를 쓸 수 있습니다.</p>
+    </div>
+
+    <div class="subheading">왜 최신 업데이트 정보가 부족한가?</div>
+    <p class="body-text">Cursor는 GitHub 수준의 공식 발표를 하지 않고 있어, 9월 2026년 기준 공식 업데이트를 비교하기 어렵습니다. 이는 Cursor의 부족함이라기보다는 커뮤니케이션 전략의 차이입니다. Cursor를 검토 중이라면 공식 웹사이트에서 최신 가격과 기능을 직접 확인하는 것이 현명합니다.</p>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>실무에서의 장점</h4>
+        <ul>
+          <li>가볍고 엔터프라이즈 기능 없이 순수 코딩에 집중</li>
+          <li>코드 완성 지연 시간이 매우 짧다는 평판</li>
+          <li>GitHub 계정 없이 독립적으로 사용 가능</li>
+          <li>간단한 가격 모델로 팀 도입이 쉬움</li>
+          <li>개발자 커뮤니티의 강한 추천과 신뢰</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>실무에서의 제약</h4>
+        <ul>
+          <li>2026년 9월 공식 업데이트 정보 부족</li>
+          <li>GitHub Copilot 대비 통합 범위가 좁음</li>
+          <li>팀 단위 엔터프라이즈 제어 기능 문서화 부족</li>
+          <li>GitHub Copilot의 다중 모델(GPT, Claude, Gemini) 옵션 없음</li>
+          <li>기능 업데이트 공지가 드물어 최신 트렌드 파악 어려움</li>
+        </ul>
+      </div>
+    </div>
+
+    <table class="rating-table">
+      <tr>
+        <th>평가 항목</th>
+        <th>점수</th>
+      </tr>
+      <tr>
+        <td>사용 편의성</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>AI 품질</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>기능</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td>속도</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>가격</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>가성비</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td><strong>종합</strong></td>
+        <td><strong>8.2/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item">
+        <span>사용 편의성</span>
+        <strong>9/10</strong>
+      </div>
+      <div class="rating-item">
+        <span>AI 품질</span>
+        <strong>8/10</strong>
+      </div>
+      <div class="rating-item">
+        <span>기능</span>
+        <strong>7/10</strong>
+      </div>
+      <div class="rating-item">
+        <span>속도</span>
+        <strong>9/10</strong>
+      </div>
+      <div class="rating-item">
+        <span>가격</span>
+        <strong>8/10</strong>
+      </div>
+      <div class="rating-item">
+        <span>가성비</span>
+        <strong>8/10</strong>
+      </div>
+      <div class="rating-item">
+        <span><strong>종합</strong></span>
+        <strong>8.2/10</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">03</div>
+    <div class="section-content">
+      <h2>Claude via GitHub Copilot: 플랫폼 내 모델 선택지로 제공</h2>
+    </div>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-badge badge-claude">Claude 모델</div>
+    <h3>독립 도구가 아닌 Copilot 내 선택지</h3>
+    <p class="body-text">Claude Fable 5.1은 2026년 9월부터 GitHub Copilot에서 GPT-6 Astra, Gemini 3.8 Flash와 함께 사용 가능합니다. 하지만 Anthropic(Claude 제작사)에서 코딩 전용 독립 도구로의 새 발표는 9월에 찾기 어렵습니다. Claude 모델은 Copilot 인터페이스 내에서만 IDE를 벗어나지 않고 접근 가능합니다.</p>
+
+    <div class="subheading">Claude의 실전 활용 시나리오</div>
+
+    <div class="use-case-box">
+      <strong>시나리오 1: 복잡한 알고리즘 디버깅</strong>
+      <p style="margin-top: 10px;">동적 프로그래밍이나 그래프 알고리즘 같은 복잡한 로직에서 버그가 발생했을 때, Copilot에서 모델을 Claude Fable 5.1로 선택하고 "이 코드가 왜 O(n²) 이상으로 느린가?"라고 물으면 Claude의 단계별 추론이 도움됩니다. 빠른 모델보다는 느리지만, 논리적 오류를 찾는 데는 탁월합니다.</p>
+    </div>
+
+    <div class="use-case-box">
+      <strong>시나리오 2: 레거시 코드 리뷰 및 설명</strong>
+      <p style="margin-top: 10px;">오래된 코드베이스를 새로운 팀원이 이해해야 할 때, Claude에게 코드 섹션을 보여주고 "이것이 뭐 하는 건지, 왜 이렇게 작성했을까?"라고 물으면 상세한 설명을 얻습니다. 다른 모델보다 설명이 정확하고 심화된 질문에도 논리적으로 대답합니다.</p>
+    </div>
+
+    <div class="subheading">Claude를 사용하는 방법</div>
+    <p class="body-text">GitHub Copilot을 이미 사용 중이라면, IDE의 모델 선택 드롭다운에서 Claude Fable 5.1을 고르면 됩니다. 별도의 Claude 계정이나 구독이 필요 없습니다. Copilot 구독료에 포함됩니다. 다만 코딩용 독립 도구로는 아직 Claude 공식 도구가 없으므로, Copilot을 통해 접근하는 것이 현재 권장되는 방식입니다.</p>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>실무에서의 장점</h4>
+        <ul>
+          <li>복잡한 알고리즘 문제의 단계별 추론 능력이 탁월함</li>
+          <li>Copilot 계정만 있으면 별도 계약 없이 접근 가능</li>
+          <li>복잡한 코드 리뷰와 설명이 매우 상세하고 정확</li>
+          <li>Copilot 구독료에 포함되어 추가 비용 없음</li>
+          <li>논리적 오류 찾기와 설명이 다른 모델보다 우수</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>실무에서의 제약</h4>
+        <ul>
+          <li>코딩 전용 독립 도구로서의 공식 발표 없음</li>
+          <li>Copilot 외 IDE 지원이 제한적</li>
+          <li>간단한 코드 완성에는 느림 (추론 시간이 김)</li>
+          <li>Copilot 구독이 필수 (독립 사용 불가)</li>
+          <li>Claude 전용 엔터프라이즈 제어 기능 없음</li>
+        </ul>
+      </div>
+    </div>
+
+    <table class="rating-table">
+      <tr>
+        <th>평가 항목</th>
+        <th>점수</th>
+      </tr>
+      <tr>
+        <td>사용 편의성</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td>AI 품질</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>기능</td>
+        <td>6/10</td>
+      </tr>
+      <tr>
+        <td>속도</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td>가격</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td>가성비</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td><strong>종합</strong></td>
+        <td><strong>7.2/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item">
+        <span>사용 편의성</span>
+        <strong>7/10</strong>
+      </div>
+      <div class="rating-item">
+        <span>AI 품질</span>
+        <strong>9/10</strong>
+      </div>
+      <div class="rating-item">
+        <span>기능</span>
+        <strong>6/10</strong>
+      </div>
+      <div class="rating-item">
+        <span>속도</span>
+        <strong>7/10</strong>
+      </div>
+      <div class="rating-item">
+        <span>가격</span>
+        <strong>7/10</strong>
+      </div>
+      <div class="rating-item">
+        <span>가성비</span>
+        <strong>7/10</strong>
+      </div>
+      <div class="rating-item">
+        <span><strong>종합</strong></span>
+        <strong>7.2/10</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2 style="font-size: 1.8em; margin: 50px 0 30px 0; color: #1a1a2e;">세 도구 비교: 실전 활용 기준</h2>
+
+  <table class="comparison-table">
+    <tr>
+      <th>기능 / 지표</th>
+      <th>GitHub Copilot</th>
+      <th>Cursor</th>
+      <th>Claude (via Copilot)</th>
+    </tr>
+    <tr>
+      <td>최신 업데이트 (2026년 9월)</td>
+      <td>Jira 통합, 모델 오케스트레이션, VS Code 에이전트</td>
+      <td>공식 발표 찾기 어려움</td>
+      <td>Copilot 모델 선택지에 추가</td>
+    </tr>
+    <tr>
+      <td>독립 제품</td>
+      <td>플랫폼 (IDE 확장, 웹, CLI)</td>
+      <td>완전한 코드 에디터</td>
+      <td>API / Copilot 내에서만 (독립 IDE 없음)</td>
+    </tr>
+    <tr>
+      <td>IDE 지원</td>
+      <td>VS Code, JetBrains, Visual Studio, Neovim</td>
+      <td>Cursor 에디터 자체</td>
+      <td>Copilot 경유 (VS Code, JetBrains 등)</td>
+    </tr>
+    <tr>
+      <td>모델 옵션</td>
+      <td>GPT-6 Astra, Gemini 3.8 Flash, Claude Fable 5.1</td>
+      <td>공식 정보 없음</td>
+      <td>Claude Fable 5.1만 (Copilot 내)</td>
+    </tr>
+    <tr>
+      <td>엔터프라이즈 제어</td>
+      <td>있음 (감사 로그, 샌드박스, 관리 정책)</td>
+      <td>공식 문서 없음</td>
+      <td>Copilot Enterprise 경유</td>
+    </tr>
+    <tr>
+      <td>가격 모델 (2026년 9월)</td>
+      <td>선불 좌석 + GPT-6 사용량 기반</td>
+      <td>공식 사이트 확인 필요</td>
+      <td>Copilot 구독료에 포함</td>
+    </tr>
+    <tr>
+      <td>코드 완성 속도</td>
+      <td>빠름 (모델 의존)</td>
+      <td>매우 빠름 (평판)</td>
+      <td>느림 (추론 시간 발생)</td>
+    </tr>
+    <tr>
+      <td>디버깅 지원</td>
+      <td>좋음 (에이전트 자동화 포함)</td>
+      <td>좋음</td>
+      <td>우수 (단계별 추론)</td>
+    </tr>
+    <tr>
+      <td>최적 사용 팀 규모</td>
+      <td>중규모 이상 (5명+)</td>
+      <td>소규모 (1-5명)</td>
+      <td>복잡한 문제 해결이 필요한 팀</td>
+    </tr>
+  </table>
+
+  <div class="pull-quote">
+    GitHub Copilot은 2026년 9월 가장 구체적인 업데이트를 발표했으며, 기능과 가격 변화가 명확합니다. Cursor는 경량성으로 개발자에게 계속 인기 있지만 공식 발표가 부족합니다. Claude는 추론 능력이 뛰어나지만 Copilot 내 옵션으로만 제공됩니다.
+  </div>
+
+  <h2 style="font-size: 1.8em; margin: 50px 0 30px 0; color: #1a1a2e;">상황별 도구 선택 가이드</h2>
+
+  <div class="body-text">
+    <strong>GitHub Copilot을 선택해야 할 때:</strong>
+  </div>
+  <div class="use-case-box">
+    <p>팀 규모가 5명 이상이거나, Jira 기반 이슈 추적을 사용 중이거나, 여러 IDE를 함께 써야 한다면 Copilot이 최선입니다. 2026년 9월 업데이트의 Jira 통합과 적응형 모델 오케스트레이션은 팀의 생산성을 크게 높입니다. 엔터프라이즈급 제어와 감사 로그가 필요한 조직이라면 필수입니다. 초기 선불 결제 부담이 있지만, 중장기적으로는 규모 경제가 작동하여 가성비가 좋습니다.</p>
+  </div>
+
+  <div class="body-text">
+    <strong>Cursor를 선택해야 할 때:</strong>
+  </div>
+  <div class="use-case-box">
+    <p>개인 프리랜서, 또는 팀이 3-5명 이하의 소규모 팀이라면 Cursor가 이상적입니다. GitHub 계정 없이 가볍게 시작할 수 있고, 코드 완성 속도가 빠르다는 평판이 있습니다. 엔터프라이즈 기능이 필요 없다면 단순하고 경제적입니다. 다만 최신 기능 업데이트를 주의 깊게 모니터링하고, 공식 사이트에서 현재 가격과 기능을 확인한 후 도입하세요.</p>
+  </div>
+
+  <div class="body-text">
+    <strong>Claude (Copilot 경유)를 선택해야 할 때:</strong>
+  </div>
+  <div class="use-case-box">
+    <p>복잡한 알고리즘 디버깅, 레거시 코드 이해, 또는 상세한 코드 리뷰가 자주 필요하다면 Claude의 단계별 추론 능력을 활용하세요. 간단한 자동완성보다는 '왜?'와 '어떻게?'에 대한 답변이 더 중요한 작업에 적합합니다. Copilot을 이미 쓰고 있다면 추가 비용 없이 모델 선택으로 접근할 수 있으므로, 상황에 맞게 모델을 전환하는 것이 효율적입니다.</p>
+  </div>
+
+  <div class="verdict-box">
+    <h3>최종 결론: 팀의 규모와 필요에 맞춘 선택</h3>
+    <p><strong>팀 규모 5명 이상 또는 Jira 기반 워크플로우:</strong> GitHub Copilot이 가장 강력합니다. 2026년 9월 업데이트의 Jira 통합과 적응형 모델 오케스트레이션은 팀의 효율성을 직접 높입니다. 초기 선불 결제의 부담만 감수하면, 규모 경제로 장기적 비용 효율성이 우수합니다.</p>
+    <p><strong>개인 또는 소규모 팀 (5명 이하):</strong> Cursor의 경량성과 빠른 코드 완성이 매력적입니다. 복잡한 관리 오버헤드 없이 순수 코딩에만 집중할 수 있습니다.</p>
+    <p><strong>복잡한 문제 해결이 자주 필요한 경우:</strong> Copilot에서 Claude Fable 5.1을 선택하거나, 복잡한 작업에만 Claude를 별도로 사용하세요. 단계별 추론이 버그 수정 시간을 단축합니다.</p>
+    <p><strong>결정 기준:</strong> IDE 지원 범위, 팀 규모, 엔터프라이즈 기능 필요 여부, 예산 제약을 순서대로 검토한 후 결정하면 후회하지 않을 것입니다.</p>
+  </div>
+
+  <div class="body-text" style="margin-top: 40px; padding-top: 30px; border-top: 2px solid #e5e7eb;">
+    <strong>공개:</strong> 이 비교는 2026년 9월 기준 공식 발표, 문서화된 기능, 그리고 공개된 가격 정보를 바탕으로 작성되었습니다. 저자에 의한 직접 테스트나 벤치마크는 포함되지 않았습니다. 권장사항은 GitHub, Anthropic, 그리고 공개 출처로부터의 최신 정보를 반영합니다. 가격과 기능은 변경될 수 있으므로, 최신 정보는 각 공급사 웹사이트에서 확인하시기 바랍니다.
+  </div>
+</div>

@@ -1,0 +1,1146 @@
+<style>
+  /* CRITICAL BASE STYLES */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #333 !important;
+    overflow-x: hidden !important;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #333;
+  }
+
+  /* HIDE BLOGGER SIDEBAR */
+  .sidebar, .sidebar-wrapper, .sidebar-container, aside {
+    display: none !important;
+  }
+
+  .Profile, .BlogArchive, .Label, .ReportAbuse, .AdSense {
+    display: none !important;
+  }
+
+  .main-content, .main-wrapper, .Blog, .post-outer, .post-body {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+  }
+
+  /* TYPOGRAPHY */
+  h1, h2, h3, h4, h5, h6 {
+    color: #1a1a2e !important;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+  }
+
+  h1 {
+    font-size: 3em;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 2em;
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+
+  h3 {
+    font-size: 1.5em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+  p {
+    color: #333 !important;
+    margin-bottom: 20px;
+  }
+
+  a {
+    color: #667eea !important;
+    text-decoration: none;
+    border-bottom: 1px solid #667eea;
+  }
+
+  a:hover {
+    color: #764ba2 !important;
+  }
+
+  /* CONTAINER */
+  .article-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: #ffffff;
+  }
+
+  /* META INFO */
+  .meta-info {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #667eea;
+  }
+
+  /* INTRO SECTION */
+  .intro-section {
+    background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    border-left: 6px solid #667eea;
+  }
+
+  .intro-section p {
+    font-size: 1.15em;
+    margin-bottom: 15px;
+  }
+
+  /* SECTION HEADER */
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    margin: 60px 0 30px 0;
+    gap: 20px;
+  }
+
+  .section-number {
+    font-size: 2.5em;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-size: 2em;
+    color: #1a1a2e;
+  }
+
+  /* CARDS */
+  .card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    border-left: 6px solid #667eea;
+  }
+
+  .card.copilot {
+    border-left-color: #14b8a6;
+  }
+
+  .card.cursor {
+    border-left-color: #06b6d4;
+  }
+
+  .card.claude {
+    border-left-color: #7c3aed;
+  }
+
+  /* RATING TABLE */
+  .rating-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .rating-table th {
+    background: #f3f4f6;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    color: #1a1a2e;
+    border-bottom: 2px solid #e5e7eb;
+  }
+
+  .rating-table td {
+    padding: 15px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #333;
+  }
+
+  .rating-table tr:last-child td {
+    border-bottom: none;
+    background: #f9fafb;
+    font-weight: 600;
+  }
+
+  .rating-table tr:nth-child(even) {
+    background: #fafbfc;
+  }
+
+  /* MOBILE RATING */
+  .rating-mobile {
+    display: none;
+  }
+
+  .rating-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 1em;
+  }
+
+  .rating-item:last-child {
+    border-bottom: none;
+  }
+
+  .rating-item span {
+    color: #333;
+    font-weight: 500;
+  }
+
+  .rating-item strong {
+    color: #667eea;
+    font-weight: 600;
+  }
+
+  /* PROS/CONS */
+  .pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin: 30px 0;
+  }
+
+  .pros {
+    background: #f0fdf4;
+    border: 1px solid #86efac;
+    border-left: 6px solid #10b981;
+    padding: 25px;
+    border-radius: 8px;
+  }
+
+  .cons {
+    background: #fef2f2;
+    border: 1px solid #fca5a5;
+    border-left: 6px solid #ef4444;
+    padding: 25px;
+    border-radius: 8px;
+  }
+
+  .pros h4, .cons h4 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    color: #1a1a2e;
+  }
+
+  .pros h4 {
+    color: #059669;
+  }
+
+  .cons h4 {
+    color: #dc2626;
+  }
+
+  .pros ul, .cons ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .pros li, .cons li {
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+    color: #333;
+  }
+
+  .pros li:before {
+    content: "+";
+    position: absolute;
+    left: 0;
+    color: #10b981;
+    font-weight: 700;
+    font-size: 1.2em;
+  }
+
+  .cons li:before {
+    content: "-";
+    position: absolute;
+    left: 0;
+    color: #ef4444;
+    font-weight: 700;
+    font-size: 1.2em;
+  }
+
+  /* COMPARISON TABLE */
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .comparison-table th {
+    background: #1a1a2e;
+    color: #ffffff;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  .comparison-table td {
+    padding: 15px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #333;
+  }
+
+  .comparison-table tr:nth-child(even) {
+    background: #fafbfc;
+  }
+
+  .comparison-table .feature-name {
+    font-weight: 600;
+    color: #1a1a2e;
+    width: 25%;
+  }
+
+  /* PULL QUOTE */
+  .pull-quote {
+    background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+    border-left: 6px solid #667eea;
+    padding: 30px;
+    margin: 40px 0;
+    border-radius: 8px;
+    font-size: 1.25em;
+    font-weight: 500;
+    color: #1a1a2e;
+    font-style: italic;
+  }
+
+  /* VERDICT BOX */
+  .verdict {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    margin: 50px 0;
+  }
+
+  .verdict h3 {
+    color: #ffffff;
+    margin-top: 0;
+  }
+
+  .verdict p {
+    color: #ffffff;
+    font-size: 1.05em;
+    margin-bottom: 15px;
+  }
+
+  /* STATS BOX */
+  .stat-box {
+    background: #f3f4f6;
+    border: 2px solid #667eea;
+    padding: 25px;
+    margin: 30px 0;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .stat-number {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 10px;
+  }
+
+  .stat-label {
+    color: #666;
+    font-size: 0.95em;
+  }
+
+  /* RESPONSIVE: TABLET */
+  @media (max-width: 1024px) {
+    .article-container {
+      padding: 30px 15px;
+    }
+
+    h1 {
+      font-size: 2.2em;
+    }
+
+    h2 {
+      font-size: 1.6em;
+    }
+
+    .section-header {
+      margin-top: 40px;
+    }
+
+    .pros-cons {
+      gap: 20px;
+    }
+  }
+
+  /* RESPONSIVE: MOBILE */
+  @media (max-width: 768px) {
+    html, body {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow-x: hidden !important;
+    }
+
+    .article-container {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 15px !important;
+      margin: 0 !important;
+    }
+
+    body {
+      font-size: 1rem;
+    }
+
+    h1 {
+      font-size: 1.6em;
+      line-height: 1.3;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-size: 1.4em;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 1.2em;
+      margin-top: 20px;
+      margin-bottom: 12px;
+    }
+
+    h4 {
+      font-size: 1.05em;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    .meta-info {
+      font-size: 0.9em;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+    }
+
+    .intro-section {
+      padding: 20px 15px;
+      margin-bottom: 30px;
+    }
+
+    .intro-section p {
+      font-size: 1em;
+      margin-bottom: 12px;
+    }
+
+    .section-header {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 40px 0 20px 0;
+    }
+
+    .section-number {
+      font-size: 2em;
+    }
+
+    .section-title {
+      font-size: 1.3em;
+    }
+
+    .card {
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+    }
+
+    /* HIDE TABLE ON MOBILE */
+    .rating-table {
+      display: none;
+    }
+
+    /* SHOW MOBILE RATING */
+    .rating-mobile {
+      display: block;
+      margin: 20px 0;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      padding: 15px;
+    }
+
+    .rating-item {
+      padding: 10px 0;
+      font-size: 0.95em;
+    }
+
+    .comparison-table {
+      display: none;
+    }
+
+    .pros-cons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .pros, .cons {
+      padding: 15px;
+      margin-bottom: 0;
+    }
+
+    .pros h4, .cons h4 {
+      font-size: 1.1em;
+      margin-bottom: 12px;
+    }
+
+    .pros li, .cons li {
+      margin-bottom: 10px;
+      padding-left: 18px;
+      font-size: 0.95em;
+    }
+
+    .pull-quote {
+      padding: 20px;
+      margin: 30px 0;
+      font-size: 1.05em;
+    }
+
+    .verdict {
+      padding: 25px;
+      margin: 30px 0;
+    }
+
+    .verdict h3 {
+      font-size: 1.3em;
+    }
+
+    .verdict p {
+      font-size: 0.95em;
+    }
+
+    .stat-box {
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .stat-number {
+      font-size: 2em;
+    }
+
+    .stat-label {
+      font-size: 0.9em;
+    }
+
+    table {
+      display: none;
+    }
+
+    ul, ol {
+      padding-left: 25px;
+    }
+
+    li {
+      word-break: break-word;
+    }
+
+    p, span, div {
+      word-break: break-word;
+    }
+  }
+
+  /* RESPONSIVE: SMALL MOBILE */
+  @media (max-width: 480px) {
+    .article-container {
+      padding: 12px !important;
+    }
+
+    h1 {
+      font-size: 1.4em;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: 1.2em;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      font-size: 1.05em;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+
+    .meta-info {
+      font-size: 0.85em;
+    }
+
+    .intro-section {
+      padding: 15px 12px;
+    }
+
+    .card {
+      padding: 12px;
+    }
+
+    .pull-quote {
+      padding: 15px;
+      font-size: 1em;
+    }
+
+    .verdict {
+      padding: 20px;
+    }
+  }
+</style>
+
+<div class="article-container">
+
+  <div class="meta-info">
+    Roche P. | 2026년 9월 | 9분 읽기
+  </div>
+
+  <div class="intro-section">
+    <p>AI 코딩 도구는 소프트웨어 개발 팀의 필수 인프라가 되었습니다. 하지만 지난 18개월간 일련의 심각한 취약점들이 불편한 진실을 드러냈습니다. 바로 이 어시스턴트들이 편의성을 위해 설계되었지, 적대적 환경에 대비하지 못했다는 것입니다. AI 도구가 악의적인 프롬프트 주입을 통해 비밀키를 탈취하거나 임의 코드를 실행하도록 속을 수 있다면, 그 위험은 추상적이지 않습니다. 유출된 자격증명, 손상된 저장소, 지속적인 백도어로 측정됩니다.</p>
+    <p>이 리포트는 Cursor, GitHub Copilot, Claude Code를 어떻게 실전에서 안전하게 사용할지 결정하는 세 가지 중요한 보안 사건을 분석합니다.</p>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">01</div>
+    <div class="section-title">CamoLeak: Copilot Chat 이미지 프록시를 통한 데이터 탈취</div>
+  </div>
+
+  <div class="card copilot">
+    <h3>무엇이 일어났는가</h3>
+    <p>GitHub Copilot Chat의 이미지 렌더링 기능이 의도하지 않은 데이터 전송 채널이 되었습니다. 보안 연구자들은 간접 프롬프트 주입과 GitHub의 Camo 이미지 프록시를 결합하여 Copilot Chat 세션에서 비공개 저장소 데이터, 비밀키, 민감한 파일 내용을 탈취하는 연쇄 공격을 발견했습니다.</p>
+    <p>공격자는 저장소에 악의적인 이미지 URL을 삽입할 수 있었고(댓글, 마크다운 파일, CI 로그를 통해), 개발자가 해당 저장소의 코드에 대해 Copilot Chat을 사용하면 어시스턴트가 이미지를 렌더링했습니다. 프록시 요청 자체가 부채널이 되어 URL이나 이미지 로딩 메커니즘을 통해 컨텍스트와 비밀키를 유출했습니다.</p>
+
+    <h3>기술 세부 사항</h3>
+    <p><strong>취약점 ID:</strong> CVE-2025-59145</p>
+    <p><strong>CVSS 점수:</strong> 9.6 (심각)</p>
+    <p><strong>공격 벡터:</strong> 저장소 내 이미지 URL을 통한 간접 프롬프트 주입</p>
+    <p><strong>영향을 받는 버전:</strong> GitHub Copilot Chat (2025년 8월 이전 모든 버전)</p>
+    <p><strong>완화 방법:</strong> GitHub은 2025년 8월 14일 Copilot Chat의 이미지 렌더링을 비활성화하고 채팅 렌더링 콘텐츠에 대한 Camo 프록시 접근을 차단했습니다.</p>
+
+    <h3>중요한 이유</h3>
+    <p>CamoLeak는 기본적인 약점을 노출했습니다. 신뢰할 수 없는 콘텐츠(저장소 파일, 이슈 댓글, CI 로그)를 수집하는 AI 어시스턴트는 은폐된 데이터 탈취의 벡터가 됩니다. 취약점은 Copilot의 핵심 모델에 있지 않았습니다. 도구가 이미지 프록시를 맹목적으로 처리했고, 요청 메타데이터 유출의 보안 함의를 이해하지 못했습니다.</p>
+
+    <div class="stat-box">
+      <div class="stat-number">CVSS 9.6</div>
+      <div class="stat-label">심각: 간접 주입을 통한 직접 데이터 탈취</div>
+    </div>
+
+    <h3>당신의 팀을 위한 조치</h3>
+    <p>Copilot Chat을 사용 중이라면, GitHub 인스턴스가 패치되었는지 확인하세요(이미지 렌더링은 기본적으로 비활성화되어야 합니다). 이미지 렌더링이 여전히 활성화되어 있다면 Copilot 설정에서 수동으로 비활성화하세요. 신뢰할 수 없는 기여자의 댓글이나 CI 로그가 있는 저장소를 감사하세요. 이러한 저장소는 탈취 페이로드를 배포하는 데 사용되었을 수 있습니다.</p>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">02</div>
+    <div class="section-title">Cursor CVE-2025-59944: MCP 설정 포이즈닝을 통한 원격 코드 실행</div>
+  </div>
+
+  <div class="card cursor">
+    <h3>무엇이 일어났는가</h3>
+    <p>AI 보조 개발을 위해 최적화된 VS Code 포크인 Cursor가 Model Context Protocol(MCP) 설정 처리에서 대소문자 구분 우회를 통한 치명적인 원격 코드 실행 결함을 겪었습니다. 공격자는 IDE 재시작 후에도 지속되는 악의적인 MCP 설정을 주입하고 사용자의 권한으로 임의 코드를 실행할 수 있었습니다.</p>
+    <p>취약점은 Cursor가 민감한 설정 파일을 검증할 때 파일 경로를 정규화하는 방식을 악용했습니다. 대소문자를 구분하지 않는 파일 시스템에서(Windows, macOS 기본값), 공격자는 소문자 `/.cursor/mcp.json`만 보호하는 우회를 위해 `/.cursor/MCP.JSON`(대문자)에 쓸 수 있었습니다. 일단 포이즈닝되면, 악의적인 설정은 IDE 재시작할 때마다 공격자 제어 명령을 실행하게 됩니다.</p>
+
+    <h3>기술 세부 사항</h3>
+    <p><strong>취약점 ID:</strong> CVE-2025-59944</p>
+    <p><strong>CVSS 점수:</strong> 9.1 (심각)</p>
+    <p><strong>영향을 받는 버전:</strong> Cursor 1.6.23 이하</p>
+    <p><strong>공격 벡터:</strong> 프롬프트 주입 + 대소문자 구분 우회를 통한 로컬 파일 쓰기</p>
+    <p><strong>지속성:</strong> 포이즈닝된 MCP 설정이 IDE 재시작을 견딤</p>
+    <p><strong>수정됨:</strong> Cursor 1.7 (여러 취약점 데이터베이스에서 확인)</p>
+
+    <h3>공격 시나리오</h3>
+    <p>개발자가 악의적인 저장소를 복제하고 Cursor에서 엽니다. 저장소에는 악의적인 MCP 설정 파일을 쓰도록 Cursor의 자동 완성을 속이는 정교한 `.cursor-readme` 또는 삽입된 컨텍스트가 포함되어 있습니다. 공격자의 페이로드는 IDE가 재시작될 때마다 실행되어, 바이러스 백신 경고를 유발하지 않으면서(악의적인 파일이 임시 디렉토리가 아닌 설정 디렉토리에 있음) 지속적인 코드 실행을 제공합니다.</p>
+
+    <div class="stat-box">
+      <div class="stat-number">Cursor 1.7+</div>
+      <div class="stat-label">필수 업데이트: 대소문자 구분 우회 및 파일 쓰기 검증 패치</div>
+    </div>
+
+    <h3>즉각적인 조치</h3>
+    <ul>
+      <li>1.6.23 이하 버전을 사용 중이라면 즉시 Cursor를 1.7 이상으로 업데이트하세요</li>
+      <li>`.cursor` 디렉토리에서 예상치 못한 MCP 설정 파일을 감사하세요</li>
+      <li>최근 코드 변경 및 git 히스토리에서 의심스러운 파일 쓰기를 검토하세요</li>
+      <li>Windows 또는 macOS를 사용 중이라면 변형 대소문자 파일명(예: `mcp.json` 대신 `MCP.JSON`)을 확인하세요</li>
+    </ul>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">03</div>
+    <div class="section-title">더 넓은 보안 위기: 프롬프트 주입 + 에이전트 실행</div>
+  </div>
+
+  <div class="card claude">
+    <h3>패턴</h3>
+    <p>CamoLeak와 CVE-2025-59944는 고립된 버그가 아닙니다. 이들은 AI 코딩 도구 전반에 걸친 체계적 약점의 증상입니다: 컨텍스트 수집과 실행 신뢰 사이의 격차입니다.</p>
+    <p>2026년 보안 연구에 따르면 Cursor, Claude Code, Gemini CLI, Copilot CLI의 높은 심각도 취약점은 공통 공격 서명을 공유합니다: 프롬프트 주입 → 도구 호출 → 검증되지 않은 조치 → 코드 실행 또는 데이터 탈취입니다.</p>
+
+    <h3>AI 코딩 도구가 취약한 이유</h3>
+    <ul>
+      <li>신뢰할 수 없는 입력(저장소 파일, 이슈 댓글, CI 로그)을 컨텍스트로 수용합니다</li>
+      <li>해당 컨텍스트를 기반으로 파일 쓰기 및 시스템 호출 결정을 합니다</li>
+      <li>도구가 수정할 수 있는 파일에 대한 엄격한 검증이 부족합니다</li>
+      <li>상태를 세션 간 캐시하거나 지속하여 공격자가 다단계 악용을 준비할 수 있습니다</li>
+    </ul>
+
+    <h3>위험 증폭 요인</h3>
+    <p>기존 애플리케이션 취약점과 달리 AI 보조 코드 실행은 탐지하기 더 어렵습니다:</p>
+    <ul>
+      <li>악의적인 작업이 외부 프로세스가 아닌 AI 도구 자체에서 나옵니다</li>
+      <li>주입 지점이 종종 간접적입니다(직접 입력 필드가 아닌 저장소 댓글)</li>
+      <li>지속성 메커니즘(포이즈닝된 설정 파일 같은)이 공격 벡터를 숨깁니다</li>
+      <li>감사 로그가 합법적인 AI 보조 변경과 주입된 변경을 명확하게 구분하지 못할 수 있습니다</li>
+    </ul>
+
+    <div class="pull-quote">
+      "문제는 이 도구들이 코드를 실행한다는 것이 아닙니다. 그것이 바로 이들의 전체 목적입니다. 문제는 충분한 검증이나 사용자 확인 없이 신뢰할 수 없는 컨텍스트를 기반으로 코드를 실행한다는 것입니다."
+    </div>
+
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">04</div>
+    <div class="section-title">GitHub Copilot: 2026년 9월 현재 보안 상태</div>
+  </div>
+
+  <div class="card copilot">
+    <h3>기능 & 역량</h3>
+    <p><strong>공식 가격:</strong> 2026년 9월 기준, Copilot은 구독 계층을 제공합니다: Copilot Individual(월 $20), Copilot Pro(GPT-4 접근, 월 $30), 기업 플랜(사용자당 월 $21부터 시작).</p>
+    <ul>
+      <li>코드 생성, 완성, 다중 파일 편집</li>
+      <li>IDE 및 GitHub 웹 인터페이스의 Copilot Chat 통합</li>
+      <li>60개 이상의 프로그래밍 언어 지원</li>
+      <li>IDE 플러그인: VS Code, JetBrains, Neovim, Visual Studio</li>
+      <li>CLI 통합(터미널 사용을 위한 GitHub Copilot CLI)</li>
+    </ul>
+
+    <h3>보안 상태</h3>
+    <p><strong>CamoLeak 완화:</strong> Copilot Chat의 이미지 렌더링은 기본적으로 비활성화되어 있습니다. 렌더링된 콘텐츠에 대한 Camo 프록시 접근이 차단되었습니다. 이는 탈취 벡터를 제거하지만 합법적인 이미지 보기 기능을 잃게 됩니다.</p>
+    <p><strong>알려진 남은 위험:</strong></p>
+    <ul>
+      <li>저장소 콘텐츠(파일, 댓글)를 통한 간접 프롬프트 주입은 여전히 일반적인 공격 표면입니다</li>
+      <li>비밀키 탐지가 제한적입니다. 개발자는 여전히 비밀 스캔 도구를 사용해야 합니다</li>
+      <li>위험한 작업을 거부하는 보장된 "안전 모드"가 없습니다</li>
+    </ul>
+
+    <h3>강점</h3>
+    <p>Copilot은 Microsoft의 인프라와 보안 팀의 이점을 누립니다. 업데이트가 일관되게 롤아웃되며 회사는 공개된 취약점에 대응합니다. 엔터프라이즈 배포는 감사 로깅 및 사용 모니터링을 포함합니다.</p>
+
+    <h3>제한사항</h3>
+    <p>Copilot의 광범위한 배포(수백만 개발자)는 높은 가치 목표입니다. 프롬프트 주입 공격의 표면 영역이 광대합니다. 도구가 저장소, CI 시스템, 통신 도구와 깊숙이 통합되기 때문입니다.</p>
+
+    <table class="rating-table">
+      <tr>
+        <th>평가 범주</th>
+        <th>점수</th>
+      </tr>
+      <tr>
+        <td>사용 용이성</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>AI 품질</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>기능</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>속도</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>보안 (CamoLeak 이후)</td>
+        <td>6/10</td>
+      </tr>
+      <tr>
+        <td>가격 대비 가치</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td><strong>종합</strong></td>
+        <td><strong>7.7/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>사용 용이성:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>AI 품질:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>기능:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>속도:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>보안 (CamoLeak 이후):</span> <strong>6/10</strong></div>
+      <div class="rating-item"><span>가격 대비 가치:</span> <strong>7/10</strong></div>
+      <div class="rating-item"><span>종합:</span> <strong>7.7/10</strong></div>
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>강점</h4>
+        <ul>
+          <li>GitHub, VS Code, 엔터프라이즈 IDE에 광범위하게 통합</li>
+          <li>Microsoft의 일관된 업데이트 및 보안 패치</li>
+          <li>엔터프라이즈 감사 로깅 및 거버넌스 제어</li>
+          <li>인기 있는 언어에 걸쳐 강력한 코드 생성 품질</li>
+          <li>Copilot CLI는 터미널 워크플로에 지원을 제공합니다</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>제한사항</h4>
+        <ul>
+          <li>CamoLeak는 간접 주입 공격에 대한 취약성을 입증합니다</li>
+          <li>이미지 렌더링 비활성화 — 합법적인 사용 사례 손실</li>
+          <li>많은 개발자가 있는 팀의 높은 구독 비용</li>
+          <li>모델 학습 데이터 및 편견에 대한 제한된 투명성</li>
+          <li>감사 로그가 주입된 프롬프트의 모든 컨텍스트 출처를 캡처하지 못할 수 있습니다</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">05</div>
+    <div class="section-title">Cursor: IDE 중심 AI 어시스턴트 및 지속적인 위험 (2026년 9월)</div>
+  </div>
+
+  <div class="card cursor">
+    <h3>기능 & 역량</h3>
+    <p><strong>공식 가격:</strong> 2026년 9월 기준, Cursor는 무료 계층(제한됨), Pro 계층(월 $20, 느린 요청 500개 + 빠른 요청 50개), 비즈니스 계층(사용자 정의 가격)을 제공합니다. Cursor는 VS Code를 기반으로 하지만 AI 우선 개발 워크플로에 최적화됩니다.</p>
+    <ul>
+      <li>대규모 코드베이스에서 조정된 편집을 위한 Antml(Cursor의 다중 파일 편집기)</li>
+      <li>단계별, AI 가이드 코드 생성을 위한 Composer 모드</li>
+      <li>사용자 정의 도구 통합을 위한 Model Context Protocol(MCP) 지원</li>
+      <li>AI 지원이 있는 내장 터미널</li>
+      <li>더 빠른 컨텍스트 검색을 위한 코드베이스 인덱싱</li>
+      <li>Claude, GPT-4, 로컬 모델에 대한 네이티브 지원</li>
+    </ul>
+
+    <h3>보안 상태</h3>
+    <p><strong>CVE-2025-59944 상태:</strong> 버전 1.7에서 수정됨. 1.6.23 이하 사용자는 즉시 업데이트해야 합니다. 수정은 대소문자 구분 없는 파일 시스템에서도 더 엄격한 경로 정규화 및 대소문자 구분 파일 검증을 포함합니다.</p>
+    <p><strong>남은 우려 사항:</strong></p>
+    <ul>
+      <li>컨텍스트가 충분히 살균되지 않으면 MCP 설정이 프롬프트 주입을 통해 여전히 조작될 수 있습니다</li>
+      <li>코드베이스 인덱싱 기능이 저장소 콘텐츠의 악의적인 프롬프트를 캐시할 수 있습니다</li>
+      <li>다중 파일 편집이 단일 주입 공격의 영향을 증폭합니다</li>
+    </ul>
+
+    <h3>Cursor가 CVE-2025-59944 이후 높은 위험인 이유</h3>
+    <p>Cursor의 핵심 강점 — 깊숙이 통합된 AI 보조 편집 — 이 또한 취약점 표면입니다. AI 도구가 파일 시스템에 직접 접근하고 컨텍스트를 기반으로 파일을 수정할 수 있으면, 단일 프롬프트 주입이 다중 파일 악용이 됩니다. CVE-2025-59944 수정은 대소문자 구분을 해결하지만, 기본 신뢰 모델은 해결하지 못합니다.</p>
+
+    <table class="rating-table">
+      <tr>
+        <th>평가 범주</th>
+        <th>점수</th>
+      </tr>
+      <tr>
+        <td>사용 용이성</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>AI 품질</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>기능</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>속도</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>보안 (CVE-2025-59944 이후)</td>
+        <td>5/10</td>
+      </tr>
+      <tr>
+        <td>가격 대비 가치</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td><strong>종합</strong></td>
+        <td><strong>8.2/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>사용 용이성:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>AI 품질:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>기능:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>속도:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>보안 (CVE-2025-59944 이후):</span> <strong>5/10</strong></div>
+      <div class="rating-item"><span>가격 대비 가치:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>종합:</span> <strong>8.2/10</strong></div>
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>강점</h4>
+        <ul>
+          <li>IDE에서 가장 빠른 코드 생성(Antml 다중 파일 편집)</li>
+          <li>Composer 모드는 생성 전략에 대한 높은 수준의 제어를 제공합니다</li>
+          <li>MCP 지원은 사용자 정의 통합 및 로컬 모델 실행을 허용합니다</li>
+          <li>전체 스택 및 복잡한 리팩토링 작업에 탁월함</li>
+          <li>Copilot Pro보다 고급 사용자에게 낮은 비용</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>제한사항</h4>
+        <ul>
+          <li>CVE-2025-59944는 치명적인 아키텍처 위험을 입증합니다</li>
+          <li>MCP 설정은 신중한 살균이 필요합니다</li>
+          <li>Windows/macOS의 대소문자 구분 우회는 여전히 경계가 필요합니다</li>
+          <li>Microsoft/GitHub과 비교하여 더 작은 보안 팀</li>
+          <li>코드베이스 인덱싱이 악의적인 컨텍스트를 의도치 않게 캐시할 수 있습니다</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">06</div>
+    <div class="section-title">Claude Code: Anthropic의 IDE 통합 (2026년 9월)</div>
+  </div>
+
+  <div class="card claude">
+    <h3>기능 & 역량</h3>
+    <p><strong>공식 가격:</strong> 2026년 9월 기준, Claude Code는 Claude.ai Pro(월 $20) 및 토큰 기반 청구가 있는 Claude API를 통해 사용할 수 있습니다. IDE 통합(VS Code, JetBrains)은 플러그인 기반이며 Claude 구독이 필요합니다.</p>
+    <ul>
+      <li>명시적 인덱싱 없이 전체 코드베이스 인식</li>
+      <li>명시적 사용자 확인을 통한 파일 생성 및 수정</li>
+      <li>코드 컨텍스트를 사용한 다중 턴 대화</li>
+      <li>Anthropic 라인업에서 가장 강력한 모델인 Claude 3.5 Sonnet에 대한 네이티브 지원</li>
+      <li>Anthropic의 안전 프레임워크와의 통합</li>
+      <li>기본적으로 코드 콘텐츠의 텔레메트리 로깅 없음</li>
+    </ul>
+
+    <h3>보안 상태</h3>
+    <p><strong>알려진 문제:</strong> CamoLeak나 CVE-2025-59944 수준의 Claude Code에 대한 단일 치명적 CVE는 공개되지 않았지만, 보안 연구는 동일한 종류의 위험이 적용됨을 나타냅니다:</p>
+    <ul>
+      <li>악의적인 저장소 콘텐츠를 통한 프롬프트 주입은 의도하지 않은 파일 수정을 유발할 수 있습니다</li>
+      <li>설정 파일(예: `.claude-config`)은 도구가 프로젝트 설정을 신뢰하는 경우 포이즈닝될 수 있습니다</li>
+      <li>코드 해석 및 실행(활성화된 경우)은 공격 표면을 증가시킵니다</li>
+    </ul>
+
+    <h3>구별되는 기능: Anthropic의 Constitutional AI</h3>
+    <p>Anthropic은 Constitutional AI 훈련을 사용하며, 이는 이론적으로 Claude를 프롬프트 주입에 더 저항하게 만듭니다. 그러나 이는 보장이 아닙니다. 도구는 여전히 LLM 결정을 기반으로 코드를 실행하며, 이러한 결정은 조작될 수 있습니다.</p>
+
+    <table class="rating-table">
+      <tr>
+        <th>평가 범주</th>
+        <th>점수</th>
+      </tr>
+      <tr>
+        <td>사용 용이성</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>AI 품질</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>기능</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>속도</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td>보안</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td>가격 대비 가치</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td><strong>종합</strong></td>
+        <td><strong>7.7/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>사용 용이성:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>AI 품질:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>기능:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>속도:</span> <strong>7/10</strong></div>
+      <div class="rating-item"><span>보안:</span> <strong>7/10</strong></div>
+      <div class="rating-item"><span>가격 대비 가치:</span> <strong>7/10</strong></div>
+      <div class="rating-item"><span>종합:</span> <strong>7.7/10</strong></div>
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>강점</h4>
+        <ul>
+          <li>Claude 3.5 Sonnet은 코드 생성 분야에서 가장 강력한 모델 중 하나입니다</li>
+          <li>Constitutional AI 훈련은 추가 안전 가드레일을 제공합니다</li>
+          <li>파일 수정을 위해 명시적 확인이 필요합니다</li>
+          <li>기본적으로 코드 텔레메트리 없음 — 경쟁자보다 더 나은 개인 정보 보호</li>
+          <li>별도 인덱싱 단계 없이 코드베이스 인식</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>제한사항</h4>
+        <ul>
+          <li>Cursor 및 Copilot과 비교하여 느린 응답 시간</li>
+          <li>VS Code 확장과 비교하여 제한된 IDE 플러그인 에코시스템</li>
+          <li>Constitutional AI는 모든 주입 공격에 대한 보장이 아닙니다</li>
+          <li>설정 파일 포이즈닝이 문서에서 명시적으로 다루어지지 않습니다</li>
+          <li>대규모 코드베이스의 높은 토큰 비용</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">07</div>
+    <div class="section-title">일대일 비교: 보안 & 기능</div>
+  </div>
+
+  <div class="card">
+    <table class="comparison-table">
+      <tr>
+        <th class="feature-name">기능 / 측면</th>
+        <th>Copilot</th>
+        <th>Cursor</th>
+        <th>Claude Code</th>
+      </tr>
+      <tr>
+        <td class="feature-name"><strong>알려진 CVE (2025-2026)</strong></td>
+        <td>CamoLeak (CVE-2025-59145), CVSS 9.6</td>
+        <td>CVE-2025-59944, CVSS 9.1, v1.7에서 수정</td>
+        <td>공개된 치명적 CVE 없음</td>
+      </tr>
+      <tr>
+        <td class="feature-name"><strong>가격 (2026년 9월)</strong></td>
+        <td>개인 월 $20-30</td>
+        <td>월 $20 (첫 달 $50)</td>
+        <td>월 $20 (Claude Pro)</td>
+      </tr>
+      <tr>
+        <td class="feature-name"><strong>코드 생성 속도</strong></td>
+        <td>빠름</td>
+        <td>가장 빠름 (Antml)</td>
+        <td>느림 (API 지연)</td>
+      </tr>
+      <tr>
+        <td class="feature-name"><strong>다중 파일 편집</strong></td>
+        <td>좋음</td>
+        <td>탁월함 (Composer)</td>
+        <td>좋음</td>
+      </tr>
+      <tr>
+        <td class="feature-name"><strong>IDE 통합</strong></td>
+        <td>VS Code, JetBrains 등</td>
+        <td>VS Code 기반</td>
+        <td>VS Code, JetBrains 플러그인</td>
+      </tr>
+      <tr>
+        <td class="feature-name"><strong>사용자 정의 모델 (MCP/API)</strong></td>
+        <td>제한됨</td>
+        <td>예 (MCP)</td>
+        <td>API를 통해</td>
+      </tr>
+      <tr>
+        <td class="feature-name"><strong>코드베이스 인식</strong></td>
+        <td>좋음</td>
+        <td>탁월함 (인덱싱됨)</td>
+        <td>좋음</td>
+      </tr>
+      <tr>
+        <td class="feature-name"><strong>프롬프트 주입 위험</strong></td>
+        <td>높음 (이미지 렌더링 비활성화됨)</td>
+        <td>높음 (파일 쓰기 역량)</td>
+        <td>중간 (확인 필요)</td>
+      </tr>
+      <tr>
+        <td class="feature-name"><strong>엔터프라이즈 지원</strong></td>
+        <td>예, 포괄적</td>
+        <td>제한됨</td>
+        <td>제한됨</td>
+      </tr>
+      <tr>
+        <td class="feature-name"><strong>감사 로깅</strong></td>
+        <td>예 (Pro + 엔터프라이즈)</td>
+        <td>없음</td>
+        <td>제한됨</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">08</div>
+    <div class="section-title">즉각적인 보안 조치 체크리스트</div>
+  </div>
+
+  <div class="card">
+    <h3>이번 주</h3>
+    <ul>
+      <li>Cursor를 사용 중: 버전 1.7 이상인지 확인하세요. `.cursor` 디렉토리에서 예상치 못한 MCP 설정, 특히 변형 대소문자 파일명(예: `MCP.JSON`)을 확인하세요.</li>
+      <li>Copilot Chat 사용 중: 설정에서 이미지 렌더링이 비활성화되어 있는지 확인하세요. 가능하면 Camo 프록시 접근 로그를 검토하세요.</li>
+      <li>저장소의 최근 커밋 및 파일 변경을 감사하세요. 개발 패턴과 맞지 않는 수정 사항을 찾으세요.</li>
+      <li>GitHub 및 기타 코드 플랫폼에서 비밀 스캔을 활성화하세요. 탐지된 비밀을 검토하세요.</li>
+    </ul>
+
+    <h3>이번 달</h3>
+    <ul>
+      <li>AI 도구의 설정 파일 및 신뢰 경계를 검토하세요. 도구가 수정할 수 있는 파일은 어떤 파일입니까?</li>
+      <li>AI 생성 코드에 대한 샌드박싱을 구현하세요. 제안된 변경 사항을 프로덕션 시스템에 직접 적용하지 마세요.</li>
+      <li>AI 보조 변경 사항을 명시적 보안 검토 대상으로 플래그하는 코드 검토 프로세스에 단계를 추가하세요.</li>
+      <li>AI 코딩 도구 사용에 대한 팀 정책을 문서화하세요: 어떤 도구가 승인되고, 어떤 저장소가 금지되며, AI 제안을 민감한 코드에서 어떻게 처리할지.</li>
+      <li>팀 전체에서 IDE 플러그인을 최신 버전으로 업데이트하세요.</li>
+    </ul>
+
+    <h3>지속적으로</h3>
+    <ul>
+      <li>Copilot, Cursor, Claude Code의 보안 공지를 모니터링하세요. 취약점 피드(CVE 데이터베이스, 벤더 공지)를 구독하세요.</li>
+      <li>개발자를 프롬프트 주입 위험에 대해 교육하세요. 사용 중인 도구가 악의적인 저장소 콘텐츠로 조작될 수 있습니다.</li>
+      <li>신뢰할 수 없는 코드(오픈소스 기여, 보안 연구)로 작업하는 경우 AI 코딩 도구를 격리된 환경에서 실행하는 것을 고려하세요.
