@@ -346,6 +346,13 @@ ${latestInfo}
 - Avoid stiff/formal phrasing that sounds translated
 - Natural phrases: "Here's the breakdown..." "Let's compare..." "Bottom line?"
 
+**CRITICAL - Character Usage (구분자 규칙):**
+- ❌ NEVER use middle dot (·) as separator - 절대 사용 금지!
+- ✅ ONLY use slash (/) or pipe (|) for separators
+- Example: "Roche P. | September 2026 | 9 min read" (CORRECT)
+- Example: "Tool A / Tool B / Tool C" (CORRECT)
+- Example: "Roche P. · September 2026" (WRONG - 절대 금지!)
+
 **Writing guidelines (FACT-BASED ONLY):**
 1. **Hook**: Start with industry stat or provocative question (use real, verifiable data only!)
 2. **Structure**:
@@ -672,6 +679,12 @@ async function translateToKorean(englishHtml, topic) {
 - Maintain professional tone
 - Keep links and formatting
 
+**CRITICAL - Character Usage (구분자 규칙):**
+- ❌ NEVER use middle dot (·) as separator - 절대 사용 금지!
+- ✅ ONLY use slash (/) or pipe (|) for separators
+- Example: "Roche P. | 2026년 9월 | 9분 읽음" (CORRECT)
+- Example: "도구 A / 도구 B / 도구 C" (CORRECT)
+
 **English HTML:**
 ${englishHtml}
 
@@ -732,6 +745,11 @@ async function createKoreanVersionA(englishHtml, topic) {
 - Keep technical terms in English when appropriate (e.g., ChatGPT, Claude, API)
 - Maintain professional tone
 - Keep links and formatting
+
+**CRITICAL - Character Usage (구분자 규칙):**
+- ❌ NEVER use middle dot (·) as separator - 절대 사용 금지!
+- ✅ ONLY use slash (/) or pipe (|) for separators
+- Example: "Roche P. | 2026년 9월 | 9분 읽음" (CORRECT)
 
 **English HTML:**
 ${englishHtml}
@@ -794,6 +812,11 @@ async function createKoreanVersionB(englishHtml, topic) {
 - Keep technical terms in English when appropriate (e.g., ChatGPT, Claude, API)
 - Maintain professional tone
 - Keep links and formatting
+
+**CRITICAL - Character Usage (구분자 규칙):**
+- ❌ NEVER use middle dot (·) as separator - 절대 사용 금지!
+- ✅ ONLY use slash (/) or pipe (|) for separators
+- Example: "Roche P. | 2026년 9월 | 9분 읽기" (CORRECT)
 
 **English HTML:**
 ${englishHtml}
