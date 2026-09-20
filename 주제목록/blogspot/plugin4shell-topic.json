@@ -1,0 +1,65 @@
+{
+  "date": "2026-09-20",
+  "category": "AI Security",
+  "name": "Plugin4Shell - AI CLI 보안 취약점 분석",
+  "keywords": "Claude Code, Cursor, Copilot, Gemini CLI, Plugin4Shell, 보안 취약점, AIR Security",
+  "outline": {
+    "intro": "CLI 4종에서 여제 갈은 구멍이 뚫렸습니다",
+    "tools": [
+      "클로드 코드",
+      "코덱스 (Cursor)",
+      "코파일럿 (GitHub Copilot)",
+      "제미나이 CLI"
+    ],
+    "vulnerability": {
+      "name": "Plugin4Shell",
+      "discoverer": "AIR Security",
+      "timeline": {
+        "discovered": "2026-06",
+        "reported": "각 회사에 알림 (3개월 전)",
+        "disclosed": "2026-09"
+      },
+      "attack": "플러그인을 특정 커밋 해시로 고정해 놓아도, 공격자가 같은 이름의 브랜치를 만들면 그게 먼저 실행됩니다"
+    },
+    "responses": {
+      "claudeCode": {
+        "status": "패치 완료",
+        "version": "2.1.179",
+        "note": "자동 업데이트라 사용자 조치 없이 업데이트됨"
+      },
+      "cursor": {
+        "status": "패치 완료",
+        "version": "0.146.0"
+      },
+      "copilot": {
+        "status": "아직 뚫려 있음",
+        "note": "패치 미완료"
+      },
+      "gemini": {
+        "status": "도구 자체를 없앰",
+        "note": "CLI 서비스 종료"
+      }
+    },
+    "checklist": [
+      {
+        "title": "클로드 코드 CLI 버전 확인",
+        "command": "claude --version",
+        "requirement": "2.1.179 이상"
+      },
+      {
+        "title": "플러그인 저장소 호스팅 확인",
+        "safe": "GitHub (브랜치 이름 규칙으로 차단)",
+        "unsafe": "Bitbucket, 자체 Git 서버 (별도 대응 필요)"
+      },
+      {
+        "title": "사고 났을 때 롤백 순서",
+        "steps": [
+          "플러그인 비활성화",
+          "CLI 도구 업데이트",
+          "플러그인 저장소 확인"
+        ]
+      }
+    ],
+    "conclusion": "비개발자도 그대로 따라 하면 되도록 체크리스트 제공"
+  }
+}

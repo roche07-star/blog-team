@@ -1,0 +1,88 @@
+{
+  "week": "2026-W38",
+  "category": "AI Tool Issues & News",
+  "generated": "2026-09-20",
+  "description": "AI 생산성툴의 최신 이슈, 보안 문제, 업데이트 소식",
+  "topics": [
+    {
+      "day": "Friday",
+      "date": "2026-09-20",
+      "category": "Security",
+      "title": "Plugin4Shell - AI CLI 도구 4종 보안 취약점 발견",
+      "affected": ["Claude Code", "Cursor (Codex)", "GitHub Copilot", "Gemini CLI"],
+      "severity": "High",
+      "summary": "플러그인 커밋 해시 고정 우회 취약점",
+      "details": {
+        "discoverer": "AIR Security",
+        "timeline": "2026년 6월 발견 → 9월 공개",
+        "attack": "공격자가 같은 이름의 브랜치를 만들면 고정된 커밋을 우회",
+        "status": {
+          "claudeCode": "2.1.179에서 패치 완료 (자동 업데이트)",
+          "cursor": "0.146.0에서 패치 완료",
+          "copilot": "아직 취약 (패치 미완료)",
+          "gemini": "CLI 도구 서비스 종료"
+        }
+      },
+      "checklist": [
+        "claude --version 확인 (2.1.179 이상)",
+        "플러그인 저장소 호스팅 확인 (GitHub 권장)",
+        "비개발자용 롤백 가이드"
+      ]
+    },
+    {
+      "day": "Saturday",
+      "date": "2026-09-21",
+      "category": "Update",
+      "title": "Cursor 0.146.0 긴급 업데이트 - Plugin4Shell 대응",
+      "summary": "보안 취약점 패치 및 플러그인 검증 강화",
+      "details": "브랜치 이름 검증, 커밋 해시 강제 확인"
+    },
+    {
+      "day": "Sunday",
+      "date": "2026-09-22",
+      "category": "Policy",
+      "title": "GitHub Copilot - 기업 데이터 학습 논란 재점화",
+      "summary": "프라이빗 레포지토리 코드 학습 여부 불명확",
+      "details": "기업 고객들의 데이터 보호 요구 증가"
+    },
+    {
+      "day": "Monday",
+      "date": "2026-09-23",
+      "category": "Feature",
+      "title": "Claude Code 2.1.180 - 자동 보안 스캔 기능 추가",
+      "summary": "플러그인 설치 전 자동 보안 검사",
+      "details": "GitHub Security Advisory 연동"
+    },
+    {
+      "day": "Tuesday",
+      "date": "2026-09-24",
+      "category": "Breaking",
+      "title": "Gemini CLI 서비스 종료 공식 발표",
+      "summary": "Plugin4Shell 대응 대신 서비스 중단 결정",
+      "details": "Gemini API로 마이그레이션 권장",
+      "migration": "대체 도구: Claude Code, Cursor"
+    },
+    {
+      "day": "Wednesday",
+      "date": "2026-09-25",
+      "category": "Performance",
+      "title": "Windsurf vs Cursor - 메모리 사용량 이슈 비교",
+      "summary": "대규모 프로젝트에서 Cursor 메모리 누수 보고",
+      "details": "Windsurf는 50% 낮은 메모리 사용량 확인"
+    },
+    {
+      "day": "Thursday",
+      "date": "2026-09-26",
+      "category": "License",
+      "title": "AI 코딩 툴 라이선스 정책 변경 - 비교 분석",
+      "summary": "Cursor, Copilot, Claude Code 가격 정책 업데이트",
+      "details": "개인/팀/엔터프라이즈 요금제 비교"
+    }
+  ],
+  "contentStyle": {
+    "tone": "전문적이지만 이해하기 쉽게",
+    "target": "개발자 + 비개발자 (기술 관리자 포함)",
+    "format": "이슈 요약 → 영향 범위 → 대응 방법 → 체크리스트",
+    "cta": "매일 아침 AI 정보를 받아 보고 싶다면 댓글에 '저요!' 남겨주세요! 👋"
+  }
+}
