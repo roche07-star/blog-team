@@ -5,58 +5,58 @@
     {
       "day": "Friday",
       "date": "2026-09-20",
-      "category": "AI Security",
-      "name": "Plugin4Shell - Claude Code, Cursor, Copilot, Gemini CLI",
-      "keywords": "security vulnerability, Plugin4Shell, AI CLI tools, commit hash bypass",
-      "focusPoint": "Critical security flaw affecting 4 major AI coding tools. Compare patch status, migration paths, and safety checklist for each tool."
+      "category": "AI Security Alert",
+      "name": "CamoLeak, Cursor CVE-2025-59944, Claude Code RCE - AI Coding Tools Security Crisis",
+      "keywords": "CamoLeak, CVE-2025-59944, RCE vulnerability, AI security, Copilot data leak, Cursor bypass, Claude Code exploit, IDEsaster",
+      "focusPoint": "Critical security crisis in AI coding tools: CamoLeak in Copilot exfiltrates data via image URLs (CVSS 9.6), Cursor's case-sensitivity bypass enables persistent RCE (CVE-2025-59944), Claude Code vulnerable to malicious config files, plus IDEsaster revealing 30+ flaws. Complete vulnerability breakdown, patch status, and immediate action checklist."
     },
     {
       "day": "Saturday",
       "date": "2026-09-21",
-      "category": "AI Security Update",
-      "name": "Cursor 0.146.0 Emergency Patch - Plugin4Shell Response",
-      "keywords": "Cursor update, security patch, plugin verification",
-      "focusPoint": "Urgent security update details, what changed, and how it protects against Plugin4Shell attacks."
+      "category": "AI Code Quality",
+      "name": "48% of AI-Generated Code Has Security Flaws - 2026 Research Report",
+      "keywords": "AI code quality, security flaws, CVE statistics, code review, vulnerability rate 2.74x",
+      "focusPoint": "Shocking 2026 research: 48% of AI-generated code contains security vulnerabilities, 74 CVEs directly linked to AI code (35 in March 2026 alone), and AI introduces bugs at 2.74x human rate. Why 75% of senior developers still review every snippet before merging."
     },
     {
       "day": "Sunday",
       "date": "2026-09-22",
-      "category": "AI Policy",
-      "name": "GitHub Copilot Data Privacy Controversy",
-      "keywords": "Copilot privacy, enterprise data, code training",
-      "focusPoint": "Analyze privacy concerns, enterprise customer worries, and alternative tools for data-sensitive organizations."
+      "category": "AI Privacy Risk",
+      "name": "Your Code Leaves Your Machine on Every Keystroke - AI Tool Data Practices Exposed",
+      "keywords": "data privacy, keystroke logging, code exfiltration, sensitive data leak, hardcoded secrets",
+      "focusPoint": "Investigative report: How Copilot, Cursor, and Claude send your source code and customer data to the cloud with every keystroke. Hardcoded secret leakage patterns, enterprise data handling risks, and which tools offer offline/local-only modes."
     },
     {
       "day": "Monday",
       "date": "2026-09-23",
-      "category": "AI Feature",
-      "name": "Claude Code 2.1.180 - Auto Security Scan",
-      "keywords": "Claude Code update, security scan, GitHub Advisory",
-      "focusPoint": "New auto-security scanning feature that checks plugins before installation. Setup guide and protection examples."
+      "category": "AI Attack Vector",
+      "name": "Prompt Injection Attacks Against AI Coding Assistants - Real Exploit Examples",
+      "keywords": "prompt injection, AI attacks, code poisoning, supply chain attack, malicious prompts",
+      "focusPoint": "First comprehensive guide to prompt injection attacks targeting AI coding tools. Real-world exploit examples, how attackers poison your codebase through crafted comments, and defensive coding practices that actually work."
     },
     {
       "day": "Tuesday",
       "date": "2026-09-24",
-      "category": "Breaking News",
-      "name": "Gemini CLI Service Shutdown Announcement",
-      "keywords": "Gemini CLI discontinued, service shutdown, migration guide",
-      "focusPoint": "Official shutdown announcement analysis, migration timeline, and best alternative tools comparison."
+      "category": "AI Patch Update",
+      "name": "Emergency Security Patches Released - Copilot, Cursor, Claude Update Guide",
+      "keywords": "security patch, emergency update, CVE fixes, version updates, patch guide",
+      "focusPoint": "Breaking: Emergency patches released for CamoLeak (Copilot), CVE-2025-59944 (Cursor), and Claude Code RCE. Step-by-step update guide, version numbers to check, and what to do if you can't update immediately."
     },
     {
       "day": "Wednesday",
       "date": "2026-09-25",
-      "category": "AI Performance",
-      "name": "Windsurf vs Cursor - Memory Usage Comparison",
-      "keywords": "memory leak, performance comparison, resource usage",
-      "focusPoint": "Real-world performance tests on large codebases. Windsurf uses 50% less memory - detailed benchmarks."
+      "category": "AI Tool Comparison",
+      "name": "Most Secure AI Coding Tool 2026 - Security Audit Results",
+      "keywords": "security comparison, audit results, vulnerability count, security score, best practices",
+      "focusPoint": "Independent security audit results comparing Copilot, Cursor, Claude Code, Windsurf, and Codeium. Vulnerability count, data handling practices, local execution options, and which tool wins for enterprise security."
     },
     {
       "day": "Thursday",
       "date": "2026-09-26",
-      "category": "AI Licensing",
-      "name": "AI Coding Tools Pricing Update - Cursor vs Copilot vs Claude",
-      "keywords": "pricing changes, license comparison, team plans",
-      "focusPoint": "Complete pricing breakdown for personal, team, and enterprise tiers. ROI analysis and value comparison."
+      "category": "AI Best Practices",
+      "name": "How to Use AI Coding Tools Safely - Enterprise Security Checklist 2026",
+      "keywords": "security best practices, enterprise guidelines, safe usage, security checklist, code review process",
+      "focusPoint": "Definitive enterprise security checklist for AI coding tools: network isolation, code review workflows, secret scanning, audit logging, and compliance-ready configurations. What 75% of developers do before merging AI code."
     }
   ]
 }

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 코딩 툴 보안 위기 - 2026년 9월 실제 이슈</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #c0392b 0%, #e74c3c 50%, #c0392b 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .header {
+      text-align: center;
+      color: white;
+      margin-bottom: 50px;
+      padding: 40px 20px;
+      background: rgba(0,0,0,0.3);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    .header h1 {
+      font-size: 2.8em;
+      margin-bottom: 15px;
+      font-weight: 800;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .header .subtitle {
+      font-size: 1.3em;
+      margin-bottom: 10px;
+      opacity: 0.95;
+    }
+
+    .header .week {
+      font-size: 1.1em;
+      opacity: 0.85;
+      margin-top: 10px;
+    }
+
+    .alert-banner {
+      background: #fff3cd;
+      border-left: 5px solid #ffc107;
+      padding: 20px;
+      margin-bottom: 40px;
+      border-radius: 8px;
+      color: #856404;
+    }
+
+    .alert-banner strong {
+      color: #c0392b;
+      font-size: 1.1em;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+    }
+
+    .topic-card {
+      background: white;
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+      border-left: 8px solid;
+      position: relative;
+    }
+
+    .topic-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .topic-card.critical { border-left-color: #c0392b; }
+    .topic-card.warning { border-left-color: #e67e22; }
+    .topic-card.info { border-left-color: #3498db; }
+    .topic-card.success { border-left-color: #27ae60; }
+
+    .severity-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.85em;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .severity-badge.critical { background: #ffebee; color: #c62828; }
+    .severity-badge.high { background: #fff3e0; color: #ef6c00; }
+    .severity-badge.medium { background: #e3f2fd; color: #1976d2; }
+    .severity-badge.low { background: #e8f5e9; color: #2e7d32; }
+
+    .day-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-size: 0.95em;
+      font-weight: 700;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .category {
+      font-size: 0.9em;
+      color: #c0392b;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .category::before {
+      content: "⚠️";
+      font-size: 1.2em;
+    }
+
+    .topic-card h3 {
+      font-size: 1.5em;
+      color: #1a1a2e;
+      margin-bottom: 18px;
+      line-height: 1.4;
+      font-weight: 800;
+    }
+
+    .keywords {
+      background: #f8f9fa;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      font-size: 0.9em;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .keywords strong {
+      color: #c0392b;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .focus {
+      font-size: 1em;
+      line-height: 1.8;
+      color: #333;
+      padding: 15px;
+      background: linear-gradient(to right, #fff5f5, white);
+      border-left: 4px solid #c0392b;
+      border-radius: 8px;
+    }
+
+    .focus strong {
+      color: #c0392b;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .cve-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    .cve-tag {
+      background: #2c3e50;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.85em;
+      font-weight: 600;
+      font-family: 'Courier New', monospace;
+    }
+
+    .stats-section {
+      background: rgba(255,255,255,0.95);
+      padding: 30px;
+      border-radius: 16px;
+      margin-bottom: 40px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .stats-section h2 {
+      color: #c0392b;
+      margin-bottom: 20px;
+      font-size: 1.8em;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .stat-box {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(135deg, #f8f9fa, white);
+      border-radius: 12px;
+      border: 2px solid #e0e0e0;
+    }
+
+    .stat-number {
+      font-size: 3em;
+      font-weight: 900;
+      color: #c0392b;
+      font-family: 'Courier New', monospace;
+    }
+
+    .stat-label {
+      font-size: 0.95em;
+      color: #666;
+      margin-top: 8px;
+    }
+
+    .cta-section {
+      text-align: center;
+      margin-top: 60px;
+      padding: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      color: white;
+    }
+
+    .cta-section h2 {
+      font-size: 2em;
+      margin-bottom: 15px;
+      font-weight: 800;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 15px;
+      }
+
+      .header h1 {
+        font-size: 2em;
+      }
+
+      .topics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🚨 AI 코딩 툴 보안 위기</h1>
+      <div class="subtitle">2026년 9월 실제 발생한 보안 이슈</div>
+      <div class="week">2026-W38 (9/20~9/26) - 실시간 업데이트</div>
+    </div>
+
+    <div class="alert-banner">
+      <strong>⚠️ 긴급 보안 경고</strong>
+      CamoLeak, CVE-2025-59944, Claude Code RCE 등 여러 AI 코딩 도구에서 심각한 보안 취약점이 발견되었습니다.
+      즉시 업데이트를 확인하고 아래 가이드를 따라주세요.
+    </div>
+
+    <div class="stats-section">
+      <h2>📊 2026년 AI 코딩 툴 보안 통계</h2>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-number">48%</div>
+          <div class="stat-label">AI 코드 보안 결함률</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">74</div>
+          <div class="stat-label">AI 연관 CVE 개수</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">2.74x</div>
+          <div class="stat-label">인간 대비 버그 발생률</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">75%</div>
+          <div class="stat-label">개발자 코드 리뷰 비율</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="topics-grid">
+
+    <div class="topic-card critical">
+      <span class="severity-badge critical">Critical</span>
+      <div class="day-badge">금요일 9/20</div>
+      <div class="category">AI Security Alert</div>
+      <h3>CamoLeak, Cursor CVE-2025-59944, Claude Code RCE - AI Coding Tools Security Crisis</h3>
+
+      <div class="keywords">
+        <strong>🔑 Keywords:</strong>
+        CamoLeak, CVE-2025-59944, RCE vulnerability, AI security, Copilot data leak, Cursor bypass, Claude Code exploit, IDEsaster
+      </div>
+
+      <div class="cve-tags">
+        <span class="cve-tag">CVE-2025-59944</span>
+        <span class="cve-tag">CVSS 9.6</span>
+        <span class="cve-tag">RCE</span>
+        <span class="cve-tag">CamoLeak</span>
+      </div>
+
+      <div class="focus">
+        <strong>📌 Focus:</strong>
+        Critical security crisis in AI coding tools: CamoLeak in Copilot exfiltrates data via image URLs (CVSS 9.6), Cursor's case-sensitivity bypass enables persistent RCE (CVE-2025-59944), Claude Code vulnerable to malicious config files, plus IDEsaster revealing 30+ flaws. Complete vulnerability breakdown, patch status, and immediate action checklist.
+      </div>
+    </div>
+
+    <div class="topic-card warning">
+      <span class="severity-badge high">High</span>
+      <div class="day-badge">토요일 9/21</div>
+      <div class="category">AI Code Quality</div>
+      <h3>48% of AI-Generated Code Has Security Flaws - 2026 Research Report</h3>
+
+      <div class="keywords">
+        <strong>🔑 Keywords:</strong>
+        AI code quality, security flaws, CVE statistics, code review, vulnerability rate 2.74x
+      </div>
+
+      <div class="focus">
+        <strong>📌 Focus:</strong>
+        Shocking 2026 research: 48% of AI-generated code contains security vulnerabilities, 74 CVEs directly linked to AI code (35 in March 2026 alone), and AI introduces bugs at 2.74x human rate. Why 75% of senior developers still review every snippet before merging.
+      </div>
+    </div>
+
+    <div class="topic-card warning">
+      <span class="severity-badge high">High</span>
+      <div class="day-badge">일요일 9/22</div>
+      <div class="category">AI Privacy Risk</div>
+      <h3>Your Code Leaves Your Machine on Every Keystroke - AI Tool Data Practices Exposed</h3>
+
+      <div class="keywords">
+        <strong>🔑 Keywords:</strong>
+        data privacy, keystroke logging, code exfiltration, sensitive data leak, hardcoded secrets
+      </div>
+
+      <div class="focus">
+        <strong>📌 Focus:</strong>
+        Investigative report: How Copilot, Cursor, and Claude send your source code and customer data to the cloud with every keystroke. Hardcoded secret leakage patterns, enterprise data handling risks, and which tools offer offline/local-only modes.
+      </div>
+    </div>
+
+    <div class="topic-card warning">
+      <span class="severity-badge high">High</span>
+      <div class="day-badge">월요일 9/23</div>
+      <div class="category">AI Attack Vector</div>
+      <h3>Prompt Injection Attacks Against AI Coding Assistants - Real Exploit Examples</h3>
+
+      <div class="keywords">
+        <strong>🔑 Keywords:</strong>
+        prompt injection, AI attacks, code poisoning, supply chain attack, malicious prompts
+      </div>
+
+      <div class="focus">
+        <strong>📌 Focus:</strong>
+        First comprehensive guide to prompt injection attacks targeting AI coding tools. Real-world exploit examples, how attackers poison your codebase through crafted comments, and defensive coding practices that actually work.
+      </div>
+    </div>
+
+    <div class="topic-card info">
+      <span class="severity-badge medium">Medium</span>
+      <div class="day-badge">화요일 9/24</div>
+      <div class="category">AI Patch Update</div>
+      <h3>Emergency Security Patches Released - Copilot, Cursor, Claude Update Guide</h3>
+
+      <div class="keywords">
+        <strong>🔑 Keywords:</strong>
+        security patch, emergency update, CVE fixes, version updates, patch guide
+      </div>
+
+      <div class="focus">
+        <strong>📌 Focus:</strong>
+        Breaking: Emergency patches released for CamoLeak (Copilot), CVE-2025-59944 (Cursor), and Claude Code RCE. Step-by-step update guide, version numbers to check, and what to do if you can't update immediately.
+      </div>
+    </div>
+
+    <div class="topic-card info">
+      <span class="severity-badge medium">Medium</span>
+      <div class="day-badge">수요일 9/25</div>
+      <div class="category">AI Tool Comparison</div>
+      <h3>Most Secure AI Coding Tool 2026 - Security Audit Results</h3>
+
+      <div class="keywords">
+        <strong>🔑 Keywords:</strong>
+        security comparison, audit results, vulnerability count, security score, best practices
+      </div>
+
+      <div class="focus">
+        <strong>📌 Focus:</strong>
+        Independent security audit results comparing Copilot, Cursor, Claude Code, Windsurf, and Codeium. Vulnerability count, data handling practices, local execution options, and which tool wins for enterprise security.
+      </div>
+    </div>
+
+    <div class="topic-card success">
+      <span class="severity-badge low">Best Practice</span>
+      <div class="day-badge">목요일 9/26</div>
+      <div class="category">AI Best Practices</div>
+      <h3>How to Use AI Coding Tools Safely - Enterprise Security Checklist 2026</h3>
+
+      <div class="keywords">
+        <strong>🔑 Keywords:</strong>
+        security best practices, enterprise guidelines, safe usage, security checklist, code review process
+      </div>
+
+      <div class="focus">
+        <strong>📌 Focus:</strong>
+        Definitive enterprise security checklist for AI coding tools: network isolation, code review workflows, secret scanning, audit logging, and compliance-ready configurations. What 75% of developers do before merging AI code.
+      </div>
+    </div>
+
+    </div>
+
+    <div class="cta-section">
+      <h2>📬 매일 아침 AI 보안 정보를 받아보세요!</h2>
+      <p style="font-size: 1.2em; margin-top: 15px;">
+        댓글에 <strong>"저요!"</strong> 남겨주시면<br>
+        최신 AI 코딩 툴 보안 이슈를 매일 아침 전달해드립니다! 👋
+      </p>
+    </div>
+  </div>
+</body>
+</html>
