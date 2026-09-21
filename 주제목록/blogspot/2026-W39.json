@@ -1,63 +1,62 @@
 {
   "week": "2026-W39",
-  "type": "blogspot",
-  "generated": "2026-09-21T02:18:12.398Z",
+  "generated": "2026-09-21T00:00:00.000Z",
   "topics": [
     {
       "day": "Monday",
       "date": "2026-09-21",
-      "category": "AI Productivity",
-      "name": "ChatGPT vs Notion AI vs Motion",
-      "keywords": "AI productivity, task management, scheduling, time blocking",
-      "focusPoint": "Workflow optimization, planning automation, and time savings"
+      "category": "AI Code Quality",
+      "name": "48% of AI-Generated Code Has Security Flaws - 2026 Research Report",
+      "keywords": "AI code quality, security flaws, CVE statistics, code review, vulnerability rate 2.74x",
+      "focusPoint": "Shocking 2026 research: 48% of AI-generated code contains security vulnerabilities, 74 CVEs directly linked to AI code (35 in March 2026 alone), and AI introduces bugs at 2.74x human rate. Why 75% of senior developers still review every snippet before merging."
     },
     {
       "day": "Tuesday",
       "date": "2026-09-22",
-      "category": "AI Writing",
-      "name": "ChatGPT vs Claude vs Jasper",
-      "keywords": "AI writing, content creation, copywriting, blogging",
-      "focusPoint": "Draft quality, brand voice control, and long-form content output"
+      "category": "AI Privacy Risk",
+      "name": "Your Code Leaves Your Machine on Every Keystroke - AI Tool Data Practices Exposed",
+      "keywords": "data privacy, keystroke logging, code exfiltration, sensitive data leak, hardcoded secrets",
+      "focusPoint": "Investigative report: How Copilot, Cursor, and Claude send your source code and customer data to the cloud with every keystroke. Hardcoded secret leakage patterns, enterprise data handling risks, and which tools offer offline/local-only modes."
     },
     {
       "day": "Wednesday",
       "date": "2026-09-23",
-      "category": "AI Research",
-      "name": "Perplexity vs ChatGPT vs Gemini",
-      "keywords": "AI research, fact-checking, citations, web search",
-      "focusPoint": "Source quality, citation accuracy, and research speed"
+      "category": "AI Attack Vector",
+      "name": "Prompt Injection Attacks Against AI Coding Assistants - Real Exploit Examples",
+      "keywords": "prompt injection, AI attacks, code poisoning, supply chain attack, malicious prompts",
+      "focusPoint": "First comprehensive guide to prompt injection attacks targeting AI coding tools. Real-world exploit examples, how attackers poison your codebase through crafted comments, and defensive coding practices that actually work."
     },
     {
       "day": "Thursday",
       "date": "2026-09-24",
-      "category": "AI Meeting Tools",
-      "name": "NotebookLM vs Fireflies.ai vs Otter.ai",
-      "keywords": "AI meetings, transcription, note-taking, summaries",
-      "focusPoint": "Meeting accuracy, summary usefulness, and action item capture"
+      "category": "AI Patch Update",
+      "name": "Emergency Security Patches Released - Copilot, Cursor, Claude Update Guide",
+      "keywords": "security patch, emergency update, CVE fixes, version updates, patch guide",
+      "focusPoint": "Breaking: Emergency patches released for CamoLeak (Copilot), CVE-2025-59944 (Cursor), and Claude Code RCE. Step-by-step update guide, version numbers to check, and what to do if you can't update immediately."
     },
     {
       "day": "Friday",
       "date": "2026-09-25",
-      "category": "AI Coding",
-      "name": "GitHub Copilot vs Cursor vs Claude",
-      "keywords": "AI coding, code completion, debugging, documentation",
-      "focusPoint": "Developer speed, code quality, and debugging assistance"
+      "category": "AI Tool Comparison",
+      "name": "Most Secure AI Coding Tool 2026 - Security Audit Results",
+      "keywords": "security comparison, audit results, vulnerability count, security score, best practices",
+      "focusPoint": "Independent security audit results comparing Copilot, Cursor, Claude Code, Windsurf, and Codeium. Vulnerability count, data handling practices, local execution options, and which tool wins for enterprise security."
     },
     {
       "day": "Saturday",
       "date": "2026-09-26",
-      "category": "AI Design",
-      "name": "Canva vs Midjourney vs Adobe Firefly",
-      "keywords": "AI design, image generation, creative AI, visual content",
-      "focusPoint": "Ease of design creation, image quality, and brand-ready assets"
+      "category": "AI Best Practices",
+      "name": "How to Use AI Coding Tools Safely - Enterprise Security Checklist 2026",
+      "keywords": "security best practices, enterprise guidelines, safe usage, security checklist, code review process",
+      "focusPoint": "Definitive enterprise security checklist for AI coding tools: network isolation, code review workflows, secret scanning, audit logging, and compliance-ready configurations. What 75% of developers do before merging AI code."
     },
     {
       "day": "Sunday",
       "date": "2026-09-27",
-      "category": "AI Email Management",
-      "name": "Superhuman vs Grammarly vs Gemini for Gmail",
-      "keywords": "AI email, inbox management, email writing, scheduling",
-      "focusPoint": "Inbox triage, reply drafting, and email workflow automation"
+      "category": "AI Security Trends",
+      "name": "AI Security Incidents Timeline 2026 - What We Learned This Year",
+      "keywords": "security timeline, 2026 review, incident analysis, lessons learned, future outlook",
+      "focusPoint": "Complete timeline of major AI coding tool security incidents in 2026. CamoLeak, CVE-2025-59944, IDEsaster, and more. Key lessons, industry responses, and predictions for 2027."
     }
   ]
 }
