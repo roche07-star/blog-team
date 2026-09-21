@@ -758,7 +758,7 @@ Output the complete Korean HTML focused on feature comparison:`;
 
   const response = await client.messages.create({
     model: MODEL,
-    max_tokens: 16000,
+    max_tokens: 24000,
     messages: [{ role: 'user', content: prompt }]
   });
 
@@ -825,7 +825,7 @@ Output the complete Korean HTML focused on practical use cases:`;
 
   const response = await client.messages.create({
     model: MODEL,
-    max_tokens: 16000,
+    max_tokens: 24000,
     messages: [{ role: 'user', content: prompt }]
   });
 
