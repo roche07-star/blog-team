@@ -1,0 +1,38 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📅 생성일: 2026. 9. 22. AM 5:12:38
+🏷️ 주제: 2026년 경력 개발자 이직 전략과 연봉 점프
+🔑 키워드: 경력 개발자, 이직 전략, 연봉 협상, 처우 개선, 오퍼 비교
+✍️ 스타일: 링커 (LinkedIn)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+```html
+<h1><i data-lucide="alert-circle"></i> 경력 5년차, 연봉은 그대로인데 이직만 3번?</h1>
+
+<p>대부분의 개발자가 이직할 때 실수하는 것:</p>
+<p><strong>"지금 받는 연봉 + 10% 정도면 괜찮겠지"</strong></p>
+
+<p>그 결과? 시장가치보다 30% 낮은 연봉으로 3년을 더 일하게 됩니다.</p>
+
+<h2><i data-lucide="target"></i> 2026년 경력 개발자 이직, 이것만은 꼭</h2>
+
+<p><i data-lucide="trending-up"></i> <strong>1. 시장가치부터 파악하세요</strong><br>
+당신과 유사한 경력자가 실제로 받는 연봉 범위를 먼저 알아야 합니다. 추측이 아닌 데이터로.</p>
+
+<p><i data-lucide="briefcase"></i> <strong>2. 타이밍이 전부입니다</strong><br>
+회사가 급하게 채용할 때 vs 여유있게 뽑을 때, 오퍼 금액이 20% 이상 차이납니다.</p>
+
+<p><i data-lucide="award"></i> <strong>3. 여러 오퍼를 비교하세요</strong><br>
+단순 연봉이 아닌 총 보상패키지(TC)로 계산해야 진짜 처우를 알 수 있습니다.</p>
+
+<p><i data-lucide="lightbulb"></i> <strong>Tip:</strong> jobizic(<a href="https://jobizic.com" target="_blank">jobizic.com</a>)은 유사 경력 포지션의 연봉 범위와 요구 조건을 비교 분석해줍니다. 이직 타이밍과 협상 포인트를 데이터 기반으로 제안받을 수 있죠.</p>
+
+<p><i data-lucide="rocket"></i> <strong>당신의 다음 이직, 연봉 점프의 기회로 만드세요.</strong></p>
+
+<p>경력 개발자분들, 어떤 이직 전략을 쓰고 계신가요? 댓글로 공유해주세요 👇</p>
+
+<p>📌 더 알아보기: <a href="https://jobizic.com" target="_blank">jobizic.com</a></p>
+```
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💡 Tip: LinkedIn에 복사/붙여넣기 하세요!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
