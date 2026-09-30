@@ -1,0 +1,44 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📅 생성일: 2026. 9. 30. AM 5:46:57
+🏷️ 주제: 포트폴리오와 GitHub로 실무 증명하는 방법
+🔑 키워드: 포트폴리오, GitHub, 프로젝트, 실무경험, 오픈소스
+✍️ 스타일: 링커 (LinkedIn)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+```html
+<h1><i data-lucide="alert-circle"></i> GitHub 잔디밭만 초록색이면 뭐하나요?</h1>
+
+<p>채용담당자가 당신의 GitHub을 열었을 때,<br>
+<strong>3초 안에 닫아버리는 이유</strong>를 아시나요?</p>
+
+<p>커밋 수는 많은데, 정작 <strong>무엇을 만들 수 있는 사람인지</strong> 모르기 때문입니다.</p>
+
+<h2><i data-lucide="target"></i> 실무 증명하는 포트폴리오 3원칙</h2>
+
+<p><strong>1. 문제 정의</strong> <i data-lucide="arrow-right"></i> 해결 과정<br>
+"Todo 앱을 만들었어요"가 아니라,<br>
+"사용자 이탈률 30% 문제를 리팩토링으로 해결했습니다"</p>
+
+<p><strong>2. 기술 스택보다 임팩트</strong> <i data-lucide="trending-up"></i><br>
+React, Node.js 나열 말고<br>
+"API 응답속도 2초 → 0.3초 개선" 같은 수치로 말하세요</p>
+
+<p><strong>3. README가 당신의 자기소개서</strong> <i data-lucide="file-text"></i><br>
+설치 방법만 적지 말고, 왜 이 프로젝트를 시작했는지 스토리를 담으세요</p>
+
+<p><i data-lucide="lightbulb"></i> <strong>Tip:</strong> jobizic(<strong>jobizic.com</strong>)의 포트폴리오 분석 기능으로<br>
+채용담당자 관점에서 개선 포인트를 확인해보세요.<br>
+프로젝트 설명과 저장소를 분석해 실무 증명력을 높여줍니다.</p>
+
+<p><i data-lucide="rocket"></i> <strong>오늘 당장 하세요:</strong><br>
+가장 자신있는 프로젝트 하나, README 다시 써보기<br>
+코드보다 '왜, 어떻게, 결과'에 집중하세요</p>
+
+<p>당신의 GitHub, 이력서가 아닌 <strong>포트폴리오로 만들 시간입니다.</strong></p>
+
+<p>#개발자포트폴리오 #GitHub #채용 #jobizic #개발자취업</p>
+```
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💡 Tip: LinkedIn에 복사/붙여넣기 하세요!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
