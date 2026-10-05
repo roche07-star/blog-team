@@ -1,0 +1,37 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📅 생성일: 2026. 10. 5. AM 5:58:44
+🏷️ 주제: 2026년 하반기 신입 개발자 포트폴리오 정리법
+🔑 키워드: 신입 개발자, 포트폴리오, 사이드 프로젝트, 취업 준비, GitHub
+✍️ 스타일: 링커 (LinkedIn)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+```html
+<h1><i data-lucide="alert-circle"></i> 신입 개발자 95%가 모르는 포트폴리오의 치명적 오류</h1>
+
+<p>2026년 하반기, 수백 개의 포트폴리오를 검토하며 발견한 충격적인 사실:</p>
+
+<p><strong>대부분의 신입 개발자가 "뭘 만들었는가"만 보여주고, "왜 필요한 사람인가"는 증명하지 못합니다.</strong></p>
+
+<p><i data-lucide="target"></i> <strong>채용 담당자가 진짜 보는 것:</strong></p>
+
+<p>1. <strong>GitHub 커밋 히스토리</strong> - 코드 작성 패턴과 문제 해결 과정<br>
+2. <strong>프로젝트 선택 이유</strong> - 기술 트렌드 이해도와 학습 방향성<br>
+3. <strong>공고 요구사항과의 매칭도</strong> - 실무 투입 가능성</p>
+
+<p><i data-lucide="lightbulb"></i> <strong>2026년 신입의 생존 전략:</strong></p>
+
+<p><i data-lucide="rocket"></i> 무작정 사이드 프로젝트를 늘리지 마세요<br>
+<i data-lucide="trending-up"></i> 지원 공고와 내 포트폴리오의 GAP을 먼저 파악하세요<br>
+<i data-lucide="award"></i> 부족한 기술 스택을 채우는 전략적 프로젝트를 시작하세요</p>
+
+<p><i data-lucide="briefcase"></i> <strong>Tip:</strong> jobizic(<strong>jobizic.com</strong>)은 AI로 당신의 포트폴리오와 채용공고를 비교 분석해 지금 당장 보완해야 할 경험과 맞춤 과제를 제안합니다.</p>
+
+<p><strong>시간은 한정적입니다. 방향성 없이 코딩만 하지 마세요.</strong></p>
+
+<p><i data-lucide="users"></i> 당신의 포트폴리오, 전략적으로 준비하고 계신가요?<br>
+👉 지금 바로 확인해보세요: <strong>jobizic.com</strong></p>
+```
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💡 Tip: LinkedIn에 복사/붙여넣기 하세요!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
