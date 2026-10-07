@@ -1,0 +1,41 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📅 생성일: 2026. 10. 7. AM 6:14:44
+🏷️ 주제: 2026년 포트폴리오와 GitHub로 합격률 높이는 법
+🔑 키워드: 포트폴리오, GitHub, 오픈소스, 프로젝트, 기술 증거
+✍️ 스타일: 링커 (LinkedIn)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+```html
+<h1><i data-lucide="alert-circle"></i> 95%의 개발자가 GitHub을 이력서로 착각합니다</h1>
+
+<p>2026년, 당신의 GitHub는 그냥 코드 저장소가 아닙니다.<br>
+채용담당자가 <strong>3분 안에</strong> 판단하는 기술 증거입니다.</p>
+
+<p><i data-lucide="target"></i> <strong>합격하는 포트폴리오의 3가지 원칙:</strong></p>
+
+<p><strong>1. 커밋 그래프가 아닌 '문제 해결 스토리'</strong><br>
+→ README에 Before/After, 성과 지표 필수<br>
+→ "트래픽 30% 개선" > "React 프로젝트"</p>
+
+<p><strong>2. 오픈소스 기여 1개 > 토이 프로젝트 10개</strong><br>
+→ 실무 협업 능력의 증거<br>
+→ PR 리뷰 히스토리가 당신의 커뮤니케이션 스킬</p>
+
+<p><strong>3. 채용담당자 관점에서 검증</strong><br>
+→ 내가 보는 강점 ≠ 시장이 보는 강점</p>
+
+<p><i data-lucide="lightbulb"></i> <strong>Tip:</strong> jobizic(<strong>jobizic.com</strong>)의 GitHub 분석 기능은 당신의 프로젝트를 채용담당자 시선으로 시각화합니다. 어떤 기술이 부각되고, 어떤 부분을 보완해야 하는지 3분 만에 확인하세요.</p>
+
+<p><i data-lucide="rocket"></i> <strong>지금 당장 실행하세요:</strong><br>
+→ 대표 프로젝트 1개 README 업데이트<br>
+→ jobizic.com에서 무료 분석 시작<br>
+→ 오픈소스 이슈 1개 선택</p>
+
+<p>포트폴리오는 결과물이 아니라 <strong>전략</strong>입니다.</p>
+
+<p><i data-lucide="users"></i> 합격률을 높인 경험이 있다면 댓글로 공유해주세요!</p>
+```
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💡 Tip: LinkedIn에 복사/붙여넣기 하세요!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
