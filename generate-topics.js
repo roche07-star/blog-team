@@ -47,25 +47,33 @@ async function generateWeeklyTopics(startDate) {
         messages: [
           {
             role: 'system',
-            content: 'You are an AI tools expert. Suggest trending AI tool comparison topics for blog posts.'
+            content: 'You are an AI industry analyst. Suggest trending AI-related issues and topics for in-depth blog posts.'
           },
           {
             role: 'user',
-            content: `Suggest 7 UNIQUE trending AI tool comparison topics for the next 7 days starting from ${startDate}.
+            content: `Suggest 7 UNIQUE trending AI-related ISSUES or TOPICS for the next 7 days starting from ${startDate}.
 
-Each topic should be in the format: "Tool A vs Tool B vs Tool C"
+Each topic should focus on:
+- Current trends, challenges, or debates in AI
+- Technical issues, ethical concerns, or industry shifts
+- Practical analysis, case studies, or insights
 
-Categories to cover: AI Productivity, AI Writing, AI Design, AI Video, AI Coding, AI Meeting Tools, AI Email Management, AI Research, AI Data Analysis, AI Voice, AI Automation${prevTopicsStr}
+Categories to cover: AI Ethics, AI Regulation, AI in Business, AI Security, AI Innovation, AI Impact, AI Trends, AI Challenges${prevTopicsStr}
 
 IMPORTANT:
 - Each topic must be COMPLETELY DIFFERENT from previous topics
-- Use NEW and TRENDING tools from 2026
-- Avoid repeating the same tool combinations
-- If a tool appears in previous topics, use DIFFERENT tools
+- Focus on 2026 current issues and trends
+- NOT "Tool A vs Tool B" format - instead focus on issues, trends, analysis
+- Use specific, timely topics
+
+Examples:
+- "AI 모델 편향성 문제: 현황과 해결 방안"
+- "오픈소스 AI의 미래: 기회와 도전"
+- "AI 저작권 분쟁: 법적 쟁점과 산업 영향"
 
 Return ONLY a JSON array with 7 topics:
 [
-  {"category": "AI Productivity", "name": "Tool A vs Tool B vs Tool C", "keywords": "keyword1, keyword2, keyword3", "focusPoint": "What to compare"},
+  {"category": "AI Ethics", "name": "Issue or Topic Title", "keywords": "keyword1, keyword2, keyword3", "focusPoint": "What to analyze"},
   ...
 ]`
           }

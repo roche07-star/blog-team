@@ -880,8 +880,7 @@ async function generateBlogspotPost() {
     const englishHtml = await alexWriteBlogPost(topic);
 
     // 한국어 2개 버전 생성 (콘텐츠 관점별)
-    const koreanHtmlA = await createKoreanVersionA(englishHtml, topic);
-    const koreanHtmlB = await createKoreanVersionB(englishHtml, topic);
+    const koreanHtml = await createKoreanVersionA(englishHtml, topic);
 
     // 날짜 폴더 생성
     const timestamp = new Date().toISOString().slice(0, 10).replace(/-/g, '');
@@ -893,39 +892,31 @@ async function generateBlogspotPost() {
     // 파일명
     const categorySlug = topic.category.replace(/\s+/g, '-');
     const englishFileName = `${categorySlug}_EN.html`;
-    const koreanFileNameA = `${categorySlug}_KR_기능비교.html`;
-    const koreanFileNameB = `${categorySlug}_KR_실전활용.html`;
+    const koreanFileName = `${categorySlug}_KR.html`;
 
     // 파일 경로
     const englishPath = path.join(dateFolder, englishFileName);
-    const koreanPathA = path.join(dateFolder, koreanFileNameA);
-    const koreanPathB = path.join(dateFolder, koreanFileNameB);
+    const koreanPath = path.join(dateFolder, koreanFileName);
 
     // ```html 마커 제거
     const cleanEnglishHtml = englishHtml
       .replace(/^```html\s*/g, '')
       .replace(/```\s*$/g, '');
 
-    const cleanKoreanHtmlA = koreanHtmlA
-      .replace(/^```html\s*/g, '')
-      .replace(/```\s*$/g, '');
-
-    const cleanKoreanHtmlB = koreanHtmlB
+    const cleanKoreanHtml = koreanHtml
       .replace(/^```html\s*/g, '')
       .replace(/```\s*$/g, '');
 
     // 파일 저장
     fs.writeFileSync(englishPath, cleanEnglishHtml, 'utf8');
-    fs.writeFileSync(koreanPathA, cleanKoreanHtmlA, 'utf8');
-    fs.writeFileSync(koreanPathB, cleanKoreanHtmlB, 'utf8');
+    fs.writeFileSync(koreanPath, cleanKoreanHtml, 'utf8');
 
     console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
     console.log('✅ Blogspot posts generated!');
     console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
     console.log(`📁 Saved to: ${dateFolder}`);
-    console.log(`  - ${englishFileName} (for Blogspot)`);
-    console.log(`  - ${koreanFileNameA} (기능 비교 버전)`);
-    console.log(`  - ${koreanFileNameB} (실전 활용 버전)\n`);
+    console.log(`  - ${englishFileName} (English)`);
+    console.log(`  - ${koreanFileName} (Korean)\n`);
 
     // Blogger 자동 발행
     try {
