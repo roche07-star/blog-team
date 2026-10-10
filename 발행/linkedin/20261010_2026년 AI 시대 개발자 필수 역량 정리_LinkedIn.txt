@@ -1,0 +1,43 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📅 생성일: 2026. 10. 10. AM 6:06:39
+🏷️ 주제: 2026년 AI 시대 개발자 필수 역량 정리
+🔑 키워드: AI 시대, 개발자 역량, LLM, 재학습, 자동화
+✍️ 스타일: 링커 (LinkedIn)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+```html
+<h1><i data-lucide="alert-circle"></i> 2026년, 코딩 못하는 개발자가 살아남습니다</h1>
+
+<p>충격적이지만 사실입니다.<br>
+AI가 코드를 짜는 시대, 개발자의 가치는 "무엇을 만들지 정의하는 능력"으로 이동했습니다.</p>
+
+<p><strong>🎯 2026년 개발자 필수 역량 TOP 5</strong></p>
+
+<p><i data-lucide="target"></i> <strong>1. LLM 프롬프트 엔지니어링</strong><br>
+AI에게 정확히 지시하는 능력 = 생산성 10배</p>
+
+<p><i data-lucide="trending-up"></i> <strong>2. AI 자동화 설계</strong><br>
+반복 작업을 AI로 대체하는 아키텍처 구성력</p>
+
+<p><i data-lucide="lightbulb"></i> <strong>3. 비즈니스 문제 정의</strong><br>
+기술이 아닌 문제 해결 관점으로 사고</p>
+
+<p><i data-lucide="users"></i> <strong>4. 크로스 펑셔널 협업</strong><br>
+PM, 디자이너와 AI 활용 워크플로우 설계</p>
+
+<p><i data-lucide="rocket"></i> <strong>5. 지속적 재학습 체계</strong><br>
+6개월마다 새로운 AI 툴 마스터하는 루틴</p>
+
+<p><i data-lucide="award"></i> <strong>핵심은?</strong><br>
+당신이 지원하는 직무가 요구하는 AI 역량을 정확히 파악하는 것입니다.</p>
+
+<p><i data-lucide="briefcase"></i> <strong>Tip:</strong> jobizic(<strong>jobizic.com</strong>)의 직무 분석 기능으로 지원 포지션의 AI 활용 역량 우선순위와 보완해야 할 스킬을 확인해보세요.</p>
+
+<p><strong>👉 당신의 역량 진단, 지금 시작하세요: jobizic.com</strong></p>
+
+<p>#AI개발자 #개발자역량 #LLM #2026커리어 #jobizic</p>
+```
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💡 Tip: LinkedIn에 복사/붙여넣기 하세요!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
