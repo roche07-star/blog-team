@@ -1,0 +1,63 @@
+{
+  "week": "2026-W42",
+  "type": "blogspot",
+  "generated": "2026-10-12T03:14:05.838Z",
+  "topics": [
+    {
+      "day": "Monday",
+      "date": "2026-10-12",
+      "category": "AI Productivity",
+      "name": "Notion AI vs Motion vs Reclaim AI",
+      "keywords": "AI productivity, task management, time blocking, scheduling",
+      "focusPoint": "Workflow automation, prioritization, and calendar optimization"
+    },
+    {
+      "day": "Tuesday",
+      "date": "2026-10-13",
+      "category": "AI Writing",
+      "name": "ChatGPT vs Claude vs Gemini",
+      "keywords": "AI writing, content creation, copywriting, long-form writing",
+      "focusPoint": "Writing quality, document length, editing control, and brand voice"
+    },
+    {
+      "day": "Wednesday",
+      "date": "2026-10-14",
+      "category": "AI Research",
+      "name": "Perplexity vs ChatGPT vs Gemini",
+      "keywords": "AI research, citations, fact-checking, web search",
+      "focusPoint": "Source quality, citation accuracy, current information, and research depth"
+    },
+    {
+      "day": "Thursday",
+      "date": "2026-10-15",
+      "category": "AI Meeting Tools",
+      "name": "Fireflies.ai vs Otter.ai vs Fathom",
+      "keywords": "AI meetings, transcription, meeting notes, summaries",
+      "focusPoint": "Transcription accuracy, action-item extraction, summaries, and CRM integration"
+    },
+    {
+      "day": "Friday",
+      "date": "2026-10-16",
+      "category": "AI Coding",
+      "name": "Claude Code vs GitHub Copilot vs Cursor",
+      "keywords": "AI coding, code completion, debugging, coding agents",
+      "focusPoint": "Repository-wide reasoning, autonomous coding, debugging, and developer workflow integration"
+    },
+    {
+      "day": "Saturday",
+      "date": "2026-10-17",
+      "category": "AI Design",
+      "name": "Midjourney vs Adobe Firefly vs Canva Magic Studio",
+      "keywords": "AI design, image generation, creative AI, graphic design",
+      "focusPoint": "Visual quality, brand control, editing flexibility, and commercial-use suitability"
+    },
+    {
+      "day": "Sunday",
+      "date": "2026-10-18",
+      "category": "AI Email Management",
+      "name": "Gmail Gemini vs Microsoft Copilot for Outlook vs Shortwave AI",
+      "keywords": "AI email, inbox management, email writing, scheduling",
+      "focusPoint": "Inbox triage, response drafting, thread summaries, and calendar coordination"
+    }
+  ]
+}
