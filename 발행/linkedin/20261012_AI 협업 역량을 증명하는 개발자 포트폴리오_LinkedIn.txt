@@ -1,0 +1,37 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📅 생성일: 2026. 10. 12. AM 6:14:38
+🏷️ 주제: AI 협업 역량을 증명하는 개발자 포트폴리오
+🔑 키워드: AI 협업, 생성형 AI, RAG, GitHub 프로젝트, 포트폴리오
+✍️ 스타일: 링커 (LinkedIn)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+```html
+<h1><i data-lucide="alert-circle"></i> GitHub에 프로젝트 10개, 왜 당신은 서류에서 탈락할까요?</h1>
+
+<p>AI 시대, 개발자 포트폴리오의 게임이 바뀌었습니다.</p>
+
+<p>이제 <strong>"무엇을 만들었나"</strong>가 아니라 <strong>"AI와 어떻게 협업했나"</strong>를 증명해야 합니다.</p>
+
+<p><i data-lucide="target"></i> <strong>채용 담당자가 찾는 3가지:</strong></p>
+
+<p>1️⃣ <strong>생성형 AI 활용 흔적</strong><br>
+→ GPT API 연동? RAG 파이프라인? 프롬프트 엔지니어링 코드?</p>
+
+<p>2️⃣ <strong>실제 문제 해결 사례</strong><br>
+→ "AI 챗봇 만들었어요" ❌ / "고객 응답률 40% 개선한 RAG 기반 챗봇" ✅</p>
+
+<p>3️⃣ <strong>JD 키워드 매칭</strong><br>
+→ 공고의 "LangChain, 벡터DB" 요구사항이 당신 프로젝트에 있나요?</p>
+
+<p><i data-lucide="lightbulb"></i> <strong>Tip:</strong> jobizic(<strong>jobizic.com</strong>)으로 채용 공고의 AI·데이터 요구사항을 분석하고, 당신의 포트폴리오에서 부족한 역량과 보강할 프로젝트 방향을 확인하세요.</p>
+
+<p><i data-lucide="rocket"></i> <strong>오늘 당장 실천:</strong><br>
+관심 공고 하나를 열고, 요구 기술 스택과 당신의 GitHub를 비교해보세요.<br>
+갭이 보이면, 그게 바로 다음 프로젝트 주제입니다.</p>
+
+<p><strong>💬 당신의 포트폴리오엔 AI 협업이 증명되어 있나요?</strong></p>
+```
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💡 Tip: LinkedIn에 복사/붙여넣기 하세요!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
