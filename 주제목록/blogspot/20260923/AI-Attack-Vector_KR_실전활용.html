@@ -1,0 +1,779 @@
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+    background: #ffffff !important;
+    color: #333 !important;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.8;
+    font-size: 1.1em;
+    color: #333;
+    background: #ffffff;
+  }
+
+  .sidebar, .sidebar-wrapper, .sidebar-container, aside {
+    display: none !important;
+  }
+
+  .Profile, .BlogArchive, .Label, .ReportAbuse {
+    display: none !important;
+  }
+
+  .main-content, .main-wrapper, .Blog, .post-outer, .post-body, .article, .post {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #1a1a2e !important;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  p, li, span, div, td, th {
+    color: #333 !important;
+  }
+
+  a {
+    color: #667eea !important;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .article-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: #ffffff;
+    width: 100%;
+  }
+
+  .meta-info {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #667eea;
+  }
+
+  .intro-section {
+    background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    border-left: 6px solid #667eea;
+  }
+
+  .intro-section p {
+    font-size: 1.15em;
+    line-height: 1.8;
+    color: #333;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    margin: 60px 0 30px 0;
+  }
+
+  .section-number {
+    font-size: 2.5em;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-right: 20px;
+    line-height: 1;
+  }
+
+  .section-title {
+    font-size: 2em;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin: 0;
+  }
+
+  .section-card {
+    background: #ffffff;
+    border-left: 4px solid #667eea;
+    padding: 30px;
+    margin: 30px 0;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  }
+
+  .section-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #1a1a2e;
+  }
+
+  .section-card p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+  }
+
+  .highlight-box {
+    background: linear-gradient(135deg, #f0f4ff 0%, #f9faff 100%);
+    border-left: 4px solid #667eea;
+    padding: 25px;
+    margin: 30px 0;
+    border-radius: 8px;
+  }
+
+  .highlight-box p {
+    color: #333;
+    margin: 0;
+  }
+
+  .pull-quote {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #667eea;
+    border-left: 4px solid #667eea;
+    padding-left: 20px;
+    margin: 30px 0;
+    line-height: 1.6;
+  }
+
+  .pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin: 30px 0;
+  }
+
+  .pros {
+    background: #f0fdf4;
+    border-left: 4px solid #10b981;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .cons {
+    background: #fef2f2;
+    border-left: 4px solid #ef4444;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .pros h4, .cons h4 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #1a1a2e;
+  }
+
+  .pros ul, .cons ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .pros li, .cons li {
+    padding: 8px 0;
+    color: #333;
+  }
+
+  .pros li:before {
+    content: "+ ";
+    color: #10b981;
+    font-weight: 700;
+    margin-right: 8px;
+  }
+
+  .cons li:before {
+    content: "- ";
+    color: #ef4444;
+    font-weight: 700;
+    margin-right: 8px;
+  }
+
+  .rating-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  }
+
+  .rating-table th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  .rating-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #333;
+  }
+
+  .rating-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .rating-table tr:nth-child(even) {
+    background: #f9fafb;
+  }
+
+  .rating-table tr:last-child {
+    background: #f0f4ff;
+    font-weight: 600;
+  }
+
+  .rating-mobile {
+    display: none;
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  }
+
+  .comparison-table th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  .comparison-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #333;
+  }
+
+  .comparison-table tr:nth-child(even) {
+    background: #f9fafb;
+  }
+
+  .verdict-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    margin: 40px 0;
+  }
+
+  .verdict-box h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+
+  .verdict-box p {
+    font-size: 1.05em;
+    line-height: 1.8;
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+
+  .stat-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 25px 0;
+  }
+
+  .stat-number {
+    font-size: 2.5em;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .stat-label {
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .warning-box {
+    background: #fffbeb;
+    border-left: 4px solid #f59e0b;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 30px 0;
+  }
+
+  .warning-box p {
+    color: #333;
+  }
+
+  ul, ol {
+    margin: 20px 0 20px 20px;
+    color: #333;
+  }
+
+  li {
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  strong {
+    color: #1a1a2e;
+    font-weight: 600;
+  }
+
+  .divider {
+    height: 1px;
+    background: #e5e7eb;
+    margin: 40px 0;
+  }
+
+  @media (max-width: 768px) {
+    html, body {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow-x: hidden !important;
+    }
+
+    .article-container {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 15px !important;
+      margin: 0 !important;
+    }
+
+    .meta-info {
+      padding: 15px 0;
+    }
+
+    .intro-section {
+      padding: 20px 15px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+
+    .intro-section p {
+      font-size: 1em;
+    }
+
+    .section-header {
+      margin: 40px 0 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .section-number {
+      font-size: 2em;
+      margin-right: 15px;
+    }
+
+    .section-title {
+      font-size: 1.4em;
+    }
+
+    .section-card {
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+
+    .section-card h3 {
+      font-size: 1.25em;
+      margin-bottom: 10px;
+    }
+
+    .section-card p {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    h1 {
+      font-size: 1.8em;
+    }
+
+    h2 {
+      font-size: 1.4em;
+    }
+
+    h3 {
+      font-size: 1.2em;
+    }
+
+    body {
+      font-size: 1rem;
+    }
+
+    .pros-cons {
+      display: block;
+      gap: 0;
+    }
+
+    .pros, .cons {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 15px;
+    }
+
+    .rating-table {
+      display: none;
+    }
+
+    .rating-mobile {
+      display: block;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+      padding: 20px;
+      margin: 30px 0;
+    }
+
+    .rating-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #e5e7eb;
+      color: #333;
+    }
+
+    .rating-item:last-child {
+      border-bottom: none;
+    }
+
+    .rating-item span {
+      font-weight: 500;
+      color: #333;
+    }
+
+    .rating-item strong {
+      color: #667eea;
+      font-weight: 600;
+    }
+
+    .comparison-table {
+      display: none;
+    }
+
+    .verdict-box {
+      padding: 20px 15px;
+      margin: 30px 0;
+    }
+
+    .verdict-box h3 {
+      font-size: 1.4em;
+    }
+
+    .verdict-box p {
+      font-size: 0.95em;
+    }
+
+    .stat-box {
+      padding: 20px 15px;
+      margin: 20px 0;
+    }
+
+    .stat-number {
+      font-size: 2em;
+    }
+
+    .stat-label {
+      font-size: 0.9em;
+    }
+
+    .pull-quote {
+      font-size: 1.1em;
+      padding-left: 15px;
+      margin: 20px 0;
+    }
+
+    .highlight-box {
+      padding: 15px;
+      margin: 20px 0;
+    }
+
+    .warning-box {
+      padding: 15px;
+      margin: 20px 0;
+    }
+
+    ul, ol {
+      margin: 15px 0 15px 15px;
+    }
+
+    li {
+      margin-bottom: 8px;
+      word-break: break-word;
+    }
+
+    p {
+      word-break: break-word;
+    }
+
+    .divider {
+      margin: 30px 0;
+    }
+  }
+</style>
+
+<div class="article-container">
+  <div class="meta-info">
+    Roche P. / 2026년 9월 / 10분 읽기
+  </div>
+
+  <div class="intro-section">
+    <p>2026년 9월, 연구팀들은 AI 코딩 어시스턴트가 공급망 중독(Supply Chain Poisoning)의 주요 공격 벡터가 되었다는 깨달음을 얻었습니다. 단 한 번의 손상된 개발자 세션만으로도 수백 개의 내부 저장소에 악성 코드를 심을 수 있으며, 공격자는 한 번도 키보드를 만지지 않습니다. 이 글은 실제로 이런 공격이 어떻게 작동하는지, 현재 일어나고 있는 실제 악용 사례, 그리고 이에 대응하는 실질적인 방어책을 다룹니다.</p>
+  </div>
+
+  <div class="stat-box">
+    <span class="stat-number">21개 중 7개</span>
+    <span class="stat-label">최근 프롬프트웨어(Promptware) 사건이 AI 코딩 어시스턴트를 직접 겨냥했습니다. 코드 실행 권한과 자격증명 접근 능력 때문에 최고의 공격 대상입니다</span>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">01</div>
+    <h2 class="section-title">위협 현황: AI 코딩 어시스턴트가 최전선인 이유</h2>
+  </div>
+
+  <div class="section-card">
+    <p><strong>실전 활용 관점:</strong> 프롬프트 인젝션 공격은 이론이 아닙니다. 현재 진행 중이며, 규모 있게 작동합니다. 채팅봇처럼 작성된 텍스트를 읽고 판단하는 도구와 달리, AI 코딩 어시스턴트는 직접 실행 권한을 가집니다. 셸 명령 실행, 저장소에 코드 배포, 패키지 매니저 접근, 개발자 머신의 자격증명 수집 등이 모두 가능합니다.</p>
+
+    <p>2026년 arXiv 분석에서 에이전트형 코딩 어시스턴트 대상 42개의 서로 다른 공격 기법을 확인했습니다. 공격은 입력 조작, 도구 중독, 프로토콜 악용, 멀티모달 인젝션, 교차 출처 컨텍스트 중독 등으로 다양합니다. 가장 중요한 점은 기록된 21개의 프롬프트웨어 사건 중 7개가 AI 코딩 어시스턴트를 특별히 겨냥했다는 것입니다. 다른 모든 제품 카테고리보다 많습니다.</p>
+
+    <div class="pull-quote">
+      근본적인 실패 지점은 간단합니다: 어시스턴트가 공격자 통제 콘텐츠를 신뢰할 수 있는 컨텍스트로 취급한 후, 사용자가 의도하지 않은 동작을 수행합니다.
+    </div>
+
+    <p>Google Mandiant의 2026 AI 위험 및 복원력 보고서에 따르면, 실제 침입 사건 여러 건이 손상된 AI 코딩 어시스턴트 세션을 활용했습니다. 패턴은 일관성 있습니다: 공격자가 초기 접근을 확보하고, 중독된 프롬프트나 악성 코드 주석으로 어시스턴트를 조작하며, 나머지는 어시스턴트가 처리합니다.</p>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">02</div>
+    <h2 class="section-title">실제 사례: 공격자들이 실제로 하는 방법</h2>
+  </div>
+
+  <div class="section-card">
+    <h3>Shai-Hulud 공급망 공격 (2026년 9월 보도)</h3>
+    <p><strong>실전 사례 분석:</strong> Mandiant는 개발자 워크스테이션에서 활성 AI 코딩 어시스턴트 세션을 납치한 공격자를 기록했습니다. 단 한 세션에서 공격자는 어시스턴트를 이용해 약 100개의 내부 저장소에 Shai-Hulud 웜을 심었습니다. 어시스턴트는 정당한 코드 리뷰나 디버깅을 수행한다고 속았습니다.</p>
+
+    <p>같은 세션에서 손상된 PyPI 패키지를 통해 GitHub OAuth 토큰도 수집했습니다. 개발자는 자신의 어시스턴트가 이런 움직임을 하고 있다는 사실을 알 수 없었고, 토큰이 이미 손상될 때까지 발견되지 않았습니다. 어시스턴트 자체의 제로데이 취약점이 아닙니다. 이것은 AI 수준의 소셜 엔지니어링입니다.</p>
+  </div>
+
+  <div class="section-card">
+    <h3>조작된 어시스턴트를 통한 자격증명 탈취</h3>
+    <p><strong>실전 적용 방법:</strong> CrowdStrike는 악의적인 간접 프롬프트 인젝션이 Claude Code가 로컬 개발자 머신에서 AWS 자격증명을 탈취하도록 하는 실제 데모를 공개했습니다. 악성 프롬프트는 코드 주석이나 GitHub 이슈에 숨겨져 있었습니다. 어시스턴트가 "디버깅 지원" 또는 "오류 분석" 요청을 받으면, 악성 지침을 읽고, 자격증명 파일에 접근하며, 공격자 통제 인프라로 전송합니다.</p>
+
+    <p>핵심 통찰: 어시스턴트가 프롬프트가 개발자로부터 온 것이라고 믿을 필요가 없습니다. 자연스럽게 실행될 때 자격증명 탈취를 수행하는 작업만으로도 충분합니다.</p>
+  </div>
+
+  <div class="section-card">
+    <h3>에이전트 스킬의 보이지 않는 유니코드 명령</h3>
+    <p><strong>실무 위험 사례:</strong> Cloud Security Alliance는 스킬 마크다운 파일 내 보이지 않는 유니코드 태그에 숨겨진 악성 지침으로부터 임의의 셸 명령과 curl 요청을 실행하는 프로덕션 시스템을 기록했습니다. 공격자는 너비가 0인 문자를 사용해 악성 지침을 숨기는데, 이는 사람 눈에 보이지 않지만 AI 모델은 완전히 파싱합니다.</p>
+
+    <p>이는 Claude Code, GitHub Copilot, Gemini CLI, OpenAI Codex 스킬 및 유사 도구들에 영향을 줍니다. 공격자가 숨겨진 지침이 있는 파일을 커밋합니다. 개발자가 어시스턴트에 리뷰 또는 최적화를 요청합니다. 어시스턴트는 표시된 텍스트에 어떤 명령을 보지 못해도 실행합니다.</p>
+  </div>
+
+  <div class="section-card">
+    <h3>교차 브라우저 에이전트 납치 (BragJack)</h3>
+    <p><strong>신기술 공격 방식:</strong> 연구팀은 2026년 9월 16일 BragJack를 공개했는데, 이는 AI 어시스턴트가 사용하는 신뢰할 수 있는 통신 채널을 납치할 수 있는 악성 브라우저 확장입니다. 기존 프롬프트 인젝션과 달리, 이것은 "프롬프트 강제(Prompt Forcing)": 확장이 어시스턴트의 상호 작용 계층을 가로채고 공격자 명령 실행을 강제합니다.</p>
+
+    <p>BragJack는 Chrome, Edge, Opera Neon, Perplexity Comet, Claude in Chrome에 영향을 줬습니다. Google과 Microsoft는 자신들의 인스턴스에 패치를 배포했지만, 공개 공개 당시 다른 플랫폼의 패치 상태는 미확인이었습니다. 공격은 브라우저 확장 설치를 필요로 하지만, 일단 존재하면 공격자는 어시스턴트가 하는 모든 것에 대한 완전한 통제를 유지합니다.</p>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">03</div>
+    <h2 class="section-title">공격 기법: 연구팀이 발견한 42가지 방법</h2>
+  </div>
+
+  <div class="section-card">
+    <p><strong>실전 분류 기법:</strong> 2026년 arXiv 연구는 42개의 서로 다른 공격 기법을 목록화했습니다. 주요 카테고리는 다음과 같습니다:</p>
+
+    <div class="highlight-box">
+      <strong>입력 조작:</strong> 악성 코드 주석, GitHub 이슈 설명 또는 풀 리퀘스트 제목으로 어시스턴트를 속여 의도하지 않은 명령을 실행하도록 합니다.
+    </div>
+
+    <div class="highlight-box">
+      <strong>도구 중독:</strong> 손상된 패키지, 포크된 저장소 또는 악성 스킬 정의로 어시스턴트가 다운로드하고 실행하도록 합니다.
+    </div>
+
+    <div class="highlight-box">
+      <strong>프로토콜 악용:</strong> 어시스턴트와 코드 실행 환경 간의 통신 프로토콜 악용 - 예: 안전 확인 무시를 위해 CI/CD 파이프라인 입력 조작.
+    </div>
+
+    <div class="highlight-box">
+      <strong>멀티모달 인젝션:</strong> 이미지, PDF 또는 기타 비텍스트 파일의 악성 지침 임베딩으로 어시스턴트가 처리하도록 합니다.
+    </div>
+
+    <div class="highlight-box">
+      <strong>교차 출처 컨텍스트 중독:</strong> 어시스턴트가 한 도메인(GitHub, Stack Overflow, 문서)의 공격자 콘텐츠를 다른 합법적인 컨텍스트에 나타나기 때문에 신뢰할 수 있는 것으로 취급하도록 속입니다.
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">04</div>
+    <h2 class="section-title">영향받는 도구 (2026년 9월 기준)</h2>
+  </div>
+
+  <div class="section-card">
+    <p><strong>현재 사용 중인 도구 보안 상태:</strong> 기록된 사건과 취약점 공개가 다음 도구에 대한 실제 공격을 확인했습니다:</p>
+
+    <ul>
+      <li>Claude Code (Anthropic)</li>
+      <li>GitHub Copilot (Microsoft / OpenAI)</li>
+      <li>Gemini CLI (Google)</li>
+      <li>OpenAI Codex 스킬</li>
+      <li>Cursor (IDE 통합 어시스턴트)</li>
+      <li>브라우저 통합 어시스턴트 (Chrome, Edge, Opera Neon)</li>
+    </ul>
+
+    <p><strong>중요한 주의:</strong> 이 공격들은 어시스턴트 자체의 새로운 취약점이 아닙니다. 이들은 이런 도구가 어떻게 작동하는지에 근본적인 것입니다. 코드 컨텍스트를 읽고 개발자를 대신해 작업을 실행할 수 있는 어시스턴트는 정의상 그 컨텍스트를 중독할 수 있다면 조작에 취약합니다.</p>
+
+    <div class="warning-box">
+      <p><strong>중대한 구분점:</strong> 영향받은 공급업체들이 보안 공지와 완화 방법을 공개했습니다(예: Google과 Microsoft가 BragJack 벡터에 패치 배포). 그러나 핵심 공격 벡터 - 악성 코드 주석, 파일의 숨겨진 지침, 자격증명 접근 - 은 여전히 가능합니다. 왜냐하면 어시스턴트가 어떻게 설계되어 작동하는지에 달려 있기 때문입니다.</p>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">05</div>
+    <h2 class="section-title">기존 보안이 이런 공격을 막지 못하는 이유</h2>
+  </div>
+
+  <div class="section-card">
+    <p><strong>현재 팀의 방어책 평가:</strong> 기존의 방화벽, EDR, 코드 스캐닝 등은 이런 공격을 잡도록 설계되지 않았습니다. 왜냐하면 이들은 기존적 의미의 악성코드가 아니기 때문입니다.</p>
+
+    <div class="pros-cons">
+      <div class="cons">
+        <h4>작동하지 않는 것들</h4>
+        <ul>
+          <li>코드 파일의 안티바이러스 스캔 - 감염되지 않았고, 단지 정교한 주석만 포함</li>
+          <li>네트워크 모니터링 - 어시스턴트가 합법적인 GitHub API 호출과 패키지 매니저 엔드포인트 사용</li>
+          <li>사람의 코드 리뷰 - 악성 지침이 보이지 않는 유니코드이거나 컨텍스트에 숨겨져 있으면 검토자가 놓침</li>
+          <li>자격증명 보안 저장소 - 어시스턴트가 정상 작동 중에 합법적으로 접근 권한을 가짐</li>
+          <li>어시스턴트 완전 차단 - 합법적인 개발 도구이면서 실제 비즈니스 가치 있음</li>
+        </ul>
+      </div>
+
+      <div class="pros">
+        <h4>실제로 작동하는 것들</h4>
+        <ul>
+          <li>최소 권한 어시스턴트 접근 - 터미널, 패키지 매니저, 저장소, 자격증명 권한 제한</li>
+          <li>격리된 실행 환경 - 어시스턴트 생성 코드를 네트워크 제한이 있는 샌드박스에서 실행</li>
+          <li>스킬/확장 검증 - 실행 전에 에이전트 스킬을 암호학적으로 서명하고 검증</li>
+          <li>행동 모니터링 - 비정상적인 명령 패턴(예: 자격증명 탈취) 경고</li>
+          <li>입력 콘텐츠 필터링 - 보이지 않는 유니코드 제거, 코드 주석 구문 검증</li>
+          <li>고위험 작업에 대한 사람 개입 - 자격증명 접근 또는 저장소 푸시 전 승인 필수</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">06</div>
+    <h2 class="section-title">실제로 작동하는 방어 코딩 실전</h2>
+  </div>
+
+  <div class="section-card">
+    <h3>1. 어시스턴트 권한 제한 (필수 우선순위)</h3>
+    <p>Mandiant 보고서의 핵심 강조: AI 어시스턴트가 터미널 접근이 필요 없으면 허용하지 마세요. 프로덕션 저장소에 푸시할 필요가 없으면 테스팅 전용 "샌드박스" 저장소를 만드세요. 어시스턴트가 할 수 있는 것을 제한할수록, 손상된 세션이 입힐 수 있는 피해도 줄어듭니다. <strong>실무 적용:</strong> 새로운 AI 도구 배포 시 기본 정책으로 최소 권한 설정을 실행하세요.</p>
+
+    <h3>2. 실행 환경 격리 (즉시 구현 가능)</h3>
+    <p>어시스턴트 생성 코드를 네트워크 제한이 있는 컨테이너화된 환경에서 실행하세요. 어시스턴트가 공격자 IP로 아웃바운드 curl 요청을 시도하면, 네트워크 격리가 이를 막습니다. Google, CrowdStrike, CSA 연구 전반에서 가장 구체적으로 언급된 방어책입니다. <strong>실전 팁:</strong> Docker 또는 Kubernetes를 사용하는 팀은 어시스턴트 코드 실행용 격리된 네임스페이스를 만드세요.</p>
+
+    <h3>3. 스킬 파일 검증 및 서명 (확장 사용 시 필수)</h3>
+    <p>Claude Code, GitHub Copilot 또는 유사 도구에 확장 가능한 "스킬" 또는 "확장"을 사용하는 경우, 스킬 파일을 코드로 취급하세요. 알려진 퍼블리셔로부터의 암호학적 서명을 요구하세요. 어시스턴트가 로드하기 전에 서명되지 않았거나 신뢰할 수 없는 스킬은 거부하세요. <strong>구현 방법:</strong> 내부 스킬 레지스트리에 서명 검증 게이트웨이를 구축하세요.</p>
+
+    <h3>4. 자격증명 접근 패턴 모니터링 (탐지 기반 방어)</h3>
+    <p>CrowdStrike의 AWS 자격증명 탈취 데모가 위험을 명확히 보여줍니다. 개발자의 어시스턴트가 자격증명 파일에 접근할 때마다 로깅하고, 패턴이 비정상적이면(예: 자격증명 접근 후 미지의 IP로 아웃바운드 HTTPS) 경고하세요. <strong>구체적 실행:</strong> CloudTrail 또는 유사 도구에서 credential_accessed 이벤트 필터링 규칙 설정</p>
+
+    <h3>5. 코드 입력에서 보이지 않는 유니코드 제거 (프로세싱 전 방어)</h3>
+    <p>CSA의 너비 0 문자 공격은 방지 가능합니다. 어시스턴트가 보기 전에 모든 코드 입력을 전처리해 너비 0 공간, 조인터, 기타 보이지 않는 유니코드를 제거하세요. 이는 숨겨진 지침 공격의 전체 클래스를 제거합니다. <strong>기술 구현:</strong> Git pre-commit 훅에서 정규식 필터링 추가</p>
+
+    <h3>6. 민감한 작업에 대한 승인 요구 (사람 보안 루프)</h3>
+    <p>어시스턴트를 구성해 고위험 작업을 수행하기 전에 명시적인 개발자 승인을 요구하도록 하세요: 주 브랜치로 푸시, 비밀 접근, 쓰기 권한이 있는 셸 명령 실행. 이는 마찰을 더하지만 많은 공급망 공격을 완전히 막습니다. <strong>UX 설계:</strong> 어시스턴트가 고위험 작업을 탐지하면, 명확한 확인 프롬프트와 작업이 정말 필요한지 묻는 설명 표시</p>
+
+    <h3>7. 코드 주석 및 PR 설명 감시 (수동 검토 강화)</h3>
+    <p>코드 리뷰 프로세스의 일부로 주석 및 PR 설명을 의심스러운 패턴으로 스캔합니다 - "검사 우회" 요청, 비정상적인 컨텍스트 전환(예: "이 관련 없는 문제 디버깅 지원"), 또는 기술적으로 부자연스러운 요청. 공격자의 프롬프트 인젝션은 다시 읽을 때 때때로 눈에 띕니다. <strong>실행 방법:</strong> PR 템플릿에 "의심스러운 주석 확인" 체크리스트 항목 추가</p>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">07</div>
+    <h2 class="section-title">업계 대응 및 현재 패치 상황 (2026년 9월)</h2>
+  </div>
+
+  <div class="section-card">
+    <p><strong>주요 업체별 현황:</strong></p>
+
+    <p><strong>Google Mandiant:</strong> 가장 포괄적인 공개 분석인 2026 AI 위험 및 복원력 보고서를 공개했습니다. 보안 권장사항을 업데이트했으며 도구 공급업체와 완화 방법을 함께 개발하고 있습니다.</p>
+
+    <p><strong>Microsoft와 Google:</strong> BragJack 관련 할당된 취약점에 패치를 배포했습니다 (2026년 9월 16일 공개). Opera Neon, Perplexity Comet, Claude in Chrome의 패치 상태는 공개 공개 당시 아직 확인 중이었습니다.</p>
+
+    <p><strong>CrowdStrike:</strong> 간접 프롬프트 인젝션에 대한 상세 연구를 공개했고 자격증명 탈취 시나리오를 실제 입증했습니다. 패치만으로는 부족하며 구조적 변경(격리, 권한 제한)이 필요하다고 강조합니다.</p>
+
+    <p><strong>Anthropic, OpenAI, GitHub:</strong> 모두 위협 클래스를 인정하고 각 도구에 대한 보안 공지를 공개했습니다. 그러나 2026년 9월 기준, AI 코딩 어시스턴트 강화를 위한 업계 전체 표준은 없습니다.</p>
+
+    <div class="highlight-box">
+      <p><strong>실전 해석:</strong> 공급업체들이 응답하고 있지만, 패치는 진행 중입니다. 현재 방어 책임은 이런 도구를 배포하는 조직에 있습니다. 이것이 권한 제한과 격리 실행이 선택지가 아닌 필수 사항인 이유입니다.</p>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">08</div>
+    <h2 class="section-title">결론: 당신 팀이 안전한가?</h2>
+  </div>
+
+  <div class="verdict-box">
+    <h3>AI 코딩 어시스턴트는 강력하고 위험합니다</h3>
+    <p>생산성 향상은 실질적이고 상당합니다. 그러나 2026년 9월 기준, 이런 도구는 제대로 제약되지 않으면 공급망 무기가 될 수 있습니다.</p>
+
+    <p>당신의 보안은 공격이 <strong>가능한지</strong> 여부에 달려 있지 않습니다 - 가능합니다. 당신의 보안은 당신의 특정 배포가 <strong>악용될 수 있는지</strong> 여부에 달려 있습니다. 완전히 격리되고 낮은 권한의 샌드박스에서 실행되며 행동 모니터링과 서명된 확장 검증이 있는 어시스턴트는 무제한 터미널 접근이 있는 어시스턴트보다 무기화하기 훨씬 어렵습니다.</p>
+
+    <p><strong>증거는 압도적입니다:</strong> Mandiant가 실제 공격을 기록했습니다. CrowdStrike가 자격증명 탈취가 작동함을 입증했습니다. CSA가 프로덕션에서 보이지 않는 지침 공격을 발견했습니다. BragJack이 교차 브라우저 납치가 실용적임을 보였습니다. 이들은 가설적 위험이 아닙니다.</p>
+
+    <p>조직이 AI 코딩 어시스턴트를 사용 중이고 - 2026년 9월까지 대부분의 엔터프라이즈가 사용 중이면 - 지금 방어 조치를 구현해야 합니다. 특정 도구에 대한 취약점이 공개될 때를 기다리지 말고, 아키텍처 방어(이 글에서 설명한 대로)를 사전에 사용하세요.</p>
+  </div>
+
+  <div class="section-card">
+    <h3>즉시 실행 항목 체크리스트</h3>
+
+    <ul>
+      <li>현재 AI 코딩 어시스턴트가 가진 권한 감시 (터미널, 패키지 매니저, 저장소, 자격증명)</li>
+      <li>권한 축소 계획 수립 - 터미널 제한부터 시작</li>
+      <li>어시스턴트 생성 코드용 격리된 실행 환경 배포</li>
+      <li>자격증명 접근 및 아웃바운드 연결 행동 모니터링 활성화</li>
+      <li>확장, 스킬, 플러그인 리뷰 - 서명되지 않았거나 신뢰할 수 없는 항목은 비활성화</li>
+      <li>PR 리뷰 체크리스트에 코드 주석 감시 추가 (의심스러운 패턴 찾기)</li>
+      <li>개발 팀 교육 - 제약이 있는 이유와 이를 이해하도록</li>
+    </ul>
+
+    <p>2026년에 기록된 공격은 실제입니다. 그러나 방어책도 마찬가지입니다. 다음 세대 공급망 공격을 견뎌낼 조직은 AI 어시스턴트 보안을 인프라 구조 문제로 취급하는 조직들입니다. 나중의 생각이 아니라요.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-card">
+    <p><strong>저자:</strong> Roche P. / <strong>발행:</strong> 2026년 9월 / <strong>카테고리:</strong> AI 보안 / 공급망 위험</p>
+
+    <p><strong>출처:</strong> Google Mandiant AI 위험 및 복원력 보고서 2026 / CrowdStrike 간접 프롬프트 인젝션 연구 / Cloud Security Alliance (CSA) 에이전트 보안 발견 / arXiv 프롬프트웨어 공격 연구 (2026) / BragJack 공개 (2026년 9월 16일)</p>
+  </div>
+</div>

@@ -1,0 +1,892 @@
+<style>
+  /* Base CSS - Critical for Blogger */
+  body {
+    color: #333 !important;
+    background: #ffffff !important;
+    font-family: 'Inter', sans-serif !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #1a1a2e !important;
+    font-family: 'Poppins', sans-serif !important;
+  }
+
+  p, li, span, div {
+    color: #333 !important;
+  }
+
+  a {
+    color: #667eea !important;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .post-body, .article, .post {
+    background: #ffffff !important;
+    color: #333 !important;
+  }
+
+  .container, .main-content, .post-content {
+    background: #ffffff !important;
+  }
+
+  /* Hide Blogger sidebar - Critical */
+  .sidebar, .sidebar-wrapper, .sidebar-container, aside {
+    display: none !important;
+  }
+
+  .Profile, .BlogArchive, .Label, .ReportAbuse {
+    display: none !important;
+  }
+
+  .main-content, .main-wrapper, .Blog, .post-outer {
+    width: 100% !important;
+  }
+
+  /* Article Container */
+  .article-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: #ffffff;
+  }
+
+  /* Meta Information */
+  .meta-info {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #667eea;
+    font-weight: 500;
+  }
+
+  /* Introduction Section */
+  .intro-section {
+    background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+    padding: 35px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    border-left: 6px solid #667eea;
+  }
+
+  .intro-section p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  /* Section Headers */
+  .section-header {
+    display: flex;
+    align-items: center;
+    margin: 60px 0 30px 0;
+  }
+
+  .section-number {
+    font-size: 2.5em;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-right: 20px;
+    line-height: 1;
+  }
+
+  .section-header h2 {
+    font-size: 2em;
+    margin: 0;
+  }
+
+  /* Tool Section Cards */
+  .tool-section {
+    background: #ffffff;
+    border-left: 6px solid #667eea;
+    padding: 30px;
+    margin-bottom: 40px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+
+  .tool-section.microsoft {
+    border-left-color: #0078d4;
+  }
+
+  .tool-section.openai {
+    border-left-color: #10a37f;
+  }
+
+  .tool-section.google {
+    border-left-color: #4285f4;
+  }
+
+  .tool-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+
+  .tool-badge {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.3em;
+    color: white;
+    margin-right: 15px;
+  }
+
+  .tool-badge.microsoft {
+    background: #0078d4;
+  }
+
+  .tool-badge.openai {
+    background: #10a37f;
+  }
+
+  .tool-badge.google {
+    background: #4285f4;
+  }
+
+  .tool-title h3 {
+    margin: 0;
+    font-size: 1.6em;
+  }
+
+  /* Rating Table */
+  .rating-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    background: white;
+    font-size: 1em;
+  }
+
+  .rating-table th {
+    background: #f3f4f6;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 600;
+    color: #1a1a2e;
+    border: 1px solid #e5e7eb;
+  }
+
+  .rating-table td {
+    padding: 12px 15px;
+    border: 1px solid #e5e7eb;
+    color: #333;
+  }
+
+  .rating-table tr:nth-child(even) {
+    background: #f9fafb;
+  }
+
+  .rating-table tr:last-child {
+    background: #f3f4f6;
+    font-weight: 600;
+  }
+
+  /* Rating Mobile (hidden on desktop) */
+  .rating-mobile {
+    display: none;
+  }
+
+  .rating-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 1em;
+  }
+
+  .rating-item strong {
+    color: #667eea;
+    font-weight: 600;
+  }
+
+  /* Pros and Cons */
+  .pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin: 30px 0;
+  }
+
+  .pros, .cons {
+    padding: 20px;
+    border-radius: 6px;
+    border-left: 4px solid;
+  }
+
+  .pros {
+    background: #f0fdf4;
+    border-left-color: #10b981;
+  }
+
+  .cons {
+    background: #fef2f2;
+    border-left-color: #ef4444;
+  }
+
+  .pros h4, .cons h4 {
+    margin-top: 0;
+    font-size: 1.1em;
+    font-weight: 600;
+  }
+
+  .pros h4 {
+    color: #10b981;
+  }
+
+  .cons h4 {
+    color: #ef4444;
+  }
+
+  .pros ul, .cons ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .pros li, .cons li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .pros li:before {
+    content: "+";
+    position: absolute;
+    left: 0;
+    color: #10b981;
+    font-weight: 700;
+  }
+
+  .cons li:before {
+    content: "-";
+    position: absolute;
+    left: 0;
+    color: #ef4444;
+    font-weight: 700;
+  }
+
+  /* Comparison Table */
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    font-size: 1em;
+  }
+
+  .comparison-table th {
+    background: #f3f4f6;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    color: #1a1a2e;
+    border: 1px solid #e5e7eb;
+  }
+
+  .comparison-table td {
+    padding: 15px;
+    border: 1px solid #e5e7eb;
+    color: #333;
+  }
+
+  .comparison-table tr:nth-child(even) {
+    background: #f9fafb;
+  }
+
+  .comparison-table .category-col {
+    font-weight: 600;
+    color: #1a1a2e;
+    width: 25%;
+  }
+
+  /* Pull Quote */
+  .pull-quote {
+    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    border-left: 4px solid #667eea;
+    padding: 25px;
+    margin: 35px 0;
+    border-radius: 6px;
+    font-size: 1.15em;
+    font-style: italic;
+    line-height: 1.8;
+    color: #1a1a2e;
+  }
+
+  /* Final Verdict Section */
+  .final-verdict {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 8px;
+    margin: 50px 0;
+  }
+
+  .final-verdict h3 {
+    margin-top: 0;
+    font-size: 1.8em;
+    color: white;
+  }
+
+  .final-verdict p {
+    color: white;
+    line-height: 1.8;
+    font-size: 1.05em;
+  }
+
+  /* Stat Boxes */
+  .stat-box {
+    background: #f3f4f6;
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+    margin: 20px 0;
+    border-top: 3px solid #667eea;
+  }
+
+  .stat-number {
+    font-size: 2em;
+    font-weight: 700;
+    color: #667eea;
+    margin: 0;
+  }
+
+  .stat-label {
+    font-size: 0.95em;
+    color: #666;
+    margin: 5px 0 0 0;
+  }
+
+  /* General Body Text */
+  p {
+    line-height: 1.8;
+    font-size: 1.05em;
+    margin: 20px 0;
+  }
+
+  li {
+    margin-bottom: 10px;
+    line-height: 1.7;
+  }
+
+  ul {
+    margin: 20px 0;
+    padding-left: 25px;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    html, body {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow-x: hidden !important;
+    }
+
+    .sidebar, .sidebar-wrapper, .sidebar-container, aside {
+      display: none !important;
+    }
+
+    .main-content, .main-wrapper, .Blog, .post-outer, .post-body {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .article-container {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 15px !important;
+      margin: 0 !important;
+    }
+
+    .section-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .section-number {
+      margin-bottom: 10px;
+    }
+
+    .tool-section {
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    .tool-header {
+      flex-wrap: wrap;
+    }
+
+    .pros-cons {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .rating-table {
+      display: none;
+    }
+
+    .rating-mobile {
+      display: block;
+    }
+
+    .comparison-table {
+      display: none;
+    }
+
+    h1 {
+      font-size: 1.6em;
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-size: 1.4em;
+    }
+
+    h3 {
+      font-size: 1.2em;
+    }
+
+    p, li {
+      word-break: break-word;
+      font-size: 1em;
+    }
+
+    .pull-quote {
+      font-size: 1.05em;
+      padding: 20px;
+    }
+
+    .final-verdict {
+      padding: 25px;
+    }
+
+    .final-verdict h3 {
+      font-size: 1.4em;
+    }
+
+    .meta-info {
+      font-size: 0.9em;
+    }
+
+    .intro-section {
+      padding: 20px;
+    }
+
+    .stat-box {
+      padding: 15px;
+    }
+
+    .stat-number {
+      font-size: 1.6em;
+    }
+  }
+
+  /* Font Import */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+</style>
+
+<div class="article-container">
+  <div class="meta-info">
+    작성자: Roche P. / 2026년 10월 / 9분 읽기
+  </div>
+
+  <div class="intro-section">
+    <p>지식 근로자들이 일상 생산성을 위해 어떤 AI 어시스턴트를 선택해야 할까요? Microsoft는 최근 Copilot을 SharePoint와 OneDrive 통합을 갖춘 통합 플랫폼으로 재구축했고, ChatGPT for Work와 Google Gemini for Workspace가 기업 시장에서 경쟁하고 있습니다. 이 비교 분석은 마케팅 광고를 걷어내고 실제로 중요한 것에 집중합니다: 파일 처리, 작업 자동화, 그리고 업무 도구와의 실제 통합.</p>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">01</div>
+    <h2>지금 이것이 중요한 이유</h2>
+  </div>
+
+  <p>사무 자동화는 더 이상 사치가 아닙니다. 업계 채택 현황에 따르면, 많은 기업 팀들이 AI 생산성 도구에 상당한 예산을 투자하고 있지만, 채택률은 통합 깊이와 사용 편의성에 따라 크게 달라집니다. 세 가지 도구는 각각 다른 전략을 취합니다. 하나는 Microsoft 365 생태계 종속성에 베팅하고, 하나는 독립적인 직장 매력을 활용하며, 하나는 Google Workspace에 깊이 있게 내장되어 있습니다.</p>
+
+  <p>핵심 질문은 "어떤 AI가 가장 똑똑한가?"가 아닙니다. "매일 사용하는 파일과 워크플로우에 실제로 연결되는 AI는 어떤 것인가?"입니다. 2026년 10월 기준으로 각 도구가 제공하는 것을 분석해보겠습니다.</p>
+
+  <div class="section-header">
+    <div class="section-number">02</div>
+    <h2>Microsoft 365 Copilot / Microsoft Copilot</h2>
+  </div>
+
+  <div class="tool-section microsoft">
+    <div class="tool-header">
+      <div class="tool-badge microsoft">M</div>
+      <div class="tool-title">
+        <h3>Microsoft 365 Copilot</h3>
+      </div>
+    </div>
+
+    <p><strong>정의:</strong> Microsoft의 기업용 AI 어시스턴트로 Microsoft 365에 포함됩니다. 2026년 9월 기준, Microsoft는 Copilot을 세 가지 핵심 경험으로 재구축했습니다: Home(Chat과 Cowork 결합), Code(경량 앱 구축용), Autopilot(에이전트 방식의 장시간 실행 워크플로우용).</p>
+
+    <p><strong>최신 업데이트(2026년 9월):</strong></p>
+    <ul>
+      <li>SharePoint의 Copilot과 OneDrive의 Copilot이 일반 공급(GA) 달성</li>
+      <li>Microsoft는 모델 선택 확장 - 엔터프라이즈 경험에서 Anthropic Claude, OpenAI GPT 계열, 기타 첨단 모델 중에서 직접 선택 가능</li>
+      <li>Word, Excel, PowerPoint가 Copilot 자체에 내장되어 단일 작업 허브로 전환 중</li>
+      <li>Excel Copilot 응답에는 변경된 정확한 셀, 범위, 테이블, 차트, 도형으로 직접 연결되는 링크 포함</li>
+    </ul>
+
+    <p><strong>파일 통합 & 문서 워크플로우:</strong> 여기서 Microsoft가 압도적으로 우수합니다. Copilot은 OneDrive, SharePoint, Teams, Outlook에서 직접 읽어오므로 추가 단계가 필요 없습니다. 특정 문서에 대해 질문하면 Copilot이 자연스럽게 참조합니다. 새로운 SharePoint/OneDrive GA 기능은 조직의 지식을 즉시 검색할 수 있음을 의미합니다.</p>
+
+    <p><strong>작업 자동화 & 에이전트:</strong> 새로운 Autopilot 기능은 에이전트 방식의 실행을 가능하게 합니다. 여러 앱에서 수동 이관 없이 작업을 완료하는 장시간 실행 워크플로우를 생각해보세요. Code를 통해 경량 자동화를 구축할 수 있습니다. 이것은 단순 채팅이 아닌 엔터프라이즈급 작업 조율입니다.</p>
+
+    <p><strong>가격(2026년 10월 기준):</strong> 제공된 자료에 따르면 일부 기능은 Microsoft 365 Premium 및 Pro 구독자와 첨단 모델 접근에 대한 미리보기 프로그램으로 배포됩니다. Microsoft는 Copilot 단독 추가 기능에 대한 완전한 공개 가격표를 발표하지 않았으며, 비용은 기존 Microsoft 365 라이선싱 수준에 따라 다릅니다.</p>
+
+    <table class="rating-table">
+      <tr>
+        <th>평가 항목</th>
+        <th>점수</th>
+      </tr>
+      <tr>
+        <td>사용 편의성</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>AI 품질</td>
+        <td>8.5/10</td>
+      </tr>
+      <tr>
+        <td>기능</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>속도</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>가격</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td>가성비</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td><strong>종합</strong></td>
+        <td><strong>8.1/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>사용 편의성:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>AI 품질:</span> <strong>8.5/10</strong></div>
+      <div class="rating-item"><span>기능:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>속도:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>가격:</span> <strong>7/10</strong></div>
+      <div class="rating-item"><span>가성비:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>종합:</span> <strong>8.1/10</strong></div>
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>강점</h4>
+        <ul>
+          <li>Microsoft 365 깊은 통합(OneDrive, SharePoint, Teams, Outlook)</li>
+          <li>여러 모델 선택 가능 - 엔터프라이즈 수준에서 Claude, GPT 등 이용 가능</li>
+          <li>에이전트 자동화(Autopilot)로 다단계 워크플로우 실행</li>
+          <li>Excel에서 응답에 변경된 셀과 범위에 직접 연결</li>
+          <li>Copilot Studio로 사용자 정의 거버넌스 및 배포 제어</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>한계</h4>
+        <ul>
+          <li>Microsoft 365 구독 필수 - 예산 제약이 있는 중소기업용 단독 옵션 없음</li>
+          <li>비기술 사용자를 위한 Autopilot 및 Code 기능의 학습곡선</li>
+          <li>공개 문서에서 가격 구조 불명확, 기존 Microsoft 라이선싱에 따라 비용 결정</li>
+          <li>Microsoft 생태계 외 사용자에게는 이상적이지 않음</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">03</div>
+    <h2>ChatGPT for Work</h2>
+  </div>
+
+  <div class="tool-section openai">
+    <div class="tool-header">
+      <div class="tool-badge openai">C</div>
+      <div class="tool-title">
+        <h3>ChatGPT for Work</h3>
+      </div>
+    </div>
+
+    <p><strong>정의:</strong> OpenAI의 팀을 위한 엔터프라이즈급 ChatGPT 수준. 소비자용 ChatGPT Plus와 엔터프라이즈 커스텀 모델 사이에 위치하며, 작업공간 제어, 공유 컨텍스트, 회사 정책을 제공합니다.</p>
+
+    <p><strong>현재 상태(2026년 10월):</strong> OpenAI는 Microsoft와 Google의 2026년 9월 발표 속도를 따르는 상세한 공개 업데이트를 발표하지 않았습니다. 이용 가능한 문서에 따르면 ChatGPT for Work는 팀 제어와 작업공간 격리를 원하는 팀을 위해 위치하고 있지만, 공식적인 기능 패리티 비교는 제공된 자료에 발표되지 않았습니다.</p>
+
+    <p><strong>파일 통합 & 문서 워크플로우:</strong> ChatGPT for Work는 파일 업로드와 웹 브라우징을 지원합니다. 그러나 경쟁사처럼 Microsoft 365, Google Workspace 또는 Slack과 기본 통합이 없습니다. 파일을 수동으로 업로드하거나 내용을 복사/붙여넣기해야 합니다. 이것은 일상 생산성 워크플로우에서 상당한 마찰 지점입니다.</p>
+
+    <p><strong>작업 자동화 & 에이전트:</strong> ChatGPT for Work는 Copilot의 Autopilot이나 Gemini의 워크플로우 기능 수준의 에이전트 방식 자동화를 지원하지 않습니다. 단일 응답 분석과 브레인스토밍에 강하지만, 반복적인 다중 앱 워크플로우 대체에는 약합니다.</p>
+
+    <p><strong>가격(2026년 10월 기준):</strong> ChatGPT for Work에 대한 공식 현재 가격은 제공된 자료에 상세히 기재되지 않았습니다. 업계 보고서는 팀 요금이 사용자당 월 20~30달러부터 시작된다고 제안하지만, OpenAI의 2026년 10월 공개 가격 발표 없이는 이를 확인할 수 없습니다.</p>
+
+    <table class="rating-table">
+      <tr>
+        <th>평가 항목</th>
+        <th>점수</th>
+      </tr>
+      <tr>
+        <td>사용 편의성</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>AI 품질</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>기능</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td>속도</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>가격</td>
+        <td>6/10</td>
+      </tr>
+      <tr>
+        <td>가성비</td>
+        <td>6.5/10</td>
+      </tr>
+      <tr>
+        <td><strong>종합</strong></td>
+        <td><strong>7.8/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>사용 편의성:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>AI 품질:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>기능:</span> <strong>7/10</strong></div>
+      <div class="rating-item"><span>속도:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>가격:</span> <strong>6/10</strong></div>
+      <div class="rating-item"><span>가성비:</span> <strong>6.5/10</strong></div>
+      <div class="rating-item"><span>종합:</span> <strong>7.8/10</strong></div>
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>강점</h4>
+        <ul>
+          <li>일반 작업 전반에서 우수한 AI 품질과 추론 능력</li>
+          <li>빠른 응답 속도와 높은 신뢰성</li>
+          <li>깔끔하고 직관적인 인터페이스 - 세 도구 중 가장 낮은 학습곡선</li>
+          <li>파일 업로드와 웹 브라우징으로 연구 작업 지원</li>
+          <li>독립적으로 작동 - Microsoft 또는 Google 생태계 종속성 없음</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>한계</h4>
+        <ul>
+          <li>Microsoft 365, Google Workspace, Slack과 기본 통합 없음</li>
+          <li>파일 업로드 필수 - 드라이브에서 자동 문서 참조 없음</li>
+          <li>에이전트 방식의 다단계 자동화 없음</li>
+          <li>사용자당 가격 설정으로 대규모 팀 확장 시 비용 증가</li>
+          <li>고급 관리자 제어 및 규정 준수 옵션과 같은 엔터프라이즈 기능 부족</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">04</div>
+    <h2>Google Gemini for Workspace</h2>
+  </div>
+
+  <div class="tool-section google">
+    <div class="tool-header">
+      <div class="tool-badge google">G</div>
+      <div class="tool-title">
+        <h3>Gemini for Google Workspace</h3>
+      </div>
+    </div>
+
+    <p><strong>정의:</strong> Google의 AI 어시스턴트로 Google Workspace(Docs, Sheets, Gmail, Drive, Meet, Calendar)에 직접 내장되어 있습니다. Google Workspace 고객을 위한 기본 생산성 AI로 위치합니다.</p>
+
+    <p><strong>현재 상태(2026년 10월):</strong> Google은 제공된 자료에서 2026년 9월의 상세한 업데이트를 발표하지 않았으므로, 핵심 Workspace 위치를 넘어 기능 변경이나 현재 가격을 안정적으로 서술할 수 없습니다. Gemini for Workspace는 출시 이후 기능을 확장해왔지만, 2026년 10월 구체사항은 이용 가능한 출처에서 확인되지 않습니다.</p>
+
+    <p><strong>파일 통합 & 문서 워크플로우:</strong> Gemini는 Docs, Sheets, Slides, Drive에서 직접 읽습니다. Google Workspace 사용자라면 통합은 원활합니다. 복사/붙여넣기 없이 컨텍스트 전환 없이 Gemini가 지원합니다. 그러나 Google과 함께 Microsoft Office를 사용한다면 Gemini는 해당 파일을 기본으로 읽지 않습니다.</p>
+
+    <p><strong>작업 자동화 & 에이전트:</strong> Gemini for Workspace는 문서 내 지원과 이메일 도우미에 중점을 둡니다. 복잡한 다단계 워크플로우를 조율하는 Copilot의 Autopilot만큼 고급이 아니지만, ChatGPT for Work보다 문서 수준 통합이 더 개선되었습니다.</p>
+
+    <p><strong>가격(2026년 10월 기준):</strong> 공식적인 현재 가격은 제공된 자료에 상세히 기재되지 않았습니다. 역사적으로 Gemini는 비용 추가 없이 Google Workspace Business Standard 또는 Standard 요금제에 포함되어 있었지만, 2026년 10월 가격 구조 및 수준 변경은 여기서 확인되지 않습니다.</p>
+
+    <table class="rating-table">
+      <tr>
+        <th>평가 항목</th>
+        <th>점수</th>
+      </tr>
+      <tr>
+        <td>사용 편의성</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>AI 품질</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>기능</td>
+        <td>7.5/10</td>
+      </tr>
+      <tr>
+        <td>속도</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>가격</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>가성비</td>
+        <td>8.5/10</td>
+      </tr>
+      <tr>
+        <td><strong>종합</strong></td>
+        <td><strong>8.2/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>사용 편의성:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>AI 품질:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>기능:</span> <strong>7.5/10</strong></div>
+      <div class="rating-item"><span>속도:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>가격:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>가성비:</span> <strong>8.5/10</strong></div>
+      <div class="rating-item"><span>종합:</span> <strong>8.2/10</strong></div>
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>강점</h4>
+        <ul>
+          <li>Google Docs, Sheets, Slides, Gmail과 원활한 통합</li>
+          <li>컨텍스트 전환 없음 - AI 지원이 사용하는 도구에 내장됨</li>
+          <li>가격 이점: 종종 추가 비용 없이 Workspace 요금제에 포함</li>
+          <li>문서 생성, 이메일 작성, Sheets 데이터 분석에 강함</li>
+          <li>Google 중심 조직을 위한 낮은 진입장벽</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>한계</h4>
+        <ul>
+          <li>Microsoft Office 파일을 기본으로 읽거나 분석할 수 없음</li>
+          <li>Copilot의 Autopilot보다 에이전트/워크플로우 자동화 수준 낮음</li>
+          <li>하이브리드 환경(Google + Microsoft)에서 약함</li>
+          <li>다단계 다중 앱 조율을 위한 제한된 에이전트 기능</li>
+          <li>2026년 10월 가격 및 기능 업데이트 공식 확인 미흡</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">05</div>
+    <h2>정면 비교</h2>
+  </div>
+
+  <table class="comparison-table">
+    <tr>
+      <th class="category-col">기능</th>
+      <th>Microsoft 365 Copilot</th>
+      <th>ChatGPT for Work</th>
+      <th>Gemini for Workspace</th>
+    </tr>
+    <tr>
+      <td class="category-col">Microsoft 365 통합</td>
+      <td>기본 / 완전함</td>
+      <td>수동 업로드만 가능</td>
+      <td>없음</td>
+    </tr>
+    <tr>
+      <td class="category-col">Google Workspace 통합</td>
+      <td>없음</td>
+      <td>수동 업로드만 가능</td>
+      <td>기본 / 완전함</td>
+    </tr>
+    <tr>
+      <td class="category-col">모델 선택</td>
+      <td>Claude, GPT, 기타</td>
+      <td>GPT-4 Turbo / 고급</td>
+      <td>Gemini Pro / 고급</td>
+    </tr>
+    <tr>
+      <td class="category-col">다단계 자동화</td>
+      <td>Autopilot / 고급</td>
+      <td>제한적</td>
+      <td>제한적</td>
+    </tr>
+    <tr>
+      <td class="category-col">채팅 경험</td>
+      <td>좋음</td>
+      <td>우수</td>
+      <td>좋음</td>
+    </tr>
+    <tr>
+      <td class="category-col">엔터프라이즈 관리자 제어</td>
+      <td>포괄적</td>
+      <td>기본</td>
+      <td>중간</td>
+    </tr>
+    <tr>
+      <td class="category-col">최적 사용 대상</td>
+      <td>Microsoft 생태계 사용자</td>
+      <td>다중 플랫폼 팀</td>
+      <td>Google Workspace 사용자</td>
+    </tr>
+  </table>
+
+  <div class="pull-quote">
+    "통합이 승자를 결정합니다. 최고의 AI 어시스턴트는 파일을 수동으로 공급할 필요가 없는 것입니다. 2026년 10월 기준, 이는 단순 AI 품질만이 아니라 기존 생산성 스택을 기반으로 선택하는 것을 의미합니다."
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">06</div>
+    <h2>최종 결론: 상황별 최적 도구</h2>
+  </div>
+
+  <div class="final-verdict">
+    <h3>Microsoft 365 Copilot 선택 시기</h3>
+    <p>Microsoft Office, Teams, OneDrive, SharePoint에 완전히 투자한 경우. 복잡한 다단계 워크플로우를 위한 에이전트 방식 자동화(Autopilot)가 필요한 경우. 여러 AI 모델(Claude, GPT, Anthropic)에서 유연성을 원하는 경우. 예산은 제약이 아니며 이미 Microsoft 365를 구독 중인 경우. 이것이 엔터프라이즈 작업 조율을 위한 가장 고급 옵션입니다.</p>
+  </div>
+
+  <div class="final-verdict" style="background: linear-gradient(135deg, #10a37f 0%, #059669 100%);">
+    <h3>ChatGPT for Work 선택 시기</h3>
+    <p>혼합 생태계에서 운영하는 경우(일부 Microsoft, 일부 Google, 기타 SaaS). 최고의 범용 회화형 AI를 원하는 경우. 팀이 분산되어 있고 문서 중심 통합이 필요하지 않은 경우. 포커싱된 AI 작업을 위해 파일을 수동으로 업로드할 의향이 있는 경우. 채팅 품질과 사용 편의성과 비교하면 가격이 부수적인 경우.</p>
+  </div>
+
+  <div class="final-verdict" style="background: linear-gradient(135deg, #4285f4 0%, #1f6feb 100%);">
+    <h3>Gemini for Workspace 선택 시기</h3>
+    <p>완벽한 Google Workspace 조직이고 원활한 저비용 AI 통합을 원하는 경우. 고급 에이전트 자동화가 필요하지 않으며 문서 협업, 이메일, 스프레드시트 분석에 중점을 두는 경우. 단순성을 가치 있게 여기고 컨텍스트 전환 없음을 원하는 경우. 팀이 이미 Google 도구와 문화에 익숙한 경우.</p>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">07</div>
+    <h2>결론</h2>
+  </div>
+
+  <p>2026년 10월 기준, 이들 도구 중 어느 것이 기본적으로 다른 것보다 똑똑하지는 않습니다. 결정은 AI 품질이 아니라 워크플로우 마찰에 관한 것입니다. Microsoft Copilot은 자동화 깊이와 모델 유연성에서 우수합니다. ChatGPT for Work는 인터페이스 단순성과 플랫폼 중립성에서 우수합니다. Gemini for Workspace는 낮은 비용으로 통합 스프레드시트 작업과 이메일 지원에서 우수합니다.</p>
+
+  <p>일상적인 사무 자동화를 수행하는 지식 근로자의 경우, 실제 ROI는 이미 시간을 많이 들이는 곳에 가장 가깝게 사는 도구 선택에서 나옵니다. Microsoft 365를 사용 중이면 Copilot의 SharePoint / OneDrive 통합과 Autopilot 기능이 투자를 정당화합니다. Google Workspace를 사용 중이면 Gemini의 원활한 문서 및 시트 지원으로 새 앱 학습 없이 시간을 절약합니다. 진정으로 혼합되었거나 약속하지 않은 경우 ChatGPT for Work의 독립적인 품질과 이동성이 최고의 보험을 제공합니다.</p>
+
+  <p>2026년 10월의 생산성 AI 지형은 하나의 "최고" 도구에 관한 것이 아닙니다. 도구-생태계 적합성에 관한 것입니다. 그에 따라 선택하면 일상 문서 작업, 분석, 자동화 작업에 측정 가능한 시간 절약을 해제합니다.</p>
+</div>

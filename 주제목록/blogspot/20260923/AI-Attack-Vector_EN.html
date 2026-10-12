@@ -1,0 +1,777 @@
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+    background: #ffffff !important;
+    color: #333 !important;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.8;
+    font-size: 1.1em;
+    color: #333;
+    background: #ffffff;
+  }
+
+  .sidebar, .sidebar-wrapper, .sidebar-container, aside {
+    display: none !important;
+  }
+
+  .Profile, .BlogArchive, .Label, .ReportAbuse {
+    display: none !important;
+  }
+
+  .main-content, .main-wrapper, .Blog, .post-outer, .post-body, .article, .post {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #1a1a2e !important;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  p, li, span, div, td, th {
+    color: #333 !important;
+  }
+
+  a {
+    color: #667eea !important;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .article-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: #ffffff;
+    width: 100%;
+  }
+
+  .meta-info {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #667eea;
+  }
+
+  .intro-section {
+    background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    border-left: 6px solid #667eea;
+  }
+
+  .intro-section p {
+    font-size: 1.15em;
+    line-height: 1.8;
+    color: #333;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    margin: 60px 0 30px 0;
+  }
+
+  .section-number {
+    font-size: 2.5em;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-right: 20px;
+    line-height: 1;
+  }
+
+  .section-title {
+    font-size: 2em;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin: 0;
+  }
+
+  .section-card {
+    background: #ffffff;
+    border-left: 4px solid #667eea;
+    padding: 30px;
+    margin: 30px 0;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  }
+
+  .section-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #1a1a2e;
+  }
+
+  .section-card p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+  }
+
+  .highlight-box {
+    background: linear-gradient(135deg, #f0f4ff 0%, #f9faff 100%);
+    border-left: 4px solid #667eea;
+    padding: 25px;
+    margin: 30px 0;
+    border-radius: 8px;
+  }
+
+  .highlight-box p {
+    color: #333;
+    margin: 0;
+  }
+
+  .pull-quote {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #667eea;
+    border-left: 4px solid #667eea;
+    padding-left: 20px;
+    margin: 30px 0;
+    line-height: 1.6;
+  }
+
+  .pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin: 30px 0;
+  }
+
+  .pros {
+    background: #f0fdf4;
+    border-left: 4px solid #10b981;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .cons {
+    background: #fef2f2;
+    border-left: 4px solid #ef4444;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .pros h4, .cons h4 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #1a1a2e;
+  }
+
+  .pros ul, .cons ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .pros li, .cons li {
+    padding: 8px 0;
+    color: #333;
+  }
+
+  .pros li:before {
+    content: "+ ";
+    color: #10b981;
+    font-weight: 700;
+    margin-right: 8px;
+  }
+
+  .cons li:before {
+    content: "- ";
+    color: #ef4444;
+    font-weight: 700;
+    margin-right: 8px;
+  }
+
+  .rating-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  }
+
+  .rating-table th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  .rating-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #333;
+  }
+
+  .rating-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .rating-table tr:nth-child(even) {
+    background: #f9fafb;
+  }
+
+  .rating-table tr:last-child {
+    background: #f0f4ff;
+    font-weight: 600;
+  }
+
+  .rating-mobile {
+    display: none;
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  }
+
+  .comparison-table th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  .comparison-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #333;
+  }
+
+  .comparison-table tr:nth-child(even) {
+    background: #f9fafb;
+  }
+
+  .verdict-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    margin: 40px 0;
+  }
+
+  .verdict-box h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+
+  .verdict-box p {
+    font-size: 1.05em;
+    line-height: 1.8;
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+
+  .stat-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 25px 0;
+  }
+
+  .stat-number {
+    font-size: 2.5em;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .stat-label {
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .warning-box {
+    background: #fffbeb;
+    border-left: 4px solid #f59e0b;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 30px 0;
+  }
+
+  .warning-box p {
+    color: #333;
+  }
+
+  ul, ol {
+    margin: 20px 0 20px 20px;
+    color: #333;
+  }
+
+  li {
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  strong {
+    color: #1a1a2e;
+    font-weight: 600;
+  }
+
+  .divider {
+    height: 1px;
+    background: #e5e7eb;
+    margin: 40px 0;
+  }
+
+  @media (max-width: 768px) {
+    html, body {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow-x: hidden !important;
+    }
+
+    .article-container {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 15px !important;
+      margin: 0 !important;
+    }
+
+    .meta-info {
+      padding: 15px 0;
+    }
+
+    .intro-section {
+      padding: 20px 15px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+
+    .intro-section p {
+      font-size: 1em;
+    }
+
+    .section-header {
+      margin: 40px 0 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .section-number {
+      font-size: 2em;
+      margin-right: 15px;
+    }
+
+    .section-title {
+      font-size: 1.4em;
+    }
+
+    .section-card {
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+
+    .section-card h3 {
+      font-size: 1.25em;
+      margin-bottom: 10px;
+    }
+
+    .section-card p {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    h1 {
+      font-size: 1.8em;
+    }
+
+    h2 {
+      font-size: 1.4em;
+    }
+
+    h3 {
+      font-size: 1.2em;
+    }
+
+    body {
+      font-size: 1rem;
+    }
+
+    .pros-cons {
+      display: block;
+      gap: 0;
+    }
+
+    .pros, .cons {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 15px;
+    }
+
+    .rating-table {
+      display: none;
+    }
+
+    .rating-mobile {
+      display: block;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+      padding: 20px;
+      margin: 30px 0;
+    }
+
+    .rating-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #e5e7eb;
+      color: #333;
+    }
+
+    .rating-item:last-child {
+      border-bottom: none;
+    }
+
+    .rating-item span {
+      font-weight: 500;
+      color: #333;
+    }
+
+    .rating-item strong {
+      color: #667eea;
+      font-weight: 600;
+    }
+
+    .comparison-table {
+      display: none;
+    }
+
+    .verdict-box {
+      padding: 20px 15px;
+      margin: 30px 0;
+    }
+
+    .verdict-box h3 {
+      font-size: 1.4em;
+    }
+
+    .verdict-box p {
+      font-size: 0.95em;
+    }
+
+    .stat-box {
+      padding: 20px 15px;
+      margin: 20px 0;
+    }
+
+    .stat-number {
+      font-size: 2em;
+    }
+
+    .stat-label {
+      font-size: 0.9em;
+    }
+
+    .pull-quote {
+      font-size: 1.1em;
+      padding-left: 15px;
+      margin: 20px 0;
+    }
+
+    .highlight-box {
+      padding: 15px;
+      margin: 20px 0;
+    }
+
+    .warning-box {
+      padding: 15px;
+      margin: 20px 0;
+    }
+
+    ul, ol {
+      margin: 15px 0 15px 15px;
+    }
+
+    li {
+      margin-bottom: 8px;
+      word-break: break-word;
+    }
+
+    p {
+      word-break: break-word;
+    }
+
+    .divider {
+      margin: 30px 0;
+    }
+  }
+</style>
+
+<div class="article-container">
+  <div class="meta-info">
+    By Roche P. / September 2026 / 10 min read
+  </div>
+
+  <div class="intro-section">
+    <p>In September 2026, researchers disclosed a sobering reality: AI coding assistants have become the primary attack vector for supply chain poisoning. A single compromised developer session can now seed malicious code across hundreds of internal repositories—and the attacker never touches a keyboard. This is the definitive guide to how these attacks work, real exploits happening right now, and what actually defends against them.</p>
+  </div>
+
+  <div class="stat-box">
+    <span class="stat-number">7 of 21</span>
+    <span class="stat-label">Recent promptware incidents targeted AI coding assistants specifically—they're the highest-value target because they execute code and access credentials</span>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">01</div>
+    <h2 class="section-title">The Threat Landscape: Why Coding Assistants Are Ground Zero</h2>
+  </div>
+
+  <div class="section-card">
+    <p>Prompt injection attacks against coding assistants aren't theoretical—they're active, documented, and working at scale. Unlike chatbots that produce text you read before acting, AI coding tools have direct execution privileges: they can run shell commands, deploy code to repositories, access package managers, and harvest credentials stored on developer machines.</p>
+
+    <p>A 2026 arXiv analysis identified 42 distinct attack techniques against agentic coding assistants. The attacks span input manipulation, tool poisoning, protocol exploitation, multimodal injection, and cross-origin context poisoning. Most critically, 7 of the 21 documented promptware incidents specifically targeted AI coding assistants—more than any other product category.</p>
+
+    <div class="pull-quote">
+      The fundamental failure mode is simple: the assistant treats attacker-controlled content as trusted context, then performs actions the operator never intended.
+    </div>
+
+    <p>According to Google Mandiant's AI Risk and Resilience Report 2026, multiple real-world intrusions have leveraged hijacked AI coding-assistant sessions. The pattern is consistent: attacker gains initial access, manipulates the assistant through poisoned prompts or malicious code comments, and the assistant does the rest.</p>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">02</div>
+    <h2 class="section-title">Real-World Exploits: How Attackers Actually Do This</h2>
+  </div>
+
+  <div class="section-card">
+    <h3>The Shai-Hulud Supply Chain Attack (Reported September 2026)</h3>
+    <p>Mandiant documented an attacker who hijacked an active AI coding-assistant session on a developer workstation. From that single session, the attacker used the assistant to seed the Shai-Hulud worm across approximately 100 internal repositories. The assistant was tricked into believing it was performing legitimate code review or debugging.</p>
+
+    <p>The same session was then used to harvest GitHub OAuth tokens through a compromised PyPI package. The developer had no idea their assistant was making these moves until the tokens were already compromised. This wasn't a zero-day in the assistant itself—it was social engineering at the AI level.</p>
+  </div>
+
+  <div class="section-card">
+    <h3>Credential Theft via Manipulated Assistants</h3>
+    <p>CrowdStrike published a practical demonstration where a malicious indirect prompt injection caused Claude Code to exfiltrate AWS credentials from the local developer machine. The prompt was embedded in a seemingly innocent code comment or GitHub issue. The assistant, asked to "help debug" or "analyze the error," read the malicious instruction, accessed the credentials file, and sent it to attacker-controlled infrastructure.</p>
+
+    <p>The key insight: the assistant didn't need to be tricked into believing the prompt came from the developer. It just needed to be given a task that, when executed naturally, would perform credential exfiltration as a side effect.</p>
+  </div>
+
+  <div class="section-card">
+    <h3>Invisible Unicode Instructions in Agent Skills</h3>
+    <p>The Cloud Security Alliance documented production systems executing arbitrary shell commands and curl requests from invisible Unicode-tagged instructions hidden inside skill markdown files. Attackers hide malicious directives using zero-width characters—invisible to human readers but fully parsed by the AI model.</p>
+
+    <p>This affects Claude Code, GitHub Copilot, Gemini CLI, OpenAI Codex Skills, and similar tools. An attacker commits a file with hidden instructions. The developer asks the assistant to review it or optimize it. The assistant executes the commands without the developer ever seeing them in the displayed text.</p>
+  </div>
+
+  <div class="section-card">
+    <h3>Cross-Browser Agent Hijacking (BragJack)</h3>
+    <p>Researchers disclosed BragJack on September 16, 2026—a malicious browser extension that can hijack trusted communication channels used by AI assistants. Unlike classic prompt injection, this is "prompt forcing": the extension intercepts the assistant's interaction layer and forces execution of attacker commands.</p>
+
+    <p>BragJack affected Chrome, Edge, Opera Neon, Perplexity Comet, and Claude in Chrome. Google and Microsoft patched their instances, but patch status for other platforms was unconfirmed at public disclosure. The attack requires browser extension installation, but once present, the attacker maintains full control over what the assistant does.</p>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">03</div>
+    <h2 class="section-title">Attack Techniques: The 42 Methods Researchers Found</h2>
+  </div>
+
+  <div class="section-card">
+    <p>A 2026 arXiv study cataloged 42 distinct attack techniques. Here are the primary categories:</p>
+
+    <div class="highlight-box">
+      <strong>Input Manipulation:</strong> Malicious code comments, GitHub issue descriptions, or pull request titles that trick the assistant into executing unintended commands.
+    </div>
+
+    <div class="highlight-box">
+      <strong>Tool Poisoning:</strong> Compromised packages, forked repositories, or malicious skill definitions that the assistant downloads and executes.
+    </div>
+
+    <div class="highlight-box">
+      <strong>Protocol Exploitation:</strong> Abusing the communication protocol between the assistant and code execution environments—e.g., manipulating CI/CD pipeline inputs to override safety checks.
+    </div>
+
+    <div class="highlight-box">
+      <strong>Multimodal Injection:</strong> Embedding malicious instructions in images, PDFs, or other non-text files that the assistant processes.
+    </div>
+
+    <div class="highlight-box">
+      <strong>Cross-Origin Context Poisoning:</strong> Tricking the assistant into treating attacker content from one domain (GitHub, Stack Overflow, documentation) as trusted because it appears in a different, legitimate context.
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">04</div>
+    <h2 class="section-title">Affected Tools as of September 2026</h2>
+  </div>
+
+  <div class="section-card">
+    <p>Documented incidents and vulnerability disclosures have confirmed real-world attacks against:</p>
+
+    <ul>
+      <li>Claude Code (Anthropic)</li>
+      <li>GitHub Copilot (Microsoft / OpenAI)</li>
+      <li>Gemini CLI (Google)</li>
+      <li>OpenAI Codex Skills</li>
+      <li>Cursor (IDE-integrated assistant)</li>
+      <li>Browser-integrated assistants (Chrome, Edge, Opera Neon)</li>
+    </ul>
+
+    <p>It's important to note: these attacks are not new vulnerabilities in the assistants themselves. They're fundamental to how these tools operate. An assistant that can read code context and execute actions on a developer's behalf is, by definition, vulnerable to manipulation if that context can be poisoned.</p>
+
+    <div class="warning-box">
+      <p><strong>Critical distinction:</strong> Affected vendors have published security bulletins and mitigations (e.g., Google and Microsoft patched BragJack vectors). However, the core attack vectors—malicious code comments, hidden instructions in files, credential access—remain possible because they depend on how assistants are designed to operate.</p>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">05</div>
+    <h2 class="section-title">Why Traditional Security Fails Against These Attacks</h2>
+  </div>
+
+  <div class="section-card">
+    <p>Your existing defenses—firewalls, EDR, code scanning—aren't designed to catch these attacks because they're not malware in the traditional sense.</p>
+
+    <div class="pros-cons">
+      <div class="cons">
+        <h4>What Doesn't Work</h4>
+        <ul>
+          <li>Antivirus scanning the code file—it's not infected, it contains a crafted comment</li>
+          <li>Network monitoring—the assistant uses legitimate GitHub API calls and package manager endpoints</li>
+          <li>Code review by humans—if the malicious instruction is invisible Unicode or embedded in context, reviewers miss it</li>
+          <li>Credential vaults—the assistant has legitimate access to them during normal operation</li>
+          <li>Blocking the assistant entirely—it's a legitimate development tool with real business value</li>
+        </ul>
+      </div>
+
+      <div class="pros">
+        <h4>What Actually Works</h4>
+        <ul>
+          <li>Least-privilege assistant access—limit terminal, package manager, and repository permissions</li>
+          <li>Isolated execution environments—run assistant code in sandboxes with network restrictions</li>
+          <li>Skill / extension validation—cryptographically sign and verify agent skills before execution</li>
+          <li>Behavioral monitoring—alert on unusual command patterns (e.g., credential exfiltration)</li>
+          <li>Content filtering on inputs—strip invisible Unicode, validate code comment syntax</li>
+          <li>Human-in-the-loop for high-risk actions—require approval before credential access or repository pushes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">06</div>
+    <h2 class="section-title">Defensive Coding Practices That Actually Work</h2>
+  </div>
+
+  <div class="section-card">
+    <h3>1. Limit Assistant Privileges</h3>
+    <p>The Mandiant report emphasizes this: if your AI assistant doesn't need terminal access, don't grant it. If it doesn't need to push to production repositories, create separate "sandbox" repositories for testing. The more you restrict what an assistant can do, the less damage a compromised session can inflict.</p>
+
+    <h3>2. Isolate Execution Environments</h3>
+    <p>Run assistant-generated code in containerized environments with network restrictions. If an assistant tries to make an outbound curl request to an attacker IP, the network isolation stops it. This is the most concrete defense mentioned across Google, CrowdStrike, and CSA research.</p>
+
+    <h3>3. Validate and Sign Skill Files</h3>
+    <p>If you're using Claude Code, GitHub Copilot, or similar tools with extensible "skills" or "extensions," treat skill files as code. Require cryptographic signatures from known publishers. Reject unsigned or untrusted skills before the assistant ever loads them.</p>
+
+    <h3>4. Monitor for Credential Access Patterns</h3>
+    <p>CrowdStrike's AWS credential exfiltration demo shows the risk clearly. Log every time a developer's assistant accesses credential files, and alert if patterns are unusual (e.g., credential access followed by outbound HTTPS to unknown IPs).</p>
+
+    <h3>5. Strip Invisible Unicode from Code Input</h3>
+    <p>The CSA's zero-width character attacks are preventable. Pre-process all code input to remove zero-width spaces, joiners, and other invisible Unicode before the assistant sees it. This eliminates an entire class of hidden-instruction attacks.</p>
+
+    <h3>6. Require Approval for Sensitive Actions</h3>
+    <p>Configure assistants to require explicit developer approval before performing high-risk actions: pushing to main branch, accessing secrets, running shell commands with write permissions. This adds friction but prevents many supply chain attacks cold.</p>
+
+    <h3>7. Audit Code Comments and PR Descriptions</h3>
+    <p>Make it part of code review to scan comments and PR descriptions for suspicious patterns—requests to "bypass" checks, unusual context-switching (e.g., "help me debug this unrelated problem"), or technical requests that seem out of place. An attacker's prompt injection will sometimes stand out on re-read.</p>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">07</div>
+    <h2 class="section-title">Industry Response and Current Patches (September 2026)</h2>
+  </div>
+
+  <div class="section-card">
+    <p><strong>Google Mandiant</strong> published the AI Risk and Resilience Report 2026, the most comprehensive public analysis of these attacks. They've updated security recommendations and are working with tool vendors on mitigations.</p>
+
+    <p><strong>Microsoft and Google</strong> patched their assigned vulnerabilities related to BragJack (the cross-browser hijacking attack disclosed Sep. 16, 2026). Patch status for Opera Neon, Perplexity Comet, and Claude in Chrome was still pending public confirmation at disclosure time.</p>
+
+    <p><strong>CrowdStrike</strong> published detailed research on indirect prompt injection and demonstrated credential theft scenarios. They emphasize that patches aren't sufficient—architectural changes (isolation, privilege limits) are required.</p>
+
+    <p><strong>Anthropic, OpenAI, and GitHub</strong> have all acknowledged the threat class and published security advisories for their respective tools. However, as of September 2026, there's no industry-wide standard for hardening AI coding assistants against prompt injection.</p>
+
+    <div class="highlight-box">
+      <p><strong>Key takeaway:</strong> Vendors are responding, but patches are ongoing. The responsibility for defense currently falls on organizations deploying these tools—which is why limiting privileges and isolating execution is non-negotiable.</p>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-number">08</div>
+    <h2 class="section-title">The Bottom Line: Is Your Team Safe?</h2>
+  </div>
+
+  <div class="verdict-box">
+    <h3>AI Coding Assistants Are Powerful and Dangerous</h3>
+    <p>The productivity gains are real and significant. But as of September 2026, these tools can also become supply chain weapons if not properly constrained.</p>
+
+    <p>Your security doesn't depend on whether an attack *can* be mounted—it does. Your security depends on whether your specific deployment can be exploited. An assistant running in a fully isolated, low-privilege sandbox with behavioral monitoring and signed-extension validation is far harder to weaponize than one with unrestricted terminal access.</p>
+
+    <p><strong>The evidence is overwhelming:</strong> Mandiant documented real attacks. CrowdStrike proved credential theft works. CSA found invisible-instruction attacks in production. BragJack showed cross-browser hijacking is practical. These aren't hypothetical risks.</p>
+
+    <p>If your organization is using AI coding assistants—and most enterprises are, by September 2026—you need defensive measures in place *now*. Not when a vulnerability is disclosed against your specific tool, but proactively, using the architectural defenses outlined above.</p>
+  </div>
+
+  <div class="section-card">
+    <h3>Immediate Action Items</h3>
+
+    <ul>
+      <li>Audit what privileges your AI coding assistants have (terminal, package manager, repository, credentials)</li>
+      <li>Plan for privilege reduction—start with terminal restrictions</li>
+      <li>Deploy isolated execution environments for assistant-generated code</li>
+      <li>Enable behavioral monitoring for credential access and outbound connections</li>
+      <li>Review extensions, skills, and plugins—disable anything unsigned or untrusted</li>
+      <li>Add code comment auditing to your PR review checklist (look for suspicious patterns)</li>
+      <li>Brief your development team on the threat—they need to understand why restrictions exist</li>
+    </ul>
+
+    <p>The attacks documented in 2026 are real. But so are the defenses. The organizations that survive the next generation of supply chain attacks will be those that treated AI assistant security as infrastructure, not afterthought.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-card">
+    <p><strong>Author:</strong> Roche P. | <strong>Published:</strong> September 2026 | <strong>Category:</strong> AI Security / Supply Chain Risk</p>
+
+    <p><strong>Sources:</strong> Google Mandiant AI Risk and Resilience Report 2026 / CrowdStrike Indirect Prompt Injection Research / Cloud Security Alliance (CSA) Agent Security Findings / arXiv Promptware Attacks Study (2026) / BragJack Disclosure (Sep. 16, 2026)</p>
+  </div>
+</div>

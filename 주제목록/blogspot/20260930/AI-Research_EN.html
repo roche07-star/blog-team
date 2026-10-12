@@ -1,0 +1,1105 @@
+<style>
+/* CRITICAL BASE STYLES - Force colors on Blogger */
+* {
+  box-sizing: border-box;
+}
+
+body, .post-body, .article, .post, .main-content, .main-wrapper, .Blog, .post-outer {
+  background: #ffffff !important;
+  color: #333 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.sidebar, .sidebar-wrapper, .sidebar-container, aside, .Profile, .BlogArchive, .Label, .ReportAbuse {
+  display: none !important;
+}
+
+.main-content, .main-wrapper, .Blog, .post-outer {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #1a1a2e !important;
+  margin: 0;
+  line-height: 1.3;
+}
+
+p, li, span, div {
+  color: #333 !important;
+}
+
+a {
+  color: #667eea !important;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* TYPOGRAPHY */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #333;
+}
+
+h1, h2, h3, .section-header, .section-number {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+/* ARTICLE CONTAINER */
+.article-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: #ffffff;
+}
+
+/* META INFO */
+.meta-info {
+  font-size: 0.95em;
+  color: #666;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #667eea;
+}
+
+/* HERO SECTION */
+.hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 60px 40px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+.hero h1 {
+  font-size: 3em;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  color: white;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.3em;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+  max-width: 700px;
+}
+
+/* INTRO SECTION */
+.intro-section {
+  background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+  padding: 40px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  border-left: 6px solid #667eea;
+}
+
+.intro-section p {
+  font-size: 1.15em;
+  line-height: 1.9;
+  color: #333;
+  margin: 0;
+}
+
+/* SECTION HEADERS */
+.section-header {
+  display: flex;
+  align-items: center;
+  margin: 60px 0 30px 0;
+}
+
+.section-number {
+  font-size: 2.5em;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-right: 20px;
+  line-height: 1;
+}
+
+.section-title {
+  font-size: 2em;
+  color: #1a1a2e;
+  margin: 0;
+}
+
+/* TOOL CARDS */
+.tool-section {
+  background: white;
+  border-left: 6px solid #667eea;
+  padding: 40px;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.tool-section.perplexity {
+  border-left-color: #ff6b6b;
+}
+
+.tool-section.notebooklm {
+  border-left-color: #4f46e5;
+}
+
+.tool-section.chatgpt {
+  border-left-color: #10b981;
+}
+
+.tool-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.tool-badge {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.5em;
+  color: white;
+  margin-right: 20px;
+}
+
+.tool-badge.perplexity {
+  background: linear-gradient(135deg, #ff6b6b, #ff8787);
+}
+
+.tool-badge.notebooklm {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+}
+
+.tool-badge.chatgpt {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.tool-name {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+}
+
+.tool-tagline {
+  font-size: 0.95em;
+  color: #666;
+  margin: 5px 0 0 0;
+  font-style: italic;
+}
+
+/* RATING TABLE */
+.rating-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 30px 0;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.rating-table th {
+  background: #f3f4f6;
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+  color: #1a1a2e;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.rating-table td {
+  padding: 15px;
+  border-bottom: 1px solid #e5e7eb;
+  color: #333;
+}
+
+.rating-table tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+.rating-table tr:last-child {
+  background: #f3f4f6;
+  font-weight: 600;
+}
+
+.rating-table tr:last-child td {
+  border-bottom: none;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+/* RATING MOBILE - Hidden by default */
+.rating-mobile {
+  display: none;
+}
+
+/* PROS AND CONS */
+.pros-cons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.pros {
+  background: #f0fdf4;
+  border-left: 4px solid #10b981;
+  padding: 25px;
+  border-radius: 8px;
+}
+
+.cons {
+  background: #fef2f2;
+  border-left: 4px solid #ef4444;
+  padding: 25px;
+  border-radius: 8px;
+}
+
+.pros h4, .cons h4 {
+  font-size: 1.2em;
+  margin: 0 0 15px 0;
+  color: #1a1a2e;
+}
+
+.pros ul, .cons ul {
+  margin: 0;
+  padding-left: 20px;
+  list-style: none;
+}
+
+.pros li, .cons li {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 0.95em;
+}
+
+.pros li:before {
+  content: "+ ";
+  font-weight: 700;
+  color: #10b981;
+  margin-right: 8px;
+}
+
+.cons li:before {
+  content: "- ";
+  font-weight: 700;
+  color: #ef4444;
+  margin-right: 8px;
+}
+
+/* COMPARISON TABLE */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 40px 0;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.comparison-table th {
+  background: #1a1a2e;
+  color: white;
+  padding: 18px;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid #667eea;
+}
+
+.comparison-table td {
+  padding: 18px;
+  border-bottom: 1px solid #e5e7eb;
+  color: #333;
+}
+
+.comparison-table tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+.comparison-table .feature-name {
+  font-weight: 600;
+  color: #1a1a2e;
+  width: 25%;
+}
+
+/* PULL QUOTE */
+.pull-quote {
+  border-left: 5px solid #667eea;
+  padding: 30px 30px;
+  margin: 40px 0;
+  background: #f6f8fb;
+  border-radius: 8px;
+  font-size: 1.3em;
+  color: #1a1a2e;
+  font-weight: 500;
+}
+
+/* VERDICT SECTION */
+.verdict-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 40px;
+  border-radius: 12px;
+  margin: 60px 0 40px 0;
+}
+
+.verdict-section h2 {
+  color: white;
+  margin: 0 0 20px 0;
+}
+
+.verdict-section p {
+  color: rgba(255, 255, 255, 0.95);
+  margin: 15px 0;
+  line-height: 1.9;
+}
+
+.verdict-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.verdict-item {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.verdict-item h4 {
+  color: white;
+  margin: 0 0 10px 0;
+  font-size: 1.1em;
+}
+
+.verdict-item p {
+  margin: 0;
+  font-size: 0.95em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* KEY TAKEAWAYS BOX */
+.key-takeaways {
+  background: #fffbeb;
+  border-left: 5px solid #f59e0b;
+  padding: 25px;
+  border-radius: 8px;
+  margin: 40px 0;
+}
+
+.key-takeaways h3 {
+  color: #1a1a2e;
+  margin: 0 0 15px 0;
+  font-size: 1.3em;
+}
+
+.key-takeaways ul {
+  margin: 0;
+  padding-left: 20px;
+  list-style: none;
+}
+
+.key-takeaways li {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.key-takeaways li:before {
+  content: "+ ";
+  font-weight: 700;
+  color: #f59e0b;
+  margin-right: 8px;
+}
+
+/* STAT BOX */
+.stat-box {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.stat-number {
+  font-size: 2.5em;
+  font-weight: 700;
+  margin: 0;
+}
+
+.stat-label {
+  font-size: 1em;
+  opacity: 0.9;
+  margin: 10px 0 0 0;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+  }
+
+  .main-content, .main-wrapper, .Blog, .post-outer, .post-body, .article, .post {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .article-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 15px !important;
+    margin: 0 !important;
+  }
+
+  .hero {
+    padding: 30px 15px;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-size: 1.6em;
+    line-height: 1.3;
+    margin-bottom: 15px;
+  }
+
+  .hero p {
+    font-size: 1.05em;
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+
+  .section-header {
+    margin: 40px 0 20px 0;
+  }
+
+  .section-number {
+    font-size: 2em;
+    margin-right: 12px;
+  }
+
+  .section-title {
+    font-size: 1.5em;
+  }
+
+  .tool-section {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .tool-header {
+    margin-bottom: 15px;
+  }
+
+  .tool-badge {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2em;
+    margin-right: 15px;
+  }
+
+  .tool-name {
+    font-size: 1.3em;
+  }
+
+  .intro-section {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .intro-section p {
+    font-size: 1em;
+  }
+
+  .meta-info {
+    font-size: 0.9em;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+  }
+
+  body {
+    font-size: 1rem;
+  }
+
+  /* HIDE TABLES ON MOBILE */
+  .rating-table {
+    display: none;
+  }
+
+  .comparison-table {
+    display: none;
+  }
+
+  /* SHOW MOBILE RATING */
+  .rating-mobile {
+    display: block;
+    margin: 30px 0;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 20px;
+  }
+
+  .rating-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e7eb;
+    color: #333;
+  }
+
+  .rating-item:last-child {
+    border-bottom: none;
+  }
+
+  .rating-item span {
+    font-weight: 600;
+    color: #1a1a2e;
+  }
+
+  .rating-item strong {
+    color: #667eea;
+    font-weight: 700;
+  }
+
+  /* PROS/CONS STACK */
+  .pros-cons {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .pros, .cons {
+    padding: 20px;
+  }
+
+  /* VERDICT GRID STACK */
+  .verdict-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  /* PULL QUOTE */
+  .pull-quote {
+    padding: 20px;
+    font-size: 1.1em;
+    margin: 30px 0;
+  }
+
+  /* KEY TAKEAWAYS */
+  .key-takeaways {
+    padding: 20px;
+    margin: 30px 0;
+  }
+
+  .key-takeaways h3 {
+    font-size: 1.1em;
+  }
+
+  /* STAT BOX */
+  .stat-box {
+    padding: 20px;
+    margin: 20px 0;
+  }
+
+  .stat-number {
+    font-size: 2em;
+  }
+
+  p, li {
+    word-break: break-word;
+  }
+
+  .sidebar, .sidebar-wrapper, .sidebar-container, aside, .Profile, .BlogArchive, .Label, .ReportAbuse {
+    display: none !important;
+  }
+}
+</style>
+
+<div class="article-container">
+  <div class="meta-info">
+    By Roche P. / September 2026 / 10 min read
+  </div>
+
+  <div class="hero">
+    <h1>Perplexity vs NotebookLM vs ChatGPT: Which AI Research Tool Should You Actually Use?</h1>
+    <p>As AI research tools mature in 2026, the landscape has split into three distinct philosophies. Here's what separates them and which one wins for your workflow.</p>
+  </div>
+
+  <div class="intro-section">
+    <p>The AI research and writing space has evolved dramatically. You no longer need a single tool that does everything mediocrely. Instead, you can choose a specialist: an answer engine that cites live web sources, a document analyzer locked to your sources, or a flexible general-purpose assistant. The critical question isn't "which is best?" but rather "which is best for what I'm actually trying to do?" As of September 2026, the answer depends entirely on your research workflow.</p>
+  </div>
+
+  <div class="key-takeaways">
+    <h3>Quick Answer</h3>
+    <ul>
+      <li>Need current facts with live-web citations? Perplexity wins.</li>
+      <li>Analyzing your own PDFs and documents? NotebookLM (now Gemini Notebook) is your tool.</li>
+      <li>Want one flexible assistant for writing, coding, and multi-step projects? ChatGPT remains the strongest all-rounder.</li>
+    </ul>
+  </div>
+
+  <div class="section-header">
+    <span class="section-number">01</span>
+    <h2 class="section-title">Perplexity: The Web Research Engine with Citations</h2>
+  </div>
+
+  <div class="tool-section perplexity">
+    <div class="tool-header">
+      <div class="tool-badge perplexity">P</div>
+      <div>
+        <h3 class="tool-name">Perplexity</h3>
+        <p class="tool-tagline">Conversational search + live-web research</p>
+      </div>
+    </div>
+
+    <p>Perplexity positions itself as a "conversational search engine," and that's exactly what it does. Unlike ChatGPT, which relies on training data from its knowledge cutoff, Perplexity retrieves live web results, cites them directly in its answers, and lets you dig deeper with follow-up questions. As of September 2026, Perplexity has matured significantly beyond its original scope.</p>
+
+    <p>The flagship feature is still real-time web access—crucial if you're researching current events, market trends, product releases, or any topic where freshness matters. The citations appear directly inline, and you can click through to verify sources. Perplexity's <strong>Deep Research</strong> feature, available on paid tiers, creates longer-form reports with structured research, useful for competitors analysis, industry reports, and detailed topic exploration.</p>
+
+    <p>September 2026 updates include major <strong>Computer</strong> feature upgrades across web, mobile, desktop, and Mac—meaning the tool can now handle more agentic workflows, not just chat-based search. Perplexity also introduced <strong>Effort Mode</strong>, <strong>Side Chat</strong>, history search, voice noise isolation, and enterprise analytics for teams. The API now supports <strong>Gemini 3.8 Flash</strong> and other newer models, giving developers more flexibility for custom applications.</p>
+
+    <p><strong>Pricing as of September 2026:</strong> Free tier with limited searches; Pro at approximately $20/month for higher usage limits and Deep Research access.</p>
+
+    <h4 style="margin-top: 25px; color: #1a1a2e;">What it's built for:</h4>
+    <ul style="margin-left: 20px; color: #333;">
+      <li>Market research, competitive analysis, industry trends</li>
+      <li>Current events and breaking news verification</li>
+      <li>Citing sources directly (auditable research)</li>
+      <li>Quick fact-checking with live web evidence</li>
+      <li>Reports that need to show their work</li>
+    </ul>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>Strengths</h4>
+        <ul>
+          <li>Live web access means current information</li>
+          <li>Direct source citations (auditable)</li>
+          <li>Deep Research for longer reports</li>
+          <li>Fast, conversational interface</li>
+          <li>Recent 2026 upgrades to Computer and agentic workflows</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>Limitations</h4>
+        <ul>
+          <li>Not ideal for closed-document analysis (no deep synthesis of your own files)</li>
+          <li>Requires active internet connection</li>
+          <li>Can occasionally hallucinate or misinterpret cited sources</li>
+          <li>Free tier heavily rate-limited</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>Ease of Use:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>AI Quality:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Features:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>Speed:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>Pricing:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Value for Money:</span> <strong>8.5/10</strong></div>
+      <div class="rating-item"><span><strong>Overall</strong></span> <strong>8.6/10</strong></div>
+    </div>
+
+    <table class="rating-table">
+      <tr>
+        <th>Rating Category</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td>Ease of Use</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>AI Quality</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>Features</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>Speed</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>Pricing</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>Value for Money</td>
+        <td>8.5/10</td>
+      </tr>
+      <tr>
+        <td><strong>Overall</strong></td>
+        <td><strong>8.6/10</strong></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section-header">
+    <span class="section-number">02</span>
+    <h2 class="section-title">NotebookLM / Gemini Notebook: The Document Deep-Dive Tool</h2>
+  </div>
+
+  <div class="tool-section notebooklm">
+    <div class="tool-header">
+      <div class="tool-badge notebooklm">N</div>
+      <div>
+        <h3 class="tool-name">NotebookLM / Gemini Notebook</h3>
+        <p class="tool-tagline">Source-grounded document analysis</p>
+      </div>
+    </div>
+
+    <p>Google renamed NotebookLM to <strong>Gemini Notebook</strong> in July 2026, and the rebrand reflects a deeper integration with Google's broader AI ecosystem. But the core strength remains unchanged: it's the best tool for analyzing documents you already own.</p>
+
+    <p>You upload PDFs, Google Docs, Google Drive files, transcripts, or notes. Gemini Notebook then grounds all its answers exclusively in those sources. If something isn't in your documents, it won't fabricate an answer—it'll simply say so. This makes it invaluable for legal review, academic research, financial analysis, or any scenario where staying true to source material is non-negotiable.</p>
+
+    <p>In 2026, Gemini Notebook expanded its output formats significantly. It now generates <strong>video overviews, mind maps, study guides, quiz formats, and Audio Overviews</strong>—useful if you want to transform a 200-page PDF into multiple study or teaching formats. Notably, Google moved the same underlying model family across free and paid tiers; what differs is quotas (number of notebooks, sources per notebook, daily usage) rather than model quality. The free tier is surprisingly functional for lightweight use.</p>
+
+    <p>A September 2026 update also expanded language support to <strong>nearly 100 languages</strong>, making it a genuinely global tool for non-English research and content analysis.</p>
+
+    <p><strong>Pricing as of September 2026:</strong> Free tier with modest limits (3 notebooks, a few sources per notebook, limited daily usage); Gemini Plus at approximately $19.99/month for higher quotas and expanded output formats.</p>
+
+    <h4 style="margin-top: 25px; color: #1a1a2e;">What it's built for:</h4>
+    <ul style="margin-left: 20px; color: #333;">
+      <li>Analyzing research papers, book chapters, transcripts</li>
+      <li>Legal document review with source grounding</li>
+      <li>Academic study from PDFs and lecture notes</li>
+      <li>Creating study guides, quizzes, and mind maps from source material</li>
+      <li>Converting content (PDFs to audio overviews, videos, etc.)</li>
+    </ul>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>Strengths</h4>
+        <ul>
+          <li>Answers grounded exclusively in your uploaded sources</li>
+          <li>No hallucinations beyond source material</li>
+          <li>Multiple output formats (videos, mind maps, quizzes)</li>
+          <li>Same underlying model across free and paid (quotas differ, not quality)</li>
+          <li>Supports 100+ languages as of September 2026</li>
+          <li>Affordable free tier for light use</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>Limitations</h4>
+        <ul>
+          <li>Can't use live web data (only your documents)</li>
+          <li>Free tier quotas are restrictive for heavy users</li>
+          <li>Output formats vary in quality (video generation can be basic)</li>
+          <li>Not ideal for open-ended creative writing or brainstorming</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>Ease of Use:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>AI Quality:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Features:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Speed:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Pricing:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>Value for Money:</span> <strong>8.5/10</strong></div>
+      <div class="rating-item"><span><strong>Overall</strong></span> <strong>8.4/10</strong></div>
+    </div>
+
+    <table class="rating-table">
+      <tr>
+        <th>Rating Category</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td>Ease of Use</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>AI Quality</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>Features</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>Speed</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>Pricing</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>Value for Money</td>
+        <td>8.5/10</td>
+      </tr>
+      <tr>
+        <td><strong>Overall</strong></td>
+        <td><strong>8.4/10</strong></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section-header">
+    <span class="section-number">03</span>
+    <h2 class="section-title">ChatGPT: The Flexible General-Purpose Assistant</h2>
+  </div>
+
+  <div class="tool-section chatgpt">
+    <div class="tool-header">
+      <div class="tool-badge chatgpt">C</div>
+      <div>
+        <h3 class="tool-name">ChatGPT</h3>
+        <p class="tool-tagline">General-purpose AI assistant with projects and memory</p>
+      </div>
+    </div>
+
+    <p>ChatGPT isn't a specialist. It's a generalist designed to handle writing, coding, brainstorming, analysis, project management, and dozens of other tasks in a single interface. While it doesn't have the live-web edge of Perplexity or the source-grounding precision of NotebookLM, it compensates with flexibility and breadth.</p>
+
+    <p>The core appeal in 2026 remains unchanged: you upload files, ask complex multi-step questions, and ChatGPT works through them. What's evolved is the project-based memory system and file management. You can organize your work into <strong>Projects</strong>, maintain <strong>persistent memory</strong> across conversations, and import files for analysis. The tool also supports web browsing (similar to Perplexity), though that's secondary to its text-based capabilities.</p>
+
+    <p>ChatGPT's strength is in synthesis and flexibility. You're not confined to web sources or your own documents—you're working with a model that can integrate knowledge from multiple sources, brainstorm freely, write creatively, debug code, and adapt to ambiguous or complex requests. For teams managing multiple projects or individuals working across different domains, ChatGPT's adaptability is a genuine advantage.</p>
+
+    <p><strong>Pricing as of September 2026:</strong> Free tier with basic access; ChatGPT Plus at approximately $20/month; ChatGPT Pro (announced in 2026) at higher tiers for priority access and extended compute. Exact tiering varies by region.</p>
+
+    <h4 style="margin-top: 25px; color: #1a1a2e;">What it's built for:</h4>
+    <ul style="margin-left: 20px; color: #333;">
+      <li>Writing drafts, editing, and creative work</li>
+      <li>Coding and debugging across multiple languages</li>
+      <li>Brainstorming and strategy planning</li>
+      <li>Multi-step problem-solving with ambiguous inputs</li>
+      <li>Project-based work requiring memory and context</li>
+      <li>File analysis that doesn't require source-grounding</li>
+    </ul>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>Strengths</h4>
+        <ul>
+          <li>Exceptional flexibility across diverse tasks</li>
+          <li>Project-based memory and persistent context</li>
+          <li>Strong coding and writing capabilities</li>
+          <li>Web browsing for current information</li>
+          <li>File upload and analysis support</li>
+          <li>Works well for brainstorming and open-ended tasks</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>Limitations</h4>
+        <ul>
+          <li>Not optimized for live-web research (web browsing is secondary)</li>
+          <li>Doesn't ground answers in uploaded documents the way NotebookLM does</li>
+          <li>Can hallucinate or provide outdated information without web access</li>
+          <li>Broader focus means less specialization for research-specific tasks</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>Ease of Use:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>AI Quality:</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>Features:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Speed:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>Pricing:</span> <strong>7/10</strong></div>
+      <div class="rating-item"><span>Value for Money:</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span><strong>Overall</strong></span> <strong>8.2/10</strong></div>
+    </div>
+
+    <table class="rating-table">
+      <tr>
+        <th>Rating Category</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td>Ease of Use</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>AI Quality</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>Features</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>Speed</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>Pricing</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td>Value for Money</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td><strong>Overall</strong></td>
+        <td><strong>8.2/10</strong></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section-header">
+    <span class="section-number">04</span>
+    <h2 class="section-title">Head-to-Head Comparison</h2>
+  </div>
+
+  <table class="comparison-table">
+    <tr>
+      <th>Feature</th>
+      <th>Perplexity</th>
+      <th>Gemini Notebook</th>
+      <th>ChatGPT</th>
+    </tr>
+    <tr>
+      <td class="feature-name">Live Web Access</td>
+      <td>Yes (core feature)</td>
+      <td>No</td>
+      <td>Yes (secondary)</td>
+    </tr>
+    <tr>
+      <td class="feature-name">Document Upload</td>
+      <td>Limited</td>
+      <td>Primary strength</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td class="feature-name">Source Citation</td>
+      <td>Web sources (direct)</td>
+      <td>Your documents (direct)</td>
+      <td>Limited</td>
+    </tr>
+    <tr>
+      <td class="feature-name">Research Focus</td>
+      <td>Current events, trends</td>
+      <td>Deep analysis of owned sources</td>
+      <td>General synthesis</td>
+    </tr>
+    <tr>
+      <td class="feature-name">Knowledge Cutoff</td>
+      <td>Live updates daily</td>
+      <td>Your document content</td>
+      <td>April 2024</td>
+    </tr>
+    <tr>
+      <td class="feature-name">Output Formats</td>
+      <td>Text, reports</td>
+      <td>Video, mind maps, quizzes, audio</td>
+      <td>Text, code, analysis</td>
+    </tr>
+    <tr>
+      <td class="feature-name">Best For</td>
+      <td>Web research with citations</td>
+      <td>Analyzing your documents</td>
+      <td>Flexible, multi-purpose work</td>
+    </tr>
+    <tr>
+      <td class="feature-name">Free Tier Quality</td>
+      <td>Functional but rate-limited</td>
+      <td>Strong for light use</td>
+      <td>Good (basic model)</td>
+    </tr>
+    <tr>
+      <td class="feature-name">Pricing (Pro)</td>
+      <td>~$20/month</td>
+      <td>~$19.99/month</td>
+      <td>~$20/month</td>
+    </tr>
+  </table>
+
+  <div class="pull-quote">
+    "The key insight for 2026 is that these tools aren't competing head-to-head anymore. They're serving different needs. Choose the specialist that matches your workflow, not the generalist that does everything mediocrely."
+  </div>
+
+  <div class="section-header">
+    <span class="section-number">05</span>
+    <h2 class="section-title">Which Tool Should You Choose?</h2>
+  </div>
+
+  <h3 style="color: #1a1a2e; font-size: 1.3em; margin-top: 30px;">Choose Perplexity if you:</h3>
+  <ul style="margin-left: 20px; color: #333; font-size: 0.95em;">
+    <li>Need current information (breaking news, market trends, recent releases)</li>
+    <li>Require cited sources you can audit and verify</li>
+    <li>Want fast, conversational search rather than traditional Google queries</li>
+    <li>Are researching multiple angles on a topic quickly</li>
+    <li>Value real-time accuracy over broad synthesis</li>
+  </ul>
+
+  <h3 style="color: #1a1a2e; font-size: 1.3em; margin-top: 30px;">Choose Gemini Notebook if you:</h3>
+  <ul style="margin-left: 20px; color: #333; font-size: 0.95em;">
+    <li>Have specific documents (PDFs, papers, transcripts) you need to analyze deeply</li>
+    <li>Need answers grounded exclusively in your source material (legal, academic, compliance work)</li>
+    <li>Want to transform documents into multiple formats (study guides, videos, quizzes)</li>
+    <li>Prefer free or cheap tools for light research use</li>
+    <li>Work across many languages or need international document support</li>
+  </ul>
+
+  <h3 style="color: #1a1a2e; font-size: 1.3em; margin-top: 30px;">Choose ChatGPT if you:</h3>
+  <ul style="margin-left: 20px; color: #333; font-size: 0.95em;">
+    <li>Do a mix of writing, coding, planning, and analysis (no single focus)</li>
+    <li>Need one tool that handles multiple project types</li>
+    <li>Value project-based memory and persistent context</li>
+    <li>Work on brainstorming, creative, or open-ended tasks</li>
+    <li>Want the broadest AI capability in a single tool</li>
+  </ul>
+
+  <div class="verdict-section">
+    <h2>The Bottom Line: September 2026 Reality</h2>
+    <p>The AI research landscape has matured to the point where you should <strong>stop trying to pick a single winner</strong> and start picking the right tool for the job. Perplexity owns web research with citations. Gemini Notebook dominates source-grounded document analysis. ChatGPT remains the most flexible assistant.</p>
+    <p>For most professionals, the answer is: use all three. Run quick web research in Perplexity, analyze your documents in Gemini Notebook, and handle everything else in ChatGPT. The marginal cost is minimal (about $40-60/month for all three Pro tiers), and the coverage is complete.</p>
+    <p>If forced to choose just one, pick based on your primary workflow: researchers and journalists should lean toward Perplexity; students and academics toward Gemini Notebook; writers, coders, and generalists toward ChatGPT.</p>
+
+    <div class="verdict-grid">
+      <div class="verdict-item">
+        <h4>Research Specialist</h4>
+        <p><strong>Winner: Perplexity</strong><br>Best for web research with auditable sources.</p>
+      </div>
+      <div class="verdict-item">
+        <h4>Document Analysis</h4>
+        <p><strong>Winner: Gemini Notebook</strong><br>Best for grounding answers in your files.</p>
+      </div>
+      <div class="verdict-item">
+        <h4>All-Around Assistant</h4>
+        <p><strong>Winner: ChatGPT</strong><br>Best for flexible, multi-domain work.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="key-takeaways" style="margin-top: 50px;">
+    <h3>Key Takeaways for Your Workflow</h3>
+    <ul>
+      <li>Perplexity 2026: Upgraded Computer features, Effort Mode, better agentic workflows, ~$20/month</li>
+      <li>Gemini Notebook 2026: Renamed from NotebookLM, video/mind map generation, 100+ language support, ~$19.99/month</li>
+      <li>ChatGPT 2026: Project-based memory, file analysis, web browsing, flexible pricing starting ~$20/month</li>
+      <li>All three have strong free tiers worth testing before committing to paid plans</li>
+      <li>The real win is using each tool for what it was designed for, not forcing one to do everything</li>
+    </ul>
+  </div>
+
+</div>

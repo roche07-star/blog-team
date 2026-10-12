@@ -1,0 +1,967 @@
+<style>
+  /* BASE STYLES */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #333 !important;
+    background: #ffffff !important;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #1a1a2e !important;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+  }
+
+  p, li, span, div {
+    color: #333 !important;
+  }
+
+  a {
+    color: #667eea !important;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* HIDE BLOGGER SIDEBAR */
+  .sidebar, .sidebar-wrapper, .sidebar-container, aside,
+  .Profile, .BlogArchive, .Label, .ReportAbuse {
+    display: none !important;
+  }
+
+  .main-content, .main-wrapper, .Blog, .post-outer {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* CONTAINER */
+  .article-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: #ffffff;
+  }
+
+  /* META INFO */
+  .meta-info {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #667eea;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* INTRO SECTION */
+  .intro-section {
+    background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    border-left: 6px solid #667eea;
+  }
+
+  .intro-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #1a1a2e;
+  }
+
+  .intro-section p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #333;
+  }
+
+  /* SECTION HEADER */
+  .section-header {
+    display: flex;
+    align-items: center;
+    margin: 60px 0 30px 0;
+  }
+
+  .section-number {
+    font-size: 2.5em;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-right: 20px;
+    line-height: 1;
+  }
+
+  .section-header h2 {
+    font-size: 2em;
+    color: #1a1a2e;
+  }
+
+  /* TOOL CARD */
+  .tool-card {
+    background: #ffffff;
+    border-left: 5px solid #667eea;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  }
+
+  .tool-card.perplexity {
+    border-left-color: #667eea;
+  }
+
+  .tool-card.notebook {
+    border-left-color: #14b8a6;
+  }
+
+  .tool-card.chatgpt {
+    border-left-color: #10b981;
+  }
+
+  .tool-card h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #1a1a2e;
+  }
+
+  .tool-badge {
+    display: inline-block;
+    font-size: 0.85em;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    color: white;
+  }
+
+  .tool-badge.perplexity {
+    background: #667eea;
+  }
+
+  .tool-badge.notebook {
+    background: #14b8a6;
+  }
+
+  .tool-badge.chatgpt {
+    background: #10b981;
+  }
+
+  .pricing-box {
+    background: #f0f4ff;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 15px 0;
+    border-left: 4px solid #667eea;
+  }
+
+  .pricing-box strong {
+    color: #1a1a2e;
+  }
+
+  /* PROS AND CONS */
+  .pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+  }
+
+  .pros {
+    background: #f0fdf4;
+    padding: 20px;
+    border-left: 4px solid #10b981;
+    border-radius: 6px;
+  }
+
+  .cons {
+    background: #fef2f2;
+    padding: 20px;
+    border-left: 4px solid #ef4444;
+    border-radius: 6px;
+  }
+
+  .pros h4, .cons h4 {
+    font-size: 1.1em;
+    margin-bottom: 12px;
+    color: #1a1a2e;
+  }
+
+  .pros ul, .cons ul {
+    list-style: none;
+  }
+
+  .pros li, .cons li {
+    padding: 6px 0;
+    color: #333;
+  }
+
+  .pros li:before {
+    content: "+ ";
+    font-weight: 700;
+    color: #10b981;
+    margin-right: 8px;
+  }
+
+  .cons li:before {
+    content: "- ";
+    font-weight: 700;
+    color: #ef4444;
+    margin-right: 8px;
+  }
+
+  /* RATING TABLE */
+  .rating-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: #ffffff;
+  }
+
+  .rating-table th {
+    background: #f0f4ff;
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    color: #1a1a2e;
+    border-bottom: 2px solid #667eea;
+  }
+
+  .rating-table td {
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #333;
+  }
+
+  .rating-table tr:nth-child(even) {
+    background: #f9fafb;
+  }
+
+  .rating-table tr:last-child {
+    background: #f0f4ff;
+  }
+
+  .rating-table tr:last-child td {
+    font-weight: 700;
+    color: #1a1a2e;
+    border-bottom: 2px solid #667eea;
+  }
+
+  /* MOBILE RATING (hidden on desktop) */
+  .rating-mobile {
+    display: none;
+  }
+
+  .rating-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e7eb;
+    color: #333;
+  }
+
+  .rating-item span {
+    font-weight: 500;
+  }
+
+  .rating-item strong {
+    color: #1a1a2e;
+  }
+
+  /* COMPARISON TABLE */
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    background: #ffffff;
+    overflow-x: auto;
+  }
+
+  .comparison-table th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  .comparison-table td {
+    padding: 15px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #333;
+  }
+
+  .comparison-table tr:nth-child(even) {
+    background: #f9fafb;
+  }
+
+  .comparison-table .tool-name {
+    font-weight: 600;
+    color: #1a1a2e;
+  }
+
+  /* PULL QUOTE */
+  .pull-quote {
+    background: linear-gradient(135deg, #f0f4ff 0%, #f9fafb 100%);
+    border-left: 5px solid #667eea;
+    padding: 25px;
+    margin: 30px 0;
+    border-radius: 6px;
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #1a1a2e;
+    line-height: 1.8;
+  }
+
+  /* VERDICT BOX */
+  .verdict-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 12px;
+    margin: 40px 0;
+  }
+
+  .verdict-box h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  .verdict-box p {
+    font-size: 1.05em;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 12px;
+  }
+
+  /* GENERAL TEXT */
+  p {
+    margin-bottom: 18px;
+    font-size: 1.05em;
+    line-height: 1.8;
+  }
+
+  ul, ol {
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+
+  li {
+    margin-bottom: 10px;
+    line-height: 1.7;
+  }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: #e5e7eb;
+    margin: 40px 0;
+  }
+
+  /* MOBILE RESPONSIVE */
+  @media (max-width: 768px) {
+    html, body {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow-x: hidden !important;
+    }
+
+    .main-content, .main-wrapper, .Blog, .post-outer, .post-body, .article, .post {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .sidebar, .sidebar-wrapper, .sidebar-container, aside,
+    .Profile, .BlogArchive, .Label, .ReportAbuse {
+      display: none !important;
+    }
+
+    .article-container {
+      max-width: 100% !important;
+      padding: 15px !important;
+      margin: 0 !important;
+    }
+
+    h1 {
+      font-size: 1.8em;
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-size: 1.4em;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      font-size: 1.2em;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    .meta-info {
+      font-size: 0.9em;
+      margin-bottom: 20px;
+    }
+
+    .intro-section {
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    .intro-section h2 {
+      font-size: 1.5em;
+    }
+
+    .intro-section p {
+      font-size: 1rem;
+    }
+
+    .section-header {
+      margin: 40px 0 20px 0;
+    }
+
+    .section-number {
+      font-size: 2em;
+      margin-right: 15px;
+    }
+
+    .section-header h2 {
+      font-size: 1.4em;
+    }
+
+    .tool-card {
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .tool-card h3 {
+      font-size: 1.4em;
+      margin-bottom: 8px;
+    }
+
+    .pricing-box {
+      padding: 12px;
+      margin: 12px 0;
+    }
+
+    .pros-cons {
+      display: block;
+      grid-template-columns: none;
+      gap: 0;
+    }
+
+    .pros, .cons {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 15px;
+    }
+
+    .pros h4, .cons h4 {
+      font-size: 1em;
+    }
+
+    .rating-table {
+      display: none;
+    }
+
+    .rating-mobile {
+      display: block;
+      margin: 20px 0;
+    }
+
+    .rating-item {
+      padding: 10px 0;
+    }
+
+    .comparison-table {
+      display: none;
+    }
+
+    .pull-quote {
+      font-size: 1.05em;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .verdict-box {
+      padding: 25px;
+      margin: 30px 0;
+    }
+
+    .verdict-box h3 {
+      font-size: 1.4em;
+      margin-bottom: 15px;
+    }
+
+    .verdict-box p {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<div class="article-container">
+  <div class="meta-info">
+    Roche P. / 2026년 10월 / 9분 읽기
+  </div>
+
+  <div class="intro-section">
+    <h2>AI 리서치 도구 완전 비교: Perplexity vs NotebookLM vs ChatGPT Deep Research</h2>
+    <p>실제 업무에서 정확한 답변과 근거를 제공하는 AI 리서치 플랫폼은 어느 것일까요? 2026년 10월 현재 시장을 주도하는 세 가지 도구의 실전 활용 방법을 상세히 분석합니다.</p>
+  </div>
+
+  <p>웹에서 진지한 리서치를 할 때, Google과 순수 AI 추론 사이의 간격을 느껴본 적 있나요? 일반 채팅 인터페이스는 답변만 제공합니다. 리서치 도구는 '책임성'을 제공합니다. 2026년 10월 현재 시장 구도는 명확합니다: <strong>Perplexity의 Advanced Deep Research</strong>는 빠른 속도와 정확한 인용을 자랑하고, <strong>NotebookLM(Gemini Notebook으로 개명)</strong>은 문서 기반 작업을 주도하며, <strong>ChatGPT Deep Research</strong>는 장문의 보고서를 정교하게 작성합니다.</p>
+
+  <p>핵심은 '어느 도구가 최고인가'가 아니라 '당신의 업무 흐름에 어떤 도구가 맞는가'입니다. 실제 활용 사례 중심으로 분석해봅시다.</p>
+
+  <div class="divider"></div>
+
+  <div class="section-header">
+    <div class="section-number">01</div>
+    <h2>Perplexity: 속도와 실시간 웹 리서치의 강자</h2>
+  </div>
+
+  <div class="tool-card perplexity">
+    <span class="tool-badge perplexity">Advanced Deep Research / Pro / Max</span>
+
+    <p>Perplexity는 2026년 9월 <strong>Advanced Deep Research</strong> 기능을 발표했으며, 이는 이번 비교에서 가장 눈에 띄는 업그레이드입니다. 이 플랫폼은 이제 더 많은 웹 소스에서 검색하고, 소스 간 검증을 수행하며, 업로드된 문서와 PDF를 처리하고, 코드 샌드박스에서 계산을 실행하고, 요청이 모호할 때 명확한 질문을 던집니다.</p>
+
+    <p>진정한 강점은 <strong>속도와 인용 밀도의 조합</strong>입니다. 팩트 체크, 제품 비교, 시장 동향 조사를 할 때 인라인 소스 링크가 있는 빠른 답변을 얻습니다. 또한 연구 진행 상황이 실시간으로 스트리밍되어 로딩 화면을 바라보지 않아도 됩니다.</p>
+
+    <div class="pricing-box">
+      <strong>가격 (2026년 10월 기준):</strong> 무료 / Pro 월 $20 또는 연 $200 / Max 월 $200
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>실전 강점</h4>
+        <ul>
+          <li>광범위한 웹 소스에서 실시간 검색</li>
+          <li>인라인 인용 및 소스 추적 가능</li>
+          <li>업로드된 파일과 계산 처리</li>
+          <li>진행 상황 실시간 스트리밍으로 즉시 피드백</li>
+          <li>모델 선택 가능 (Claude, GPT 등)</li>
+          <li>리서치 쿼리에 대한 빠른 응답 속도</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>실전 제약</h4>
+        <ul>
+          <li>웹 소스 품질이 일관되지 않을 수 있음</li>
+          <li>개인이 관리하는 문서 코퍼스에는 적합하지 않음</li>
+          <li>실시간 검색 성능에 과도한 의존</li>
+        </ul>
+      </div>
+    </div>
+
+    <h4>평가 분석</h4>
+    <table class="rating-table">
+      <tr>
+        <th>항목</th>
+        <th>점수</th>
+      </tr>
+      <tr>
+        <td>사용 편의성</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>AI 품질</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>기능</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>속도</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>가격</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>가성비</td>
+        <td>8.5/10</td>
+      </tr>
+      <tr>
+        <td><strong>종합 평가</strong></td>
+        <td><strong>8.6/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>사용 편의성</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>AI 품질</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>기능</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>속도</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>가격</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>가성비</span> <strong>8.5/10</strong></div>
+      <div class="rating-item"><span>종합 평가</span> <strong>8.6/10</strong></div>
+    </div>
+  </div>
+
+  <div class="pull-quote">
+    "Perplexity의 Advanced Deep Research 보고서는 이제 더 많은 소스, 업로드된 파일, 계산, 코드를 통합할 수 있어 실시간 웹 리서치 분야에서 가장 빠른 선택지입니다."
+  </div>
+
+  <h3>📌 Perplexity 활용 시나리오</h3>
+  <ul>
+    <li><strong>신제품 출시 조사:</strong> 새로운 경쟁사 제품 리뷰와 기술 사양을 5분 이내에 정리</li>
+    <li><strong>시장 트렌드 추적:</strong> 최근 업계 뉴스와 통계를 최신 소스와 함께 수집</li>
+    <li><strong>의사결정을 위한 빠른 검증:</strong> 구매 결정 전에 제품 비교표와 사용자 피드백 즉시 확인</li>
+    <li><strong>프로젝트 초기 조사:</strong> 클라이언트 미팅 전 1시간 내에 기본 정보 수집</li>
+  </ul>
+
+  <div class="divider"></div>
+
+  <div class="section-header">
+    <div class="section-number">02</div>
+    <h2>NotebookLM / Gemini Notebook: 문서 기반 작업의 최강자</h2>
+  </div>
+
+  <div class="tool-card notebook">
+    <span class="tool-badge notebook">Gemini Notebook / Google AI</span>
+
+    <p>Google은 2026년 7월 NotebookLM을 <strong>Gemini Notebook</strong>으로 개명했습니다. 이 도구는 근본적으로 다른 접근 방식을 선택했습니다: 실시간 웹 검색을 추구하는 대신, <em>당신이 직접 관리하는</em> 소스 분석을 최적화했습니다.</p>
+
+    <p>PDF 리서치 패킷, 회의 필사본, 법률 문서, 마크다운 노트 폴더를 다루든 Gemini Notebook은 모든 답변을 그 자료에 근거하게 만듭니다. 웹 리서치도 가능하지만 독립적인 검색 엔진이 아니라 당신의 노트북에 통합됩니다. 2026년 9월 기준으로 3천만 이상의 사용자가 있으며 60만 개 이상의 조직에서 사용 중입니다.</p>
+
+    <div class="pricing-box">
+      <strong>가격 (2026년 10월 기준):</strong> 무료 / Google AI Plus 월 $4.99 / Google AI Pro 월 $19.99 / Ultra 월 $99.99부터
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>실전 강점</h4>
+        <ul>
+          <li>PDF와 노트의 소스 기반 답변이 최고 수준</li>
+          <li>당신의 문서 코퍼스에 대한 완벽한 통제</li>
+          <li>업로드된 자료 내에서 강력한 종합 및 인용</li>
+          <li>노트북 정리와 학습 도구가 기본 포함</li>
+          <li>웹 리서치가 노트북 워크플로우에 통합됨</li>
+          <li>노트북 소스에 대한 코드 실행</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>실전 제약</h4>
+        <ul>
+          <li>일반적인 실시간 검색 엔진이 아님</li>
+          <li>먼저 자료를 업로드해야 함</li>
+          <li>구조화된 리서치 패킷에 가장 적합</li>
+        </ul>
+      </div>
+    </div>
+
+    <h4>평가 분석</h4>
+    <table class="rating-table">
+      <tr>
+        <th>항목</th>
+        <th>점수</th>
+      </tr>
+      <tr>
+        <td>사용 편의성</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>AI 품질</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>기능</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>속도</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>가격</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>가성비</td>
+        <td>8.5/10</td>
+      </tr>
+      <tr>
+        <td><strong>종합 평가</strong></td>
+        <td><strong>8.2/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>사용 편의성</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>AI 품질</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>기능</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>속도</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>가격</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>가성비</span> <strong>8.5/10</strong></div>
+      <div class="rating-item"><span>종합 평가</span> <strong>8.2/10</strong></div>
+    </div>
+  </div>
+
+  <div class="pull-quote">
+    "Gemini Notebook은 당신이 관리하는 특정 소스에서만 답변을 뽑아야 할 때 가장 강력합니다 - 학위논문 패킷, 법률 문서, 리서치 아카이브, 회의 필사본."
+  </div>
+
+  <h3>📌 Gemini Notebook 활용 시나리오</h3>
+  <ul>
+    <li><strong>학위논문 분석:</strong> 논문에 인용된 20개 학술지 PDF를 한 곳에 업로드하고, AI에게 "이 문헌들에서 주요 논쟁점은?"이라고 질문</li>
+    <li><strong>법률 검토:</strong> 계약서 3개와 선례판결문 5개를 업로드한 후 "조항 간 모순점 찾기"</li>
+    <li><strong>회의 기록 분석:</strong> 월간 경영진 회의 필사본 12개에서 "CEO가 강조한 핵심 목표 추출"</li>
+    <li><strong>내부 정책 학습:</strong> 회사 핸드북, 보안 정책, 프로세스 문서를 업로드해 신입사원 온보딩 자료화</li>
+  </ul>
+
+  <div class="divider"></div>
+
+  <div class="section-header">
+    <div class="section-number">03</div>
+    <h2>ChatGPT Deep Research: 정교한 보고서 작성의 정수</h2>
+  </div>
+
+  <div class="tool-card chatgpt">
+    <span class="tool-badge chatgpt">Deep Research / Go / Plus / Pro</span>
+
+    <p>ChatGPT의 Deep Research 모드는 시간이 가장 오래 걸리지만, 아마도 가장 정교하게 추론된 결과물을 생산합니다. 이 도구는 복잡하고 다단계적인 조사를 구조화된 보고서로 변환하도록 설계되었으며, 채팅 응답이 아닌 실제 리서치 문서처럼 읽힙니다.</p>
+
+    <p>주의: 현재 정보에 따르면 Deep Research는 유료 계층 전체에서 GPT-6 Astra를 사용할 수 있다고 하며 (GPT-5.6 Sol이 이전 세대), <strong>이 정보는 제3자 비교 소스에서 나오며 OpenAI의 공식 발표가 아닙니다</strong>. 구매 전에 모델 버전과 쿼터 변경 사항을 OpenAI의 공식 가격 책정 페이지에서 확인하세요.</p>
+
+    <div class="pricing-box">
+      <strong>가격 (2026년 10월 기준):</strong> 무료 / Go 월 $8 / Plus 월 $20 / Pro 월 $100
+    </div>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>실전 강점</h4>
+        <ul>
+          <li>가장 구조화되고 정교한 장문 보고서</li>
+          <li>여러 단계의 깊은 추론 체인</li>
+          <li>복잡한 조사에 탁월함</li>
+          <li>전문적인 전달 품질</li>
+          <li>많은 소스에 걸친 광범위한 종합</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>실전 제약</h4>
+        <ul>
+          <li>Perplexity보다 응답 속도가 느림</li>
+          <li>Pro 플랜에서 쿼터 제한</li>
+          <li>동등한 사용량 대비 높은 비용</li>
+          <li>모델 업그레이드 주장은 공식 확인 필요</li>
+        </ul>
+      </div>
+    </div>
+
+    <h4>평가 분석</h4>
+    <table class="rating-table">
+      <tr>
+        <th>항목</th>
+        <th>점수</th>
+      </tr>
+      <tr>
+        <td>사용 편의성</td>
+        <td>8/10</td>
+      </tr>
+      <tr>
+        <td>AI 품질</td>
+        <td>9/10</td>
+      </tr>
+      <tr>
+        <td>기능</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td>속도</td>
+        <td>6/10</td>
+      </tr>
+      <tr>
+        <td>가격</td>
+        <td>6/10</td>
+      </tr>
+      <tr>
+        <td>가성비</td>
+        <td>7/10</td>
+      </tr>
+      <tr>
+        <td><strong>종합 평가</strong></td>
+        <td><strong>7.9/10</strong></td>
+      </tr>
+    </table>
+
+    <div class="rating-mobile">
+      <div class="rating-item"><span>사용 편의성</span> <strong>8/10</strong></div>
+      <div class="rating-item"><span>AI 품질</span> <strong>9/10</strong></div>
+      <div class="rating-item"><span>기능</span> <strong>7/10</strong></div>
+      <div class="rating-item"><span>속도</span> <strong>6/10</strong></div>
+      <div class="rating-item"><span>가격</span> <strong>6/10</strong></div>
+      <div class="rating-item"><span>가성비</span> <strong>7/10</strong></div>
+      <div class="rating-item"><span>종합 평가</span> <strong>7.9/10</strong></div>
+    </div>
+  </div>
+
+  <div class="pull-quote">
+    "ChatGPT Deep Research는 빠른 답변이 필요할 때가 아니라 정교하고 다층적인 분석이 필요할 때 가장 강력합니다. 형식적인 보고서에 최고의 후보입니다."
+  </div>
+
+  <h3>📌 ChatGPT Deep Research 활용 시나리오</h3>
+  <ul>
+    <li><strong>전략 자료 작성:</strong> 시간이 충분할 때 임원진 보고서용 15장짜리 산업 분석 리포트 생성</li>
+    <li><strong>투자 심사:</strong> 스타트업 투자 검토 시 시장, 경쟁사, 기술, 팀 배경에 대한 깊이 있는 분석</li>
+    <li><strong>정책 연구:</strong> 규제 변화의 영향을 여러 각도에서 분석하고 논리적 구조로 정리</li>
+    <li><strong>학술 에세이 초안:</strong> 3000자 이상의 정교한 분석 에세이 작성</li>
+  </ul>
+
+  <div class="divider"></div>
+
+  <div class="section-header">
+    <div class="section-number">04</div>
+    <h2>실시간 비교 분석</h2>
+  </div>
+
+  <p>세 도구를 핵심 항목으로 비교하면 다음과 같습니다:</p>
+
+  <table class="comparison-table">
+    <tr>
+      <th>항목</th>
+      <th>Perplexity</th>
+      <th>Gemini Notebook</th>
+      <th>ChatGPT Deep Research</th>
+    </tr>
+    <tr>
+      <td class="tool-name">실시간 웹 검색</td>
+      <td>핵심 강점</td>
+      <td>통합, 보조</td>
+      <td>추론에 보조적</td>
+    </tr>
+    <tr>
+      <td class="tool-name">문서 기반 답변</td>
+      <td>지원, 주요 기능 아님</td>
+      <td>핵심 강점</td>
+      <td>지원, 주요 기능 아님</td>
+    </tr>
+    <tr>
+      <td class="tool-name">속도</td>
+      <td>빠름 (9/10)</td>
+      <td>중간 (8/10)</td>
+      <td>느림 (6/10)</td>
+    </tr>
+    <tr>
+      <td class="tool-name">보고서 품질</td>
+      <td>좋음, 간단~중간 길이</td>
+      <td>강함, 종합 중심</td>
+      <td>탁월함, 정식 장문</td>
+    </tr>
+    <tr>
+      <td class="tool-name">인용 밀도</td>
+      <td>높음 (인라인 링크)</td>
+      <td>높음 (소스 기반)</td>
+      <td>중~높음</td>
+    </tr>
+    <tr>
+      <td class="tool-name">최적 사용처</td>
+      <td>최신 정보, 제품 비교, 빠른 답변</td>
+      <td>학위논문, 법률서류, 내부 지식베이스</td>
+      <td>깊이 있는 조사, 형식적 보고서, 정교한 전달물</td>
+    </tr>
+    <tr>
+      <td class="tool-name">가격 효율</td>
+      <td>Pro $20/월 (최고 가성비)</td>
+      <td>무료 또는 Plus $4.99/월</td>
+      <td>Plus $20/월 (사용 빈도에 따라)</td>
+    </tr>
+  </table>
+
+  <div class="divider"></div>
+
+  <div class="section-header">
+    <div class="section-number">05</div>
+    <h2>정확도와 소스 품질 비교</h2>
+  </div>
+
+  <p>2026년 10월 현재 세 도구를 모두 포괄하는 독립적인 벤치마크는 공표되지 않았습니다. 하지만 공개 기록에서 이렇게 나타납니다:</p>
+
+  <p><strong>Perplexity 자체 테스트:</strong> Advanced Deep Research가 팩트 찾기, 제품 비교, 전문적 실사에서 경쟁사와 동등하거나 능가한다고 주장합니다. 하지만 이는 벤더 주장이며 공개된 방법론이 없습니다.</p>
+
+  <p><strong>제3자 보고서:</strong> Columbia University Tow Center 감사에서 Perplexity가 인용 실패율이 가장 낮다고 언급했습니다. 하지만 구체적인 테스트 조건과 2026년 9월 버전에 대한 적용 가능성은 독립적 검증이 필요합니다.</p>
+
+  <p><strong>문서 기반 테스트:</strong> 2025년 데이터에 따르면 Gemini Notebook은 비슷한 조건에서 약 13%의 경우 부정확한 결과를 냈고 ChatGPT는 40%였습니다. 하지만 이는 1년 이상 된 데이터이므로 현재 Deep Research 성능에 일반화하면 안 됩니다.</p>
+
+  <p><strong>결론:</strong> 세 도구 모두 일반 채팅 모델보다 소스 인용이 훨씬 낫습니다. 검증되지 않은 벤치마크가 아니라 당신의 업무 흐름에 맞춰 선택하세요.</p>
+
+  <div class="divider"></div>
+
+  <div class="section-header">
+    <div class="section-number">06</div>
+    <h2>상황별 도구 선택 가이드</h2>
+  </div>
+
+  <div class="tool-card">
+    <h3>Perplexity를 선택해야 할 때:</h3>
+    <ul>
+      <li><strong>최신 정보가 필요한 경우:</strong> 뉴스, 시장 트렌드, 최근 제품 출시</li>
+      <li><strong>빠른 제품 비교:</strong> 경쟁사 조사나 경쟁력 분석</li>
+      <li><strong>즉시 검증 가능한 인용:</strong> 인라인 링크로 바로 확인 가능한 답변</li>
+      <li><strong>파일과 웹 리서치 동시 필요:</strong> 자료 업로드와 웹 검색을 함께 활용</li>
+      <li><strong>예산 효율:</strong> Pro $20/월은 매우 좋은 가성비</li>
+    </ul>
+  </div>
+
+  <div class="tool-card">
+    <h3>Gemini Notebook을 선택해야 할 때:</h3>
+    <ul>
+      <li><strong>특정 문서 세트 분석:</strong> 학위논문, 법률 문서, 리서치 패킷</li>
+      <li><strong>엄격한 소스 제한 필요:</strong> AI가 제공한 자료 범위 외로 나가지 않아야 할 때</li>
+      <li><strong>학습 자료나 요약본 작성:</strong> 알려진 소스로부터의 종합과 정리</li>
+      <li><strong>체계적인 조직:</strong> 노트북, 컬렉션, 학습 도구 필요</li>
+      <li><strong>낮은 가격:</strong> 무료 또는 $4.99/월로 시작 가능</li>
+    </ul>
+  </div>
+
+  <div class="tool-card">
+    <h3>ChatGPT Deep Research를 선택해야 할 때:</h3>
+    <ul>
+      <li><strong>형식적인 보고서 필요:</strong> 빠른 답변이 아닌 다층적 분석</li>
+      <li><strong>복잡한 다단계 조사:</strong> 여러 추론 단계가 필요한 문제</li>
+      <li><strong>시간이 충분할 때:</strong> 속도가 중요하지 않은 프로젝트</li>
+      <li><strong>프레젠테이션 품질 필요:</strong> 임원진 보고서, 클라이언트 제안서</li>
+      <li><strong>Pro 구독이 있을 때:</strong> 이미 ChatGPT Pro 구독이 있다면 효율적</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-header">
+    <div class="section-number">07</div>
+    <h2>최종 평가 및 추천</h2>
+  </div>
+
+  <div class="verdict-box">
+    <h3>Perplexity가 속도와 개방형 리서치 분야 선점</h3>
+    <p>Perplexity의 2026년 9월 Advanced Deep Research 업그레이드는 세 도구 중 가장 눈에 띄는 개선입니다. 이는 수백 개의 웹 소스에서 빠르고 잘 인용된 답변을 제공하며, 업로드된 문서를 처리하고 실시간으로 진행 상황을 스트리밍합니다. Pro 월 $20에서 최신 정보가 필요한 리서처를 위한 최고의 가성비입니다.</p>
+    
+    <p><strong>Gemini Notebook은 문서 중심 작업의 최강자로 남음:</strong> 학위논문, 법률 문서, 회의 기록, 내부 지식 베이스. 소스 기반 답변 품질이 뛰어나고 가격이 더 저렴합니다 ($4.99/월 Plus).</p>
+    
+    <p><strong>ChatGPT Deep Research는 정교한 보고서용 프리미엄 옵션:</strong> 가장 정갈한 결과를 만들지만 비용이 높고 느립니다. 종합 품질이 속도보다 중요한 경우에만 사용하세요.</p>
+    
+    <p><strong>2026년 대부분의 리서처에게 최적 조합은 Perplexity + Gemini Notebook:</strong> 개방형 웹 리서치는 Perplexity, 통제된 자료 분석은 Gemini Notebook. ChatGPT Deep Research는 정기적으로 형식적인 다단계 보고서를 작성하는 경우에만 추가하세요.</p>
+  </div>
+
+  <p style="margin-top: 40px; font-size: 0.95em; color: #666; border-top: 1px solid #e5e7eb; padding-top: 20px;"><strong>공시사항:</strong> 본 비교는 2026년 10월 기준 공식 발표 기능, 공개 가격 정보, 이용 가능한 제3자 테스트에 기반합니다. ChatGPT 모델 버전 및 쿼터 변경에 관한 주장은 제3자 소스이므로 구매 전에 OpenAI의 공식 문서에서 확인하세요. Perplexity의 자체 테스트 주장은 벤더 보고이며 독립적으로 검증된 방법론이 없습니다.</p>
+
+</div>
