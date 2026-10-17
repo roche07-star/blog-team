@@ -1,0 +1,48 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📅 생성일: 2026. 10. 17. AM 4:44:32
+🏷️ 주제: RAG·AI 에이전트·클라우드 네이티브 기술 스택 구축
+🔑 키워드: RAG, AI 에이전트, Python, 클라우드 네이티브, 데이터 엔지니어링
+✍️ 스타일: 링커 (LinkedIn)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+```html
+<h1><i data-lucide="alert-circle"></i> AI 개발자 95%가 놓치는 치명적 실수</h1>
+
+<p>RAG 구축할 줄 알아도, AI 에이전트 만들 줄 알아도<br>
+<strong>시장이 원하는 기술 스택을 모르면 탈락합니다.</strong></p>
+
+<p><i data-lucide="target"></i> <strong>문제의 핵심:</strong></p>
+
+<p>✗ Python 잘하면 충분하다? <strong>NO</strong><br>
+✗ RAG만 구축하면 된다? <strong>NO</strong><br>
+✗ 클라우드 네이티브는 부가 옵션? <strong>NO</strong></p>
+
+<p><i data-lucide="trending-up"></i> <strong>실제 채용 시장의 요구사항:</strong></p>
+
+<p>1️⃣ <strong>RAG + 벡터DB 실전 경험</strong> (Pinecone, Weaviate)<br>
+2️⃣ <strong>AI 에이전트 오케스트레이션</strong> (LangChain, LlamaIndex)<br>
+3️⃣ <strong>클라우드 네이티브 배포</strong> (Kubernetes, Docker)<br>
+4️⃣ <strong>데이터 파이프라인 설계</strong> (Airflow, dbt)</p>
+
+<p><i data-lucide="lightbulb"></i> <strong>해법:</strong></p>
+
+<p>jobizic(<a href="https://jobizic.com" target="_blank">jobizic.com</a>)의 JD 집계 분석으로<br>
+<strong>관심 직무의 실제 기술 스택 우선순위</strong>를 파악하고<br>
+전략적 학습 계획을 세우세요.</p>
+
+<p><i data-lucide="rocket"></i> <strong>당신의 다음 스텝:</strong></p>
+
+<p>👉 최신 AI 개발자 공고 100개 분석<br>
+👉 수요 높은 기술 조합 발견<br>
+👉 맞춤형 학습 로드맵 설계</p>
+
+<p><strong>시장이 원하는 것을 배우세요. 당신이 배우고 싶은 것이 아니라.</strong></p>
+
+<p><i data-lucide="arrow-right"></i> 지금 확인하기: <a href="https://jobizic.com" target="_blank">jobizic.com</a></p>
+
+<p>#AI개발자 #RAG #클라우드네이티브 #데이터엔지니어링 #커리어전략</p>
+```
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💡 Tip: LinkedIn에 복사/붙여넣기 하세요!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
