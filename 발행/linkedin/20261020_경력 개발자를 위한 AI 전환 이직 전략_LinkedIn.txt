@@ -1,0 +1,42 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📅 생성일: 2026. 10. 20. AM 5:04:56
+🏷️ 주제: 경력 개발자를 위한 AI 전환 이직 전략
+🔑 키워드: 경력 개발자, 이직 전략, AI 전환, 직무 매칭, 경력 기술서
+✍️ 스타일: 링커 (LinkedIn)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+```html
+<h1><i data-lucide="alert-circle"></i> 경력 10년차가 신입보다 탈락률이 높은 이유</h1>
+
+<p>놀랍게도, 많은 경력 개발자들이 이직 시장에서 고전합니다.<br>
+문제는 역량이 아닙니다. <strong>"매칭"</strong>입니다.</p>
+
+<p><i data-lucide="target"></i> <strong>경력자 이직의 3가지 함정:</strong></p>
+
+<p>1️⃣ <strong>기술 스택만 맞추는 실수</strong><br>
+→ 기업이 원하는 건 '기술'이 아니라 '문제 해결 경험'입니다</p>
+
+<p>2️⃣ <strong>내 가치를 스스로 모름</strong><br>
+→ 10년 경력을 3줄로 요약하면서 핵심을 놓칩니다</p>
+
+<p>3️⃣ <strong>AI 시대, 구시대 방식 고수</strong><br>
+→ 수백 개 JD를 읽으며 시간을 낭비하고 있습니다</p>
+
+<p><i data-lucide="lightbulb"></i> <strong>해결책?</strong></p>
+
+<p>jobizic(<strong>jobizic.com</strong>)은 당신의 경력 기술서와 기업 JD를 AI로 교차 분석합니다.<br>
+<i data-lucide="check-circle"></i> 적합 포지션 자동 발굴<br>
+<i data-lucide="check-circle"></i> 이직 가능성 수치화<br>
+<i data-lucide="check-circle"></i> 보완해야 할 역량 명확화</p>
+
+<p><i data-lucide="rocket"></i> <strong>경력자의 이직은 '전략'입니다.</strong><br>
+당신의 10년을 제대로 매칭하세요.</p>
+
+<p>👉 지금 확인: <strong>jobizic.com</strong></p>
+
+<p><i data-lucide="message-circle"></i> 이직 준비 중이신가요? 댓글로 고민을 공유해주세요!</p>
+```
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💡 Tip: LinkedIn에 복사/붙여넣기 하세요!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
