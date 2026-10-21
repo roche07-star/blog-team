@@ -1,0 +1,37 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📅 생성일: 2026. 10. 21. AM 5:04:58
+🏷️ 주제: 성과 중심 포트폴리오와 GitHub 프로젝트 고도화
+🔑 키워드: 개발자 포트폴리오, GitHub, 오픈소스, 프로젝트 성과, 코드 품질
+✍️ 스타일: 링커 (LinkedIn)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+```html
+<h1><i data-lucide="alert-circle"></i> 개발자 95%가 모르는 충격적인 사실</h1>
+
+<p>GitHub 스타 100개보다 중요한 게 있습니다.<br>
+바로 <strong>"그 기업이 원하는 기술이 당신의 프로젝트에 있는가"</strong>입니다.</p>
+
+<p><i data-lucide="target"></i> <strong>채용 담당자가 보는 것:</strong></p>
+
+<p>✓ React 프로젝트 5개 (회사는 Vue.js 찾는 중)<br>
+✓ 개인 토이 프로젝트 (회사는 팀 협업 경험 원함)<br>
+✓ 코드만 가득 (성과 지표는 어디에?)</p>
+
+<p><i data-lucide="trending-up"></i> <strong>성과 중심 포트폴리오 3원칙:</strong></p>
+
+<p>1. <strong>기술 스택 매칭</strong> - 지원 기업의 JD와 당신의 GitHub를 비교하세요<br>
+2. <strong>정량적 성과</strong> - "성능 개선했습니다" → "로딩 속도 40% 개선"<br>
+3. <strong>코드 품질 증명</strong> - README, 테스트 코드, 문서화가 핵심입니다</p>
+
+<p><i data-lucide="lightbulb"></i> <strong>Tip:</strong> jobizic(<strong>jobizic.com</strong>)은 지원 기업의 요구 기술과 당신의 GitHub 프로젝트를 자동으로 매칭해서, 포트폴리오의 강점과 보완할 요소를 정확히 분석해줍니다.</p>
+
+<p><i data-lucide="rocket"></i> <strong>오늘 실행하세요:</strong><br>
+당신의 GitHub, 정말 그 회사가 원하는 걸 보여주고 있나요?<br>
+→ <strong>jobizic.com</strong>에서 지금 확인해보세요</p>
+
+<p>💬 여러분의 포트폴리오 관리 팁도 댓글로 공유해주세요!</p>
+```
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💡 Tip: LinkedIn에 복사/붙여넣기 하세요!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
