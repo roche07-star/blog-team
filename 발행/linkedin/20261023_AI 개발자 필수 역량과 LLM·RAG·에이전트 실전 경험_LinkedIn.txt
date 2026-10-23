@@ -1,0 +1,42 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📅 생성일: 2026. 10. 23. AM 5:07:02
+🏷️ 주제: AI 개발자 필수 역량과 LLM·RAG·에이전트 실전 경험
+🔑 키워드: AI 개발자, LLM, RAG, AI 에이전트, 생성형 AI
+✍️ 스타일: 링커 (LinkedIn)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+```html
+<h1><i data-lucide="alert-circle"></i> AI 개발자 채용, 95%가 이 한 가지를 놓칩니다</h1>
+
+<p>LLM 공부했고, RAG 튜토리얼 따라했고, 트렌드도 다 알고 있는데<br>
+<strong>왜 서류에서 탈락할까요?</strong></p>
+
+<p>답은 간단합니다.<br>
+<strong>"기술 나열 ≠ 실전 역량"</strong>이기 때문입니다.</p>
+
+<h2><i data-lucide="target"></i> AI 채용 담당자가 실제로 보는 것</h2>
+
+<p><i data-lucide="check-circle"></i> <strong>1. 구체적 프로젝트 경험</strong><br>
+"LLM 활용 가능" (X) → "GPT-4 기반 고객 응대 에이전트 구축, 응답 정확도 87% 달성" (O)</p>
+
+<p><i data-lucide="check-circle"></i> <strong>2. 기술 스택의 맥락</strong><br>
+"RAG, LangChain 사용" (X) → "벡터DB 최적화로 검색 속도 40% 개선" (O)</p>
+
+<p><i data-lucide="check-circle"></i> <strong>3. 비즈니스 임팩트</strong><br>
+"AI 에이전트 개발" (X) → "자동화로 CS 처리시간 60% 단축, 월 300만원 절감" (O)</p>
+
+<h2><i data-lucide="lightbulb"></i> 현실 체크</h2>
+
+<p>채용 공고에는 "LLM, RAG, AI 에이전트 경험자"라고 쓰여있지만,<br>
+<strong>진짜로 원하는 건 그 기술로 문제를 해결한 경험입니다.</strong></p>
+
+<p><i data-lucide="rocket"></i> <strong>Tip:</strong> jobizic(<strong>jobizic.com</strong>)의 JD 분석 기능을 활용하면<br>
+AI 채용공고가 요구하는 실전 역량과 당신의 경험 사이 격차를 정확히 파악할 수 있습니다.</p>
+
+<p><i data-lucide="trending-up"></i> <strong>당신의 AI 역량, 제대로 어필하고 계신가요?</strong><br>
+→ <strong>jobizic.com</strong>에서 무료로 확인해보세요</p>
+```
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💡 Tip: LinkedIn에 복사/붙여넣기 하세요!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
