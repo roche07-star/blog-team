@@ -1,0 +1,41 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📅 생성일: 2026. 10. 26. AM 5:04:16
+🏷️ 주제: AI 활용형 신입 개발자 취업 준비
+🔑 키워드: 신입 개발자, AI 문제해결력, 취업 준비, 주니어 채용
+✍️ 스타일: 링커 (LinkedIn)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+```html
+<h1><i data-lucide="alert-circle"></i> 신입 개발자 100명 중 95명이 놓치는 치명적 실수</h1>
+
+<p>포트폴리오는 완벽한데 왜 서류 탈락할까요?<br>
+답은 간단합니다. <strong>"공고가 원하는 것"</strong>과 <strong>"내가 보여준 것"</strong>의 미스매치.</p>
+
+<p><i data-lucide="target"></i> <strong>AI 시대, 신입 개발자가 반드시 해야 할 3가지:</strong></p>
+
+<p>1️⃣ <strong>JD 해부하기</strong><br>
+"Python 가능자" ≠ "Python으로 데이터 파이프라인 구축 경험"<br>
+같은 단어, 완전히 다른 의미입니다.</p>
+
+<p>2️⃣ <strong>AI 역량 매칭</strong><br>
+기업이 원하는 AI 문제해결 능력 vs 내 프로젝트 경험<br>
+이 갭을 정확히 아는 사람만 합격합니다.</p>
+
+<p>3️⃣ <strong>지원 우선순위 전략</strong><br>
+100곳 지원 < 10곳 전략적 지원<br>
+합격 확률 높은 곳부터 공략하세요.</p>
+
+<p><i data-lucide="lightbulb"></i> <strong>Tip:</strong> jobizic(<strong>jobizic.com</strong>)의 AI 분석 기능으로<br>
+채용공고의 숨은 요구사항과 내 프로필 갭을 3분 만에 파악할 수 있습니다.</p>
+
+<p><i data-lucide="rocket"></i> <strong>당신의 첫 오퍼레터, 전략에서 시작됩니다.</strong></p>
+
+<p>💬 신입 시절 가장 후회되는 지원 전략이 있나요?<br>
+댓글로 공유해주세요!</p>
+
+<p>👉 더 알아보기: <strong>jobizic.com</strong></p>
+```
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💡 Tip: LinkedIn에 복사/붙여넣기 하세요!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
