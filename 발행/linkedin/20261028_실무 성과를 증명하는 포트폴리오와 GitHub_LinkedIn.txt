@@ -1,0 +1,46 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📅 생성일: 2026. 10. 28. AM 6:00:00
+🏷️ 주제: 실무 성과를 증명하는 포트폴리오와 GitHub
+🔑 키워드: 개발자 포트폴리오, GitHub, 실무 프로젝트, 기술 문서화
+✍️ 스타일: 링커 (LinkedIn)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+```html
+<h1><i data-lucide="alert-circle"></i> 개발자 1000명 중 970명, 포트폴리오로 탈락합니다.</h1>
+
+<p>이유가 뭘까요?<br>
+코드는 훌륭한데, <strong>기업이 원하는 걸 증명하지 못했기 때문</strong>입니다.</p>
+
+<p><i data-lucide="target"></i> <strong>채용 담당자가 5초 안에 보는 것:</strong></p>
+
+<p>1️⃣ <strong>우리 기술 스택이 있나?</strong> (React? Spring? AWS?)<br>
+2️⃣ <strong>실무 수준인가?</strong> (토이 프로젝트 vs 프로덕션급 설계)<br>
+3️⃣ <strong>성과가 측정 가능한가?</strong> (만들었다 ❌ / 응답속도 40% 개선 ✅)</p>
+
+<p><i data-lucide="briefcase"></i> <strong>현실:</strong></p>
+
+<p>대부분의 포트폴리오는<br>
+• GitHub에 코드만 올림 (README 부실)<br>
+• "프로젝트 완성"만 강조 (비즈니스 임팩트 無)<br>
+• JD의 핵심 키워드와 불일치</p>
+
+<p><i data-lucide="lightbulb"></i> <strong>해결책:</strong></p>
+
+<p><strong>jobizic</strong>(<a href="https://jobizic.com" target="_blank">jobizic.com</a>)은 목표 기업 JD를 분석해<br>
+→ 당신의 포트폴리오에 <strong>빠진 기술 키워드</strong>를 찾아내고<br>
+→ <strong>프로젝트 성과 문서화 방식</strong>을 구체적으로 제안합니다.</p>
+
+<p><i data-lucide="rocket"></i> <strong>오늘 실행하세요:</strong></p>
+
+<p>✅ GitHub README를 "기술 증명서"로 만드세요<br>
+✅ 숫자로 말하는 성과를 추가하세요<br>
+✅ JD 키워드 매칭률을 확인하세요</p>
+
+<p><i data-lucide="award"></i> <strong>당신의 코드, 이제 제대로 보여줄 시간입니다.</strong></p>
+
+<p>👉 지금 확인: <a href="https://jobizic.com" target="_blank"><strong>jobizic.com</strong></a></p>
+```
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💡 Tip: LinkedIn에 복사/붙여넣기 하세요!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
