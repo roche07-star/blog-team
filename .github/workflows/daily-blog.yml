@@ -1,9 +1,7 @@
 name: Daily Blog Generation (Naver, Tistory, LinkedIn)
 
 on:
-  schedule:
-    - cron: '30 0 * * *'  # 매일 09:30 KST (UTC 00:30)
-  workflow_dispatch:  # 수동 실행 가능
+  workflow_dispatch:  # 수동 실행만 가능 (자동 스케줄 중지)
 
 jobs:
   generate-daily-blog:
