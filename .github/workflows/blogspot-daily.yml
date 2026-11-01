@@ -1,9 +1,7 @@
 name: Daily Blogspot Generation
 
 on:
-  schedule:
-    - cron: '0 0 * * *'  # 매일 09:00 KST (UTC 00:00)
-  workflow_dispatch:  # 수동 실행 가능
+  workflow_dispatch:  # 수동 실행만 가능 (자동 스케줄 중지)
 
 jobs:
   generate-blogspot:
