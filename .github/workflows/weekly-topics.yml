@@ -1,9 +1,7 @@
 name: Weekly Topics Generation
 
 on:
-  schedule:
-    - cron: '0 0 * * 1'  # 매주 월요일 09:00 KST (UTC 00:00)
-  workflow_dispatch:  # 수동 실행 가능
+  workflow_dispatch:  # 수동 실행만 가능 (자동 스케줄 중지)
 
 jobs:
   generate-topics:
